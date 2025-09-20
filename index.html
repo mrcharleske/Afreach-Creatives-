@@ -1,158 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Afreach Creatives</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="logo.png" type="image/png">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FYZL907RTJ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-FYZL907RTJ');
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Afreach Creatives — Designing Africa’s future brands. Professional web development, graphic design, branding, PR, and more.">
+    <meta name="keywords" content="web design Kenya, graphic design, branding, PR, social media management, book writing">
+    <title>Afreach Creatives — Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="icon" href="images/logo.jpg" type="image/jpeg">
+    <link rel="manifest" href="site.webmanifest">
+    <meta property="og:title" content="Afreach Creatives — Designing Africa’s future brands">
+    <meta property="og:description" content="Expert services in web development, design, branding, and PR.">
+    <meta property="og:image" content="https://yourdomain.com/images/logo.jpg">
+    <meta property="og:url" content="https://yourdomain.com/">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Afreach Creatives",
+      "url": "https://yourdomain.com/",
+      "logo": "https://yourdomain.com/images/logo.jpg"
+    }
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FYZL907RTJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FYZL907RTJ');
+    </script>
 </head>
 <body>
-
-  <!-- Header / Navbar -->
-  <header>
-    <div class="container navbar">
-      <img src="logo.png" alt="Afreach Creatives Logo">
-      <nav>
-        <div class="hamburger" onclick="toggleMenu()">
-          <span></span><span></span><span></span>
+    <header>
+        <div class="container">
+            <img src="images/logo.jpg" alt="Afreach Creatives Logo" class="logo">
+            <nav>
+                <div class="hamburger" onclick="toggleMenu()">☰</div>
+                <ul class="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="nav-links" id="navLinks">
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="services.html">Services</a>
-          <a href="portfolio.html">Portfolio</a>
-          <a href="blog.html">Blog</a>
-          <a href="contact.html">Contact</a>
+    </header>
+    <section class="hero" style="background-image: url('images/heroback.jpg');">
+        <div class="hero-content" data-aos="fade-up">
+            <h1>Afreach Creatives</h1>
+            <p>Designing Africa’s future brands</p>
+            <button class="cta" onclick="openModal()">Start a Project</button>
         </div>
-      </nav>
+    </section>
+    <section class="services-overview" data-aos="fade-up">
+        <div class="container">
+            <h2>Our Services</h2>
+            <p>From web development to branding and PR, we cover it all.</p>
+            <button class="cta" onclick="openModal()">Get a Quote</button>
+        </div>
+    </section>
+    <section class="testimonials-preview" data-aos="fade-up">
+        <div class="container">
+            <h2>Testimonials</h2>
+            <div class="testimonial">
+                <img src="images/lydia.jpg" alt="Lydia Waweru Testimonial">
+                <p>"Afreach transformed my online presence with a beautiful website." - Lydia Waweru</p>
+            </div>
+            <div class="testimonial">
+                <img src="images/elite.jpg" alt="Elite Star Academy Testimonial">
+                <p>"Their team handled everything professionally." - Elite Star Academy</p>
+            </div>
+            <div class="testimonial">
+                <img src="images/grace.jpg" alt="Grace Children Home Testimonial">
+                <p>"Afreach captured our mission perfectly." - Grace Children Home</p>
+            </div>
+            <a href="portfolio.html">See More</a>
+        </div>
+    </section>
+    <section class="cta-section" data-aos="fade-up">
+        <div class="container">
+            <h2>Grow your brand with us today</h2>
+            <button class="cta" onclick="openModal()">Get a Quote</button>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <p>Contact: +254703579059 | afreachcreatives@gmail.com</p>
+            <div class="socials">
+                <a href="https://www.linkedin.com/in/afreach-creatives-9802a6372?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">LinkedIn</a>
+                <a href="https://x.com/AfreachCreative?t=95xNXP91OWjgsZOZ8zrExg&s=09">X</a>
+                <a href="https://www.facebook.com/share/1D4xPeLRkc/">Facebook</a>
+                <a href="https://www.instagram.com/afreach_creatives?igsh=MTIyN3MwYnlneGx5ZQ==">Instagram</a>
+                <a href="https://www.tiktok.com/@afreach.creatives?_t=ZM-8zipJxHSNaK&_r=1">TikTok</a>
+            </div>
+            <p>&copy; 2025 Afreach Creatives</p>
+        </div>
+    </footer>
+    <div id="quoteModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Get a Quote</h2>
+            <form id="quoteForm" action="https://formspree.io/f/mjkedvkg" method="POST">
+                <label>Name:</label><input type="text" name="name" required>
+                <label>Email:</label><input type="email" name="email" required>
+                <label>Service:</label>
+                <select name="service" id="service" onchange="updateBudgetOptions()" required>
+                    <option value="">Select Service</option>
+                    <option value="Website Development">Website Development</option>
+                    <option value="Graphic Designs">Graphic Designs</option>
+                    <option value="Software Development">Software Development</option>
+                    <option value="Book Writing for Authors">Book Writing for Authors</option>
+                    <option value="Branding">Branding</option>
+                    <option value="Social Media Management & PR">Social Media Management & PR</option>
+                </select>
+                <label>Budget:</label>
+                <select name="budget" id="budget" required></select>
+                <label>Timeline:</label>
+                <select name="timeline" required>
+                    <option value="1–2 weeks">1–2 weeks</option>
+                    <option value="3–4 weeks">3–4 weeks</option>
+                    <option value="1–2 months">1–2 months</option>
+                    <option value="Flexible / Not urgent">Flexible / Not urgent</option>
+                </select>
+                <label>Message:</label><textarea name="message"></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
     </div>
-  </header>
-
-  <!-- Hero Section (Slideshow) -->
-  <section class="hero">
-    <div class="hero-content" data-aos="fade-up">
-      <h1>We design, build, and elevate your digital presence.</h1>
-      <p>Branding • PWAs • Web Development • PR & Social • Publishing</p>
-      <button class="btn" onclick="openModal()">Get a Quote</button>
-      <button class="btn" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">View Services</button>
-    </div>
-  </section>
-
-  <!-- About Preview -->
-  <section class="about container" data-aos="fade-up">
-    <h2>Who We Are</h2>
-    <p>Afreach Creatives is a full-service creative agency helping brands and individuals shine with design, web, PR, and publishing solutions.</p>
-    <a href="about.html" class="btn">Learn More</a>
-  </section>
-
-  <!-- Services Preview -->
-  <section class="services container" id="services" data-aos="fade-up">
-    <h2>Our Services</h2>
-    <div class="services">
-      <div class="service-card">
-        <img src="creative.jpg" alt="Creative Design">
-        <h3>Creative Design</h3>
-        <p>Logos, branding, and visuals that impress.</p>
-        <button class="btn" onclick="openModal()">Get a Quote</button>
-      </div>
-      <div class="service-card">
-        <img src="web.jpg" alt="Web Development">
-        <h3>Web Development</h3>
-        <p>Responsive websites and PWAs tailored to your business.</p>
-        <button class="btn" onclick="openModal()">Get a Quote</button>
-      </div>
-    </div>
-    <a href="services.html" class="btn">View All Services</a>
-  </section>
-
-  <!-- Testimonials Preview -->
-  <section class="testimonials container" data-aos="fade-up">
-    <h2>What Clients Say</h2>
-    <div class="testimonials">
-      <div class="testimonial">
-        <img src="elite.jpg" alt="Elite">
-        <p>"Afreach Creatives transformed our brand presence!"</p>
-      </div>
-      <div class="testimonial">
-        <img src="grace.png" alt="Grace">
-        <p>"Professional, creative, and supportive team."</p>
-      </div>
-    </div>
-    <a href="portfolio.html" class="btn">See More</a>
-  </section>
-
-  <!-- Call to Action -->
-  <section class="contact" data-aos="fade-up">
-    <h2>Let’s Work Together</h2>
-    <button class="btn" onclick="openModal()">Get a Quote</button>
-  </section>
-
-  <!-- Modal Form -->
-  <div class="modal" id="quoteModal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <h3>Get a Quote</h3>
-      <form action="https://formspree.io/f/mjkedvkg" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Email Address" required>
-        <input type="text" name="contact" placeholder="Phone Number" required>
-        <select name="urgency" required>
-          <option value="">Urgency</option>
-          <option value="Urgent">Urgent</option>
-          <option value="Within 1 Week">Within 1 Week</option>
-          <option value="Flexible">Flexible</option>
-        </select>
-        <button type="submit" class="btn">Submit</button>
-      </form>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Afreach Creatives. All Rights Reserved.</p>
-    <div>
-      <a href="https://www.facebook.com/share/1D4xPeLRkc/">Facebook</a> |
-      <a href="https://x.com/AfreachCreative?t=95xNXP91OWjgsZOZ8zrExg&s=09">X</a> |
-      <a href="https://www.instagram.com/afreach_creatives?igsh=MTIyN3MwYnlneGx5ZQ==">Instagram</a> |
-      <a href="https://www.tiktok.com/@afreach.creatives?_t=ZM-8zipJxHSNaK&_r=1">TikTok</a> |
-      <a href="https://www.linkedin.com/in/afreach-creatives-9802a6372">LinkedIn</a>
-    </div>
-  </footer>
-
-  <!-- Scripts -->
-  <script>
-    AOS.init();
-
-    function toggleMenu() {
-      document.getElementById('navLinks').classList.toggle('active');
-    }
-
-    function openModal() {
-      document.getElementById('quoteModal').style.display = 'block';
-    }
-
-    function closeModal() {
-      document.getElementById('quoteModal').style.display = 'none';
-    }
-
-    window.onclick = function(event) {
-      const modal = document.getElementById('quoteModal');
-      if (event.target === modal) {
-        closeModal();
-      }
-    }
-  </script>
-
+    <script src="js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(reg => console.log('Service Worker registered'))
+                    .catch(err => console.log('Service Worker registration failed:', err));
+            });
+        }
+    </script>
 </body>
 </html>
