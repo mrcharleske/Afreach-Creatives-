@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Services - Afreach Creatives</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FYZL907RTJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FYZL907RTJ');
+  </script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="navbar">
+    <div class="logo">
+      <a href="index.html"><img src="images/logo.png" alt="Afreach Creatives Logo"></a>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="hamburger">&#9776;</div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-about" style="background-image: url('images/hero3.jpg');">
+    <div class="overlay">
+      <h1 data-aos="fade-down">Our Services</h1>
+      <p data-aos="fade-up">We Build, Design & Inspire</p>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section class="services-section container">
+    <h2 data-aos="fade-up">What We Offer</h2>
+    <div class="services-grid">
+
+      <!-- Creative Design -->
+      <div class="service-card" data-aos="fade-up">
+        <img src="images/creative.jpg" alt="Creative Design">
+        <h3>Creative Design</h3>
+        <p>Logos, flyers, and designs that speak your brand language.</p>
+        <button class="quote-btn" data-service="Creative Design">Get a Quote</button>
+      </div>
+
+      <!-- Web Development -->
+      <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+        <img src="images/web.jpg" alt="Web Development">
+        <h3>Web Development</h3>
+        <p>Modern, responsive, and SEO-ready websites & PWAs.</p>
+        <button class="quote-btn" data-service="Web Development">Get a Quote</button>
+      </div>
+
+      <!-- PR & Social Media -->
+      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+        <img src="images/pr.jpg" alt="PR & Social Media">
+        <h3>PR & Social Media</h3>
+        <p>Social media management & PR campaigns that boost your presence.</p>
+        <button class="quote-btn" data-service="PR & Social Media">Get a Quote</button>
+      </div>
+
+      <!-- Support -->
+      <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+        <img src="images/support.jpg" alt="Support">
+        <h3>Tech Support</h3>
+        <p>Reliable maintenance, updates & technical solutions.</p>
+        <button class="quote-btn" data-service="Tech Support">Get a Quote</button>
+      </div>
+
+      <!-- Publishing -->
+      <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+        <img src="images/publishing.jpg" alt="Publishing">
+        <h3>Publishing & Book Writing</h3>
+        <p>From eBooks to soft copies – we help you publish and reach the world.</p>
+        <button class="quote-btn" data-service="Publishing & Book Writing">Get a Quote</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-content" data-aos="zoom-in">
+      <h2>Ready to bring your ideas to life?</h2>
+      <p>Partner with Afreach Creatives today and let’s create something amazing together.</p>
+      <a href="contact.html" class="btn-primary">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- Modal Form -->
+  <div id="quoteModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Request a Quote</h2>
+      <form id="quoteForm" action="https://formspree.io/f/mjkedvkg" method="POST">
+        <input type="hidden" name="service" id="serviceInput">
+        <label for="name">Full Name</label>
+        <input type="text" name="name" required>
+        
+        <label for="email">Email</label>
+        <input type="email" name="email" required>
+        
+        <label for="contact">Phone/WhatsApp</label>
+        <input type="text" name="contact" required>
+        
+        <label for="urgency">Urgency</label>
+        <select name="urgency">
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
+        
+        <button type="submit" class="btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Afreach Creatives. All Rights Reserved.</p>
+    <div class="social-links">
+      <a href="https://www.facebook.com/share/1D4xPeLRkc/">Facebook</a>
+      <a href="https://www.instagram.com/afreach_creatives?igsh=MTIyN3MwYnlneGx5ZQ==">Instagram</a>
+      <a href="https://x.com/AfreachCreative?t=95xNXP91OWjgsZOZ8zrExg&s=09">X</a>
+      <a href="https://www.linkedin.com/in/afreach-creatives-9802a6372?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">LinkedIn</a>
+      <a href="https://www.tiktok.com/@afreach.creatives?_t=ZM-8zipJxHSNaK&_r=1">TikTok</a>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1200 });
+
+    // Modal Logic
+    const modal = document.getElementById("quoteModal");
+    const closeBtn = document.querySelector(".close");
+    const quoteBtns = document.querySelectorAll(".quote-btn");
+    const serviceInput = document.getElementById("serviceInput");
+
+    quoteBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        modal.style.display = "block";
+        serviceInput.value = btn.dataset.service;
+
+        // Pre-fill WhatsApp link
+        document.getElementById("quoteForm").onsubmit = function(e){
+          const name = this.name.value;
+          const contact = this.contact.value;
+          const service = this.service.value;
+          const urgency = this.urgency.value;
+          const message = `Hello Afreach Creatives, my name is ${name}. I am interested in ${service}. Urgency: ${urgency}. You can reach me at ${contact}.`;
+          window.open(`https://wa.me/254703579059?text=${encodeURIComponent(message)}`, "_blank");
+        };
+      });
+    });
+
+    closeBtn.addEventListener("click", () => modal.style.display = "none");
+    window.onclick = e => { if (e.target == modal) modal.style.display = "none"; };
+  </script>
+</body>
+</html>
