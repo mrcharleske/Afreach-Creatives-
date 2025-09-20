@@ -1,156 +1,144 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Services — Afreach Creatives</title>
-  <meta name="description" content="Explore Afreach Creatives' services: branding, web development, maintenance, digital marketing, and publishing." />
-  <meta name="theme-color" content="#081233" />
-  <link rel="canonical" href="https://www.afreachcreatives.com/services.html" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="images/favicon.ico">
-  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-  <link rel="manifest" href="site.webmanifest">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Afreach Creatives",
-    "url": "https://www.afreachcreatives.com",
-    "logo": "https://www.afreachcreatives.com/images/logo.png",
-    "sameAs": [
-      "https://www.linkedin.com/company/afreach-creatives",
-      "https://x.com/AfreachCreative",
-      "https://www.facebook.com/afreachcreatives",
-      "https://www.instagram.com/afreach_creatives",
-      "https://www.tiktok.com/@afreach.creatives"
-    ]
-  }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="branding, web development, live streaming, digital marketing, publishing, Nairobi, creative agency">
+    <title>Afreach Creatives - Services</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="images/logo.png">
+    <link rel="manifest" href="site.webmanifest">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FYZL907RTJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FYZL907RTJ');
+    </script>
 </head>
 <body>
-  <header class="site-header" id="siteHeader">
-    <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <img src="images/logo.png" alt="Afreach Creatives logo" class="brand-logo" loading="lazy" />
-        <span class="brand-text">Afreach Creatives</span>
-      </a>
-      <nav class="nav" id="nav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html" aria-current="page">Services</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="contact.html">Contact</a>
-        <button class="cta primary" id="openQuote">Get a Quote</button>
-      </nav>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <!-- Preloader -->
+    <div id="preloader">
+        <img src="images/logo.png" alt="Loading...">
     </div>
-  </header>
-  <main>
-    <section class="hero-services" data-aos="fade-up">
-      <div class="container">
-        <h1>Our Services</h1>
-        <p>Creative, technical, and digital solutions tailored to your brand’s success.</p>
-      </div>
+
+    <!-- Sticky CTA -->
+    <button class="sticky-cta btn-primary" onclick="openModal('quoteModal')">Get a Quote</button>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <img src="images/logo.png" alt="Afreach Creatives Logo">
+            </a>
+            <button class="navbar-toggle">☰</button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-services">
+        <div class="container">
+            <h1 data-aos="fade-up">Our Services</h1>
+            <p data-aos="fade-up" data-aos-delay="100">Comprehensive solutions to elevate your brand and digital presence.</p>
+        </div>
     </section>
-    <section class="services container">
-      <div class="grid">
-        <article class="service-card" data-aos="fade-up" id="creative">
-          <img src="images/creative.jpg" alt="Creative and Branding services" loading="lazy">
-          <h2>Creative & Branding</h2>
-          <ul>
-            <li>Logo Design</li>
-            <li>Flyers / Posters</li>
-            <li>Social Media Graphics</li>
-            <li>Brand Identity Kits</li>
-          </ul>
-        </article>
-        <article class="service-card" data-aos="fade-up" data-aos-delay="100" id="web">
-          <img src="images/web.jpg" alt="Web and App Development services" loading="lazy">
-          <h2>Web & App Development</h2>
-          <ul>
-            <li>Website Design & Redesign</li>
-            <li>Progressive Web Apps (PWAs)</li>
-            <li>E-commerce Stores</li>
-            <li>Landing Pages</li>
-          </ul>
-        </article>
-        <article class="service-card" data-aos="fade-up" data-aos-delay="200" id="maintenance">
-          <img src="images/support.jpg" alt="Website and App Maintenance services" loading="lazy">
-          <h2>Website & App Maintenance</h2>
-          <ul>
-            <li>Content Updates (text, images, blogs)</li>
-            <li>Bug Fixing & Troubleshooting</li>
-            <li>Feature Additions</li>
-            <li>Security & Backup Services</li>
-            <li>Monthly Maintenance Packages</li>
-          </ul>
-        </article>
-        <article class="service-card" data-aos="fade-up" data-aos-delay="300" id="pr">
-          <img src="images/pr.jpg" alt="Digital Marketing and PR services" loading="lazy">
-          <h2>Digital Marketing & PR</h2>
-          <ul>
-            <li>Social Media Management</li>
-            <li>Online PR & Campaigns</li>
-            <li>SEO & Content Strategy</li>
-          </ul>
-        </article>
-        <article class="service-card" data-aos="fade-up" data-aos-delay="400" id="publishing">
-          <img src="images/publishing.jpg" alt="Publishing and Content services" loading="lazy">
-          <h2>Publishing & Content</h2>
-          <ul>
-            <li>Book Writing & Ghostwriting</li>
-            <li>Ebook Design & Publishing</li>
-            <li>Editing & Cover Design</li>
-          </ul>
-        </article>
-      </div>
+
+    <!-- Services -->
+    <section class="services">
+        <div class="container">
+            <div class="grid">
+                <div class="service-card" data-aos="fade-up">
+                    <img src="images/branding.jpg" alt="Creative & Branding">
+                    <h3>Creative & Branding</h3>
+                    <p>Logo Design, Flyers/Posters, Business Cards, Brand Identity Kits, Social Media Templates</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="images/webdev.jpg" alt="Web & App Development">
+                    <h3>Web & App Development</h3>
+                    <p>Website Design, Mobile Apps, E-commerce, SEO, UI/UX Design</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="images/maintenance.jpg" alt="Maintenance">
+                    <h3>Maintenance</h3>
+                    <p>Website Maintenance, App Updates, Performance Optimization</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <img src="images/marketing.jpg" alt="Digital Marketing">
+                    <h3>Digital Marketing</h3>
+                    <p>Social Media Management, PR, Campaign Management, Content Creation</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <img src="images/publishing.jpg" alt="Publishing">
+                    <h3>Publishing</h3>
+                    <p>E-books, Editing, Formatting, Cover Design</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                    <img src="images/livestreaming.jpg" alt="Live Streaming">
+                    <h3>Live Streaming</h3>
+                    <p>Engage your audience with seamless live event streaming, professional webinar setups, and real-time interaction tools. From corporate events to online broadcasts, we deliver high-quality, reliable streaming solutions tailored to your brand.</p>
+                </div>
+            </div>
+        </div>
     </section>
-  </main>
-  <footer class="site-footer">
-    <div class="container footer-grid">
- Calendrier
-      <div class="footer-brand">
-        <img src="images/logo.png" alt="Afreach Creatives logo" loading="lazy" />
-        <p>Design & technology for growth. <br> © <span id="year"></span> Afreach Creatives</p>
-      </div>
-      <div class="footer-links">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="services.html#creative">Creative & Branding</a></li>
-          <li><a href="services.html#web">Web Development</a></li>
-          <li><a href="services.html#maintenance">Maintenance</a></li>
-          <li><a href="services.html#publishing">Publishing</a></li>
-        </ul>
-      </div>
-      <div class="footer-contact">
-        <h4>Contact</h4>
-        <p><a href="mailto:afreachcreatives@gmail.com">afreachcreatives@gmail.com</a></p>
-        <p><a href="https://wa.me/254703579059">WhatsApp: +254703579059</a></p>
-      </div>
+
+    <!-- Quote Modal -->
+    <div id="quoteModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Get a Quote</h2>
+            <form id="quoteForm" action="https://formspree.io/f/mjkedvkg" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <select name="service" required>
+                    <option value="" disabled selected>Select a Service</option>
+                    <option value="Creative & Branding">Creative & Branding</option>
+                    <option value="Web & App Development">Web & App Development</option>
+                    <option value="Maintenance">Maintenance</option>
+                    <option value="Digital Marketing">Digital Marketing</option>
+                    <option value="Publishing">Publishing</option>
+                    <option value="Live Streaming">Live Streaming</option>
+                </select>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <input type="text" name="budget" placeholder="Budget (e.g., $5000)">
+                <input type="text" name="timeline" placeholder="Timeline (e.g., 1 month)">
+                <button type="submit" class="btn btn-primary">Send Quote</button>
+            </form>
+        </div>
     </div>
-  </footer>
-  <div id="quoteModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="modal-content">
-      <span class="modal-close" id="closeModal" aria-label="Close modal">&times;</span>
-      <h2 id="modalTitle">Request a Quote</h2>
-      <form id="quoteForm" action="https://formspree.io/f/mqakngpa" method="POST">
-        <label for="name">Your Name</label>
-        <input type="text" id="name" name="name" placeholder="Your Name" required>
-        <label for="email">Your Email</label>
-        <input type="email" id="email" name="email" placeholder="Your Email" required>
-        <label for="service">Service You Need</label>
-        <input type="text" id="service" name="service" placeholder="Service You Need">
-        <label for="project">Project Details</label>
-        <textarea id="project" name="project" placeholder="Project Details" required></textarea>
-        <button type="submit" class="btn-primary">Send Quote</button>
-      </form>
-    </div>
-  </div>
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>AOS.init({ duration: 700, easing: 'ease-in-out', offset: 80 });</script>
-  <script src="main.js"></script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-brand">
+                <h3>Afreach Creatives</h3>
+            </div>
+            <p>&copy; 2025 Afreach Creatives. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Afreach Creatives",
+        "url": "https://mrcharleske.github.io/Afreach-Creatives/",
+        "logo": "https://mrcharleske.github.io/Afreach-Creatives/images/logo.png"
+    }
+    </script>
 </body>
 </html>
