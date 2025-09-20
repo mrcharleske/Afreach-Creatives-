@@ -4,42 +4,50 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>About — Afreach Creatives</title>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
-
-  <!-- AOS CSS -->
+  <meta name="description" content="Learn about Afreach Creatives, a hybrid studio blending creativity and technology for impactful branding and digital solutions." />
+  <meta name="theme-color" content="#081233" />
+  <link rel="canonical" href="https://www.afreachcreatives.com/about.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-  <!-- Site styles (root) -->
   <link rel="stylesheet" href="styles.css">
-
-  <!-- PWA manifest -->
-  <link rel="manifest" href="json/manifest.json">
+  <link rel="icon" href="images/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Afreach Creatives",
+    "url": "https://www.afreachcreatives.com",
+    "logo": "https://www.afreachcreatives.com/images/logo.png",
+    "sameAs": [
+      "https://www.linkedin.com/company/afreach-creatives",
+      "https://x.com/AfreachCreative",
+      "https://www.facebook.com/afreachcreatives",
+      "https://www.instagram.com/afreach_creatives",
+      "https://www.tiktok.com/@afreach.creatives"
+    ]
+  }
+  </script>
 </head>
 <body>
-  <!-- HEADER -->
   <header class="site-header" id="siteHeader">
     <div class="container header-inner">
       <a class="brand" href="index.html">
-        <img src="images/logo.png" alt="Afreach Creatives logo" class="brand-logo" />
+        <img src="images/logo.png" alt="Afreach Creatives logo" class="brand-logo" loading="lazy" />
         <span class="brand-text">Afreach Creatives</span>
       </a>
-
       <nav class="nav" id="nav">
         <a href="index.html">Home</a>
         <a href="about.html" aria-current="page">About</a>
         <a href="services.html">Services</a>
         <a href="portfolio.html">Portfolio</a>
         <a href="contact.html">Contact</a>
-        <button class="cta primary" id="navCta">Start a Project</button>
+        <button class="cta primary" id="openQuote">Get a Quote</button>
       </nav>
-
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
     </div>
   </header>
-
-  <!-- ABOUT HERO -->
   <main>
     <section class="about-hero" style="background-image:url('images/hero1.jpg');" aria-label="About hero">
       <div class="container" data-aos="fade-up">
@@ -47,74 +55,61 @@
         <p class="lead">We are a hybrid studio blending creativity and technology to help brands stand out, grow, and connect with people.</p>
       </div>
     </section>
-
-    <!-- OUR STORY -->
     <section class="about-story container" data-aos="fade-up">
       <h2>Our Story</h2>
       <p>Afreach Creatives was founded with one goal — to bridge creativity and technology. From branding and digital marketing to website development and publishing, our team is committed to delivering solutions that not only look stunning but also create measurable impact.</p>
     </section>
-
-    <!-- INTRO TO TEAM -->
     <section class="team-intro container" data-aos="fade-up">
       <h2>Meet Our Team</h2>
       <p>At Afreach Creatives, our strength lies in the people behind the vision. Each team member brings unique skills, creativity, and passion to deliver outstanding solutions for our clients. Together, we shape ideas into impactful results.</p>
     </section>
-
-    <!-- TEAM GRID -->
     <section class="team container">
       <div class="team-grid">
         <article class="team-member" data-aos="fade-up" data-aos-delay="100">
-          <img src="images/ceo.jpg" alt="Charles N. — CEO & Founder">
+          <img src="images/ceo.jpg" alt="Charles N., CEO and Founder" loading="lazy">
           <h3>Charles N. — CEO & Founder</h3>
           <p>Visionary leader and founder of Afreach Creatives, Charles drives the company’s mission to deliver creative and digital solutions with impact.</p>
         </article>
-
         <article class="team-member" data-aos="fade-up" data-aos-delay="200">
-          <img src="images/joseph.jpg" alt="Joseph — Creative Designer">
+          <img src="images/joseph.jpg" alt="Joseph, Creative Designer" loading="lazy">
           <h3>Joseph — Creative Designer</h3>
           <p>Passionate about design and innovation, Joseph crafts engaging visuals and creative assets that bring brands to life.</p>
         </article>
-
         <article class="team-member" data-aos="fade-up" data-aos-delay="300">
-          <img src="images/beatrice.jpg" alt="Beatrice — PR & Social Media Manager">
+          <img src="images/beatrice.jpg" alt="Beatrice, PR and Social Media Manager" loading="lazy">
           <h3>Beatrice — PR & Social Media Manager</h3>
           <p>Specialist in public relations and digital engagement, Beatrice ensures brands connect with their audiences effectively.</p>
         </article>
       </div>
     </section>
-
-    <!-- CTA -->
     <section class="cta-bar" data-aos="fade-up">
       <div class="container cta-inner">
         <div>
-          <h3>Let’s work together</h3>
+          <h3>Let’s Work Together</h3>
           <p>Ready to bring your ideas to life? Partner with Afreach Creatives today.</p>
         </div>
         <div class="cta-actions">
           <a class="btn primary" href="contact.html">Start a Project</a>
-          <button class="btn ghost" id="openQuoteFromAbout">Get a Quote</button>
+          <button class="btn ghost" id="openQuoteAbout">Get a Quote</button>
         </div>
       </div>
     </section>
   </main>
-
-  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <img src="images/logo.png" alt="Afreach Creatives" />
+        <img src="images/logo.png" alt="Afreach Creatives logo" loading="lazy" />
         <p>Design & technology for growth. <br> © <span id="year"></span> Afreach Creatives</p>
       </div>
-
       <div class="footer-links">
-        <h4>Quick Links</h4>
+        <h4>Services</h4>
         <ul>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="services.html#creative">Creative & Branding</a></li>
+          <li><a href="services.html#web">Web Development</a></li>
+          <li><a href="services.html#maintenance">Maintenance</a></li>
+          <li><a href="services.html#publishing">Publishing</a></li>
         </ul>
       </div>
-
       <div class="footer-contact">
         <h4>Contact</h4>
         <p><a href="mailto:afreachcreatives@gmail.com">afreachcreatives@gmail.com</a></p>
@@ -122,14 +117,23 @@
       </div>
     </div>
   </footer>
-
-  <!-- AOS & main JS -->
+  <div id="quoteModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-content">
+      <span class="modal-close" id="closeModal" aria-label="Close modal">&times;</span>
+      <h2 id="modalTitle">Request a Quote</h2>
+      <form id="quoteForm" action="https://formspree.io/f/mqakngpa" method="POST">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+        <label for="project">Project Details</label>
+        <textarea id="project" name="project" placeholder="Tell us about your project..." required></textarea>
+        <button type="submit" class="btn-primary">Send Quote</button>
+      </form>
+    </div>
+  </div>
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init({ duration: 700, easing: 'ease-in-out', offset: 80 });</script>
   <script src="main.js"></script>
-  <script>
-    AOS.init({ duration: 700, easing: 'ease-in-out', offset: 80 });
-    // set year
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
