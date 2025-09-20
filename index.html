@@ -3,17 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Afreach Creatives | Home</title>
-
-  <!-- Link Styles -->
+  <title>Afreach Creatives</title>
   <link rel="stylesheet" href="styles.css">
-
-  <!-- AOS Animations -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
+  <link rel="icon" href="logo.png" type="image/png">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-FYZL907RTJ"></script>
   <script>
@@ -25,120 +19,138 @@
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- Header / Navbar -->
   <header>
-    <nav>
-      <div class="logo">
-        <img src="logo.png" alt="Afreach Creatives" width="140">
-      </div>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <div class="hamburger">☰</div>
-    </nav>
+    <div class="container navbar">
+      <img src="logo.png" alt="Afreach Creatives Logo">
+      <nav>
+        <div class="hamburger" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="nav-links" id="navLinks">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="blog.html">Blog</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </nav>
+    </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero Section (Image Slider) -->
   <section class="hero">
     <div class="hero-content" data-aos="fade-up">
-      <h1>We Create. We Innovate. We Deliver.</h1>
-      <p>Transforming ideas into modern digital experiences. Websites, branding, publishing & more.</p>
-      <a href="services.html" class="btn">Explore Our Services</a>
+      <h1>We Are Afreach Creatives</h1>
+      <p>Design • Web • PR • Publishing</p>
+      <button class="btn" onclick="openModal()">Get a Quote</button>
     </div>
   </section>
 
-  <!-- About Section -->
-  <section id="about" data-aos="fade-right">
+  <!-- About Preview -->
+  <section class="about container" data-aos="fade-up">
     <h2>Who We Are</h2>
-    <p style="text-align:center; max-width:800px; margin:0 auto;">
-      Afreach Creatives is a forward-thinking digital agency helping businesses, brands,
-      and individuals shine online. From web development to PR, publishing, and social media management,
-      our team brings creativity and excellence to every project.
-    </p>
-    <div style="text-align:center; margin-top:20px;">
-      <a href="about.html" class="btn">Meet Our Team</a>
-    </div>
+    <p>We are a creative powerhouse providing design, web, PR, and publishing solutions to help brands and individuals stand out.</p>
+    <a href="about.html" class="btn">Learn More</a>
   </section>
 
-  <!-- Services Section -->
-  <section id="services">
-    <h2 data-aos="fade-up">Our Services</h2>
-    <div class="services-grid">
-      <div class="card" data-aos="zoom-in">
+  <!-- Services Preview -->
+  <section class="services container" data-aos="fade-up">
+    <h2>What We Do</h2>
+    <div class="services">
+      <div class="service-card">
         <img src="creative.jpg" alt="Creative Design">
         <h3>Creative Design</h3>
-        <p>Modern branding and visuals that set you apart in the marketplace.</p>
-        <a href="services.html" class="btn">Get a Quote</a>
+        <p>Logos, branding, and stunning visuals.</p>
+        <button class="btn" onclick="openModal()">Get a Quote</button>
       </div>
-      <div class="card" data-aos="zoom-in" data-aos-delay="200">
+      <div class="service-card">
         <img src="web.jpg" alt="Web Development">
         <h3>Web Development</h3>
-        <p>Responsive websites & apps designed to engage and convert.</p>
-        <a href="services.html" class="btn">Get a Quote</a>
-      </div>
-      <div class="card" data-aos="zoom-in" data-aos-delay="400">
-        <img src="pr.jpg" alt="PR & Social Media">
-        <h3>PR & Social Media</h3>
-        <p>Grow your brand with targeted social media & PR strategies.</p>
-        <a href="services.html" class="btn">Get a Quote</a>
-      </div>
-      <div class="card" data-aos="zoom-in" data-aos-delay="600">
-        <img src="publishing.jpg" alt="Publishing">
-        <h3>Publishing</h3>
-        <p>Book writing, eBooks & publishing support for authors and businesses.</p>
-        <a href="services.html" class="btn">Get a Quote</a>
+        <p>Modern websites & PWAs that convert.</p>
+        <button class="btn" onclick="openModal()">Get a Quote</button>
       </div>
     </div>
+    <a href="services.html" class="btn">View All Services</a>
   </section>
 
-  <!-- Testimonials -->
-  <section id="testimonials" data-aos="fade-up">
-    <h2>What Our Clients Say</h2>
-    <div class="testimonial" data-aos="fade-up">
-      <img src="lydia.jpg" alt="Lydia" width="80" style="border-radius:50%; margin-bottom:10px;">
-      <p>"Afreach Creatives transformed my website and gave my brand a new life. I highly recommend them!"</p>
-      <strong>- Lydia Waweru</strong>
+  <!-- Testimonials Preview -->
+  <section class="testimonials container" data-aos="fade-up">
+    <h2>What Clients Say</h2>
+    <div class="testimonials">
+      <div class="testimonial">
+        <img src="elite.jpg" alt="Elite">
+        <p>"Afreach Creatives transformed our brand presence!"</p>
+      </div>
+      <div class="testimonial">
+        <img src="grace.png" alt="Grace">
+        <p>"Professional, creative, and supportive team."</p>
+      </div>
     </div>
-    <div class="testimonial" data-aos="fade-up" data-aos-delay="200">
-      <img src="elite.jpg" alt="Elite School" width="80" style="border-radius:50%; margin-bottom:10px;">
-      <p>"Professional and creative team. They manage our school branding and social media excellently."</p>
-      <strong>- Elite School</strong>
-    </div>
+    <a href="portfolio.html" class="btn">See More</a>
   </section>
 
   <!-- Call to Action -->
-  <section id="cta" style="background:var(--black); color:var(--white);" data-aos="zoom-in">
-    <h2>Ready to Elevate Your Brand?</h2>
-    <p style="text-align:center;">Let’s create something amazing together. Contact us today.</p>
-    <div style="text-align:center; margin-top:20px;">
-      <a href="contact.html" class="btn">Work With Us</a>
-    </div>
+  <section class="contact" data-aos="fade-up">
+    <h2>Let’s Work Together</h2>
+    <button class="btn" onclick="openModal()">Get a Quote</button>
   </section>
+
+  <!-- Modal Form -->
+  <div class="modal" id="quoteModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h3>Get a Quote</h3>
+      <form action="https://formspree.io/f/mjkedvkg" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="text" name="contact" placeholder="Phone Number" required>
+        <select name="urgency" required>
+          <option value="">Urgency</option>
+          <option value="urgent">Urgent</option>
+          <option value="moderate">Moderate</option>
+          <option value="flexible">Flexible</option>
+        </select>
+        <button type="submit" class="btn">Submit</button>
+      </form>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Afreach Creatives. All rights reserved.</p>
-    <div class="socials">
-      <a href="https://www.facebook.com/share/1D4xPeLRkc/"><i class="fab fa-facebook"></i></a>
-      <a href="https://x.com/AfreachCreative"><i class="fab fa-twitter"></i></a>
-      <a href="https://www.instagram.com/afreach_creatives"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.linkedin.com/in/afreach-creatives-9802a6372"><i class="fab fa-linkedin"></i></a>
-      <a href="https://www.tiktok.com/@afreach.creatives"><i class="fab fa-tiktok"></i></a>
+    <p>&copy; 2025 Afreach Creatives. All Rights Reserved.</p>
+    <div>
+      <a href="https://www.facebook.com/share/1D4xPeLRkc/">Facebook</a> |
+      <a href="https://x.com/AfreachCreative?t=95xNXP91OWjgsZOZ8zrExg&s=09">X</a> |
+      <a href="https://www.instagram.com/afreach_creatives?igsh=MTIyN3MwYnlneGx5ZQ==">Instagram</a> |
+      <a href="https://www.tiktok.com/@afreach.creatives?_t=ZM-8zipJxHSNaK&_r=1">TikTok</a> |
+      <a href="https://www.linkedin.com/in/afreach-creatives-9802a6372">LinkedIn</a>
     </div>
   </footer>
 
   <!-- Scripts -->
-  <script src="https://kit.fontawesome.com/yourfontawesomekit.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
-    AOS.init({
-      duration: 1000,
-      once: true
-    });
+    AOS.init();
+
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+
+    function openModal() {
+      document.getElementById('quoteModal').style.display = 'block';
+    }
+
+    function closeModal() {
+      document.getElementById('quoteModal').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      let modal = document.getElementById('quoteModal');
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
   </script>
 </body>
 </html>
