@@ -29,6 +29,47 @@ body {
   --white: #ffffff;
 }
 
+/* Hero Image Slider */
+.hero {
+  height: 100vh;
+  position: relative;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-size: cover;
+  background-position: center;
+  animation: heroFade 20s infinite;
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes heroFade {
+  0%   { background-image: url("hero1.jpg"); }
+  25%  { background-image: url("hero2.jpg"); }
+  50%  { background-image: url("hero3.jpg"); }
+  75%  { background-image: url("hero4.jpg"); }
+  100% { background-image: url("hero1.jpg"); }
+}
+
+/* Responsive Modal Fix */
+.modal-content {
+  width: 90%;
+  max-width: 500px;
+}
+
 /* ==============================
    Header & Navbar
 ============================== */
