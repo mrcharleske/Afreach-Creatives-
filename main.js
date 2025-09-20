@@ -1,45 +1,91 @@
-// HERO SLIDER
-let slides = document.querySelectorAll('.slide');
+/* Hero Slider */
+const slides = document.querySelectorAll('.slide');
 let currentSlide = 0;
+
 function showNextSlide() {
-  slides[currentSlide].classList.remove('active');
-  currentSlide = (currentSlide + 1) % slides.length;
-  slides[currentSlide].classList.add('active');
+  if (slides.length) {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }
 }
-setInterval(showNextSlide, 5000);
+if (slides.length) setInterval(showNextSlide, 5000);
 
-// QUOTE MODAL
-const modal = document.getElementById("quoteModal");
-const btns = [document.getElementById("openQuote"), document.getElementById("openQuoteHero")];
-const span = document.querySelector(".modal .close");
+/* Navigation Toggle */
+const navToggle = document.getElementById('navToggle');
+const nav = document.getElementById('nav');
 
-btns.forEach(btn => {
-  if (btn) btn.onclick = () => modal.style.display = "block";
-});
-span.onclick = () => modal.style.display = "none";
-window.onclick = (event) => {
-  if (event.target == modal) modal.style.display = "none";
-};
-
-// FORMSPREE HANDLER
-const quoteForm = document.getElementById("quoteForm");
-if (quoteForm) {
-  quoteForm.addEventListener("submit", async function(e) {
-    e.preventDefault();
-    let formData = new FormData(this);
-
-    await fetch(this.action, {
-      method: this.method,
-      body: formData,
-      headers: { 'Accept': 'application/json' }
-    });
-
-    alert("Thank you! We'll contact you shortly.");
-    modal.style.display = "none";
-    this.reset();
-    
-    // WhatsApp Forward
-    let msg = `Hello Afreach Creatives, I just sent a quote request.\nName: ${formData.get("name")}\nPhone: ${formData.get("phone")}\nProject: ${formData.get("project")}`;
-    window.open(`https://wa.me/254703579059?text=${encodeURIComponent(msg)}`, "_blank");
+if (navToggle && nav) {
+  navToggle.addEventListener('click', () => {
+    const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+    navToggle.setAttribute('aria-expanded', !isExpanded);
+    nav.classList.toggle('show');
   });
+}
+
+/* Quote Modal */
+const modal = document.getElementById('quoteModal');
+const quoteForm = document.getElementById('quoteForm');
+const contactForm = document.getElementById('contactForm');
+const modalClose = document.getElementById('closeModal');
+const quoteButtons = [
+  document.getElementById('openQuote'),
+  document.getElementById('openQuoteHero'),
+  document.getElementById('openQuoteAbout')
+].filter(btn => btn);
+
+function openModal() {
+  if (modal) modal.style.display = 'block';
+}
+
+function closeModal() {
+  if (modal) modal.style.display = 'none';
+}
+
+quoteButtons.forEach(btn => {
+  btn.addEventListener('click', openModal);
+});
+
+if (modalClose) {
+  modalClose.addEventListener('click', closeModal);
+}
+
+if (modal) {
+  window.addEventListener('click', (event) => {
+    if (event.target === modal) closeModal();
+  });
+}
+
+/* Form Submission */
+[quoteForm, contactForm].forEach(form => {
+  if (form) {
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      try {
+        const response = await fetch(this.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (response.ok) {
+          alert('Thank you! We’ll contact you shortly.');
+          this.reset();
+          closeModal();
+          const msg = `Hello Afreach Creatives, I sent a ${this.id === 'quoteForm' ? 'quote' : 'contact'} request.\nName: ${formData.get('name')}\nEmail: ${formData.get('email')}\n${this.id === 'quoteForm' ? `Service: ${formData.get('service') || 'N/A'}\nProject: ${formData.get('project')}` : `Subject: ${formData.get('subject') || 'N/A'}\nMessage: ${formData.get('message')}`}`;
+          window.open(`https://wa.me/254703579059?text=${encodeURIComponent(msg)}`, '_blank');
+        } else {
+          alert('Something went wrong. Please try again.');
+        }
+      } catch (error) {
+        alert('Error submitting form. Please check your connection.');
+      }
+    });
+  }
+});
+
+/* Dynamic Copyright Year */
+const yearSpan = document.getElementById('year');
+if (yearSpan) {
+  yearSpan.textContent = new Date().getFullYear();
 }
