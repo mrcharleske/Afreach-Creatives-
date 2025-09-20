@@ -1,142 +1,135 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Afreach Creatives</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — Afreach Creatives</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Site styles (root) -->
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="logo.png" type="image/png">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FYZL907RTJ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-FYZL907RTJ');
-  </script>
+
+  <!-- PWA manifest -->
+  <link rel="manifest" href="json/manifest.json">
 </head>
 <body>
+  <!-- HEADER -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="images/logo.png" alt="Afreach Creatives logo" class="brand-logo" />
+        <span class="brand-text">Afreach Creatives</span>
+      </a>
 
-  <!-- Header / Navbar -->
-  <header>
-    <div class="container navbar">
-      <img src="logo.png" alt="Afreach Creatives Logo">
-      <nav>
-        <div class="hamburger" onclick="toggleMenu()">
-          <span></span><span></span><span></span>
-        </div>
-        <div class="nav-links" id="navLinks">
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="services.html">Services</a>
-          <a href="portfolio.html">Portfolio</a>
-          <a href="blog.html">Blog</a>
-          <a href="contact.html">Contact</a>
-        </div>
+      <nav class="nav" id="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html" aria-current="page">About</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+        <button class="cta primary" id="navCta">Start a Project</button>
       </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content" data-aos="fade-up">
-      <h1>About Afreach Creatives</h1>
-      <p>Meet the team behind the innovation.</p>
-      <button class="btn" onclick="openModal()">Get a Quote</button>
-    </div>
-  </section>
-
-  <!-- About Us Content -->
-  <section class="about container" data-aos="fade-up">
-    <h2>Who We Are</h2>
-    <p>Afreach Creatives is a full-service creative agency that empowers brands and individuals with innovative design, web development, PR strategies, and publishing solutions. Our mission is to make every project unique and impactful.</p>
-  </section>
-
-  <!-- Team Section -->
-  <section class="team container" data-aos="fade-up">
-    <h2>Meet the Team</h2>
-    <div class="team-members">
-      <div class="team-member">
-        <img src="ceo.jpg" alt="CEO">
-        <h3>CEO</h3>
-        <p>Leading the vision and strategy of Afreach Creatives.</p>
+  <!-- ABOUT HERO -->
+  <main>
+    <section class="about-hero" style="background-image:url('images/hero1.jpg');" aria-label="About hero">
+      <div class="container" data-aos="fade-up">
+        <h1>About Afreach Creatives</h1>
+        <p class="lead">We are a hybrid studio blending creativity and technology to help brands stand out, grow, and connect with people.</p>
       </div>
-      <div class="team-member">
-        <img src="joseph.jpg" alt="Joseph">
-        <h3>Joseph</h3>
-        <p>Head of Web & PWA development.</p>
+    </section>
+
+    <!-- OUR STORY -->
+    <section class="about-story container" data-aos="fade-up">
+      <h2>Our Story</h2>
+      <p>Afreach Creatives was founded with one goal — to bridge creativity and technology. From branding and digital marketing to website development and publishing, our team is committed to delivering solutions that not only look stunning but also create measurable impact.</p>
+    </section>
+
+    <!-- INTRO TO TEAM -->
+    <section class="team-intro container" data-aos="fade-up">
+      <h2>Meet Our Team</h2>
+      <p>At Afreach Creatives, our strength lies in the people behind the vision. Each team member brings unique skills, creativity, and passion to deliver outstanding solutions for our clients. Together, we shape ideas into impactful results.</p>
+    </section>
+
+    <!-- TEAM GRID -->
+    <section class="team container">
+      <div class="team-grid">
+        <article class="team-member" data-aos="fade-up" data-aos-delay="100">
+          <img src="images/ceo.jpg" alt="Charles N. — CEO & Founder">
+          <h3>Charles N. — CEO & Founder</h3>
+          <p>Visionary leader and founder of Afreach Creatives, Charles drives the company’s mission to deliver creative and digital solutions with impact.</p>
+        </article>
+
+        <article class="team-member" data-aos="fade-up" data-aos-delay="200">
+          <img src="images/joseph.jpg" alt="Joseph — Creative Designer">
+          <h3>Joseph — Creative Designer</h3>
+          <p>Passionate about design and innovation, Joseph crafts engaging visuals and creative assets that bring brands to life.</p>
+        </article>
+
+        <article class="team-member" data-aos="fade-up" data-aos-delay="300">
+          <img src="images/beatrice.jpg" alt="Beatrice — PR & Social Media Manager">
+          <h3>Beatrice — PR & Social Media Manager</h3>
+          <p>Specialist in public relations and digital engagement, Beatrice ensures brands connect with their audiences effectively.</p>
+        </article>
       </div>
-      <div class="team-member">
-        <img src="beatrice.jpg" alt="Beatrice">
-        <h3>Beatrice</h3>
-        <p>Creative Director & PR Specialist.</p>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-bar" data-aos="fade-up">
+      <div class="container cta-inner">
+        <div>
+          <h3>Let’s work together</h3>
+          <p>Ready to bring your ideas to life? Partner with Afreach Creatives today.</p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn primary" href="contact.html">Start a Project</a>
+          <button class="btn ghost" id="openQuoteFromAbout">Get a Quote</button>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- Call to Action -->
-  <section class="contact" data-aos="fade-up">
-    <h2>Want to work with us?</h2>
-    <button class="btn" onclick="openModal()">Get a Quote</button>
-  </section>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="images/logo.png" alt="Afreach Creatives" />
+        <p>Design & technology for growth. <br> © <span id="year"></span> Afreach Creatives</p>
+      </div>
 
-  <!-- Modal Form -->
-  <div class="modal" id="quoteModal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <h3>Get a Quote</h3>
-      <form action="https://formspree.io/f/mjkedvkg" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Email Address" required>
-        <input type="text" name="contact" placeholder="Phone Number" required>
-        <select name="urgency" required>
-          <option value="">Urgency</option>
-          <option value="Urgent">Urgent</option>
-          <option value="Within 1 Week">Within 1 Week</option>
-          <option value="Flexible">Flexible</option>
-        </select>
-        <button type="submit" class="btn">Submit</button>
-      </form>
-    </div>
-  </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Afreach Creatives. All Rights Reserved.</p>
-    <div>
-      <a href="https://www.facebook.com/share/1D4xPeLRkc/">Facebook</a> |
-      <a href="https://x.com/AfreachCreative?t=95xNXP91OWjgsZOZ8zrExg&s=09">X</a> |
-      <a href="https://www.instagram.com/afreach_creatives?igsh=MTIyN3MwYnlneGx5ZQ==">Instagram</a> |
-      <a href="https://www.tiktok.com/@afreach.creatives?_t=ZM-8zipJxHSNaK&_r=1">TikTok</a> |
-      <a href="https://www.linkedin.com/in/afreach-creatives-9802a6372">LinkedIn</a>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><a href="mailto:afreachcreatives@gmail.com">afreachcreatives@gmail.com</a></p>
+        <p><a href="https://wa.me/254703579059">WhatsApp: +254703579059</a></p>
+      </div>
     </div>
   </footer>
 
-  <!-- Scripts -->
+  <!-- AOS & main JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="main.js"></script>
   <script>
-    AOS.init();
-
-    function toggleMenu() {
-      document.getElementById('navLinks').classList.toggle('active');
-    }
-
-    function openModal() {
-      document.getElementById('quoteModal').style.display = 'block';
-    }
-
-    function closeModal() {
-      document.getElementById('quoteModal').style.display = 'none';
-    }
-
-    window.onclick = function(event) {
-      const modal = document.getElementById('quoteModal');
-      if (event.target === modal) {
-        closeModal();
-      }
-    }
+    AOS.init({ duration: 700, easing: 'ease-in-out', offset: 80 });
+    // set year
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
-
 </body>
 </html>
