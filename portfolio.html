@@ -1,147 +1,197 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Portfolio — Afreach Creatives</title>
-  <meta name="description" content="Discover Afreach Creatives' portfolio showcasing branding, web development, and publishing projects." />
-  <meta name="theme-color" content="#081233" />
-  <link rel="canonical" href="https://www.afreachcreatives.com/portfolio.html" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="images/favicon.ico">
-  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-  <link rel="manifest" href="site.webmanifest">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Afreach Creatives",
-    "url": "https://www.afreachcreatives.com",
-    "logo": "https://www.afreachcreatives.com/images/logo.png",
-    "sameAs": [
-      "https://www.linkedin.com/company/afreach-creatives",
-      "https://x.com/AfreachCreative",
-      "https://www.facebook.com/afreachcreatives",
-      "https://www.instagram.com/afreach_creatives",
-      "https://www.tiktok.com/@afreach.creatives"
-    ]
-  }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="branding, web development, live streaming, digital marketing, publishing, Nairobi, creative agency">
+    <title>Afreach Creatives - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="images/logo.png">
+    <link rel="manifest" href="site.webmanifest">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FYZL907RTJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FYZL907RTJ');
+    </script>
 </head>
 <body>
-  <header class="site-header" id="siteHeader">
-    <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <img src="images/logo.png" alt="Afreach Creatives logo" class="brand-logo" loading="lazy" />
-        <span class="brand-text">Afreach Creatives</span>
-      </a>
-      <nav class="nav" id="nav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="portfolio.html" aria-current="page">Portfolio</a>
-        <a href="contact.html">Contact</a>
-        <button class="cta primary" id="openQuote">Get a Quote</button>
-      </nav>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <!-- Preloader -->
+    <div id="preloader">
+        <img src="images/logo.png" alt="Loading...">
     </div>
-  </header>
-  <main>
-    <section class="hero-portfolio" data-aos="fade-up">
-      <div class="container">
-        <h1>Our Portfolio</h1>
-        <p>Some of our creative work and what our clients say about us.</p>
-      </div>
+
+    <!-- Sticky CTA -->
+    <button class="sticky-cta btn-primary" onclick="openModal('quoteModal')">Get a Quote</button>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <img src="images/logo.png" alt="Afreach Creatives Logo">
+            </a>
+            <button class="navbar-toggle">☰</button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-portfolio">
+        <div class="container">
+            <h1 data-aos="fade-up">Our Portfolio</h1>
+            <p data-aos="fade-up" data-aos-delay="100">Explore our featured projects showcasing creativity and innovation.</p>
+        </div>
     </section>
-    <section class="projects container">
-      <h2 data-aos="fade-up">Featured Projects</h2>
-      <div class="project-grid">
-        <div class="project-card" data-aos="zoom-in">
-          <img src="images/hero1.jpg" alt="Brand Identity Kit project" loading="lazy">
-          <h3>Brand Identity Kit</h3>
-          <p>A complete branding kit for a growing startup, including logos, color palette, and social media templates.</p>
+
+    <!-- Projects -->
+    <section class="portfolio">
+        <div class="container">
+            <h2 data-aos="fade-up">Featured Projects</h2>
+            <div class="project-grid">
+                <div class="project-card" data-project="brand" data-aos="fade-up">
+                    <img src="images/brandmain.jpg" alt="Brand Identity Kit">
+                    <h3>Brand Identity Kit</h3>
+                </div>
+                <div class="project-card" data-project="ecommerce" data-aos="fade-up" data-aos-delay="100">
+                    <img src="images/e-commercemain.jpg" alt="E-commerce Website">
+                    <h3>E-commerce Website</h3>
+                </div>
+                <div class="project-card" data-project="digital" data-aos="fade-up" data-aos-delay="200">
+                    <img src="images/digitalmain.jpg" alt="Digital Campaign">
+                    <h3>Digital Campaign</h3>
+                </div>
+                <div class="project-card" data-project="publishing" data-aos="fade-up" data-aos-delay="300">
+                    <img src="images/bookpublishingmain.jpg" alt="Book Publishing">
+                    <h3>Book Publishing</h3>
+                </div>
+            </div>
         </div>
-        <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
-          <img src="images/hero2.jpg" alt="E-commerce Website project" loading="lazy">
-          <h3>E-commerce Website</h3>
-          <p>Responsive online store with secure checkout, optimized for desktop and mobile devices.</p>
-        </div>
-        <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
-          <img src="images/hero3.jpg" alt="Digital Campaign project" loading="lazy">
-          <h3>Digital Campaign</h3>
-          <p>Social media and PR campaign that increased brand visibility and engagement by 40%.</p>
-        </div>
-        <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
-          <img src="images/hero4.jpg" alt="Book Publishing project" loading="lazy">
-          <h3>Book Publishing</h3>
-          <p>Designed and published an inspiring ebook, including editing, cover design, and formatting.</p>
-        </div>
-      </div>
     </section>
-    <section class="testimonials container">
-      <h2 data-aos="fade-up">What Our Clients Say</h2>
-      <div class="test-grid">
-        <div class="test-card" data-aos="fade-up">
-          <img src="images/lydia.jpg" alt="Photo of Lydia, client" loading="lazy">
-          <p>“Afreach Creatives transformed my brand vision into reality. Their design work is professional and impactful.”</p>
-          <cite>Lydia — Entrepreneur</cite>
+
+    <!-- Project Modals -->
+    <div id="projectModal-brand" class="modal project-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Brand Identity Kit</h2>
+            <p>Designed a comprehensive branding package for a startup in 2025, including a modern logo, color palette, typography, and social media templates. The project enhanced brand consistency across all platforms, driving client recognition.</p>
+            <div class="project-gallery">
+                <img src="images/brandmain.jpg" alt="Brand Identity Kit" class="main-image">
+                <div class="thumbnails">
+                    <img src="images/brand1.png" alt="Brand Image 1" class="thumbnail">
+                    <img src="images/brand2.jpg" alt="Brand Image 2" class="thumbnail">
+                    <img src="images/brand3.jpg" alt="Brand Image 3" class="thumbnail">
+                    <img src="images/brand4.png" alt="Brand Image 4" class="thumbnail">
+                </div>
+            </div>
         </div>
-        <div class="test-card" data-aos="fade-up" data-aos-delay="100">
-          <img src="images/grace.png" alt="Photo of Grace, client" loading="lazy">
-          <p>“The team is creative, responsive, and truly cares about delivering the best results. Highly recommended!”</p>
-          <cite>Grace — Digital Marketer</cite>
-        </div>
-        <div class="test-card" data-aos="fade-up" data-aos-delay="200">
-          <img src="images/elite.jpg" alt="Photo of Elite, client" loading="lazy">
-          <p>“Their expertise in branding and digital campaigns helped my business grow online. I trust them completely.”</p>
-          <cite>Elite — Business Owner</cite>
-        </div>
-      </div>
-    </section>
-  </main>
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <img src="images/logo.png" alt="Afreach Creatives logo" loading="lazy" />
-        <p>Design & technology for growth. <br> © <span id="year"></span> Afreach Creatives</p>
-      </div>
-      <div class="footer-links">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="services.html#creative">Creative & Branding</a></li>
-          <li><a href="services.html#web">Web Development</a></li>
-          <li><a href="services.html#maintenance">Maintenance</a></li>
-          <li><a href="services.html#publishing">Publishing</a></li>
-        </ul>
-      </div>
-      <div class="footer-contact">
-        <h4>Contact</h4>
-        <p><a href="mailto:afreachcreatives@gmail.com">afreachcreatives@gmail.com</a></p>
-        <p><a href="https://wa.me/254703579059">WhatsApp: +254703579059</a></p>
-      </div>
     </div>
-  </footer>
-  <div id="quoteModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="modal-content">
-      <span class="modal-close" id="closeModal" aria-label="Close modal">&times;</span>
-      <h2 id="modalTitle">Request a Quote</h2>
-      <form id="quoteForm" action="https://formspree.io/f/mqakngpa" method="POST">
-        <label for="name">Your Name</label>
-        <input type="text" id="name" name="name" placeholder="Your Name" required>
-        <label for="email">Your Email</label>
-        <input type="email" id="email" name="email" placeholder="Your Email" required>
-        <label for="service">Service You Need</label>
-        <input type="text" id="service" name="service" placeholder="Service You Need">
-        <label for="project">Project Details</label>
-        <textarea id="project" name="project" placeholder="Project Details" required></textarea>
-        <button type="submit" class="btn-primary">Send Quote</button>
-      </form>
+    <div id="projectModal-ecommerce" class="modal project-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>E-commerce Website</h2>
+            <p>Developed a responsive e-commerce platform in 2025, featuring a user-friendly interface, secure checkout, and mobile optimization. The site boosted sales by 30% through improved UX and SEO.</p>
+            <div class="project-gallery">
+                <img src="images/e-commercemain.jpg" alt="E-commerce Website" class="main-image">
+                <div class="thumbnails">
+                    <img src="images/e-commerce1.jpg" alt="E-commerce Image 1" class="thumbnail">
+                    <img src="images/e-commerce2.jpg" alt="E-commerce Image 2" class="thumbnail">
+                    <img src="images/e-commerce3.jpg" alt="E-commerce Image 3" class="thumbnail">
+                    <img src="images/e-commerce4.jpg" alt="E-commerce Image 4" class="thumbnail">
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>AOS.init({ duration: 700, easing: 'ease-in-out', offset: 80 });</script>
-  <script src="main.js"></script>
+    <div id="projectModal-digital" class="modal project-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Digital Campaign</h2>
+            <p>Created a targeted digital marketing campaign in 2025, leveraging social media and PR to increase brand visibility by 40%. The campaign included engaging ads and strategic content.</p>
+            <div class="project-gallery">
+                <img src="images/digitalmain.jpg" alt="Digital Campaign" class="main-image">
+                <div class="thumbnails">
+                    <img src="images/digital1.jpg" alt="Digital Image 1" class="thumbnail">
+                    <img src="images/digital2.jpg" alt="Digital Image 2" class="thumbnail">
+                    <img src="images/digital3.jpg" alt="Digital Image 3" class="thumbnail">
+                    <img src="images/digital4.jpg" alt="Digital Image 4" class="thumbnail">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="projectModal-publishing" class="modal project-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Book Publishing</h2>
+            <p>Published a professional ebook in 2025, including editing, cover design, and formatting. The project delivered a polished product ready for global distribution.</p>
+            <div class="project-gallery">
+                <img src="images/bookpublishingmain.jpg" alt="Book Publishing" class="main-image">
+                <div class="thumbnails">
+                    <img src="images/bookpublishing1.jpg" alt="Publishing Image 1" class="thumbnail">
+                    <img src="images/bookpublishing2.jpg" alt="Publishing Image 2" class="thumbnail">
+                    <img src="images/bookpublishing3.jpg" alt="Publishing Image 3" class="thumbnail">
+                    <img src="images/bookpublishing4.jpg" alt="Publishing Image 4" class="thumbnail">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quote Modal -->
+    <div id="quoteModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Get a Quote</h2>
+            <form id="quoteForm" action="https://formspree.io/f/mjkedvkg" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <select name="service" required>
+                    <option value="" disabled selected>Select a Service</option>
+                    <option value="Creative & Branding">Creative & Branding</option>
+                    <option value="Web & App Development">Web & App Development</option>
+                    <option value="Maintenance">Maintenance</option>
+                    <option value="Digital Marketing">Digital Marketing</option>
+                    <option value="Publishing">Publishing</option>
+                    <option value="Live Streaming">Live Streaming</option>
+                </select>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <input type="text" name="budget" placeholder="Budget (e.g., $5000)">
+                <input type="text" name="timeline" placeholder="Timeline (e.g., 1 month)">
+                <button type="submit" class="btn btn-primary">Send Quote</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-brand">
+                <h3>Afreach Creatives</h3>
+            </div>
+            <p>&copy; 2025 Afreach Creatives. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Afreach Creatives",
+        "url": "https://mrcharleske.github.io/Afreach-Creatives/",
+        "logo": "https://mrcharleske.github.io/Afreach-Creatives/images/logo.png"
+    }
+    </script>
 </body>
 </html>
