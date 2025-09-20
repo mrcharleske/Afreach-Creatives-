@@ -1,111 +1,145 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us - Afreach Creatives</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact Us — Afreach Creatives</title>
+  <meta name="description" content="Get in touch with Afreach Creatives for your branding, web development, or digital marketing projects." />
+  <meta name="theme-color" content="#081233" />
+  <link rel="canonical" href="https://www.afreachcreatives.com/contact.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <!-- AOS CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="icon" href="images/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Afreach Creatives",
+    "url": "https://www.afreachcreatives.com",
+    "logo": "https://www.afreachcreatives.com/images/logo.png",
+    "sameAs": [
+      "https://www.linkedin.com/company/afreach-creatives",
+      "https://x.com/AfreachCreative",
+      "https://www.facebook.com/afreachcreatives",
+      "https://www.instagram.com/afreach_creatives",
+      "https://www.tiktok.com/@afreach.creatives"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "afreachcreatives@gmail.com",
+      "telephone": "+254703579059",
+      "contactType": "Customer Service"
+    }
+  }
+  </script>
 </head>
 <body>
-
-  <!-- Header -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">
-        <a href="index.html"><img src="images/logo.png" alt="Afreach Creatives"></a>
-      </div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
-      </ul>
-      <a href="#" class="btn-quote" onclick="openQuoteModal()">Get a Quote</a>
-    </nav>
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="images/logo.png" alt="Afreach Creatives logo" class="brand-logo" loading="lazy" />
+        <span class="brand-text">Afreach Creatives</span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+        <button class="cta primary" id="openQuote">Get a Quote</button>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    </div>
   </header>
-
-  <!-- Hero -->
-  <section class="hero-contact" data-aos="fade-up">
-    <h1>Contact Us</h1>
-    <p>We’d love to hear about your project. Let’s create something amazing together.</p>
-  </section>
-
-  <!-- Contact Section -->
-  <section class="contact-section">
-    <div class="container contact-grid">
-
-      <!-- Contact Form -->
-      <div class="contact-form" data-aos="fade-right">
-        <h2>Send Us a Message</h2>
-        <form action="https://formspree.io/f/mjkedvkg" method="POST">
-          <input type="text" name="name" placeholder="Your Name" required>
-          <input type="email" name="email" placeholder="Your Email" required>
-          <input type="text" name="subject" placeholder="Subject">
-          <textarea name="message" placeholder="Your Message" required></textarea>
-
-          <!-- Hidden CC to Gmail -->
-          <input type="hidden" name="_cc" value="afreachcreatives@gmail.com">
-
-          <button type="submit">Send Message</button>
-        </form>
-        <p class="alt-contact">
-          Or message us directly on <a href="https://wa.me/254703579059" target="_blank">WhatsApp</a>.
-        </p>
+  <main>
+    <section class="hero-contact" data-aos="fade-up">
+      <div class="container">
+        <h1>Contact Us</h1>
+        <p>We’d love to hear about your project. Let’s create something amazing together.</p>
       </div>
-
-      <!-- Contact Info -->
-      <div class="contact-info" data-aos="fade-left">
-        <h2>Reach Us</h2>
-        <p><strong>Email:</strong> <a href="mailto:afreachcreatives@gmail.com">afreachcreatives@gmail.com</a></p>
-        <p><strong>Phone/WhatsApp:</strong> <a href="https://wa.me/254703579059">+254 703 579 059</a></p>
-
-        <div class="socials">
-          <a href="https://www.linkedin.com/in/afreach-creatives-9802a6372">LinkedIn</a>
-          <a href="https://x.com/AfreachCreative">X (Twitter)</a>
-          <a href="https://www.facebook.com/share/1D4xPeLRkc/">Facebook</a>
-          <a href="https://www.instagram.com/afreach_creatives">Instagram</a>
-          <a href="https://www.tiktok.com/@afreach.creatives">TikTok</a>
+    </section>
+    <section class="contact-section container">
+      <div class="contact-grid">
+        <div class="contact-form" data-aos="fade-right">
+          <h2>Send Us a Message</h2>
+          <form id="contactForm" action="https://formspree.io/f/mqakngpa" method="POST">
+            <label for="contactName">Your Name</label>
+            <input type="text" id="contactName" name="name" placeholder="Your Name" required>
+            <label for="contactEmail">Your Email</label>
+            <input type="email" id="contactEmail" name="email" placeholder="Your Email" required>
+            <label for="contactSubject">Subject</label>
+            <input type="text" id="contactSubject" name="subject" placeholder="Subject">
+            <label for="contactMessage">Your Message</label>
+            <textarea id="contactMessage" name="message" placeholder="Your Message" required></textarea>
+            <input type="hidden" name="_cc" value="afreachcreatives@gmail.com">
+            <button type="submit" class="btn-primary">Send Message</button>
+          </form>
+          <p class="alt-contact">
+            Or message us directly on <a href="https://wa.me/254703579059" target="_blank">WhatsApp</a>.
+          </p>
+        </div>
+        <div class="contact-info" data-aos="fade-left">
+          <h2>Reach Us</h2>
+          <p><strong>Email:</strong> <a href="mailto:afreachcreatives@gmail.com">afreachcreatives@gmail.com</a></p>
+          <p><strong>Phone/WhatsApp:</strong> <a href="https://wa.me/254703579059">+254 703 579 059</a></p>
+          <div class="socials">
+            <a href="https://www.linkedin.com/company/afreach-creatives">LinkedIn</a>
+            <a href="https://x.com/AfreachCreative">X</a>
+            <a href="https://www.facebook.com/afreachcreatives">Facebook</a>
+            <a href="https://www.instagram.com/afreach_creatives">Instagram</a>
+            <a href="https://www.tiktok.com/@afreach.creatives">TikTok</a>
+          </div>
         </div>
       </div>
+    </section>
+    <section class="map" data-aos="fade-up">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.815781011113!2d36.82194631537528!3d-1.283253635996678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwMTYnNTkuNyJTIDM2wrA0OSc0My4zIkU!5e0!3m2!1sen!2ske!4v1634567890123" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" aria-label="Map showing Afreach Creatives location"></iframe>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="images/logo.png" alt="Afreach Creatives logo" loading="lazy" />
+        <p>Design & technology for growth. <br> © <span id="year"></span> Afreach Creatives</p>
+      </div>
+      <div class="footer-links">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html#creative">Creative & Branding</a></li>
+          <li><a href="services.html#web">Web Development</a></li>
+          <li><a href="services.html#maintenance">Maintenance</a></li>
+          <li><a href="services.html#publishing">Publishing</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><a href="mailto:afreachcreatives@gmail.com">afreachcreatives@gmail.com</a></p>
+        <p><a href="https://wa.me/254703579059">WhatsApp: +254703579059</a></p>
+      </div>
     </div>
-  </section>
-
-  <!-- Map (optional) -->
-  <section class="map" data-aos="fade-up">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994!2d36.8219!3d-1.2921!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d2d5e1!5e0!3m2!1sen!2ske!4v1234567890"
-      width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-  </section>
-
-  <!-- Quote Modal -->
-  <div id="quoteModal" class="modal">
+  </footer>
+  <div id="quoteModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div class="modal-content">
-      <span class="close" onclick="closeQuoteModal()">&times;</span>
-      <h2>Request a Quote</h2>
-      <form action="https://formspree.io/f/mjkedvkg" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <input type="text" name="service" placeholder="Service You Need">
-        <textarea name="message" placeholder="Project Details" required></textarea>
-        <button type="submit">Submit</button>
+      <span class="modal-close" id="closeModal" aria-label="Close modal">&times;</span>
+      <h2 id="modalTitle">Request a Quote</h2>
+      <form id="quoteForm" action="https://formspree.io/f/mqakngpa" method="POST">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+        <label for="service">Service You Need</label>
+        <input type="text" id="service" name="service" placeholder="Service You Need">
+        <label for="project">Project Details</label>
+        <textarea id="project" name="project" placeholder="Project Details" required></textarea>
+        <button type="submit" class="btn-primary">Send Quote</button>
       </form>
     </div>
   </div>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Afreach Creatives. All rights reserved.</p>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="js/main.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>AOS.init();</script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init({ duration: 700, easing: 'ease-in-out', offset: 80 });</script>
+  <script src="main.js"></script>
 </body>
 </html>
