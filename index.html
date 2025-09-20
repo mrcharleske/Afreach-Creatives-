@@ -1,164 +1,179 @@
-<!doctype html>
+        <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Afreach Creatives — Professional Design & Development</title>
-  <meta name="description" content="Afreach Creatives offers branding, websites, digital marketing, and publishing crafted for clarity and conversion." />
-  <meta name="theme-color" content="#081233" />
-  <link rel="canonical" href="https://www.afreachcreatives.com/" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="images/favicon.ico">
-  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-  <link rel="manifest" href="site.webmanifest">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Afreach Creatives",
-    "url": "https://www.afreachcreatives.com",
-    "logo": "https://www.afreachcreatives.com/images/logo.png",
-    "sameAs": [
-      "https://www.linkedin.com/company/afreach-creatives",
-      "https://x.com/AfreachCreative",
-      "https://www.facebook.com/afreachcreatives",
-      "https://www.instagram.com/afreach_creatives",
-      "https://www.tiktok.com/@afreach.creatives"
-    ]
-  }
-  </script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FYZL907RTJ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-FYZL907RTJ');
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="branding, web development, live streaming, digital marketing, publishing, Nairobi, creative agency">
+    <title>Afreach Creatives - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="images/logo.png">
+    <link rel="manifest" href="site.webmanifest">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FYZL907RTJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FYZL907RTJ');
+    </script>
 </head>
 <body>
-  <header class="site-header" id="siteHeader">
-    <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <img src="images/logo.png" alt="Afreach Creatives logo" class="brand-logo" loading="lazy" />
-        <span class="brand-text">Afreach Creatives</span>
-      </a>
-      <nav class="nav" id="nav">
-        <a href="index.html" aria-current="page">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="contact.html">Contact</a>
-        <button class="cta primary" id="openQuote">Get a Quote</button>
-      </nav>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <!-- Preloader -->
+    <div id="preloader">
+        <img src="images/logo.png" alt="Loading...">
     </div>
-  </header>
-  <main>
-    <section class="hero" role="region" aria-label="Hero">
-      <div class="hero-slider">
-        <div class="slide active" style="background-image:url('images/hero1.jpg');" role="img" aria-label="Hero image 1"></div>
-        <div class="slide" style="background-image:url('images/hero2.jpg');" role="img" aria-label="Hero image 2"></div>
-        <div class="slide" style="background-image:url('images/hero3.jpg');" role="img" aria-label="Hero image 3"></div>
-        <div class="slide" style="background-image:url('images/hero4.jpg');" role="img" aria-label="Hero image 4"></div>
-      </div>
-      <div class="hero-overlay">
-        <h1>Design & Build Digital Products That Move People</h1>
-        <p class="lead">Branding, websites, digital marketing, and publishing — crafted for clarity and conversion.</p>
-        <div class="hero-ctas">
-          <a class="btn-primary" href="contact.html">Start a Project</a>
-          <a class="btn-primary" href="portfolio.html">See Portfolio</a>
-          <button class="btn-primary" id="openQuoteHero">Get a Quote</button>
+
+    <!-- Sticky CTA -->
+    <button class="sticky-cta btn-primary" onclick="openModal('quoteModal')">Get a Quote</button>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <img src="images/logo.png" alt="Afreach Creatives Logo">
+            </a>
+            <button class="navbar-toggle">☰</button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         </div>
-      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay">
+            <div class="container">
+                <h1 data-aos="fade-up">Innovative Digital Solutions for Your Brand</h1>
+                <p data-aos="fade-up" data-aos-delay="100">Transform your vision with our creative services in branding, web development, and more.</p>
+                <div class="hero-ctas" data-aos="fade-up" data-aos-delay="200">
+                    <a href="#" class="btn btn-primary" onclick="openModal('quoteModal')">Get a Quote</a>
+                    <a href="portfolio.html" class="btn btn-secondary">See Portfolio</a>
+                    <a href="#" class="btn btn-primary" onclick="openModal('quoteModal')">Start a Project</a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-slider">
+            <img src="images/hero1.jpg" alt="Hero Image 1" class="active">
+            <img src="images/hero2.jpg" alt="Hero Image 2">
+            <img src="images/hero3.jpg" alt="Hero Image 3">
+        </div>
     </section>
-    <section class="services-preview container" aria-labelledby="servicesHeading">
-      <h2 id="servicesHeading" data-aos="fade-up">Main Services</h2>
-      <div class="grid" data-aos="fade-up" data-aos-delay="120">
-        <article class="card">
-          <img src="images/creative.jpg" alt="Creative and Branding services" loading="lazy">
-          <h3>Creative & Branding</h3>
-          <ul><li>Logo Design</li><li>Flyers / Posters</li><li>Social Media Graphics</li><li>Brand Identity Kits</li></ul>
-        </article>
-        <article class="card">
-          <img src="images/web.jpg" alt="Web and App Development services" loading="lazy">
-          <h3>Web & App Development</h3>
-          <ul><li>Website Design & Redesign</li><li>Progressive Web Apps (PWAs)</li><li>E-commerce Stores</li><li>Landing Pages</li></ul>
-        </article>
-        <article class="card">
-          <img src="images/support.jpg" alt="Website and App Maintenance services" loading="lazy">
-          <h3>Website & App Maintenance</h3>
-          <ul><li>Content Updates</li><li>Bug Fixing</li><li>Security Services</li><li>Monthly Packages</li></ul>
-        </article>
-        <article class="card">
-          <img src="images/pr.jpg" alt="Digital Marketing and PR services" loading="lazy">
-          <h3>Digital Marketing & PR</h3>
-          <ul><li>Social Media Management</li><li>Campaigns</li><li>SEO & Content</li></ul>
-        </article>
-        <article class="card">
-          <img src="images/publishing.jpg" alt="Publishing and Content services" loading="lazy">
-          <h3>Publishing & Content</h3>
-          <ul><li>Book Writing</li><li>Ebook Publishing</li><li>Editing & Covers</li></ul>
-        </article>
-      </div>
+
+    <!-- Services Preview -->
+    <section class="services-preview">
+        <div class="container">
+            <h2 data-aos="fade-up">Our Main Services</h2>
+            <div class="grid">
+                <div class="service-card" data-aos="fade-up">
+                    <img src="images/branding.jpg" alt="Creative & Branding">
+                    <h3>Creative & Branding</h3>
+                    <p>Logo Design, Flyers/Posters, Business Cards, Brand Identity Kits, Social Media Templates</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="images/webdev.jpg" alt="Web & App Development">
+                    <h3>Web & App Development</h3>
+                    <p>Website Design, Mobile Apps, E-commerce, SEO, UI/UX Design</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="images/maintenance.jpg" alt="Maintenance">
+                    <h3>Maintenance</h3>
+                    <p>Website Maintenance, App Updates, Performance Optimization</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <img src="images/marketing.jpg" alt="Digital Marketing">
+                    <h3>Digital Marketing</h3>
+                    <p>Social Media Management, PR, Campaign Management, Content Creation</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <img src="images/publishing.jpg" alt="Publishing">
+                    <h3>Publishing</h3>
+                    <p>E-books, Editing, Formatting, Cover Design</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                    <img src="images/livestreaming.jpg" alt="Live Streaming">
+                    <h3>Live Streaming</h3>
+                    <p>Engage your audience with seamless live event streaming, professional webinar setups, and real-time interaction tools. From corporate events to online broadcasts, we deliver high-quality, reliable streaming solutions tailored to your brand.</p>
+                </div>
+            </div>
+        </div>
     </section>
-    <section class="portfolio-preview container" aria-labelledby="portfolioHeading" data-aos="fade-up">
-      <h2 id="portfolioHeading">Selected Work</h2>
-      <div class="portfolio-grid">
-        <div class="port-item"><img src="images/hero2.jpg" alt="Brand Campaign project" loading="lazy"><div class="port-meta"><h4>Brand Campaign</h4></div></div>
-        <div class="port-item"><img src="images/hero3.jpg" alt="Product Landing project" loading="lazy"><div class="port-meta"><h4>Product Landing</h4></div></div>
-        <div class="port-item"><img src="images/hero4.jpg" alt="Publishing Design project" loading="lazy"><div class="port-meta"><h4>Publishing Design</h4></div></div>
-      </div>
+
+    <!-- Portfolio Preview -->
+    <section class="portfolio-preview">
+        <div class="container">
+            <h2 data-aos="fade-up">Selected Work</h2>
+            <div class="portfolio-grid">
+                <div class="project-card" data-aos="fade-up">
+                    <img src="images/brandmain.jpg" alt="Brand Identity Kit">
+                    <h3>Brand Identity Kit</h3>
+                </div>
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="images/e-commercemain.jpg" alt="E-commerce Website">
+                    <h3>E-commerce Website</h3>
+                </div>
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="images/digitalmain.jpg" alt="Digital Campaign">
+                    <h3>Digital Campaign</h3>
+                </div>
+            </div>
+            <a href="portfolio.html" class="btn btn-primary" data-aos="fade-up" data-aos-delay="300">View Full Portfolio</a>
+        </div>
     </section>
-    <section class="testimonials container" data-aos="fade-up">
-      <h2>What Clients Say</h2>
-      <div class="test-grid">
-        <blockquote class="test-card"><img src="images/elite.jpg" alt="Photo of Elite, client" loading="lazy"><p>“A high-quality team who delivered beyond expectations.”</p><cite>Elite</cite></blockquote>
-        <blockquote class="test-card"><img src="images/grace.png" alt="Photo of Grace, client" loading="lazy"><p>“Fast turnaround and great communication.”</p><cite>Grace</cite></blockquote>
-        <blockquote class="test-card"><img src="images/lydia.jpg" alt="Photo of Lydia, client" loading="lazy"><p>“Our brand look is now consistent and clear.”</p><cite>Lydia</cite></blockquote>
-      </div>
-    </section>
-  </main>
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <img src="images/logo.png" alt="Afreach Creatives logo" loading="lazy" />
-        <p>Design & technology for growth. <br> © <span id="year"></span> Afreach Creatives</p>
-      </div>
-      <div class="footer-links">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="services.html#creative">Creative & Branding</a></li>
-          <li><a href="services.html#web">Web Development</a></li>
-          <li><a href="services.html#maintenance">Maintenance</a></li>
-          <li><a href="services.html#publishing">Publishing</a></li>
-        </ul>
-      </div>
-      <div class="footer-contact">
-        <h4>Contact</h4>
-        <p><a href="mailto:afreachcreatives@gmail.com">afreachcreatives@gmail.com</a></p>
-        <p><a href="https://wa.me/254703579059">WhatsApp: +254703579059</a></p>
-      </div>
+
+    <!-- Quote Modal -->
+    <div id="quoteModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Get a Quote</h2>
+            <form id="quoteForm" action="https://formspree.io/f/mjkedvkg" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <select name="service" required>
+                    <option value="" disabled selected>Select a Service</option>
+                    <option value="Creative & Branding">Creative & Branding</option>
+                    <option value="Web & App Development">Web & App Development</option>
+                    <option value="Maintenance">Maintenance</option>
+                    <option value="Digital Marketing">Digital Marketing</option>
+                    <option value="Publishing">Publishing</option>
+                    <option value="Live Streaming">Live Streaming</option>
+                </select>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <input type="text" name="budget" placeholder="Budget (e.g., $5000)">
+                <input type="text" name="timeline" placeholder="Timeline (e.g., 1 month)">
+                <button type="submit" class="btn btn-primary">Send Quote</button>
+            </form>
+        </div>
     </div>
-  </footer>
-  <div id="quoteModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="modal-content">
-      <span class="modal-close" id="closeModal" aria-label="Close modal">&times;</span>
-      <h2 id="modalTitle">Request a Quote</h2>
-      <form id="quoteForm" action="https://formspree.io/f/mqakngpa" method="POST">
-        <label for="name">Your Name</label>
-        <input type="text" id="name" name="name" placeholder="Your Name" required>
-        <label for="email">Your Email</label>
-        <input type="email" id="email" name="email" placeholder="Your Email" required>
-        <label for="project">Project Details</label>
-        <textarea id="project" name="project" placeholder="Tell us about your project..." required></textarea>
-        <button type="submit" class="btn-primary">Send Quote</button>
-      </form>
-    </div>
-  </div>
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>AOS.init({ duration: 700, easing: 'ease-in-out', offset: 80 });</script>
-  <script src="main.js"></script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-brand">
+                <h3>Afreach Creatives</h3>
+            </div>
+            <p>&copy; 2025 Afreach Creatives. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Afreach Creatives",
+        "url": "https://mrcharleske.github.io/Afreach-Creatives/",
+        "logo": "https://mrcharleske.github.io/Afreach-Creatives/images/logo.png"
+    }
+    </script>
 </body>
 </html>
