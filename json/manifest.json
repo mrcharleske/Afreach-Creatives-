@@ -1,11 +1,10 @@
 {
   "name": "Afreach Creatives",
   "short_name": "Afreach",
-  "start_url": "index.html",
+  "start_url": "/index.html",
   "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#FFD700",
-  "orientation": "portrait",
+  "background_color": "#0A0A0A",
+  "theme_color": "#0D47A1",
   "icons": [
     {
       "src": "images/logo.png",
