@@ -39,36 +39,37 @@
     </div>
   </header>
 
-  <!-- Hero Section (Image Slider) -->
+  <!-- Hero Section (Slideshow) -->
   <section class="hero">
     <div class="hero-content" data-aos="fade-up">
-      <h1>We Are Afreach Creatives</h1>
-      <p>Design • Web • PR • Publishing</p>
+      <h1>We design, build, and elevate your digital presence.</h1>
+      <p>Branding • PWAs • Web Development • PR & Social • Publishing</p>
       <button class="btn" onclick="openModal()">Get a Quote</button>
+      <button class="btn" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">View Services</button>
     </div>
   </section>
 
   <!-- About Preview -->
   <section class="about container" data-aos="fade-up">
     <h2>Who We Are</h2>
-    <p>We are a creative powerhouse providing design, web, PR, and publishing solutions to help brands and individuals stand out.</p>
+    <p>Afreach Creatives is a full-service creative agency helping brands and individuals shine with design, web, PR, and publishing solutions.</p>
     <a href="about.html" class="btn">Learn More</a>
   </section>
 
   <!-- Services Preview -->
-  <section class="services container" data-aos="fade-up">
-    <h2>What We Do</h2>
+  <section class="services container" id="services" data-aos="fade-up">
+    <h2>Our Services</h2>
     <div class="services">
       <div class="service-card">
         <img src="creative.jpg" alt="Creative Design">
         <h3>Creative Design</h3>
-        <p>Logos, branding, and stunning visuals.</p>
+        <p>Logos, branding, and visuals that impress.</p>
         <button class="btn" onclick="openModal()">Get a Quote</button>
       </div>
       <div class="service-card">
         <img src="web.jpg" alt="Web Development">
         <h3>Web Development</h3>
-        <p>Modern websites & PWAs that convert.</p>
+        <p>Responsive websites and PWAs tailored to your business.</p>
         <button class="btn" onclick="openModal()">Get a Quote</button>
       </div>
     </div>
@@ -108,9 +109,9 @@
         <input type="text" name="contact" placeholder="Phone Number" required>
         <select name="urgency" required>
           <option value="">Urgency</option>
-          <option value="urgent">Urgent</option>
-          <option value="moderate">Moderate</option>
-          <option value="flexible">Flexible</option>
+          <option value="Urgent">Urgent</option>
+          <option value="Within 1 Week">Within 1 Week</option>
+          <option value="Flexible">Flexible</option>
         </select>
         <button type="submit" class="btn">Submit</button>
       </form>
@@ -146,11 +147,12 @@
     }
 
     window.onclick = function(event) {
-      let modal = document.getElementById('quoteModal');
-      if (event.target == modal) {
-        modal.style.display = "none";
+      const modal = document.getElementById('quoteModal');
+      if (event.target === modal) {
+        closeModal();
       }
     }
   </script>
+
 </body>
 </html>
