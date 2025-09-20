@@ -3,27 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Afreach Creatives — Professional design & development with creative flair</title>
-
-  <!-- Primary meta -->
-  <meta name="description" content="Afreach Creatives — Branding, websites, digital marketing and publishing built to move your audience." />
+  <title>Afreach Creatives — Professional Design & Development</title>
+  <meta name="description" content="Afreach Creatives offers branding, websites, digital marketing, and publishing crafted for clarity and conversion." />
   <meta name="theme-color" content="#081233" />
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
-
-  <!-- AOS CSS (CDN) -->
+  <link rel="canonical" href="https://www.afreachcreatives.com/" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-  <!-- Main stylesheet -->
   <link rel="stylesheet" href="styles.css">
-
-  <!-- Favicons / App icons -->
   <link rel="icon" href="images/favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-
-  <!-- JSON-LD Organization -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -32,133 +21,118 @@
     "url": "https://www.afreachcreatives.com",
     "logo": "https://www.afreachcreatives.com/images/logo.png",
     "sameAs": [
-      "https://www.linkedin.com/in/afreach-creatives-9802a6372",
+      "https://www.linkedin.com/company/afreach-creatives",
       "https://x.com/AfreachCreative",
-      "https://www.facebook.com/share/1D4xPeLRkc/",
+      "https://www.facebook.com/afreachcreatives",
       "https://www.instagram.com/afreach_creatives",
       "https://www.tiktok.com/@afreach.creatives"
     ]
   }
   </script>
-
-  <!-- Google Analytics 4 (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-FYZL907RTJ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-FYZL907RTJ', { 'send_page_view': true });
+    gtag('config', 'G-FYZL907RTJ');
   </script>
 </head>
 <body>
-  <!-- Sticky header -->
   <header class="site-header" id="siteHeader">
     <div class="container header-inner">
       <a class="brand" href="index.html">
-        <img src="images/logo.png" alt="Afreach Creatives logo" class="brand-logo" />
+        <img src="images/logo.png" alt="Afreach Creatives logo" class="brand-logo" loading="lazy" />
         <span class="brand-text">Afreach Creatives</span>
       </a>
-
       <nav class="nav" id="nav">
-        <a href="index.html">Home</a>
+        <a href="index.html" aria-current="page">Home</a>
         <a href="about.html">About</a>
         <a href="services.html">Services</a>
         <a href="portfolio.html">Portfolio</a>
         <a href="contact.html">Contact</a>
         <button class="cta primary" id="openQuote">Get a Quote</button>
       </nav>
-
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
     </div>
   </header>
-
-  <!-- HERO -->
   <main>
     <section class="hero" role="region" aria-label="Hero">
       <div class="hero-slider">
-        <div class="slide active" style="background-image:url('images/hero1.jpg');"></div>
-        <div class="slide" style="background-image:url('images/hero2.jpg');"></div>
-        <div class="slide" style="background-image:url('images/hero3.jpg');"></div>
-        <div class="slide" style="background-image:url('images/hero4.jpg');"></div>
+        <div class="slide active" style="background-image:url('images/hero1.jpg');" role="img" aria-label="Hero image 1"></div>
+        <div class="slide" style="background-image:url('images/hero2.jpg');" role="img" aria-label="Hero image 2"></div>
+        <div class="slide" style="background-image:url('images/hero3.jpg');" role="img" aria-label="Hero image 3"></div>
+        <div class="slide" style="background-image:url('images/hero4.jpg');" role="img" aria-label="Hero image 4"></div>
       </div>
       <div class="hero-overlay">
-        <h1>Design & build digital products that move people.</h1>
-        <p class="lead">Branding, websites, digital marketing and publishing — crafted for clarity and conversion.</p>
+        <h1>Design & Build Digital Products That Move People</h1>
+        <p class="lead">Branding, websites, digital marketing, and publishing — crafted for clarity and conversion.</p>
         <div class="hero-ctas">
           <a class="btn-primary" href="contact.html">Start a Project</a>
           <a class="btn-primary" href="portfolio.html">See Portfolio</a>
-          <button class="btn-primary" id="openQuote2">Get a Quote</button>
+          <button class="btn-primary" id="openQuoteHero">Get a Quote</button>
         </div>
       </div>
     </section>
-
-    <!-- SERVICES -->
     <section class="services-preview container" aria-labelledby="servicesHeading">
       <h2 id="servicesHeading" data-aos="fade-up">Main Services</h2>
       <div class="grid" data-aos="fade-up" data-aos-delay="120">
         <article class="card">
-          <img src="images/creative.jpg" alt="Creative & Branding">
+          <img src="images/creative.jpg" alt="Creative and Branding services" loading="lazy">
           <h3>Creative & Branding</h3>
           <ul><li>Logo Design</li><li>Flyers / Posters</li><li>Social Media Graphics</li><li>Brand Identity Kits</li></ul>
         </article>
         <article class="card">
-          <img src="images/web.jpg" alt="Web & App Development">
+          <img src="images/web.jpg" alt="Web and App Development services" loading="lazy">
           <h3>Web & App Development</h3>
           <ul><li>Website Design & Redesign</li><li>Progressive Web Apps (PWAs)</li><li>E-commerce Stores</li><li>Landing Pages</li></ul>
         </article>
         <article class="card">
-          <img src="images/support.jpg" alt="Website & App Maintenance">
+          <img src="images/support.jpg" alt="Website and App Maintenance services" loading="lazy">
           <h3>Website & App Maintenance</h3>
           <ul><li>Content Updates</li><li>Bug Fixing</li><li>Security Services</li><li>Monthly Packages</li></ul>
         </article>
         <article class="card">
-          <img src="images/pr.jpg" alt="Digital Marketing & PR">
+          <img src="images/pr.jpg" alt="Digital Marketing and PR services" loading="lazy">
           <h3>Digital Marketing & PR</h3>
           <ul><li>Social Media Management</li><li>Campaigns</li><li>SEO & Content</li></ul>
         </article>
         <article class="card">
-          <img src="images/publishing.jpg" alt="Publishing & Content">
+          <img src="images/publishing.jpg" alt="Publishing and Content services" loading="lazy">
           <h3>Publishing & Content</h3>
           <ul><li>Book Writing</li><li>Ebook Publishing</li><li>Editing & Covers</li></ul>
         </article>
       </div>
     </section>
-
-    <!-- PORTFOLIO -->
     <section class="portfolio-preview container" aria-labelledby="portfolioHeading" data-aos="fade-up">
       <h2 id="portfolioHeading">Selected Work</h2>
       <div class="portfolio-grid">
-        <div class="port-item"><img src="images/hero2.jpg" alt=""><div class="port-meta"><h4>Brand Campaign</h4></div></div>
-        <div class="port-item"><img src="images/hero3.jpg" alt=""><div class="port-meta"><h4>Product Landing</h4></div></div>
-        <div class="port-item"><img src="images/hero4.jpg" alt=""><div class="port-meta"><h4>Publishing Design</h4></div></div>
+        <div class="port-item"><img src="images/hero2.jpg" alt="Brand Campaign project" loading="lazy"><div class="port-meta"><h4>Brand Campaign</h4></div></div>
+        <div class="port-item"><img src="images/hero3.jpg" alt="Product Landing project" loading="lazy"><div class="port-meta"><h4>Product Landing</h4></div></div>
+        <div class="port-item"><img src="images/hero4.jpg" alt="Publishing Design project" loading="lazy"><div class="port-meta"><h4>Publishing Design</h4></div></div>
       </div>
     </section>
-
-    <!-- TESTIMONIALS -->
     <section class="testimonials container" data-aos="fade-up">
-      <h2>What clients say</h2>
+      <h2>What Clients Say</h2>
       <div class="test-grid">
-        <blockquote class="test-card"><img src="images/elite.jpg" alt=""><p>“A high-quality team who delivered beyond expectations.”</p><cite>Elite</cite></blockquote>
-        <blockquote class="test-card"><img src="images/grace.png" alt=""><p>“Fast turnaround and great communication.”</p><cite>Grace</cite></blockquote>
-        <blockquote class="test-card"><img src="images/lydia.jpg" alt=""><p>“Our brand look is now consistent and clear.”</p><cite>Lydia</cite></blockquote>
+        <blockquote class="test-card"><img src="images/elite.jpg" alt="Photo of Elite, client" loading="lazy"><p>“A high-quality team who delivered beyond expectations.”</p><cite>Elite</cite></blockquote>
+        <blockquote class="test-card"><img src="images/grace.png" alt="Photo of Grace, client" loading="lazy"><p>“Fast turnaround and great communication.”</p><cite>Grace</cite></blockquote>
+        <blockquote class="test-card"><img src="images/lydia.jpg" alt="Photo of Lydia, client" loading="lazy"><p>“Our brand look is now consistent and clear.”</p><cite>Lydia</cite></blockquote>
       </div>
     </section>
   </main>
-
-  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <img src="images/logo.png" alt="Afreach Creatives" />
+        <img src="images/logo.png" alt="Afreach Creatives logo" loading="lazy" />
         <p>Design & technology for growth. <br> © <span id="year"></span> Afreach Creatives</p>
       </div>
       <div class="footer-links">
         <h4>Services</h4>
         <ul>
-          <li><a href="#">Creative & Branding</a></li>
-          <li><a href="#">Web Development</a></li>
-          <li><a href="#">Maintenance</a></li>
-          <li><a href="#">Publishing</a></li>
+          <li><a href="services.html#creative">Creative & Branding</a></li>
+          <li><a href="services.html#web">Web Development</a></li>
+          <li><a href="services.html#maintenance">Maintenance</a></li>
+          <li><a href="services.html#publishing">Publishing</a></li>
         </ul>
       </div>
       <div class="footer-contact">
@@ -168,24 +142,23 @@
       </div>
     </div>
   </footer>
-
-  <!-- QUOTE MODAL -->
-  <div id="quoteModal" class="modal">
+  <div id="quoteModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div class="modal-content">
-      <span class="modal-close" id="closeModal">&times;</span>
-      <h2>Request a Quote</h2>
+      <span class="modal-close" id="closeModal" aria-label="Close modal">&times;</span>
+      <h2 id="modalTitle">Request a Quote</h2>
       <form id="quoteForm" action="https://formspree.io/f/mqakngpa" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="project" placeholder="Tell us about your project..." required></textarea>
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+        <label for="project">Project Details</label>
+        <textarea id="project" name="project" placeholder="Tell us about your project..." required></textarea>
         <button type="submit" class="btn-primary">Send Quote</button>
       </form>
     </div>
   </div>
-
-  <!-- AOS & Scripts -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>AOS.init();</script>
+  <script>AOS.init({ duration: 700, easing: 'ease-in-out', offset: 80 });</script>
   <script src="main.js"></script>
 </body>
 </html>
