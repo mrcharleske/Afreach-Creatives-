@@ -1,25 +1,20 @@
 {
-  "name": "Afreach Creatives",
-  "short_name": "Afreach",
-  "start_url": "/index.html",
-  "display": "standalone",
-  "background_color": "#081233",
-  "theme_color": "#081233",
-  "icons": [
-    {
-      "src": "/images/logo.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "/images/logo.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    },
-    {
-      "src": "/images/apple-touch-icon.png",
-      "sizes": "180x180",
-      "type": "image/png"
-    }
-  ]
+    "name": "Afreach Creatives",
+    "short_name": "Afreach",
+    "icons": [
+        {
+            "src": "/Afreach-Creatives/images/logo.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/Afreach-Creatives/images/logo.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#f04e31",
+    "background_color": "#081233",
+    "display": "standalone",
+    "start_url": "/Afreach-Creatives/index.html"
 }
