@@ -110,7 +110,9 @@ body {
 }
 
 .hero {
-    height: 80vh; /* Reduced from 100vh */
+    height: 80vh; /* Reduced for desktop */
+    position: relative;
+    overflow: hidden;
 }
 
 .hero-overlay {
@@ -119,12 +121,12 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(8, 18, 51, 0.8), rgba(26, 42, 108, 0.8)); /* Stronger overlay */
-    backdrop-filter: blur(3px);
+    background: linear-gradient(rgba(8, 18, 51, 0.85), rgba(26, 42, 108, 0.85)); /* Stronger overlay */
+    backdrop-filter: blur(4px);
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1;
+    z-index: 2; /* Ensure overlay is above slider */
 }
 
 .hero-services, .hero-portfolio, .hero-contact, .about-hero {
@@ -132,15 +134,15 @@ body {
 }
 
 .hero h1, .hero-services h1, .hero-portfolio h1, .hero-contact h1, .about-hero h1 {
-    font-size: 3.5rem; /* Increased for visibility */
+    font-size: 3.5rem;
     margin-bottom: 1.5rem;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero p, .hero-services p, .hero-portfolio p, .hero-contact p, .about-hero p {
-    font-size: 1.5rem; /* Increased for visibility */
+    font-size: 1.5rem;
     margin-bottom: 2rem;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero-ctas {
@@ -150,10 +152,16 @@ body {
 }
 
 /* Hero Slider */
-.hero-slider img {
+.hero-slider {
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Below overlay */
+}
+
+.hero-slider img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -168,7 +176,7 @@ body {
 /* Buttons */
 .btn {
     display: inline-block;
-    padding: 1rem 2rem; /* Larger for better tap targets */
+    padding: 1rem 2rem;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
@@ -250,7 +258,7 @@ body {
 
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Changed to 2x2 grid */
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
 }
 
@@ -271,7 +279,7 @@ body {
 
 .project-card img {
     width: 100%;
-    height: 250px; /* Increased for impact */
+    height: 250px;
     object-fit: cover;
     border-radius: 10px 10px 0 0;
 }
