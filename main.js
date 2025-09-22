@@ -120,12 +120,16 @@ document.querySelectorAll('#quoteForm, #contactForm').forEach(form => {
     });
 });
 
-// Service Worker Registration
+// Enhanced PWA Service Worker Registration
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/Afreach-Creatives/sw.js')
-            .then(reg => console.log('Service Worker registered'))
-            .catch(err => console.error('Service Worker registration failed:', err));
+        navigator.serviceWorker.register('/sw.js', { scope: '/' })
+            .then(registration => {
+                console.log('Service Worker registered with scope:', registration.scope);
+            })
+            .catch(error => {
+                console.error('Service Worker registration failed:', error);
+            });
     });
 }
 
@@ -134,10 +138,24 @@ let deferredPrompt;
 window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     deferredPrompt = e;
-    // Optionally show a custom install button
-    // Example: document.getElementById('installButton').style.display = 'block';
+    console.log('PWA install prompt ready');
+    // Optional: Show custom install button
+    const installBtn = document.createElement('button');
+    installBtn.textContent = 'Install Afreach Creatives App';
+    installBtn.className = 'btn btn-primary install-btn';
+    installBtn.addEventListener('click', () => {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+                console.log('User accepted PWA install');
+            }
+            deferredPrompt = null;
+        });
+    });
+    document.body.appendChild(installBtn);
 });
 
+// Hide preloader
 window.addEventListener('load', () => {
     document.getElementById('preloader').style.display = 'none';
 });
