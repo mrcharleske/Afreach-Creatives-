@@ -3,12 +3,12 @@
     "short_name": "Afreach",
     "icons": [
         {
-            "src": "/Afreach-Creatives/images/logo.png",
+            "src": "/https://afreachcreatives.com/images/logo.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/Afreach-Creatives/images/logo.png",
+            "src": "/https://afreachcreatives.com/logo.png",
             "sizes": "512x512",
             "type": "image/png"
         }
@@ -16,5 +16,5 @@
     "theme_color": "#f04e31",
     "background_color": "#081233",
     "display": "standalone",
-    "start_url": "/Afreach-Creatives/index.html"
+    "start_url": "/https://afreachcreatives.com/index.html"
 }
