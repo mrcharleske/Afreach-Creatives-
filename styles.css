@@ -339,7 +339,7 @@ body {
     margin-bottom: 0.8rem;
 }
 
-/* Responsive */
+/* Mobile Responsive */
 @media (max-width: 768px) {
     .navbar .container {
         flex-direction: column;
@@ -350,6 +350,12 @@ body {
         display: none;
         flex-direction: column;
         width: 100%;
+        background: #081233;
+        padding: 1rem 0;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        z-index: 999;
     }
 
     .nav-menu.active {
@@ -357,7 +363,13 @@ body {
     }
 
     .nav-menu li {
-        margin: 0.5rem 0;
+        margin: 0.5rem 1rem;
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: 0.5rem 0;
+        font-size: 1.1rem;
     }
 
     .navbar-toggle {
