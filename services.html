@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Afreach Creatives' services: branding, web development, maintenance, digital marketing, and publishing.">
     <meta name="keywords" content="branding, web development, live streaming, digital marketing, publishing, Nairobi, creative agency">
-    <title>Afreach Creatives - Services</title>
+    <title>Services — Afreach Creatives</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="icon" href="images/logo.png" type="image/png">
     <link rel="apple-touch-icon" href="images/logo.png">
     <link rel="manifest" href="site.webmanifest">
-    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FYZL907RTJ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -20,21 +19,18 @@
     </script>
 </head>
 <body>
-    <!-- Preloader -->
     <div id="preloader">
         <img src="images/logo.png" alt="Loading...">
     </div>
 
-    <!-- Sticky CTA -->
     <button class="sticky-cta btn-primary" onclick="openModal('quoteModal')">Get a Quote</button>
 
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="navbar-brand">
                 <img src="images/logo.png" alt="Afreach Creatives Logo">
             </a>
-            <button class="navbar-toggle">☰</button>
+            <button class="navbar-toggle" onclick="toggleNav()">☰</button>
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
@@ -45,56 +41,60 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero-services">
-        <div class="container">
-            <h1 data-aos="fade-up">Our Services</h1>
-            <p data-aos="fade-up" data-aos-delay="100">Comprehensive solutions to elevate your brand and digital presence.</p>
+    <section class="hero">
+        <div class="hero-overlay">
+            <div class="container">
+                <h1>Our Services</h1>
+                <p>Creative, technical, and digital solutions tailored to your brand's success.</p>
+                <div class="hero-ctas">
+                    <a href="#" class="btn btn-primary" onclick="openModal('quoteModal')">Get a Quote</a>
+                    <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+                </div>
+            </div>
         </div>
+        <img src="images/hero2.jpg" alt="Services Background" class="hero-background">
     </section>
 
-    <!-- Services -->
     <section class="services">
         <div class="container">
             <div class="grid">
-                <div class="service-card" data-aos="fade-up">
-                    <img src="images/digital4.jpg" alt="Creative & Branding">
+                <div class="service-card">
+                    <img src="images/branding.jpg" alt="Creative & Branding" loading="lazy">
                     <h3>Creative & Branding</h3>
                     <p>Logo Design, Flyers/Posters, Business Cards, Brand Identity Kits, Social Media Templates</p>
                 </div>
-                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                    <img src="images/e-commerce1.jpg" alt="Web & App Development">
+                <div class="service-card">
+                    <img src="images/webdev.jpg" alt="Web & App Development" loading="lazy">
                     <h3>Web & App Development</h3>
                     <p>Website Design, Mobile Apps, E-commerce, SEO, UI/UX Design</p>
                 </div>
-                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                    <img src="images/digital3.jpg" alt="Maintenance">
+                <div class="service-card">
+                    <img src="images/maintenance.jpg" alt="Maintenance" loading="lazy">
                     <h3>Maintenance</h3>
                     <p>Website Maintenance, App Updates, Performance Optimization</p>
                 </div>
-                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-                    <img src="images/support.jpg" alt="Digital Marketing">
+                <div class="service-card">
+                    <img src="images/marketing.jpg" alt="Digital Marketing" loading="lazy">
                     <h3>Digital Marketing</h3>
                     <p>Social Media Management, PR, Campaign Management, Content Creation</p>
                 </div>
-                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
-                    <img src="images/publishing.jpg" alt="Publishing">
+                <div class="service-card">
+                    <img src="images/publishing.jpg" alt="Publishing" loading="lazy">
                     <h3>Publishing</h3>
                     <p>E-books, Editing, Formatting, Cover Design</p>
                 </div>
-                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
-                    <img src="images/livestreaming.jpg" alt="Live Streaming">
+                <div class="service-card">
+                    <img src="images/livestreaming.jpg" alt="Live Streaming" loading="lazy">
                     <h3>Live Streaming</h3>
-                    <p>Engage your audience with seamless live event streaming, professional webinar setups, and real-time interaction tools. From corporate events to online broadcasts, we deliver high-quality, reliable streaming solutions tailored to your brand.</p>
+                    <p>Engage your audience with seamless live event streaming, professional webinar setups, and real-time interaction tools.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Quote Modal -->
     <div id="quoteModal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="close" onclick="closeModal('quoteModal')">&times;</span>
             <h2>Get a Quote</h2>
             <form id="quoteForm" action="https://formspree.io/f/mjkedvkg" method="POST">
                 <input type="text" name="name" placeholder="Your Name" required>
@@ -116,7 +116,6 @@
         </div>
     </div>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-brand">
@@ -127,16 +126,12 @@
     </footer>
 
     <script src="main.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "Afreach Creatives",
-        "url": "https://afreachcreatives.com/",
+        "url": "https://afreachcreatives.com",
         "logo": "https://afreachcreatives.com/images/logo.png"
     }
     </script>
