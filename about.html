@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about Afreach Creatives, a hybrid studio blending creativity and technology for impactful branding and digital solutions.">
     <meta name="keywords" content="branding, web development, live streaming, digital marketing, publishing, Nairobi, creative agency">
-    <title>Afreach Creatives - About</title>
+    <title>About — Afreach Creatives</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="icon" href="images/logo.png" type="image/png">
     <link rel="apple-touch-icon" href="images/logo.png">
     <link rel="manifest" href="site.webmanifest">
-    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FYZL907RTJ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -20,21 +19,18 @@
     </script>
 </head>
 <body>
-    <!-- Preloader -->
     <div id="preloader">
         <img src="images/logo.png" alt="Loading...">
     </div>
 
-    <!-- Sticky CTA -->
     <button class="sticky-cta btn-primary" onclick="openModal('quoteModal')">Get a Quote</button>
 
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="navbar-brand">
                 <img src="images/logo.png" alt="Afreach Creatives Logo">
             </a>
-            <button class="navbar-toggle">☰</button>
+            <button class="navbar-toggle" onclick="toggleNav()">☰</button>
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html" class="active">About</a></li>
@@ -45,54 +41,53 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="about-hero">
+    <section class="hero">
+        <div class="hero-overlay">
+            <div class="container">
+                <h1>About Afreach Creatives</h1>
+                <p>We are a hybrid studio blending creativity and technology to help brands stand out, grow, and connect with people.</p>
+                <div class="hero-ctas">
+                    <a href="contact.html" class="btn btn-primary">Get Started</a>
+                    <a href="portfolio.html" class="btn btn-secondary">See Portfolio</a>
+                </div>
+            </div>
+        </div>
+        <img src="images/hero1.jpg" alt="About Background" class="hero-background">
+    </section>
+
+    <section class="about-story">
         <div class="container">
-            <h1 data-aos="fade-up">About Afreach Creatives</h1>
-            <p data-aos="fade-up" data-aos-delay="100">We are a dynamic team passionate about delivering innovative digital solutions to elevate your brand.</p>
+            <h2>Our Story</h2>
+            <p>Afreach Creatives was founded with one goal—to bridge creativity and technology. From branding and digital marketing to website development and publishing, our team is committed to delivering solutions that not only look stunning but also create measurable impact.</p>
         </div>
     </section>
 
-    <!-- Team Section -->
     <section class="team">
         <div class="container">
-            <h2 data-aos="fade-up">Meet Our Team</h2>
+            <h2>Meet Our Team</h2>
             <div class="team-grid">
-                <div class="team-member" data-aos="fade-up">
-                    <img src="images/ceo.jpg" alt="Charles Njoroge.">
-                    <h3>Charles Njoroge.</h3>
-                    <p>CEO & Founder</p>
-                    <p>Charles Njoroge., our visionary CEO, leads with a passion for innovative design and technology, ensuring every project exceeds client expectations.</p>
+                <div class="team-member">
+                    <img src="images/ceo.jpg" alt="Charles N. — CEO & Founder" loading="lazy">
+                    <h3>Charles N. — CEO & Founder</h3>
+                    <p>Visionary leader and founder of Afreach Creatives, Charles drives the company's mission to deliver creative and digital solutions with impact.</p>
                 </div>
-                <div class="team-member" data-aos="fade-up" data-aos-delay="100">
-                    <img src="images/joseph.jpg" alt="Joseph">
-                    <h3>Joseph</h3>
-                    <p>Creative Designer</p>
-                    <p>Joseph, our lead creative designer, transforms ideas into stunning visuals, blending aesthetics with strategic branding expertise.</p>
+                <div class="team-member">
+                    <img src="images/joseph.jpg" alt="Joseph — Creative Designer" loading="lazy">
+                    <h3>Joseph — Creative Designer</h3>
+                    <p>Passionate about design and innovation, Joseph crafts engaging visuals and creative assets that bring brands to life.</p>
                 </div>
-                <div class="team-member" data-aos="fade-up" data-aos-delay="200">
-                    <img src="images/beatrice.jpg" alt="Beatrice">
-                    <h3>Beatrice</h3>
-                    <p>PR & Social Media Manager</p>
-                    <p>Beatrice excels at building brand connections through strategic social media campaigns and public relations, boosting client visibility.</p>
+                <div class="team-member">
+                    <img src="images/beatrice.jpg" alt="Beatrice — PR & Social Media Manager" loading="lazy">
+                    <h3>Beatrice — PR & Social Media Manager</h3>
+                    <p>Specialist in public relations and digital engagement, Beatrice ensures brands connect with their audiences effectively.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Bar -->
-    <section class="cta-bar">
-        <div class="cta-inner">
-            <h3 data-aos="fade-up">Let's Work Together</h3>
-            <p data-aos="fade-up" data-aos-delay="100">Ready to bring your vision to life? Contact us today!</p>
-            <a href="#" class="btn btn-primary" data-aos="fade-up" data-aos-delay="200" onclick="openModal('quoteModal')">Get Started</a>
-        </div>
-    </section>
-
-    <!-- Quote Modal -->
     <div id="quoteModal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="close" onclick="closeModal('quoteModal')">&times;</span>
             <h2>Get a Quote</h2>
             <form id="quoteForm" action="https://formspree.io/f/mjkedvkg" method="POST">
                 <input type="text" name="name" placeholder="Your Name" required>
@@ -114,7 +109,6 @@
         </div>
     </div>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-brand">
@@ -125,17 +119,13 @@
     </footer>
 
     <script src="main.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "Afreach Creatives",
-        "url": "https://afreachcreatives.com/",
-        "logo": "https//afreachcreatives.com/images/logo.png"
+        "url": "https://afreachcreatives.com",
+        "logo": "https://afreachcreatives.com/images/logo.png"
     }
     </script>
 </body>
