@@ -6,11 +6,9 @@
     <meta name="keywords" content="branding, web development, live streaming, digital marketing, publishing, Nairobi, creative agency">
     <title>Afreach Creatives - Home</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="icon" href="images/logo.png" type="image/png">
     <link rel="apple-touch-icon" href="images/logo.png">
-    <link rel="manifest" href="site.webmanifest"> <!-- Added for PWA -->
-    <!-- Google Analytics -->
+    <link rel="manifest" href="site.webmanifest">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FYZL907RTJ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -19,21 +17,17 @@
       gtag('config', 'G-FYZL907RTJ');
     </script>
 </head>
-<!-- Rest of the body remains the same as previous -->
 <body>
-    <!-- Preloader -->
     <div id="preloader">
         <img src="images/logo.png" alt="Loading...">
     </div>
 
-    <!-- Sticky CTA -->
     <button class="sticky-cta btn-primary" onclick="openModal('quoteModal')">Get a Quote</button>
 
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="navbar-brand">
-                <img src="images/logo.png" alt="Afreach Creatives Logo">
+                <img src="images/logo.png" alt="Afreach Creatives Logo" loading="eager">
             </a>
             <button class="navbar-toggle">☰</button>
             <ul class="nav-menu">
@@ -46,58 +40,54 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-overlay">
             <div class="container">
-                <h1 data-aos="fade-up">Innovative Digital Solutions for Your Brand</h1>
-                <p data-aos="fade-up" data-aos-delay="100">Transform your vision with our creative services in branding, web development, and more.</p>
-                <div class="hero-ctas" data-aos="fade-up" data-aos-delay="200">
+                <h1>Innovative Digital Solutions for Your Brand</h1>
+                <p>Transform your vision with our creative services in branding, web development, and more.</p>
+                <div class="hero-ctas">
                     <a href="#" class="btn btn-primary" onclick="openModal('quoteModal')">Get a Quote</a>
                     <a href="portfolio.html" class="btn btn-secondary">See Portfolio</a>
                     <a href="#" class="btn btn-primary" onclick="openModal('quoteModal')">Start a Project</a>
                 </div>
             </div>
         </div>
-        <div class="hero-slider">
-            <img src="images/hero1.jpg" alt="Hero Image 1" class="active">
-            <img src="images/hero2.jpg" alt="Hero Image 2">
-            <img src="images/hero3.jpg" alt="Hero Image 3">
+        <div class="hero-background">
+            <img src="images/hero1.jpg" alt="Hero Background" loading="eager">
         </div>
     </section>
 
-    <!-- Services Preview -->
     <section class="services-preview">
         <div class="container">
-            <h2 data-aos="fade-up">Our Main Services</h2>
+            <h2>Our Main Services</h2>
             <div class="grid">
-                <div class="service-card" data-aos="fade-up">
-                    <img src="images/branding.jpg" alt="Creative & Branding">
+                <div class="service-card">
+                    <img src="images/branding.jpg" alt="Creative & Branding" loading="lazy">
                     <h3>Creative & Branding</h3>
                     <p>Logo Design, Flyers/Posters, Business Cards, Brand Identity Kits, Social Media Templates</p>
                 </div>
-                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                    <img src="images/webdev.jpg" alt="Web & App Development">
+                <div class="service-card">
+                    <img src="images/webdev.jpg" alt="Web & App Development" loading="lazy">
                     <h3>Web & App Development</h3>
                     <p>Website Design, Mobile Apps, E-commerce, SEO, UI/UX Design</p>
                 </div>
-                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                    <img src="images/maintenance.jpg" alt="Maintenance">
+                <div class="service-card">
+                    <img src="images/maintenance.jpg" alt="Maintenance" loading="lazy">
                     <h3>Maintenance</h3>
                     <p>Website Maintenance, App Updates, Performance Optimization</p>
                 </div>
-                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-                    <img src="images/marketing.jpg" alt="Digital Marketing">
+                <div class="service-card">
+                    <img src="images/marketing.jpg" alt="Digital Marketing" loading="lazy">
                     <h3>Digital Marketing</h3>
                     <p>Social Media Management, PR, Campaign Management, Content Creation</p>
                 </div>
-                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
-                    <img src="images/publishing.jpg" alt="Publishing">
+                <div class="service-card">
+                    <img src="images/publishing.jpg" alt="Publishing" loading="lazy">
                     <h3>Publishing</h3>
                     <p>E-books, Editing, Formatting, Cover Design</p>
                 </div>
-                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
-                    <img src="images/livestreaming.jpg" alt="Live Streaming">
+                <div class="service-card">
+                    <img src="images/livestreaming.jpg" alt="Live Streaming" loading="lazy">
                     <h3>Live Streaming</h3>
                     <p>Engage your audience with seamless live event streaming, professional webinar setups, and real-time interaction tools.</p>
                 </div>
@@ -105,29 +95,27 @@
         </div>
     </section>
 
-    <!-- Portfolio Preview -->
     <section class="portfolio-preview">
         <div class="container">
-            <h2 data-aos="fade-up">Selected Work</h2>
+            <h2>Selected Work</h2>
             <div class="portfolio-grid">
-                <div class="project-card" data-aos="fade-up">
-                    <img src="images/brandmain.jpg" alt="Brand Identity Kit">
+                <div class="project-card">
+                    <img src="images/brandmain.jpg" alt="Brand Identity Kit" loading="lazy">
                     <h3>Brand Identity Kit</h3>
                 </div>
-                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-                    <img src="images/e-commercemain.jpg" alt="E-commerce Website">
+                <div class="project-card">
+                    <img src="images/e-commercemain.jpg" alt="E-commerce Website" loading="lazy">
                     <h3>E-commerce Website</h3>
                 </div>
-                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-                    <img src="images/digitalmain.jpg" alt="Digital Campaign">
+                <div class="project-card">
+                    <img src="images/digitalmain.jpg" alt="Digital Campaign" loading="lazy">
                     <h3>Digital Campaign</h3>
                 </div>
             </div>
-            <a href="portfolio.html" class="btn btn-primary" data-aos="fade-up" data-aos-delay="300">View Full Portfolio</a>
+            <a href="portfolio.html" class="btn btn-primary">View Full Portfolio</a>
         </div>
     </section>
 
-    <!-- Quote Modal -->
     <div id="quoteModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -152,8 +140,24 @@
         </div>
     </div>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-brand">
-                <h3>Afreach Creat
+                <h3>Afreach Creatives</h3>
+            </div>
+            <p>&copy; 2025 Afreach Creatives. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Afreach Creatives",
+        "url": "https://afreachcreatives.com",
+        "logo": "https://afreachcreatives.com/images/logo.png"
+    }
+    </script>
+</body>
+</html>
