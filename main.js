@@ -1,12 +1,17 @@
 // Navbar Toggle
 function toggleNav() {
     const navMenu = document.querySelector('.nav-menu');
-    navMenu.classList.toggle('active');
+    if (navMenu) {
+        navMenu.classList.toggle('active');
+    } else {
+        console.error('Nav menu not found');
+    }
 }
 
 const navbarToggle = document.querySelector('.navbar-toggle');
 if (navbarToggle) {
     navbarToggle.addEventListener('click', toggleNav);
+    navbarToggle.addEventListener('touchstart', toggleNav); // Support mobile touch
 }
 
 // Modal Handling
