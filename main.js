@@ -2,27 +2,10 @@
 const navbarToggle = document.querySelector('.navbar-toggle');
 const navMenu = document.querySelector('.nav-menu');
 
-navbarToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-});
-
-// Hero Slider
-const slides = document.querySelectorAll('.hero-slider img');
-let currentSlide = 0;
-
-function showSlide(index) {
-    slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
+if (navbarToggle && navMenu) {
+    navbarToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
     });
-}
-
-function nextSlide() {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
-}
-
-if (slides.length > 0) {
-    setInterval(nextSlide, 5000);
 }
 
 // Modal Handling
@@ -48,25 +31,8 @@ window.addEventListener('click', (event) => {
     }
 });
 
-// Project Modals
-document.querySelectorAll('.project-card').forEach(card => {
-    card.addEventListener('click', () => {
-        const projectId = card.getAttribute('data-project');
-        openModal(`projectModal-${projectId}`);
-    });
-});
-
-// Project Gallery Thumbnails
-document.querySelectorAll('.project-gallery .thumbnail').forEach(thumbnail => {
-    thumbnail.addEventListener('click', () => {
-        const mainImage = thumbnail.parentElement.previousElementSibling;
-        mainImage.src = thumbnail.src;
-        mainImage.alt = thumbnail.alt;
-    });
-});
-
 // Form Submission with WhatsApp
-document.querySelectorAll('#quoteForm, #contactForm').forEach(form => {
+document.querySelectorAll('#quoteForm').forEach(form => {
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
         const submitButton = form.querySelector('button[type="submit"]');
@@ -84,29 +50,24 @@ document.querySelectorAll('#quoteForm, #contactForm').forEach(form => {
         };
 
         try {
-            // Send to Formspree
             const response = await fetch(form.action, {
                 method: 'POST',
                 body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
+                headers: { 'Accept': 'application/json' }
             });
 
             if (response.ok) {
-                // Google Analytics Event
                 gtag('event', 'form_submission', {
                     event_category: 'Form',
-                    event_label: form.id === 'quoteForm' ? 'Get a Quote' : 'Contact Form'
+                    event_label: 'Get a Quote'
                 });
 
-                // Send to WhatsApp
                 const whatsappMessage = `Hi Afreach, I'm reaching out for ${data.service} service. Name: ${data.name}, Email: ${data.email}, Message: ${data.message}, Budget: ${data.budget}, Timeline: ${data.timeline}`;
                 const whatsappUrl = `https://wa.me/254703579059?text=${encodeURIComponent(whatsappMessage)}`;
                 window.open(whatsappUrl, '_blank');
 
                 form.reset();
-                closeModal(form.id === 'quoteForm' ? 'quoteModal' : 'contactForm');
+                closeModal('quoteModal');
             } else {
                 throw new Error('Form submission failed');
             }
@@ -115,17 +76,17 @@ document.querySelectorAll('#quoteForm, #contactForm').forEach(form => {
             alert('An error occurred. Please try again.');
         } finally {
             submitButton.disabled = false;
-            submitButton.textContent = form.id === 'quoteForm' ? 'Send Quote' : 'Send Message';
+            submitButton.textContent = 'Send Quote';
         }
     });
 });
 
-// Enhanced PWA Service Worker Registration
+// PWA Service Worker Registration
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('/sw.js', { scope: '/' })
             .then(registration => {
-                console.log('Service Worker registered with scope:', registration.scope);
+                console.log('Service Worker registered:', registration.scope);
             })
             .catch(error => {
                 console.error('Service Worker registration failed:', error);
@@ -139,23 +100,29 @@ window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     deferredPrompt = e;
     console.log('PWA install prompt ready');
-    // Optional: Show custom install button
     const installBtn = document.createElement('button');
     installBtn.textContent = 'Install Afreach Creatives App';
     installBtn.className = 'btn btn-primary install-btn';
+    installBtn.style.position = 'fixed';
+    installBtn.style.top = '20px';
+    installBtn.style.right = '20px';
+    installBtn.style.zIndex = '1000';
     installBtn.addEventListener('click', () => {
         deferredPrompt.prompt();
         deferredPrompt.userChoice.then((choiceResult) => {
             if (choiceResult.outcome === 'accepted') {
-                console.log('User accepted PWA install');
+                console.log('User installed PWA');
             }
             deferredPrompt = null;
+            installBtn.remove();
         });
     });
     document.body.appendChild(installBtn);
 });
 
-// Hide preloader
+// Hide Preloader
 window.addEventListener('load', () => {
-    document.getElementById('preloader').style.display = 'none';
+    setTimeout(() => {
+        document.getElementById('preloader').style.display = 'none';
+    }, 300); // Faster
 });
