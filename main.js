@@ -98,14 +98,3 @@ window.addEventListener('load', () => {
     const preloader = document.getElementById('preloader');
     if (preloader) preloader.style.display = 'none';
 });
-
-// Optional: Re-enable Service Worker for PWA Later
-/*
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js', { scope: '/' })
-            .then(reg => console.log('Service Worker registered:', reg.scope))
-            .catch(err => console.error('Service Worker registration failed:', err));
-    });
-}
-*/
