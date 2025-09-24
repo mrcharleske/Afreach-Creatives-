@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Afreach Creatives — Branding, websites, digital marketing, and publishing built to move your audience.">
     <meta name="keywords" content="branding, web development, live streaming, digital marketing, publishing, Nairobi, creative agency">
-    <title>Afreach Creatives - Home</title>
+    <title>Afreach Creatives — Professional Design & Development</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="images/logo.png" type="image/png">
     <link rel="apple-touch-icon" href="images/logo.png">
@@ -18,18 +19,21 @@
     </script>
 </head>
 <body>
+    <!-- Preloader (Instant Hide) -->
     <div id="preloader">
         <img src="images/logo.png" alt="Loading...">
     </div>
 
+    <!-- Sticky CTA -->
     <button class="sticky-cta btn-primary" onclick="openModal('quoteModal')">Get a Quote</button>
 
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="navbar-brand">
-                <img src="images/logo.png" alt="Afreach Creatives Logo" loading="eager">
+                <img src="images/logo.png" alt="Afreach Creatives Logo">
             </a>
-            <button class="navbar-toggle">☰</button>
+            <button class="navbar-toggle" onclick="toggleNav()">☰</button>
             <ul class="nav-menu">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="about.html">About</a></li>
@@ -40,6 +44,7 @@
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-overlay">
             <div class="container">
@@ -52,11 +57,10 @@
                 </div>
             </div>
         </div>
-        <div class="hero-background">
-            <img src="images/hero1.jpg" alt="Hero Background" loading="eager">
-        </div>
+        <img src="images/hero1.jpg" alt="Hero Background" class="hero-background">
     </section>
 
+    <!-- Services Preview -->
     <section class="services-preview">
         <div class="container">
             <h2>Our Main Services</h2>
@@ -95,6 +99,7 @@
         </div>
     </section>
 
+    <!-- Portfolio Preview -->
     <section class="portfolio-preview">
         <div class="container">
             <h2>Selected Work</h2>
@@ -116,9 +121,10 @@
         </div>
     </section>
 
+    <!-- Quote Modal -->
     <div id="quoteModal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="close" onclick="closeModal('quoteModal')">&times;</span>
             <h2>Get a Quote</h2>
             <form id="quoteForm" action="https://formspree.io/f/mjkedvkg" method="POST">
                 <input type="text" name="name" placeholder="Your Name" required>
@@ -140,6 +146,7 @@
         </div>
     </div>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-brand">
