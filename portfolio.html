@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover Afreach Creatives' portfolio showcasing branding, web development, and publishing projects.">
     <meta name="keywords" content="branding, web development, live streaming, digital marketing, publishing, Nairobi, creative agency">
-    <title>Afreach Creatives - Portfolio</title>
+    <title>Portfolio — Afreach Creatives</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="icon" href="images/logo.png" type="image/png">
     <link rel="apple-touch-icon" href="images/logo.png">
     <link rel="manifest" href="site.webmanifest">
-    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FYZL907RTJ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -20,21 +19,18 @@
     </script>
 </head>
 <body>
-    <!-- Preloader -->
     <div id="preloader">
         <img src="images/logo.png" alt="Loading...">
     </div>
 
-    <!-- Sticky CTA -->
     <button class="sticky-cta btn-primary" onclick="openModal('quoteModal')">Get a Quote</button>
 
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="navbar-brand">
                 <img src="images/logo.png" alt="Afreach Creatives Logo">
             </a>
-            <button class="navbar-toggle">☰</button>
+            <button class="navbar-toggle" onclick="toggleNav()">☰</button>
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
@@ -45,36 +41,41 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero-portfolio">
-        <div class="container">
-            <h1 data-aos="fade-up">Our Portfolio</h1>
-            <p data-aos="fade-up" data-aos-delay="100">Explore our featured projects showcasing creativity and innovation.</p>
+    <section class="hero">
+        <div class="hero-overlay">
+            <div class="container">
+                <h1>Our Portfolio</h1>
+                <p>Some of our creative work and what our clients say about us.</p>
+                <div class="hero-ctas">
+                    <a href="#" class="btn btn-primary" onclick="openModal('quoteModal')">Get a Quote</a>
+                    <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+                </div>
+            </div>
         </div>
+        <img src="images/hero3.jpg" alt="Portfolio Background" class="hero-background">
     </section>
 
-    <!-- Projects -->
     <section class="portfolio">
         <div class="container">
-            <h2 data-aos="fade-up">Featured Projects</h2>
+            <h2>Featured Projects</h2>
             <div class="project-grid">
-                <div class="project-card" data-project="brand" data-aos="fade-up">
-                    <img src="images/brandmain.jpg" alt="Brand Identity Kit">
+                <div class="project-card">
+                    <img src="images/brandmain.jpg" alt="Brand Identity Kit" loading="lazy">
                     <h3>Brand Identity Kit</h3>
                     <button class="btn btn-primary" onclick="openModal('projectModal-brand')">Learn More</button>
                 </div>
-                <div class="project-card" data-project="ecommerce" data-aos="fade-up" data-aos-delay="100">
-                    <img src="images/e-commercemain.jpg" alt="E-commerce Website">
+                <div class="project-card">
+                    <img src="images/e-commercemain.jpg" alt="E-commerce Website" loading="lazy">
                     <h3>E-commerce Website</h3>
                     <button class="btn btn-primary" onclick="openModal('projectModal-ecommerce')">Learn More</button>
                 </div>
-                <div class="project-card" data-project="digital" data-aos="fade-up" data-aos-delay="200">
-                    <img src="images/digitalmain.jpg" alt="Digital Campaign">
+                <div class="project-card">
+                    <img src="images/digitalmain.jpg" alt="Digital Campaign" loading="lazy">
                     <h3>Digital Campaign</h3>
                     <button class="btn btn-primary" onclick="openModal('projectModal-digital')">Learn More</button>
                 </div>
-                <div class="project-card" data-project="publishing" data-aos="fade-up" data-aos-delay="300">
-                    <img src="images/bookpublishingmain.jpg" alt="Book Publishing">
+                <div class="project-card">
+                    <img src="images/bookpublishingmain.jpg" alt="Book Publishing" loading="lazy">
                     <h3>Book Publishing</h3>
                     <button class="btn btn-primary" onclick="openModal('projectModal-publishing')">Learn More</button>
                 </div>
@@ -85,73 +86,72 @@
     <!-- Project Modals -->
     <div id="projectModal-brand" class="modal project-modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="close" onclick="closeModal('projectModal-brand')">&times;</span>
             <h2>Brand Identity Kit</h2>
             <p>Designed a comprehensive branding package for a startup in 2025, including a modern logo, color palette, typography, and social media templates. The project enhanced brand consistency across all platforms, driving client recognition.</p>
             <div class="project-gallery">
                 <img src="images/brandmain.jpg" alt="Brand Identity Kit" class="main-image">
                 <div class="thumbnails">
-                    <img src="images/brand1.png" alt="Brand Image 1" class="thumbnail">
-                    <img src="images/brand2.jpg" alt="Brand Image 2" class="thumbnail">
-                    <img src="images/brand3.jpg" alt="Brand Image 3" class="thumbnail">
-                    <img src="images/brand4.png" alt="Brand Image 4" class="thumbnail">
+                    <img src="images/brand1.png" alt="Brand Image 1" class="thumbnail" onclick="setMainImage(this.src, this.alt)">
+                    <img src="images/brand2.jpg" alt="Brand Image 2" class="thumbnail" onclick="setMainImage(this.src, this.alt)">
+                    <img src="images/brand3.jpg" alt="Brand Image 3" class="thumbnail" onclick="setMainImage(this.src, this.alt)">
+                    <img src="images/brand4.png" alt="Brand Image 4" class="thumbnail" onclick="setMainImage(this.src, this.alt)">
                 </div>
             </div>
         </div>
     </div>
     <div id="projectModal-ecommerce" class="modal project-modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="close" onclick="closeModal('projectModal-ecommerce')">&times;</span>
             <h2>E-commerce Website</h2>
             <p>Developed a responsive e-commerce platform in 2025, featuring a user-friendly interface, secure checkout, and mobile optimization. The site boosted sales by 30% through improved UX and SEO.</p>
             <div class="project-gallery">
                 <img src="images/e-commercemain.jpg" alt="E-commerce Website" class="main-image">
                 <div class="thumbnails">
-                    <img src="images/e-commerce1.jpg" alt="E-commerce Image 1" class="thumbnail">
-                    <img src="images/e-commerce2.jpg" alt="E-commerce Image 2" class="thumbnail">
-                    <img src="images/e-commerce3.jpg" alt="E-commerce Image 3" class="thumbnail">
-                    <img src="images/e-commerce4.jpg" alt="E-commerce Image 4" class="thumbnail">
+                    <img src="images/e-commerce1.jpg" alt="E-commerce Image 1" class="thumbnail" onclick="setMainImage(this.src, this.alt)">
+                    <img src="images/e-commerce2.jpg" alt="E-commerce Image 2" class="thumbnail" onclick="setMainImage(this.src, this.alt)">
+                    <img src="images/e-commerce3.jpg" alt="E-commerce Image 3" class="thumbnail" onclick="setMainImage(this.src, this.alt)">
+                    <img src="images/e-commerce4.jpg" alt="E-commerce Image 4" class="thumbnail" onclick="setMainImage(this.src, this.alt)">
                 </div>
             </div>
         </div>
     </div>
     <div id="projectModal-digital" class="modal project-modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="close" onclick="closeModal('projectModal-digital')">&times;</span>
             <h2>Digital Campaign</h2>
             <p>Created a targeted digital marketing campaign in 2025, leveraging social media and PR to increase brand visibility by 40%. The campaign included engaging ads and strategic content.</p>
             <div class="project-gallery">
                 <img src="images/digitalmain.jpg" alt="Digital Campaign" class="main-image">
                 <div class="thumbnails">
-                    <img src="images/digital1.jpg" alt="Digital Image 1" class="thumbnail">
-                    <img src="images/digital2.jpg" alt="Digital Image 2" class="thumbnail">
-                    <img src="images/digital3.jpg" alt="Digital Image 3" class="thumbnail">
-                    <img src="images/digital4.jpg" alt="Digital Image 4" class="thumbnail">
+                    <img src="images/digital1.jpg" alt="Digital Image 1" class="thumbnail" onclick="setMainImage(this.src, this.alt)">
+                    <img src="images/digital2.jpg" alt="Digital Image 2" class="thumbnail" onclick="setMainImage(this.src, this.alt)">
+                    <img src="images/digital3.jpg" alt="Digital Image 3" class="thumbnail" onclick="setMainImage(this.src, this.alt)">
+                    <img src="images/digital4.jpg" alt="Digital Image 4" class="thumbnail" onclick="setMainImage(this.src, this.alt)">
                 </div>
             </div>
         </div>
     </div>
     <div id="projectModal-publishing" class="modal project-modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="close" onclick="closeModal('projectModal-publishing')">&times;</span>
             <h2>Book Publishing</h2>
             <p>Published a professional ebook in 2025, including editing, cover design, and formatting. The project delivered a polished product ready for global distribution.</p>
             <div class="project-gallery">
                 <img src="images/bookpublishingmain.jpg" alt="Book Publishing" class="main-image">
                 <div class="thumbnails">
-                    <img src="images/bookpublishing1.jpg" alt="Publishing Image 1" class="thumbnail">
-                    <img src="images/bookpublishing2.jpg" alt="Publishing Image 2" class="thumbnail">
-                    <img src="images/bookpublishing3.jpg" alt="Publishing Image 3" class="thumbnail">
-                    <img src="images/bookpublishing4.jpg" alt="Publishing Image 4" class="thumbnail">
+                    <img src="images/bookpublishing1.jpg" alt="Publishing Image 1" class="thumbnail" onclick="setMainImage(this.src, this.alt)">
+                    <img src="images/bookpublishing2.jpg" alt="Publishing Image 2" class="thumbnail" onclick="setMainImage(this.src, this.alt)">
+                    <img src="images/bookpublishing3.jpg" alt="Publishing Image 3" class="thumbnail" onclick="setMainImage(this.src, this.alt)">
+                    <img src="images/bookpublishing4.jpg" alt="Publishing Image 4" class="thumbnail" onclick="setMainImage(this.src, this.alt)">
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Quote Modal -->
     <div id="quoteModal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="close" onclick="closeModal('quoteModal')">&times;</span>
             <h2>Get a Quote</h2>
             <form id="quoteForm" action="https://formspree.io/f/mjkedvkg" method="POST">
                 <input type="text" name="name" placeholder="Your Name" required>
@@ -173,7 +173,6 @@
         </div>
     </div>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-brand">
@@ -184,18 +183,10 @@
     </footer>
 
     <script src="main.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "Afreach Creatives",
         "url": "https://afreachcreatives.com",
-        "logo": "https://afreachcreatives.com/images/logo.png"
-    }
-    </script>
-</body>
-</html>
+        "logo": "https://afreachcre
