@@ -1,70 +1,108 @@
-// main.js — small, independent vanilla JS file
-document.addEventListener('DOMContentLoaded', function(){
-  // Modal handling
-  var modal = document.getElementById('quoteModal');
-  var openBtns = document.querySelectorAll('#quoteBtnTop, #quoteBtnHero, #quoteBtnTop2, #quoteBtnTop3, #quoteBtnTop4, #quoteBtnTop5');
-  var closeBtn = document.getElementById('closeModal');
-  var form = document.getElementById('quoteForm');
+// Afreach Creatives Main JavaScript
+// Version: 2025-09-25
 
-  openBtns.forEach(function(b){
-    if(b) b.addEventListener('click', openModal);
+// Navigation Toggle for Mobile
+const navToggle = document.querySelector('.nav-toggle');
+const mainNav = document.querySelector('.main-nav');
+if (navToggle && mainNav) {
+  navToggle.addEventListener('click', () => {
+    const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+    navToggle.setAttribute('aria-expanded', !isExpanded);
+    mainNav.classList.toggle('active');
   });
-  if(closeBtn) closeBtn.addEventListener('click', closeModal);
-  if(modal) modal.addEventListener('click', function(e){ if(e.target === modal) closeModal(); });
+}
 
-  function openModal(){ if(modal){ modal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; } }
-  function closeModal(){ if(modal){ modal.setAttribute('aria-hidden','true'); document.body.style.overflow='auto'; } }
+// Quote Modal Functionality
+const quoteModal = document.getElementById('quoteModal');
+const quoteButtons = document.querySelectorAll('[id^="quoteBtnTop"], .btn[href="#"]');
+const closeModal = document.getElementById('closeModal');
+const quoteForm = document.getElementById('quoteForm');
+const quoteFormError = document.getElementById('quoteFormError');
 
-  // openQuoteFor(service) available globally
-  window.openQuoteFor = function(service){
-    openModal();
-    setTimeout(function(){
-      var sel = document.querySelector('#quoteForm select[name="service"]');
-      if(sel){ sel.value = service; sel.focus(); }
-    }, 250);
-  };
+function openQuoteFor(service) {
+  if (quoteModal) {
+    quoteModal.setAttribute('aria-hidden', 'false');
+    quoteModal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    const serviceSelect = quoteForm.querySelector('select[name="service"]');
+    if (serviceSelect && service) {
+      serviceSelect.value = service;
+    }
+    quoteModal.querySelector('input[name="name"]').focus();
+  }
+}
 
-  // Quote form submit: sends to Formspree and then opens WhatsApp prefilled (user must confirm send)
-  if(form){
-    form.addEventListener('submit', function(e){
-      // Basic client-side check for reCAPTCHA (if present)
-      var rec = document.querySelector('.g-recaptcha-response');
-      if(rec && rec.value === ""){
-        // If reCAPTCHA not completed, let reCAPTCHA handle or prevent
-        // Most likely user will tick captcha; allow default.
+if (quoteButtons.length > 0) {
+  quoteButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+      e.preventDefault();
+      const service = button.getAttribute('onclick')?.match(/'([^']+)'/)?.[1] || '';
+      openQuoteFor(service);
+    });
+  });
+}
+
+if (closeModal) {
+  closeModal.addEventListener('click', () => {
+    if (quoteModal) {
+      quoteModal.setAttribute('aria-hidden', 'true');
+      quoteModal.style.display = 'none';
+      document.body.style.overflow = '';
+      if (quoteFormError) {
+        quoteFormError.setAttribute('hidden', '');
       }
-      // Let the form submit naturally (Formspree will handle). After submit, open WhatsApp window
-      // To enhance UX: intercept and send fetch, then open whatsapp — but we'll let default submit proceed because of Formspree redirect.
-      // We'll instead listen for form submission and open WhatsApp after a small delay
-      var service = (form.querySelector('select[name="service"]') || {}).value || 'General';
-      var name = (form.querySelector('input[name="name"]') || {}).value || 'Client';
-      var msg = encodeURIComponent('Hello Afreach, can I learn more about ' + service + ' — from: ' + name);
-      // Open WhatsApp in new tab (user must press SEND in WhatsApp):
-      window.open('https://wa.me/254703579059?text=' + msg, '_blank');
-      // Allow default submit to proceed
-    });
-  }
+    }
+  });
+}
 
-  // Contact form separate handling (contact page)
-  var contactForm = document.getElementById('contactForm');
-  if(contactForm){
-    contactForm.addEventListener('submit', function(){
-      var service = 'General enquiry';
-      var nameElem = contactForm.querySelector('input[name="name"]');
-      var name = (nameElem && nameElem.value) ? nameElem.value : 'Client';
-      var msg = encodeURIComponent('Hello Afreach, a new contact from ' + name + ' (contact form)');
-      window.open('https://wa.me/254703579059?text=' + msg, '_blank');
-      // Let default submit proceed to Formspree
-    });
-  }
+// Close Modal on Outside Click
+if (quoteModal) {
+  quoteModal.addEventListener('click', (e) => {
+    if (e.target === quoteModal) {
+      quoteModal.setAttribute('aria-hidden', 'true');
+      quoteModal.style.display = 'none';
+      document.body.style.overflow = '';
+      if (quoteFormError) {
+        quoteFormError.setAttribute('hidden', '');
+      }
+    }
+  });
+}
 
-  // Simple hero image rotation (no dependency)
-  var heroImgs = document.querySelectorAll('.hero-img');
-  if(heroImgs.length > 1){
-    var i=0;
-    setInterval(function(){
-      heroImgs.forEach(function(img,idx){ img.style.display = idx === i ? 'block' : 'none'; });
-      i = (i+1) % heroImgs.length;
-    }, 3500);
-  }
-});
+// Form Validation
+if (quoteForm) {
+  quoteForm.addEventListener('submit', (e) => {
+    const name = quoteForm.querySelector('input[name="name"]').value.trim();
+    const email = quoteForm.querySelector('input[name="_replyto"]').value.trim();
+    const phone = quoteForm.querySelector('input[name="phone"]').value.trim();
+    const service = quoteForm.querySelector('select[name="service"]').value;
+    const recaptcha = quoteForm.querySelector('.g-recaptcha-response')?.value;
+
+    if (!name || !email || !phone || !service || !recaptcha) {
+      e.preventDefault();
+      if (quoteFormError) {
+        quoteFormError.removeAttribute('hidden');
+      }
+    }
+  });
+}
+
+// Contact Form Validation
+const contactForm = document.getElementById('contactForm');
+const contactFormError = document.getElementById('contactFormError');
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    const name = contactForm.querySelector('input[name="name"]').value.trim();
+    const email = contactForm.querySelector('input[name="_replyto"]').value.trim();
+    const phone = contactForm.querySelector('input[name="phone"]').value.trim();
+    const service = contactForm.querySelector('select[name="service"]').value;
+    const recaptcha = contactForm.querySelector('.g-recaptcha-response')?.value;
+
+    if (!name || !email || !phone || !service || !recaptcha) {
+      e.preventDefault();
+      if (contactFormError) {
+        contactFormError.removeAttribute('hidden');
+      }
+    }
+  });
+}
