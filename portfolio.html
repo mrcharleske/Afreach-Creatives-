@@ -1,192 +1,124 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Discover Afreach Creatives' portfolio showcasing branding, web development, and publishing projects.">
-    <meta name="keywords" content="branding, web development, live streaming, digital marketing, publishing, Nairobi, creative agency">
-    <title>Portfolio — Afreach Creatives</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="images/logo.png" type="image/png">
-    <link rel="apple-touch-icon" href="images/logo.png">
-    <link rel="manifest" href="site.webmanifest">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FYZL907RTJ"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-FYZL907RTJ');
-    </script>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Portfolio — Afreach Creatives</title>
+  <link rel="icon" href="images/favicon.png">
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="preloader">
-        <img src="images/logo.png" alt="Loading...">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><img src="images/logo.jpg" alt="Afreach Creatives" class="logo" /></a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html" aria-current="page">Portfolio</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="header-ctas">
+        <a class="btn btn-ghost" href="tel:+254703579059">Call Us</a>
+        <a class="btn btn-primary" id="quoteBtnTop4">Get a Quote</a>
+      </div>
     </div>
+  </header>
 
-    <button class="sticky-cta btn-primary" onclick="openModal('quoteModal')">Get a Quote</button>
+  <main class="container">
+    <h1>Portfolio</h1>
 
-    <nav class="navbar">
-        <div class="container">
-            <a href="index.html" class="navbar-brand">
-                <img src="images/logo.png" alt="Afreach Creatives Logo">
-            </a>
-            <button class="navbar-toggle" onclick="toggleNav()">☰</button>
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="portfolio.html" class="active">Portfolio</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+    <section id="branding" data-aos="fade-up">
+      <h2>Creative & Branding</h2>
+      <p>Our portfolio showcases bold, memorable designs that bring brands to life.</p>
+      <div class="grid cols-3">
+        <div class="work-card">
+          <img src="images/brandingmain.jpg" alt="">
+          <div class="work-copy">
+            <h4>Brand — Project Alpha</h4>
+            <p>Logo design and full brand guidelines.</p>
+            <a href="#" class="btn btn-ghost">Learn More</a>
+          </div>
         </div>
-    </nav>
-
-    <section class="hero">
-        <div class="hero-overlay">
-            <div class="container">
-                <h1>Our Portfolio</h1>
-                <p>Some of our creative work and what our clients say about us.</p>
-                <div class="hero-ctas">
-                    <a href="#" class="btn btn-primary" onclick="openModal('quoteModal')">Get a Quote</a>
-                    <a href="contact.html" class="btn btn-secondary">Contact Us</a>
-                </div>
-            </div>
+        <div class="work-card">
+          <img src="images/brandingmain.jpg" alt="">
+          <div class="work-copy">
+            <h4>Poster — Event Z</h4>
+            <p>Promotional poster design for an event campaign.</p>
+            <a href="#" class="btn btn-ghost">Learn More</a>
+          </div>
         </div>
-        <img src="images/hero3.jpg" alt="Portfolio Background" class="hero-background">
+      </div>
     </section>
 
-    <section class="portfolio">
-        <div class="container">
-            <h2>Featured Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <img src="images/brandmain.jpg" alt="Brand Identity Kit" loading="lazy">
-                    <h3>Brand Identity Kit</h3>
-                    <button class="btn btn-primary" onclick="openModal('projectModal-brand')">Learn More</button>
-                </div>
-                <div class="project-card">
-                    <img src="images/e-commercemain.jpg" alt="E-commerce Website" loading="lazy">
-                    <h3>E-commerce Website</h3>
-                    <button class="btn btn-primary" onclick="openModal('projectModal-ecommerce')">Learn More</button>
-                </div>
-                <div class="project-card">
-                    <img src="images/digitalmain.jpg" alt="Digital Campaign" loading="lazy">
-                    <h3>Digital Campaign</h3>
-                    <button class="btn btn-primary" onclick="openModal('projectModal-digital')">Learn More</button>
-                </div>
-                <div class="project-card">
-                    <img src="images/bookpublishingmain.jpg" alt="Book Publishing" loading="lazy">
-                    <h3>Book Publishing</h3>
-                    <button class="btn btn-primary" onclick="openModal('projectModal-publishing')">Learn More</button>
-                </div>
-            </div>
+    <section id="web" data-aos="fade-up">
+      <h2>Web & App Development</h2>
+      <p>Explore sleek, responsive websites and apps built to perform and engage.</p>
+      <div class="grid cols-3">
+        <div class="work-card">
+          <img src="images/webdev.jpg" alt="">
+          <div class="work-copy">
+            <h4>Website — Project Beta</h4>
+            <p>Responsive, conversion-focused landing page.</p>
+            <a href="#" class="btn btn-ghost">Learn More</a>
+          </div>
         </div>
+        <div class="work-card">
+          <img src="images/webdev.jpg" alt="">
+          <div class="work-copy">
+            <h4>App — Project Gamma</h4>
+            <p>PWA built for offline-first experiences.</p>
+            <a href="#" class="btn btn-ghost">Learn More</a>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Project Modals -->
-    <div id="projectModal-brand" class="modal project-modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('projectModal-brand')">&times;</span>
-            <h2>Brand Identity Kit</h2>
-            <p>Designed a comprehensive branding package for a startup in 2025, including a modern logo, color palette, typography, and social media templates. The project enhanced brand consistency across all platforms, driving client recognition.</p>
-            <div class="project-gallery">
-                <img src="images/brandmain.jpg" alt="Brand Identity Kit" class="main-image">
-                <div class="thumbnails">
-                    <img src="images/brand1.png" alt="Brand Image 1" class="thumbnail" onclick="setMainImage(this.src, this.alt)">
-                    <img src="images/brand2.jpg" alt="Brand Image 2" class="thumbnail" onclick="setMainImage(this.src, this.alt)">
-                    <img src="images/brand3.jpg" alt="Brand Image 3" class="thumbnail" onclick="setMainImage(this.src, this.alt)">
-                    <img src="images/brand4.png" alt="Brand Image 4" class="thumbnail" onclick="setMainImage(this.src, this.alt)">
-                </div>
-            </div>
+    <section id="publishing" data-aos="fade-up">
+      <h2>Publishing & Content</h2>
+      <div class="grid cols-3">
+        <div class="work-card">
+          <img src="images/bookpublishingmain.jpg" alt="">
+          <div class="work-copy">
+            <h4>Book — Project Delta</h4>
+            <p>Ghostwriting and cover design for a business book.</p>
+            <a href="#" class="btn btn-ghost">Learn More</a>
+          </div>
         </div>
-    </div>
-    <div id="projectModal-ecommerce" class="modal project-modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('projectModal-ecommerce')">&times;</span>
-            <h2>E-commerce Website</h2>
-            <p>Developed a responsive e-commerce platform in 2025, featuring a user-friendly interface, secure checkout, and mobile optimization. The site boosted sales by 30% through improved UX and SEO.</p>
-            <div class="project-gallery">
-                <img src="images/e-commercemain.jpg" alt="E-commerce Website" class="main-image">
-                <div class="thumbnails">
-                    <img src="images/e-commerce1.jpg" alt="E-commerce Image 1" class="thumbnail" onclick="setMainImage(this.src, this.alt)">
-                    <img src="images/e-commerce2.jpg" alt="E-commerce Image 2" class="thumbnail" onclick="setMainImage(this.src, this.alt)">
-                    <img src="images/e-commerce3.jpg" alt="E-commerce Image 3" class="thumbnail" onclick="setMainImage(this.src, this.alt)">
-                    <img src="images/e-commerce4.jpg" alt="E-commerce Image 4" class="thumbnail" onclick="setMainImage(this.src, this.alt)">
-                </div>
-            </div>
+        <div class="work-card">
+          <img src="images/bookpublishingmain.jpg" alt="">
+          <div class="work-copy">
+            <h4>Ebook — Project Epsilon</h4>
+            <p>Design and distribution on multiple platforms.</p>
+            <a href="#" class="btn btn-ghost">Learn More</a>
+          </div>
         </div>
-    </div>
-    <div id="projectModal-digital" class="modal project-modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('projectModal-digital')">&times;</span>
-            <h2>Digital Campaign</h2>
-            <p>Created a targeted digital marketing campaign in 2025, leveraging social media and PR to increase brand visibility by 40%. The campaign included engaging ads and strategic content.</p>
-            <div class="project-gallery">
-                <img src="images/digitalmain.jpg" alt="Digital Campaign" class="main-image">
-                <div class="thumbnails">
-                    <img src="images/digital1.jpg" alt="Digital Image 1" class="thumbnail" onclick="setMainImage(this.src, this.alt)">
-                    <img src="images/digital2.jpg" alt="Digital Image 2" class="thumbnail" onclick="setMainImage(this.src, this.alt)">
-                    <img src="images/digital3.jpg" alt="Digital Image 3" class="thumbnail" onclick="setMainImage(this.src, this.alt)">
-                    <img src="images/digital4.jpg" alt="Digital Image 4" class="thumbnail" onclick="setMainImage(this.src, this.alt)">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="projectModal-publishing" class="modal project-modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('projectModal-publishing')">&times;</span>
-            <h2>Book Publishing</h2>
-            <p>Published a professional ebook in 2025, including editing, cover design, and formatting. The project delivered a polished product ready for global distribution.</p>
-            <div class="project-gallery">
-                <img src="images/bookpublishingmain.jpg" alt="Book Publishing" class="main-image">
-                <div class="thumbnails">
-                    <img src="images/bookpublishing1.jpg" alt="Publishing Image 1" class="thumbnail" onclick="setMainImage(this.src, this.alt)">
-                    <img src="images/bookpublishing2.jpg" alt="Publishing Image 2" class="thumbnail" onclick="setMainImage(this.src, this.alt)">
-                    <img src="images/bookpublishing3.jpg" alt="Publishing Image 3" class="thumbnail" onclick="setMainImage(this.src, this.alt)">
-                    <img src="images/bookpublishing4.jpg" alt="Publishing Image 4" class="thumbnail" onclick="setMainImage(this.src, this.alt)">
-                </div>
-            </div>
-        </div>
-    </div>
+      </div>
+    </section>
 
-    <div id="quoteModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('quoteModal')">&times;</span>
-            <h2>Get a Quote</h2>
-            <form id="quoteForm" action="https://formspree.io/f/mjkedvkg" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <select name="service" required>
-                    <option value="" disabled selected>Select a Service</option>
-                    <option value="Creative & Branding">Creative & Branding</option>
-                    <option value="Web & App Development">Web & App Development</option>
-                    <option value="Maintenance">Maintenance</option>
-                    <option value="Digital Marketing">Digital Marketing</option>
-                    <option value="Publishing">Publishing</option>
-                    <option value="Live Streaming">Live Streaming</option>
-                </select>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <input type="text" name="budget" placeholder="Budget (e.g., $5000)">
-                <input type="text" name="timeline" placeholder="Timeline (e.g., 1 month)">
-                <button type="submit" class="btn btn-primary">Send Quote</button>
-            </form>
-        </div>
+    <!-- Add other sections similarly if needed -->
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <img src="images/logo.jpg" alt="Afreach Creatives" class="logo-sm" />
+        <p>© <span id="year4"></span> Afreach Creatives</p>
+      </div>
+      <div class="footer-right">
+        <a href="contact.html" class="btn btn-primary">Contact</a>
+      </div>
     </div>
+  </footer>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-brand">
-                <h3>Afreach Creatives</h3>
-            </div>
-            <p>&copy; 2025 Afreach Creatives. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script src="main.js"></script>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Afreach Creatives",
-        "url": "https://afreachcreatives.com",
-        "logo": "https://afreachcre
+  <script>
+    document.getElementById('year4').textContent = new Date().getFullYear();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    AOS.init({ duration: 700, once: true });
+  </script>
+</body>
+</html>
