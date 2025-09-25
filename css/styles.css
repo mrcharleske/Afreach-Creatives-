@@ -8,6 +8,10 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 16px;
+}
+
 body {
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
@@ -69,7 +73,7 @@ ul { list-style: disc; margin-left: 1.5rem; margin-bottom: 1rem; }
 
 .main-nav a:hover,
 .main-nav a[aria-current="page"] {
-  color: #007bff;
+  color: #0051ff;
 }
 
 .header-ctas {
@@ -83,6 +87,52 @@ ul { list-style: disc; margin-left: 1.5rem; margin-bottom: 1rem; }
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
+  position: relative;
+  width: 30px;
+  height: 20px;
+}
+
+.nav-toggle-icon {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #0051ff;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background 0.3s;
+}
+
+.nav-toggle-icon::before,
+.nav-toggle-icon::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background: #0051ff;
+  left: 0;
+}
+
+.nav-toggle-icon::before {
+  top: -8px;
+}
+
+.nav-toggle-icon::after {
+  top: 8px;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon {
+  background: transparent;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon::after {
+  transform: rotate(-45deg);
+  top: 0;
 }
 
 /* Buttons */
@@ -92,29 +142,29 @@ ul { list-style: disc; margin-left: 1.5rem; margin-bottom: 1rem; }
   border-radius: 4px;
   text-decoration: none;
   font-weight: 600;
-  transition: background-color 0.3s, color 0.3s;
+  transition: all 0.3s;
 }
 
 .btn-primary {
-  background-color: #007bff;
+  background: linear-gradient(to right, #007bff, #00c4ff);
   color: #fff;
-  border: 2px solid #007bff;
+  border: 2px solid #0051ff;
 }
 
 .btn-primary:hover {
-  background-color: #0056b3;
-  border-color: #0056b3;
+  background: linear-gradient(to right, #0051ff, #009cff);
+  border-color: #0033cc;
 }
 
 .btn-ghost {
   background: none;
-  color: #007bff;
-  border: 2px solid #007bff;
+  color: #0051ff;
+  border: 2px solid #0051ff;
 }
 
 .btn-ghost:hover {
-  background-color: #007bff;
-  color: #fff;
+  background: rgba(0, 81, 255, 0.1);
+  color: #0033cc;
 }
 
 .btn-outline {
@@ -124,7 +174,7 @@ ul { list-style: disc; margin-left: 1.5rem; margin-bottom: 1rem; }
 }
 
 .btn-outline:hover {
-  background-color: #333;
+  background: #333;
   color: #fff;
 }
 
@@ -138,6 +188,10 @@ ul { list-style: disc; margin-left: 1.5rem; margin-bottom: 1rem; }
   height: 100%;
   background: rgba(0,0,0,0.5);
   z-index: 2000;
+}
+
+.modal[aria-hidden="false"] {
+  display: block;
 }
 
 .modal-dialog {
@@ -199,6 +253,67 @@ ul { list-style: disc; margin-left: 1.5rem; margin-bottom: 1rem; }
   margin-bottom: 1rem;
 }
 
+/* Hero Section */
+.hero {
+  height: 60vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-block {
+  position: relative;
+  height: 100%;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 81, 255, 0.8);
+  padding: 2rem;
+  border-radius: 8px;
+  color: #fff;
+  text-align: center;
+  max-width: 80%;
+}
+
+.hero-overlay h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-overlay p {
+  font-size: 1.25rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.hero-images {
+  position: relative;
+  height: 100%;
+}
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.hero-image.active {
+  opacity: 1;
+}
+
 /* Services Layout */
 .service-block {
   margin: 2rem 0;
@@ -216,6 +331,8 @@ ul { list-style: disc; margin-left: 1.5rem; margin-bottom: 1rem; }
   max-width: 50%;
   height: auto;
   border-radius: 8px;
+  aspect-ratio: 16/9;
+  object-fit: cover;
 }
 
 .service-grid.reverse {
@@ -233,7 +350,7 @@ ul { list-style: disc; margin-left: 1.5rem; margin-bottom: 1rem; }
 
 .slogan {
   font-style: italic;
-  color: #007bff;
+  color: #ff6f00;
   margin-bottom: 1rem;
 }
 
@@ -266,6 +383,26 @@ ul { list-style: disc; margin-left: 1.5rem; margin-bottom: 1rem; }
 
 .work-copy {
   padding: 1rem;
+}
+
+/* Case Study Layout */
+.case-study {
+  margin: 2rem 0;
+}
+
+.case-study img {
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 1rem 0;
+  object-fit: cover;
+}
+
+.case-study-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
 /* Team Layout */
@@ -308,6 +445,15 @@ ul { list-style: disc; margin-left: 1.5rem; margin-bottom: 1rem; }
   margin: 0;
 }
 
+/* Testimonials Layout */
+.testimonial-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 1rem;
+  text-align: center;
+}
+
 /* Contact Layout */
 .contact-grid {
   display: flex;
@@ -325,8 +471,16 @@ ul { list-style: disc; margin-left: 1.5rem; margin-bottom: 1rem; }
   margin-left: 0;
 }
 
+.contact-info iframe {
+  max-width: 100%;
+  height: 300px;
+  border: 0;
+  margin-top: 1rem;
+}
+
 .contact-info .socials {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
   margin-top: 1rem;
 }
@@ -356,6 +510,7 @@ ul { list-style: disc; margin-left: 1.5rem; margin-bottom: 1rem; }
 
 .socials {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
 }
 
@@ -363,14 +518,28 @@ ul { list-style: disc; margin-left: 1.5rem; margin-bottom: 1rem; }
   color: #fff;
   text-decoration: none;
   font-weight: 600;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.3s, color 0.3s;
 }
 
 .social:hover {
-  color: #007bff;
+  color: #ff6f00;
+  transform: scale(1.1);
+}
+
+.social i {
+  font-size: 1.5rem;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+
   .header-inner {
     flex-wrap: wrap;
   }
@@ -395,6 +564,19 @@ ul { list-style: disc; margin-left: 1.5rem; margin-bottom: 1rem; }
     width: 100%;
     justify-content: center;
     margin-top: 1rem;
+  }
+
+  .hero {
+    height: 50vh;
+  }
+
+  .hero-overlay {
+    max-width: 90%;
+    padding: 1.5rem;
+  }
+
+  .hero-overlay h1 {
+    font-size: 2rem;
   }
 
   .service-grid,
@@ -422,11 +604,23 @@ ul { list-style: disc; margin-left: 1.5rem; margin-bottom: 1rem; }
   .contact-grid {
     flex-direction: column;
   }
+
+  .grid.cols-2,
+  .grid.cols-3 {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+
   h1 { font-size: 2rem; }
   h2 { font-size: 1.5rem; }
   h3 { font-size: 1.25rem; }
   .btn { padding: 0.5rem 1rem; }
+  .hero-overlay {
+    padding: 1rem;
+  }
 }
