@@ -6,20 +6,35 @@
   <title>Afreach Creatives — Building Your Digital World with Vision and Precision</title>
 
   <!-- Primary Meta -->
-  <meta name="description" content="Afreach Creatives — Branding, Web & App Development, Publishing, Digital Marketing and Livestreaming." />
+  <meta name="description" content="Afreach Creatives offers branding, web & app development, publishing, digital marketing, and livestreaming services in Nairobi, Kenya." />
+  <meta name="keywords" content="branding, web development, app development, digital marketing, publishing, livestreaming, Nairobi, Kenya" />
+  <meta name="author" content="Afreach Creatives" />
   <link rel="icon" href="images/favicon.png" sizes="any">
   <link rel="manifest" href="manifest.webmanifest">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <!-- Open Graph / Twitter Card -->
+  <meta property="og:title" content="Afreach Creatives — Branding, Web Development, and More" />
+  <meta property="og:description" content="Transform your brand with Afreach Creatives' expert services in branding, web & app development, publishing, and digital marketing." />
+  <meta property="og:image" content="https://afreachcreatives.com/images/logo.png" />
+  <meta property="og:url" content="https://afreachcreatives.com" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Afreach Creatives — Branding, Web Development, and More" />
+  <meta name="twitter:description" content="Transform your brand with Afreach Creatives' expert services in branding, web & app development, publishing, and digital marketing." />
+  <meta name="twitter:image" content="https://afreachcreatives.com/images/logo.png" />
+
+  <!-- Preload Google Fonts for performance -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700&display=swap" as="style" onload="this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet"></noscript>
 
   <!-- AOS -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" as="style" onload="this.rel='stylesheet'">
+  <noscript><link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"></noscript>
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/styles.css">
 
-  <!-- Google Analytics (gtag) -->
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-FYZL907RTJ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -31,37 +46,41 @@
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"Afreach Creatives",
-    "url":"https://afreachcreatives.com",
-    "logo":"https://afreachcreatives.com/images/logo.jpg",
-    "sameAs":[
-      "https://www.linkedin.com/in/afreach-creatives-9802a6372?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-      "https://x.com/AfreachCreative?t=95xNXP91OWjgsZOZ8zrExg&s=09",
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Afreach Creatives",
+    "url": "https://afreachcreatives.com",
+    "logo": "https://afreachcreatives.com/images/logo.png",
+    "sameAs": [
+      "https://www.linkedin.com/in/afreach-creatives-9802a6372",
+      "https://x.com/AfreachCreative",
       "https://www.facebook.com/share/1D4xPeLRkc/",
-      "https://www.instagram.com/afreach_creatives?igsh=MTIyN3MwYnlneGx5ZQ==",
-      "https://www.tiktok.com/@afreach.creatives?_t=ZM-8zipJxHSNaK&_r=1"
+      "https://www.instagram.com/afreach_creatives",
+      "https://www.tiktok.com/@afreach.creatives"
     ],
-    "contactPoint":[
+    "contactPoint": [
       {
-        "@type":"ContactPoint",
-        "telephone":"+254703579059",
-        "contactType":"customer service"
+        "@type": "ContactPoint",
+        "telephone": "+254703579059",
+        "contactType": "customer service",
+        "email": "afreachcreatives@gmail.com",
+        "areaServed": "KE"
       }
     ]
   }
   </script>
-
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="nav-toggle-icon"></span>
+      </button>
       <a class="brand" href="index.html">
-        <img src="images/logo.jpg" alt="Afreach Creatives" class="logo" />
+        <img src="images/logo.png" alt="Afreach Creatives Logo" class="logo" />
       </a>
       <nav class="main-nav">
-        <a href="index.html">Home</a>
+        <a href="index.html" aria-current="page">Home</a>
         <a href="about.html">About</a>
         <a href="services.html">Services</a>
         <a href="portfolio.html">Portfolio</a>
@@ -79,20 +98,19 @@
     <section class="hero">
       <div class="hero-inner container">
         <div class="hero-copy" data-aos="fade-right">
-          <h1 class="hero-title">Building Your Digital World with Vision and Precision.</h1>
-          <p class="hero-sub">Afreach Creatives bridges creativity and technology — from brand identities to PWAs and publishing.</p>
+          <h1 class="hero-title">Building Your Digital World with Vision and Precision</h1>
+          <p class="hero-sub">Afreach Creatives blends creativity and technology to deliver stunning branding, responsive web and app solutions, engaging publishing, and powerful digital marketing from Nairobi, Kenya.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" id="quoteBtnHero">Get A Quote</a>
+            <a class="btn btn-primary" id="quoteBtnHero">Get a Quote</a>
             <a class="btn btn-outline" href="contact.html">Contact Us</a>
             <a class="btn btn-ghost" href="portfolio.html">Our Portfolio</a>
           </div>
         </div>
-
         <div class="hero-images" data-aos="fade-left">
           <div class="hero-slider">
-            <img src="images/hero1.jpg" alt="Hero 1" class="hero-img" />
-            <img src="images/hero2.jpg" alt="Hero 2" class="hero-img" />
-            <img src="images/hero3.jpg" alt="Hero 3" class="hero-img" />
+            <img src="images/hero1.jpg" alt="Afreach Creatives branding project showcase" class="hero-img" loading="lazy" />
+            <img src="images/hero2.jpg" alt="Afreach Creatives web development in action" class="hero-img" loading="lazy" />
+            <img src="images/hero3.jpg" alt="Afreach Creatives digital marketing campaign" class="hero-img" loading="lazy" />
           </div>
         </div>
       </div>
@@ -100,124 +118,141 @@
 
     <!-- Services Snapshot -->
     <section class="services-preview container" data-aos="fade-up">
-      <h2>Services</h2>
+      <h2>Our Services</h2>
       <div class="grid cols-3">
         <article class="card">
-          <img src="images/brandingmain.jpg" alt="">
+          <img src="images/brandingmain.jpg" alt="Creative branding and logo design by Afreach Creatives" loading="lazy" />
           <h3>Creative & Branding</h3>
-          <p>Visual identities that captivate and inspire.</p>
+          <p>Craft visual identities that captivate and inspire your audience.</p>
           <a href="services.html#branding" class="btn btn-outline">Learn More</a>
         </article>
         <article class="card">
-          <img src="images/webdev.jpg" alt="">
+          <img src="images/webdev.jpg" alt="Responsive web and app development by Afreach Creatives" loading="lazy" />
           <h3>Web & App Development</h3>
-          <p>Custom-built digital experiences for growth.</p>
+          <p>Build custom digital experiences designed for growth and engagement.</p>
           <a href="services.html#webdev" class="btn btn-outline">Learn More</a>
         </article>
         <article class="card">
-          <img src="images/digitalmain.jpg" alt="">
+          <img src="images/digitalmain.jpg" alt="Digital marketing and PR campaigns by Afreach Creatives" loading="lazy" />
           <h3>Digital Marketing & PR</h3>
-          <p>Strategies that amplify your brand presence.</p>
+          <p>Amplify your brand with strategies that drive results.</p>
           <a href="services.html#marketing" class="btn btn-outline">Learn More</a>
         </article>
       </div>
     </section>
 
-    <!-- Portfolio preview -->
+    <!-- Portfolio Preview -->
     <section class="portfolio-preview container" data-aos="fade-up">
       <h2>Featured Work</h2>
       <div class="grid cols-3">
         <div class="portfolio-card">
-          <img src="images/brandingmain.jpg" alt="">
+          <img src="images/brandingmain.jpg" alt="Project A brand identity design by Afreach Creatives" loading="lazy" />
           <div class="pcopy">
             <h4>Brand Identity — Project A</h4>
-            <p>Memorable logos & identity kits.</p>
-            <a href="portfolio.html#branding" class="btn btn-ghost">Learn More</a>
+            <p>Memorable logos & identity kits for a bold brand presence.</p>
+            <a href="case-study-alpha.html" class="btn btn-ghost">Learn More</a>
           </div>
         </div>
         <div class="portfolio-card">
-          <img src="images/webdev.jpg" alt="">
+          <img src="images/webdev.jpg" alt="Project B responsive website by Afreach Creatives" loading="lazy" />
           <div class="pcopy">
             <h4>Website — Project B</h4>
-            <p>High-converting responsive sites.</p>
-            <a href="portfolio.html#web" class="btn btn-ghost">Learn More</a>
+            <p>High-converting responsive sites tailored to your needs.</p>
+            <a href="case-study-beta.html" class="btn btn-ghost">Learn More</a>
           </div>
         </div>
         <div class="portfolio-card">
-          <img src="images/bookpublishingmain.jpg" alt="">
+          <img src="images/bookpublishingmain.jpg" alt="Project C book publishing by Afreach Creatives" loading="lazy" />
           <div class="pcopy">
             <h4>Publishing — Project C</h4>
-            <p>Ebook & print-ready publishing.</p>
-            <a href="portfolio.html#publishing" class="btn btn-ghost">Learn More</a>
+            <p>Ebook & print-ready publishing with stunning designs.</p>
+            <a href="case-study-delta.html" class="btn btn-ghost">Learn More</a>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Testimonials -->
+    <section class="testimonials container" data-aos="fade-up">
+      <h2>What Our Clients Say</h2>
+      <div class="grid cols-3">
+        <div class="testimonial-card">
+          <p>"Afreach transformed our brand with a stunning logo and website. Their creativity is unmatched!"</p>
+          <h4>Jane K., Startup Founder</h4>
+        </div>
+        <div class="testimonial-card">
+          <p>"The team delivered a responsive PWA that boosted our engagement. Highly professional!"</p>
+          <h4>Michael O., E-commerce Owner</h4>
+        </div>
+        <div class="testimonial-card">
+          <p>"Their digital marketing strategies doubled our online reach. Truly exceptional!"</p>
+          <h4>Sarah M., Marketing Director</h4>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-left">
-        <img src="images/logo.jpg" alt="Afreach Creatives" class="logo-sm" />
-        <p>© <span id="year"></span> Afreach Creatives — All rights reserved.</p>
-      </div>
-
-      <div class="footer-right">
-        <nav class="socials">
-          <a class="social" href="https://www.linkedin.com/in/afreach-creatives-9802a6372?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a>
-          <a class="social" href="https://x.com/AfreachCreative?t=95xNXP91OWjgsZOZ8zrExg&s=09" target="_blank">X</a>
-          <a class="social" href="https://www.facebook.com/share/1D4xPeLRkc/" target="_blank">Facebook</a>
-          <a class="social" href="https://www.instagram.com/afreach_creatives?igsh=MTIyN3MwYnlneGx5ZQ==" target="_blank">Instagram</a>
-          <a class="social" href="https://www.tiktok.com/@afreach.creatives?_t=ZM-8zipJxHSNaK&_r=1" target="_blank">TikTok</a>
-        </nav>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Get Quote Modal (inlined) -->
+  <!-- Get Quote Modal -->
   <div id="quoteModal" class="modal" aria-hidden="true">
-    <div class="modal-dialog" role="dialog" aria-modal="true">
-      <button class="modal-close" id="closeModal">&times;</button>
+    <div class="modal-dialog" role="dialog" aria-modal="true" tabindex="-1">
+      <button class="modal-close" id="closeModal" aria-label="Close modal">&times;</button>
       <h3>Get a Quote</h3>
       <form id="quoteForm" class="form" method="POST" action="https://formspree.io/f/mjkedvkg">
         <label>
           <span>Name</span>
-          <input type="text" name="name" required>
+          <input type="text" name="name" required aria-required="true">
         </label>
         <label>
           <span>Email</span>
-          <input type="email" name="_replyto" required>
+          <input type="email" name="_replyto" required aria-required="true">
         </label>
         <label>
           <span>Phone</span>
-          <input type="tel" name="phone" required>
+          <input type="tel" name="phone" required aria-required="true">
         </label>
         <label>
           <span>Service</span>
-          <select name="service" required>
-            <option>Creative & Branding</option>
-            <option>Web & App Development</option>
-            <option>Website & App Maintenance</option>
-            <option>Digital Marketing & PR</option>
-            <option>Publishing & Content</option>
-            <option>Livestreaming</option>
+          <select name="service" required aria-required="true">
+            <option value="Creative & Branding">Creative & Branding</option>
+            <option value="Web & App Development">Web & App Development</option>
+            <option value="Website & App Maintenance">Website & App Maintenance</option>
+            <option value="Digital Marketing & PR">Digital Marketing & PR</option>
+            <option value="Publishing & Content">Publishing & Content</option>
+            <option value="Livestreaming">Livestreaming</option>
           </select>
         </label>
         <label>
           <span>Message</span>
-          <textarea name="message" rows="4"></textarea>
+          <textarea name="message" rows="4" aria-describedby="message-hint"></textarea>
+          <small id="message-hint" class="form-hint">Tell us about your project needs.</small>
         </label>
-
-        <!-- reCAPTCHA placeholder (replace SITE KEY in README) -->
-        <div class="g-recaptcha" data-sitekey="RECAPTCHA_SITE_KEY_HERE"></div>
-
+        <div class="g-recaptcha" data-sitekey="6LeVJdUrAAAAACi5qX3SLzr2ZjgG2_apbvxyz-d8"></div>
         <input type="hidden" name="_subject" value="Afreach: New Quote Request">
         <input type="hidden" name="_next" value="thankyou.html">
         <button class="btn btn-primary" type="submit">Send</button>
+        <p class="form-error" id="quoteFormError" hidden>Please complete all required fields and reCAPTCHA.</p>
       </form>
     </div>
   </div>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <img src="images/logo.png" alt="Afreach Creatives Logo" class="logo-sm" loading="lazy" />
+        <p>© <span class="year">2025</span> Afreach Creatives — All rights reserved.</p>
+      </div>
+      <div class="footer-right">
+        <nav class="socials">
+          <a class="social" href="https://www.linkedin.com/in/afreach-creatives-9802a6372" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="social" href="https://x.com/AfreachCreative" target="_blank" rel="noopener">X</a>
+          <a class="social" href="https://www.facebook.com/share/1D4xPeLRkc/" target="_blank" rel="noopener">Facebook</a>
+          <a class="social" href="https://www.instagram.com/afreach_creatives" target="_blank" rel="noopener">Instagram</a>
+          <a class="social" href="https://www.tiktok.com/@afreach.creatives" target="_blank" rel="noopener">TikTok</a>
+        </nav>
+        <a href="privacy.html" class="btn btn-ghost">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
@@ -225,13 +260,9 @@
   <script src="js/main.js"></script>
   <script>
     AOS.init({ duration: 700, once: true });
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-
-  <!-- Register service worker -->
-  <script>
+    document.querySelectorAll('.year').forEach(el => el.textContent = new Date().getFullYear());
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js').catch(function(err){ console.warn('SW failed:', err); });
+      navigator.serviceWorker.register('/sw.js').catch(err => console.warn('SW failed:', err));
     }
   </script>
 </body>
