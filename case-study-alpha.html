@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Case Study: Project Alpha — Afreach Creatives</title>
+
+  <!-- Primary Meta -->
+  <meta name="description" content="Discover how Afreach Creatives crafted a vibrant brand identity for Project Alpha in Nairobi, Kenya." />
+  <meta name="keywords" content="case study, branding, Afreach Creatives, Nairobi, Kenya" />
+  <meta name="author" content="Afreach Creatives" />
+  <link rel="icon" href="images/favicon.png" sizes="any">
+  <link rel="manifest" href="manifest.webmanifest">
+
+  <!-- Open Graph / Twitter Card -->
+  <meta property="og:title" content="Case Study: Project Alpha — Afreach Creatives" />
+  <meta property="og:description" content="See how Afreach Creatives developed a bold brand identity for Project Alpha." />
+  <meta property="og:image" content="https://afreachcreatives.com/images/brandingmain.jpg" />
+  <meta property="og:url" content="https://afreachcreatives.com/case-study-alpha.html" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Case Study: Project Alpha — Afreach Creatives" />
+  <meta name="twitter:description" content="See how Afreach Creatives developed a bold brand identity for Project Alpha." />
+  <meta name="twitter:image" content="https://afreachcreatives.com/images/brandingmain.jpg" />
+
+  <!-- Preload Google Fonts -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700&display=swap" as="style" onload="this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet"></noscript>
+
+  <!-- AOS -->
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" as="style" onload="this.rel='stylesheet'">
+  <noscript><link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"></noscript>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FYZL907RTJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FYZL907RTJ');
+  </script>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "Project Alpha Branding",
+    "url": "https://afreachcreatives.com/case-study-alpha.html",
+    "creator": {
+      "@type": "Organization",
+      "name": "Afreach Creatives",
+      "url": "https://afreachcreatives.com",
+      "logo": "https://afreachcreatives.com/images/logo.png"
+    },
+    "description": "Afreach Creatives designed a vibrant brand identity for Project Alpha, including logo, color palette, and social media graphics."
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="nav-toggle-icon"></span>
+      </button>
+      <a class="brand" href="index.html">
+        <img src="images/logo.png" alt="Afreach Creatives Logo" class="logo" />
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="header-ctas">
+        <a class="btn btn-ghost" href="tel:+254703579059">Call Us</a>
+        <a class="btn btn-primary" id="quoteBtnTopAlpha">Get a Quote</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="case-study" data-aos="fade-up">
+      <h1>Project Alpha: Branding</h1>
+      <p>Afreach Creatives crafted a vibrant brand identity for a Nairobi-based startup, creating a memorable logo, cohesive color palette, and engaging social media graphics.</p>
+      <img src="images/brandingmain.jpg" alt="Project Alpha brand identity design by Afreach Creatives" loading="lazy" data-aos="fade-up" />
+      <h2>Project Overview</h2>
+      <p>The client needed a bold, modern brand to stand out in a competitive market. We delivered a full identity kit, including logo design, typography, and visual guidelines.</p>
+      <h2>Results</h2>
+      <ul>
+        <li>Increased brand recognition by 40% within three months.</li>
+        <li>Unified visual presence across social media platforms.</li>
+        <li>Client reported higher customer engagement with new branding.</li>
+      </ul>
+      <div class="case-study-actions">
+        <a class="btn btn-primary" href="services.html#branding">Explore Branding Services</a>
+        <a class="btn btn-outline" href="portfolio.html">Back to Portfolio</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Get Quote Modal -->
+  <div id="quoteModal" class="modal" aria-hidden="true">
+    <div class="modal-dialog" role="dialog" aria-modal="true" tabindex="-1">
+      <button class="modal-close" id="closeModal" aria-label="Close modal">&times;</button>
+      <h3>Get a Quote</h3>
+      <form id="quoteForm" class="form" method="POST" action="https://formspree.io/f/mjkedvkg">
+        <label>
+          <span>Name</span>
+          <input type="text" name="name" required aria-required="true">
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="_replyto" required aria-required="true">
+        </label>
+        <label>
+          <span>Phone</span>
+          <input type="tel" name="phone" required aria-required="true">
+        </label>
+        <label>
+          <span>Service</span>
+          <select name="service" required aria-required="true">
+            <option value="Creative & Branding" selected>Creative & Branding</option>
+            <option value="Web & App Development">Web & App Development</option>
+            <option value="Website & App Maintenance">Website & App Maintenance</option>
+            <option value="Digital Marketing & PR">Digital Marketing & PR</option>
+            <option value="Publishing & Content">Publishing & Content</option>
+            <option value="Livestreaming">Livestreaming</option>
+          </select>
+        </label>
+        <label>
+          <span>Message</span>
+          <textarea name="message" rows="4" aria-describedby="message-hint"></textarea>
+          <small id="message-hint" class="form-hint">Tell us about your project needs.</small>
+        </label>
+        <div class="g-recaptcha" data-sitekey="6LeVJdUrAAAAACi5qX3SLzr2ZjgG2_apbvxyz-d8"></div>
+        <input type="hidden" name="_subject" value="Afreach: New Quote Request">
+        <input type="hidden" name="_next" value="thankyou.html">
+        <button class="btn btn-primary" type="submit">Send</button>
+        <p class="form-error" id="quoteFormError" hidden>Please complete all required fields and reCAPTCHA.</p>
+      </form>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <p>© <span class="year">2025</span> Afreach Creatives — All rights reserved.</p>
+      </div>
+      <div class="footer-right">
+        <nav class="socials">
+          <a class="social" href="https://www.linkedin.com/in/afreach-creatives-9802a6372" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="social" href="https://x.com/AfreachCreative" target="_blank" rel="noopener">X</a>
+          <a class="social" href="https://www.facebook.com/share/1D4xPeLRkc/" target="_blank" rel="noopener">Facebook</a>
+          <a class="social" href="https://www.instagram.com/afreach_creatives" target="_blank" rel="noopener">Instagram</a>
+          <a class="social" href="https://www.tiktok.com/@afreach.creatives" target="_blank" rel="noopener">TikTok</a>
+        </nav>
+        <a href="privacy.html" class="btn btn-ghost">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="js/main.js"></script>
+  <script>
+    AOS.init({ duration: 700, once: true });
+    document.querySelectorAll('.year').forEach(el => el.textContent = new Date().getFullYear());
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').catch(err => console.warn('SW failed:', err));
+    }
+  </script>
+</body>
+</html>
