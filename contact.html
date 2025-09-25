@@ -1,125 +1,78 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact Afreach Creatives for branding, web development, digital marketing, and more.">
-    <meta name="keywords" content="branding, web development, live streaming, digital marketing, publishing, Nairobi, creative agency">
-    <title>Contact — Afreach Creatives</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="images/logo.png" type="image/png">
-    <link rel="apple-touch-icon" href="images/logo.png">
-    <link rel="manifest" href="site.webmanifest">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FYZL907RTJ"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-FYZL907RTJ');
-    </script>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Contact — Afreach Creatives</title>
+  <link rel="icon" href="images/favicon.png">
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="preloader">
-        <img src="images/logo.png" alt="Loading...">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><img src="images/logo.jpg" alt="Afreach Creatives" class="logo" /></a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </nav>
+      <div class="header-ctas">
+        <a class="btn btn-ghost" href="tel:+254703579059">Call Us</a>
+        <a class="btn btn-primary" id="quoteBtnTop5">Get a Quote</a>
+      </div>
     </div>
+  </header>
 
-    <button class="sticky-cta btn-primary" onclick="openModal('quoteModal')">Get a Quote</button>
-
-    <nav class="navbar">
-        <div class="container">
-            <a href="index.html" class="navbar-brand">
-                <img src="images/logo.png" alt="Afreach Creatives Logo">
-            </a>
-            <button class="navbar-toggle" onclick="toggleNav()">☰</button>
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
-            </ul>
+  <main class="container">
+    <h1>Contact Us</h1>
+    <div class="contact-grid">
+      <div>
+        <h3>Reach out</h3>
+        <p>Phone / WhatsApp: <a href="tel:+254703579059">+254 703 579 059</a></p>
+        <p>Email: <a href="mailto:afreachcreatives@gmail.com">afreachcreatives@gmail.com</a></p>
+        <p>Address: Nairobi, Kenya (By appointment)</p>
+        <div class="social-inline">
+          <a href="https://www.linkedin.com/in/afreach-creatives-9802a6372?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a> |
+          <a href="https://x.com/AfreachCreative?t=95xNXP91OWjgsZOZ8zrExg&s=09" target="_blank">X</a> |
+          <a href="https://www.facebook.com/share/1D4xPeLRkc/" target="_blank">Facebook</a>
         </div>
-    </nav>
+      </div>
 
-    <section class="hero">
-        <div class="hero-overlay">
-            <div class="container">
-                <h1>Contact Us</h1>
-                <p>Let's bring your vision to life. Reach out for a free consultation.</p>
-                <div class="hero-ctas">
-                    <a href="#" class="btn btn-primary" onclick="openModal('quoteModal')">Get a Quote</a>
-                    <a href="tel:+254703579059" class="btn btn-secondary">Call Us</a>
-                </div>
-            </div>
-        </div>
-        <img src="images/hero1.jpg" alt="Contact Background" class="hero-background">
-    </section>
+      <div>
+        <form class="form" id="contactForm" method="POST" action="https://formspree.io/f/mjkedvkg">
+          <label><span>Name</span><input type="text" name="name" required></label>
+          <label><span>Email</span><input type="email" name="_replyto" required></label>
+          <label><span>Phone</span><input type="tel" name="phone"></label>
+          <label><span>Message</span><textarea name="message" rows="5" required></textarea></label>
 
-    <section class="contact">
-        <div class="container">
-            <h2>Get in Touch</h2>
-            <form id="contactForm" action="https://formspree.io/f/mjkedvkg" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <select name="service" required>
-                    <option value="" disabled selected>Select a Service</option>
-                    <option value="Creative & Branding">Creative & Branding</option>
-                    <option value="Web & App Development">Web & App Development</option>
-                    <option value="Maintenance">Maintenance</option>
-                    <option value="Digital Marketing">Digital Marketing</option>
-                    <option value="Publishing">Publishing</option>
-                    <option value="Live Streaming">Live Streaming</option>
-                </select>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <input type="text" name="budget" placeholder="Budget (e.g., $5000)">
-                <input type="text" name="timeline" placeholder="Timeline (e.g., 1 month)">
-                <button type="submit" class="btn btn-primary">Send Message</button>
-            </form>
-        </div>
-    </section>
+          <!-- reCAPTCHA placeholder -->
+          <div class="g-recaptcha" data-sitekey="RECAPTCHA_SITE_KEY_HERE"></div>
 
-    <div id="quoteModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('quoteModal')">&times;</span>
-            <h2>Get a Quote</h2>
-            <form id="quoteForm" action="https://formspree.io/f/mjkedvkg" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <select name="service" required>
-                    <option value="" disabled selected>Select a Service</option>
-                    <option value="Creative & Branding">Creative & Branding</option>
-                    <option value="Web & App Development">Web & App Development</option>
-                    <option value="Maintenance">Maintenance</option>
-                    <option value="Digital Marketing">Digital Marketing</option>
-                    <option value="Publishing">Publishing</option>
-                    <option value="Live Streaming">Live Streaming</option>
-                </select>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <input type="text" name="budget" placeholder="Budget (e.g., $5000)">
-                <input type="text" name="timeline" placeholder="Timeline (e.g., 1 month)">
-                <button type="submit" class="btn btn-primary">Send Quote</button>
-            </form>
-        </div>
+          <button class="btn btn-primary" type="submit">Send Message</button>
+        </form>
+      </div>
     </div>
+  </main>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-brand">
-                <h3>Afreach Creatives</h3>
-            </div>
-            <p>&copy; 2025 Afreach Creatives. All rights reserved.</p>
-        </div>
-    </footer>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <img src="images/logo.jpg" alt="Afreach Creatives" class="logo-sm" />
+        <p>© <span id="year5"></span> Afreach Creatives</p>
+      </div>
+      <div class="footer-right">
+        <a class="btn btn-ghost" href="index.html">Home</a>
+      </div>
+    </div>
+  </footer>
 
-    <script src="main.js"></script>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Afreach Creatives",
-        "url": "https://afreachcreatives.com",
-        "logo": "https://afreachcreatives.com/images/logo.png"
-    }
-    </script>
+  <script>
+    document.getElementById('year5').textContent = new Date().getFullYear();
+  </script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
