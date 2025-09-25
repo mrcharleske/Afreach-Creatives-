@@ -1,0 +1,432 @@
+/* Afreach Creatives Stylesheet */
+/* Version: 2025-09-25 */
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+/* Typography */
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+h2 { font-size: 2rem; margin-bottom: 1rem; }
+h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+p { margin-bottom: 1rem; }
+ul { list-style: disc; margin-left: 1.5rem; margin-bottom: 1rem; }
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Header */
+.site-header {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.logo {
+  height: 25px;
+  width: auto;
+}
+
+.main-nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.main-nav a:hover,
+.main-nav a[aria-current="page"] {
+  color: #007bff;
+}
+
+.header-ctas {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  border: 2px solid #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.btn-ghost {
+  background: none;
+  color: #007bff;
+  border: 2px solid #007bff;
+}
+
+.btn-ghost:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-outline {
+  background: none;
+  color: #333;
+  border: 2px solid #333;
+}
+
+.btn-outline:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 2000;
+}
+
+.modal-dialog {
+  background: #fff;
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 8px;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.form label {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.form span {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.form input,
+.form select,
+.form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.form textarea {
+  resize: vertical;
+}
+
+.form-hint {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.form-error {
+  color: #d32f2f;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.g-recaptcha {
+  margin-bottom: 1rem;
+}
+
+/* Services Layout */
+.service-block {
+  margin: 2rem 0;
+}
+
+.service-grid,
+.service-grid.reverse {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.service-grid img {
+  max-width: 50%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.service-grid.reverse {
+  flex-direction: row-reverse;
+}
+
+.service-copy {
+  flex: 1;
+}
+
+.service-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.slogan {
+  font-style: italic;
+  color: #007bff;
+  margin-bottom: 1rem;
+}
+
+/* Portfolio Layout */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.work-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.work-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.work-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.work-copy {
+  padding: 1rem;
+}
+
+/* Team Layout */
+.team .grid.cols-3 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.team-card {
+  flex: 1 1 280px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.team-card:nth-child(odd) {
+  flex-direction: row;
+}
+
+.team-card:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.team-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.team-card h3,
+.team-card p {
+  margin: 0;
+}
+
+/* Contact Layout */
+.contact-grid {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.contact-info,
+.contact-form {
+  flex: 1;
+}
+
+.contact-info ul {
+  list-style: none;
+  margin-left: 0;
+}
+
+.contact-info .socials {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Footer */
+.site-footer {
+  background-color: #333;
+  color: #fff;
+  padding: 2rem 0;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-left p {
+  margin: 0;
+}
+
+.footer-right {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.socials {
+  display: flex;
+  gap: 1rem;
+}
+
+.social {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.social:hover {
+  color: #007bff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-inner {
+    flex-wrap: wrap;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .main-nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  .main-nav.active {
+    display: flex;
+  }
+
+  .header-ctas {
+    width: 100%;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .service-grid,
+  .service-grid.reverse {
+    flex-direction: column;
+  }
+
+  .service-grid img,
+  .service-grid.reverse img {
+    max-width: 100%;
+  }
+
+  .team-card,
+  .team-card:nth-child(odd),
+  .team-card:nth-child(even) {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .team-card img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .contact-grid {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
+  .btn { padding: 0.5rem 1rem; }
+}
