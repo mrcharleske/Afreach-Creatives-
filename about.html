@@ -1,132 +1,77 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn about Afreach Creatives, a hybrid studio blending creativity and technology for impactful branding and digital solutions.">
-    <meta name="keywords" content="branding, web development, live streaming, digital marketing, publishing, Nairobi, creative agency">
-    <title>About — Afreach Creatives</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="images/logo.png" type="image/png">
-    <link rel="apple-touch-icon" href="images/logo.png">
-    <link rel="manifest" href="site.webmanifest">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FYZL907RTJ"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-FYZL907RTJ');
-    </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — Afreach Creatives</title>
+  <link rel="icon" href="images/favicon.png">
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="preloader">
-        <img src="images/logo.png" alt="Loading...">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><img src="images/logo.jpg" alt="Afreach Creatives" class="logo" /></a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html" aria-current="page">About</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="header-ctas">
+        <a class="btn btn-ghost" href="tel:+254703579059">Call Us</a>
+        <a class="btn btn-primary" id="quoteBtnTop2">Get a Quote</a>
+      </div>
     </div>
+  </header>
 
-    <button class="sticky-cta btn-primary" onclick="openModal('quoteModal')">Get a Quote</button>
-
-    <nav class="navbar">
-        <div class="container">
-            <a href="index.html" class="navbar-brand">
-                <img src="images/logo.png" alt="Afreach Creatives Logo">
-            </a>
-            <button class="navbar-toggle" onclick="toggleNav()">☰</button>
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html" class="active">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <section class="hero">
-        <div class="hero-overlay">
-            <div class="container">
-                <h1>About Afreach Creatives</h1>
-                <p>We are a hybrid studio blending creativity and technology to help brands stand out, grow, and connect with people.</p>
-                <div class="hero-ctas">
-                    <a href="contact.html" class="btn btn-primary">Get Started</a>
-                    <a href="portfolio.html" class="btn btn-secondary">See Portfolio</a>
-                </div>
-            </div>
-        </div>
-        <img src="images/hero1.jpg" alt="About Background" class="hero-background">
+  <main class="container">
+    <section class="about-story" data-aos="fade-up">
+      <h1>Our Story</h1>
+      <p>Afreach Creatives was founded with one goal—to bridge creativity and technology. From branding and digital marketing to website development and publishing, our team is committed to delivering solutions that not only look stunning but also create measurable impact.</p>
     </section>
 
-    <section class="about-story">
-        <div class="container">
-            <h2>Our Story</h2>
-            <p>Afreach Creatives was founded with one goal—to bridge creativity and technology. From branding and digital marketing to website development and publishing, our team is committed to delivering solutions that not only look stunning but also create measurable impact.</p>
+    <section class="team" data-aos="fade-up">
+      <h2>Meet Our Team</h2>
+      <div class="grid cols-3">
+        <div class="team-card">
+          <img src="images/ceo.jpg" alt="Charles Njoroge">
+          <h3>Charles Njoroge</h3>
+          <p>CEO — Visionary leader focused on strategy and product-market impact.</p>
         </div>
+        <div class="team-card">
+          <img src="images/joseph.jpg" alt="Joseph M">
+          <h3>Joseph M</h3>
+          <p>Lead Designer — Crafts high-impact visual systems and brand identity kits.</p>
+        </div>
+        <div class="team-card">
+          <img src="images/beatrice.jpg" alt="Beatrice W">
+          <h3>Beatrice W</h3>
+          <p>Lead Writer — Ghostwriting, editing, and content strategy specialist.</p>
+        </div>
+      </div>
     </section>
+  </main>
 
-    <section class="team">
-        <div class="container">
-            <h2>Meet Our Team</h2>
-            <div class="team-grid">
-                <div class="team-member">
-                    <img src="images/ceo.jpg" alt="Charles N. — CEO & Founder" loading="lazy">
-                    <h3>Charles N. — CEO & Founder</h3>
-                    <p>Visionary leader and founder of Afreach Creatives, Charles drives the company's mission to deliver creative and digital solutions with impact.</p>
-                </div>
-                <div class="team-member">
-                    <img src="images/joseph.jpg" alt="Joseph — Creative Designer" loading="lazy">
-                    <h3>Joseph — Creative Designer</h3>
-                    <p>Passionate about design and innovation, Joseph crafts engaging visuals and creative assets that bring brands to life.</p>
-                </div>
-                <div class="team-member">
-                    <img src="images/beatrice.jpg" alt="Beatrice — PR & Social Media Manager" loading="lazy">
-                    <h3>Beatrice — PR & Social Media Manager</h3>
-                    <p>Specialist in public relations and digital engagement, Beatrice ensures brands connect with their audiences effectively.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div id="quoteModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('quoteModal')">&times;</span>
-            <h2>Get a Quote</h2>
-            <form id="quoteForm" action="https://formspree.io/f/mjkedvkg" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <select name="service" required>
-                    <option value="" disabled selected>Select a Service</option>
-                    <option value="Creative & Branding">Creative & Branding</option>
-                    <option value="Web & App Development">Web & App Development</option>
-                    <option value="Maintenance">Maintenance</option>
-                    <option value="Digital Marketing">Digital Marketing</option>
-                    <option value="Publishing">Publishing</option>
-                    <option value="Live Streaming">Live Streaming</option>
-                </select>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <input type="text" name="budget" placeholder="Budget (e.g., $5000)">
-                <input type="text" name="timeline" placeholder="Timeline (e.g., 1 month)">
-                <button type="submit" class="btn btn-primary">Send Quote</button>
-            </form>
-        </div>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <img src="images/logo.jpg" alt="Afreach Creatives" class="logo-sm" />
+        <p>© <span id="year2"></span> Afreach Creatives</p>
+      </div>
+      <div class="footer-right">
+        <a href="contact.html" class="btn btn-primary">Contact Us</a>
+      </div>
     </div>
+  </footer>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-brand">
-                <h3>Afreach Creatives</h3>
-            </div>
-            <p>&copy; 2025 Afreach Creatives. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script src="main.js"></script>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Afreach Creatives",
-        "url": "https://afreachcreatives.com",
-        "logo": "https://afreachcreatives.com/images/logo.png"
-    }
-    </script>
+  <script>
+    document.getElementById('year2').textContent = new Date().getFullYear();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 700, once: true });
+  </script>
 </body>
 </html>
