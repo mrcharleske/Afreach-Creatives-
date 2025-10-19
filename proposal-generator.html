@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afreach Creatives - Business Proposal Generator</title>
+    <meta name="description" content="Professional business proposal generator for Afreach Creatives. Create stunning proposals for web development, app development, and digital marketing services.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        * {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #1a1a1a 0%, #1e40af 50%, #f59e0b 100%);
+        }
+        
+        .gold-gradient {
+            background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .proposal-section {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+        
+        .service-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.15);
+        }
+        
+        .service-card.selected {
+            border-color: #f59e0b;
+            background: linear-gradient(135deg, #fef3c7 0%, #fbbf24 5%, #ffffff 5%);
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background: #f59e0b;
+            border-radius: 50%;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 1.2rem;
+            width: 2px;
+            height: calc(100% - 0.5rem);
+            background: #e5e7eb;
+        }
+        
+        .timeline-item:last-child::after {
+            display: none;
+        }
+        
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            
+            body {
+                background: white !important;
+            }
+            
+            .proposal-section {
+                box-shadow: none;
+                border: 1px solid #e5e7eb;
+            }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="gradient-bg text-white py-8 no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                    Business Proposal <span class="text-yellow-300">Generator</span>
+                </h1>
+                <p class="text-xl text-gray-200 max-w-3xl mx-auto">
+                    Create professional proposals that win clients and grow your business
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Proposal Form -->
+        <div class="no-print mb-8">
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <h2 class="text-2xl font-bold mb-6 text-gray-800">
+                    <i class="fas fa-edit text-yellow-500 mr-2"></i>
+                    Proposal Details
+                </h2>
+                
+                <form id="proposal-form" class="space-y-6">
+                    <!-- Client Information -->
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="client-name" class="block text-sm font-medium text-gray-700 mb-2">Client Name</label>
+                            <input type="text" id="client-name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent" placeholder="Enter client name">
+                        </div>
+                        <div>
+                            <label for="client-company" class="block text-sm font-medium text-gray-700 mb-2">Company Name</label>
+                            <input type="text" id="client-company" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent" placeholder="Enter company name">
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="project-title" class="block text-sm font-medium text-gray-700 mb-2">Project Title</label>
+                            <input type="text" id="project-title" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent" placeholder="Enter project title">
+                        </div>
+                        <div>
+                            <label for="project-budget" class="block text-sm font-medium text-gray-700 mb-2">Budget Range (KES)</label>
+                            <select id="project-budget" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent">
+                                <option value="">Select budget range</option>
+                                <option value="50,000 - 100,000">KES 50,000 - 100,000</option>
+                                <option value="100,000 - 250,000">KES 100,000 - 250,000</option>
+                                <option value="250,000 - 500,000">KES 250,000 - 500,000</option>
+                                <option value="500,000 - 1,000,000">KES 500,000 - 1,000,000</option>
+                                <option value="1,000,000+">KES 1,000,000+</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- Services Selection -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-4">Select Services</label>
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <div class="service-card border-2 border-gray-200 rounded-lg p-4" data-service="web-development">
+                                <div class="text-center">
+                                    <i class="fas fa-code text-3xl text-blue-600 mb-2"></i>
+                                    <h4 class="font-semibold">Web Development</h4>
+                                    <p class="text-sm text-gray-600 mt-1">Custom websites & platforms</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card border-2 border-gray-200 rounded-lg p-4" data-service="app-development">
+                                <div class="text-center">
+                                    <i class="fas fa-mobile-alt text-3xl text-green-600 mb-2"></i>
+                                    <h4 class="font-semibold">App Development</h4>
+                                    <p class="text-sm text-gray-600 mt-1">Mobile & web applications</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card border-2 border-gray-200 rounded-lg p-4" data-service="social-media">
+                                <div class="text-center">
+                                    <i class="fas fa-share-alt text-3xl text-purple-600 mb-2"></i>
+                                    <h4 class="font-semibold">Social Media</h4>
+                                    <p class="text-sm text-gray-600 mt-1">Management & strategy</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card border-2 border-gray-200 rounded-lg p-4" data-service="graphic-design">
+                                <div class="text-center">
+                                    <i class="fas fa-palette text-3xl text-pink-600 mb-2"></i>
+                                    <h4 class="font-semibold">Graphic Design</h4>
+                                    <p class="text-sm text-gray-600 mt-1">Visual identity & branding</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card border-2 border-gray-200 rounded-lg p-4" data-service="brand-identity">
+                                <div class="text-center">
+                                    <i class="fas fa-rocket text-3xl text-orange-600 mb-2"></i>
+                                    <h4 class="font-semibold">Brand Identity</h4>
+                                    <p class="text-sm text-gray-600 mt-1">Complete brand packages</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card border-2 border-gray-200 rounded-lg p-4" data-service="digital-marketing">
+                                <div class="text-center">
+                                    <i class="fas fa-bullhorn text-3xl text-red-600 mb-2"></i>
+                                    <h4 class="font-semibold">Digital Marketing</h4>
+                                    <p class="text-sm text-gray-600 mt-1">SEO, PPC & campaigns</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project Description -->
+                    <div>
+                        <label for="project-description" class="block text-sm font-medium text-gray-700 mb-2">Project Description</label>
+                        <textarea id="project-description" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent" placeholder="Describe the project requirements and objectives..."></textarea>
+                    </div>
+                    
+                    <!-- Timeline -->
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="project-timeline" class="block text-sm font-medium text-gray-700 mb-2">Project Timeline</label>
+                            <select id="project-timeline" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent">
+                                <option value="">Select timeline</option>
+                                <option value="2-4 weeks">2-4 weeks</option>
+                                <option value="1-2 months">1-2 months</option>
+                                <option value="2-3 months">2-3 months</option>
+                                <option value="3-6 months">3-6 months</option>
+                                <option value="6+ months">6+ months</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="start-date" class="block text-sm font-medium text-gray-700 mb-2">Preferred Start Date</label>
+                            <input type="date" id="start-date" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent">
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-4">
+                        <button type="button" onclick="generateProposal()" class="gold-gradient text-gray-900 px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all">
+                            <i class="fas fa-magic mr-2"></i>Generate Proposal
+                        </button>
+                        <button type="button" onclick="clearForm()" class="border-2 border-gray-300 text-gray-700 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-all">
+                            <i class="fas fa-refresh mr-2"></i>Clear Form
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Generated Proposal -->
+        <div id="proposal-output" class="hidden animate-fade-in">
+            <!-- Proposal Header -->
+            <div class="proposal-section">
+                <div class="gradient-bg text-white p-8">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-rocket text-gray-900 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h1 class="text-2xl font-bold">Afreach Creatives</h1>
+                                    <p class="text-yellow-200">Kenya's Premier Brand Identity Experts</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-yellow-200">Proposal Date</p>
+                            <p class="text-xl font-semibold" id="proposal-date"></p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h2 class="text-3xl font-bold mb-2" id="proposal-title">Business Proposal</h2>
+                        <p class="text-xl text-yellow-200" id="proposal-subtitle">Transforming your digital presence</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Client Information -->
+            <div class="proposal-section">
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">
+                        <i class="fas fa-user text-yellow-500 mr-2"></i>
+                        Client Information
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-semibold text-gray-700 mb-2">Client Details</h4>
+                            <div class="space-y-2">
+                                <p><span class="font-medium">Name:</span> <span id="display-client-name">-</span></p>
+                                <p><span class="font-medium">Company:</span> <span id="display-client-company">-</span></p>
+                                <p><span class="font-medium">Project:</span> <span id="display-project-title">-</span></p>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-700 mb-2">Project Overview</h4>
+                            <div class="space-y-2">
+                                <p><span class="font-medium">Budget:</span> <span id="display-budget">-</span></p>
+                                <p><span class="font-medium">Timeline:</span> <span id="display-timeline">-</span></p>
+                                <p><span class="font-medium">Start Date:</span> <span id="display-start-date">-</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Description -->
+            <div class="proposal-section">
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">
+                        <i class="fas fa-clipboard-list text-yellow-500 mr-2"></i>
+                        Project Description
+                    </h3>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <p id="display-description" class="text-gray-700 leading-relaxed">Project description will appear here...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Services Offered -->
+            <div class="proposal-section">
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">
+                        <i class="fas fa-cogs text-yellow-500 mr-2"></i>
+                        Services Included
+                    </h3>
+                    <div id="services-list" class="space-y-4">
+                        <!-- Services will be populated here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Timeline -->
+            <div class="proposal-section">
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">
+                        <i class="fas fa-calendar-alt text-yellow-500 mr-2"></i>
+                        Project Timeline & Milestones
+                    </h3>
+                    <div id="timeline-content" class="space-y-6">
+                        <!-- Timeline will be populated here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Investment & Payment -->
+            <div class="proposal-section">
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">
+                        <i class="fas fa-money-bill-wave text-yellow-500 mr-2"></i>
+                        Investment & Payment Terms
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-semibold text-gray-700 mb-4">Payment Structure</h4>
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center p-3 bg-gray-50 rounded">
+                                    <span>Initial Deposit (50%)</span>
+                                    <span class="font-semibold" id="deposit-amount">-</span>
+                                </div>
+                                <div class="flex justify-between items-center p-3 bg-gray-50 rounded">
+                                    <span>Final Payment (50%)</span>
+                                    <span class="font-semibold" id="final-amount">-</span>
+                                </div>
+                                <div class="flex justify-between items-center p-3 bg-yellow-50 rounded border-2 border-yellow-200">
+                                    <span class="font-semibold">Total Investment</span>
+                                    <span class="font-bold text-xl" id="total-amount">-</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-700 mb-4">What's Included</h4>
+                            <ul class="space-y-2 text-gray-600">
+                                <li><i class="fas fa-check text-green-500 mr-2"></i>Complete project development</li>
+                                <li><i class="fas fa-check text-green-500 mr-2"></i>Quality assurance & testing</li>
+                                <li><i class="fas fa-check text-green-500 mr-2"></i>3 months free support</li>
+                                <li><i class="fas fa-check text-green-500 mr-2"></i>Training & documentation</li>
+                                <li><i class="fas fa-check text-green-500 mr-2"></i>SEO optimization</li>
+                                <li><i class="fas fa-check text-green-500 mr-2"></i>Mobile responsiveness</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Why Choose Us -->
+            <div class="proposal-section">
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">
+                        <i class="fas fa-star text-yellow-500 mr-2"></i>
+                        Why Choose Afreach Creatives?
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-yellow-100 rounded-full p-2 mr-4 mt-1">
+                                    <i class="fas fa-trophy text-yellow-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Proven Track Record</h4>
+                                    <p class="text-gray-600">50+ successful projects across Kenya and beyond</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-yellow-100 rounded-full p-2 mr-4 mt-1">
+                                    <i class="fas fa-users text-yellow-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Expert Team</h4>
+                                    <p class="text-gray-600">Skilled developers, designers, and marketers</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-yellow-100 rounded-full p-2 mr-4 mt-1">
+                                    <i class="fas fa-clock text-yellow-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">On-Time Delivery</h4>
+                                    <p class="text-gray-600">We respect deadlines and deliver quality work</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-yellow-100 rounded-full p-2 mr-4 mt-1">
+                                    <i class="fas fa-headset text-yellow-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">24/7 Support</h4>
+                                    <p class="text-gray-600">Ongoing support and maintenance included</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-yellow-100 rounded-full p-2 mr-4 mt-1">
+                                    <i class="fas fa-shield-alt text-yellow-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Quality Guarantee</h4>
+                                    <p class="text-gray-600">100% satisfaction or money-back guarantee</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-yellow-100 rounded-full p-2 mr-4 mt-1">
+                                    <i class="fas fa-chart-line text-yellow-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Results-Driven</h4>
+                                    <p class="text-gray-600">Focus on ROI and business growth</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Next Steps -->
+            <div class="proposal-section">
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">
+                        <i class="fas fa-arrow-right text-yellow-500 mr-2"></i>
+                        Next Steps
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="timeline-item">
+                            <h4 class="font-semibold text-gray-800">1. Proposal Review</h4>
+                            <p class="text-gray-600">Review this proposal and let us know if you have any questions or modifications.</p>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <h4 class="font-semibold text-gray-800">2. Contract Signing</h4>
+                            <p class="text-gray-600">Once approved, we'll prepare the contract and project agreement.</p>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <h4 class="font-semibold text-gray-800">3. Initial Payment</h4>
+                            <p class="text-gray-600">50% deposit to commence project development.</p>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <h4 class="font-semibold text-gray-800">4. Project Kickoff</h4>
+                            <p class="text-gray-600">We begin development and keep you updated throughout the process.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="proposal-section">
+                <div class="gradient-bg text-white p-8">
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold mb-6">Ready to Get Started?</h3>
+                        <p class="text-xl text-yellow-200 mb-8">Let's transform your digital presence together</p>
+                        
+                        <div class="grid md:grid-cols-3 gap-6 mb-8">
+                            <div class="text-center">
+                                <div class="bg-yellow-400 rounded-full p-3 w-12 h-12 mx-auto mb-2 flex items-center justify-center">
+                                    <i class="fas fa-envelope text-gray-900"></i>
+                                </div>
+                                <p class="font-semibold">Email</p>
+                                <p class="text-yellow-200">afreachcreative@gmail.com</p>
+                            </div>
+                            
+                            <div class="text-center">
+                                <div class="bg-yellow-400 rounded-full p-3 w-12 h-12 mx-auto mb-2 flex items-center justify-center">
+                                    <i class="fas fa-phone text-gray-900"></i>
+                                </div>
+                                <p class="font-semibold">Phone</p>
+                                <p class="text-yellow-200">+254 703 579 059</p>
+                            </div>
+                            
+                            <div class="text-center">
+                                <div class="bg-yellow-400 rounded-full p-3 w-12 h-12 mx-auto mb-2 flex items-center justify-center">
+                                    <i class="fab fa-whatsapp text-gray-900"></i>
+                                </div>
+                                <p class="font-semibold">WhatsApp</p>
+                                <p class="text-yellow-200">+254 703 579 059</p>
+                            </div>
+                        </div>
+                        
+                        <p class="text-yellow-200">This proposal is valid for 30 days from the date of issue.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="no-print flex gap-4 justify-center mt-8">
+                <button onclick="window.print()" class="gold-gradient text-gray-900 px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all">
+                    <i class="fas fa-print mr-2"></i>Print Proposal
+                </button>
+                <button onclick="downloadPDF()" class="border-2 border-yellow-400 text-yellow-600 px-8 py-3 rounded-lg font-semibold hover:bg-yellow-50 transition-all">
+                    <i class="fas fa-download mr-2"></i>Download PDF
+                </button>
+                <button onclick="shareProposal()" class="border-2 border-blue-400 text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-all">
+                    <i class="fas fa-share mr-2"></i>Share Proposal
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Service definitions
+        const serviceDefinitions = {
+            'web-development': {
+                title: 'Web Development',
+                description: 'Custom website development with modern technologies, responsive design, and SEO optimization.',
+                features: [
+                    'Responsive web design',
+                    'Content Management System',
+                    'SEO optimization',
+                    'Performance optimization',
+                    'Security implementation',
+                    'Cross-browser compatibility'
+                ],
+                basePrice: 150000
+            },
+            'app-development': {
+                title: 'Mobile App Development',
+                description: 'Native and cross-platform mobile applications for iOS and Android with modern UI/UX.',
+                features: [
+                    'Native iOS & Android apps',
+                    'Cross-platform development',
+                    'App Store optimization',
+                    'Push notifications',
+                    'Offline functionality',
+                    'Analytics integration'
+                ],
+                basePrice: 300000
+            },
+            'social-media': {
+                title: 'Social Media Management',
+                description: 'Complete social media strategy, content creation, and community management across platforms.',
+                features: [
+                    'Content strategy & creation',
+                    'Community management',
+                    'Paid advertising campaigns',
+                    'Analytics & reporting',
+                    'Influencer partnerships',
+                    'Brand monitoring'
+                ],
+                basePrice: 80000
+            },
+            'graphic-design': {
+                title: 'Graphic Design',
+                description: 'Professional visual identity design including logos, branding materials, and marketing collateral.',
+                features: [
+                    'Logo design & branding',
+                    'Marketing materials',
+                    'Print design',
+                    'Digital graphics',
+                    'Brand guidelines',
+                    'Packaging design'
+                ],
+                basePrice: 60000
+            },
+            'brand-identity': {
+                title: 'Brand Identity Package',
+                description: 'Complete brand identity development including strategy, visual identity, and brand guidelines.',
+                features: [
+                    'Brand strategy development',
+                    'Logo & visual identity',
+                    'Brand guidelines',
+                    'Business card design',
+                    'Letterhead & stationery',
+                    'Brand voice & messaging'
+                ],
+                basePrice: 120000
+            },
+            'digital-marketing': {
+                title: 'Digital Marketing',
+                description: 'Comprehensive digital marketing strategy including SEO, PPC, content marketing, and analytics.',
+                features: [
+                    'SEO optimization',
+                    'PPC campaign management',
+                    'Content marketing',
+                    'Email marketing',
+                    'Conversion optimization',
+                    'Analytics & reporting'
+                ],
+                basePrice: 100000
+            }
+        };
+
+        // Service card selection
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.classList.toggle('selected');
+            });
+        });
+
+        // Generate proposal
+        function generateProposal() {
+            const clientName = document.getElementById('client-name').value;
+            const clientCompany = document.getElementById('client-company').value;
+            const projectTitle = document.getElementById('project-title').value;
+            const projectBudget = document.getElementById('project-budget').value;
+            const projectDescription = document.getElementById('project-description').value;
+            const projectTimeline = document.getElementById('project-timeline').value;
+            const startDate = document.getElementById('start-date').value;
+            
+            // Get selected services
+            const selectedServices = Array.from(document.querySelectorAll('.service-card.selected'))
+                .map(card => card.dataset.service);
+            
+            if (!clientName || !projectTitle || selectedServices.length === 0) {
+                alert('Please fill in the required fields: Client Name, Project Title, and select at least one service.');
+                return;
+            }
+            
+            // Update proposal content
+            document.getElementById('proposal-date').textContent = new Date().toLocaleDateString();
+            document.getElementById('proposal-title').textContent = projectTitle || 'Business Proposal';
+            document.getElementById('display-client-name').textContent = clientName;
+            document.getElementById('display-client-company').textContent = clientCompany || 'N/A';
+            document.getElementById('display-project-title').textContent = projectTitle;
+            document.getElementById('display-budget').textContent = projectBudget || 'To be discussed';
+            document.getElementById('display-timeline').textContent = projectTimeline || 'To be determined';
+            document.getElementById('display-start-date').textContent = startDate ? new Date(startDate).toLocaleDateString() : 'To be determined';
+            document.getElementById('display-description').textContent = projectDescription || 'Project description to be provided.';
+            
+            // Generate services list
+            generateServicesList(selectedServices);
+            
+            // Generate timeline
+            generateTimeline(projectTimeline, startDate);
+            
+            // Calculate pricing
+            calculatePricing(selectedServices, projectBudget);
+            
+            // Show proposal
+            document.getElementById('proposal-output').classList.remove('hidden');
+            document.getElementById('proposal-output').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function generateServicesList(selectedServices) {
+            const servicesList = document.getElementById('services-list');
+            servicesList.innerHTML = '';
+            
+            selectedServices.forEach(serviceKey => {
+                const service = serviceDefinitions[serviceKey];
+                if (service) {
+                    const serviceDiv = document.createElement('div');
+                    serviceDiv.className = 'bg-gray-50 p-6 rounded-lg';
+                    serviceDiv.innerHTML = `
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">${service.title}</h4>
+                        <p class="text-gray-600 mb-4">${service.description}</p>
+                        <div class="grid md:grid-cols-2 gap-2">
+                            ${service.features.map(feature => `
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span class="text-sm text-gray-600">${feature}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                    `;
+                    servicesList.appendChild(serviceDiv);
+                }
+            });
+        }
+
+        function generateTimeline(timeline, startDate) {
+            const timelineContent = document.getElementById('timeline-content');
+            const start = startDate ? new Date(startDate) : new Date();
+            
+            let milestones = [];
+            
+            // Generate milestones based on timeline
+            switch(timeline) {
+                case '2-4 weeks':
+                    milestones = [
+                        { week: 1, title: 'Project Kickoff & Planning', description: 'Requirements gathering and project setup' },
+                        { week: 2, title: 'Design & Development Phase', description: 'Core development and design implementation' },
+                        { week: 3, title: 'Testing & Refinement', description: 'Quality assurance and client feedback' },
+                        { week: 4, title: 'Launch & Delivery', description: 'Final deployment and project handover' }
+                    ];
+                    break;
+                case '1-2 months':
+                    milestones = [
+                        { week: 1, title: 'Discovery & Strategy', description: 'In-depth analysis and strategy development' },
+                        { week: 3, title: 'Design Phase', description: 'UI/UX design and client approval' },
+                        { week: 5, title: 'Development Phase', description: 'Core development and feature implementation' },
+                        { week: 7, title: 'Testing & Launch', description: 'Quality assurance and go-live' }
+                    ];
+                    break;
+                default:
+                    milestones = [
+                        { week: 1, title: 'Project Initiation', description: 'Kickoff meeting and requirements analysis' },
+                        { week: 2, title: 'Planning & Design', description: 'Detailed planning and design phase' },
+                        { week: 4, title: 'Development', description: 'Core development and implementation' },
+                        { week: 6, title: 'Testing & Launch', description: 'Quality assurance and deployment' }
+                    ];
+            }
+            
+            timelineContent.innerHTML = milestones.map(milestone => `
+                <div class="timeline-item">
+                    <h4 class="font-semibold text-gray-800">Week ${milestone.week}: ${milestone.title}</h4>
+                    <p class="text-gray-600">${milestone.description}</p>
+                </div>
+            `).join('');
+        }
+
+        function calculatePricing(selectedServices, budgetRange) {
+            let totalPrice = 0;
+            
+            selectedServices.forEach(serviceKey => {
+                const service = serviceDefinitions[serviceKey];
+                if (service) {
+                    totalPrice += service.basePrice;
+                }
+            });
+            
+            // Apply discount for multiple services
+            if (selectedServices.length > 2) {
+                totalPrice *= 0.9; // 10% discount
+            }
+            
+            const deposit = totalPrice * 0.5;
+            const finalPayment = totalPrice * 0.5;
+            
+            document.getElementById('deposit-amount').textContent = `KES ${deposit.toLocaleString()}`;
+            document.getElementById('final-amount').textContent = `KES ${finalPayment.toLocaleString()}`;
+            document.getElementById('total-amount').textContent = `KES ${totalPrice.toLocaleString()}`;
+        }
+
+        function clearForm() {
+            document.getElementById('proposal-form').reset();
+            document.querySelectorAll('.service-card.selected').forEach(card => {
+                card.classList.remove('selected');
+            });
+            document.getElementById('proposal-output').classList.add('hidden');
+        }
+
+        function downloadPDF() {
+            // Simple implementation - in a real scenario, you'd use a PDF library
+            window.print();
+        }
+
+        function shareProposal() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Business Proposal - Afreach Creatives',
+                    text: 'Check out this business proposal from Afreach Creatives',
+                    url: window.location.href
+                });
+            } else {
+                // Fallback - copy URL to clipboard
+                navigator.clipboard.writeText(window.location.href).then(() => {
+                    alert('Proposal link copied to clipboard!');
+                });
+            }
+        }
+
+        // Auto-save form data to localStorage
+        function saveFormData() {
+            const formData = {
+                clientName: document.getElementById('client-name').value,
+                clientCompany: document.getElementById('client-company').value,
+                projectTitle: document.getElementById('project-title').value,
+                projectBudget: document.getElementById('project-budget').value,
+                projectDescription: document.getElementById('project-description').value,
+                projectTimeline: document.getElementById('project-timeline').value,
+                startDate: document.getElementById('start-date').value,
+                selectedServices: Array.from(document.querySelectorAll('.service-card.selected')).map(card => card.dataset.service)
+            };
+            localStorage.setItem('proposalFormData', JSON.stringify(formData));
+        }
+
+        function loadFormData() {
+            const savedData = localStorage.getItem('proposalFormData');
+            if (savedData) {
+                const formData = JSON.parse(savedData);
+                document.getElementById('client-name').value = formData.clientName || '';
+                document.getElementById('client-company').value = formData.clientCompany || '';
+                document.getElementById('project-title').value = formData.projectTitle || '';
+                document.getElementById('project-budget').value = formData.projectBudget || '';
+                document.getElementById('project-description').value = formData.projectDescription || '';
+                document.getElementById('project-timeline').value = formData.projectTimeline || '';
+                document.getElementById('start-date').value = formData.startDate || '';
+                
+                // Restore selected services
+                if (formData.selectedServices) {
+                    formData.selectedServices.forEach(service => {
+                        const card = document.querySelector(`[data-service="${service}"]`);
+                        if (card) card.classList.add('selected');
+                    });
+                }
+            }
+        }
+
+        // Auto-save on input changes
+        document.addEventListener('DOMContentLoaded', function() {
+            loadFormData();
+            
+            // Save form data on changes
+            document.getElementById('proposal-form').addEventListener('input', saveFormData);
+            document.querySelectorAll('.service-card').forEach(card => {
+                card.addEventListener('click', saveFormData);
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'990cda93f6318a67',t:'MTc2MDg0MTAzMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
