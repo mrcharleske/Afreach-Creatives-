@@ -1,208 +1,847 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>About Us — Afreach Creatives</title>
-
-  <!-- Primary Meta -->
-  <meta name="description" content="Learn about Afreach Creatives, a Nairobi-based creative agency specializing in branding, web development, and digital marketing." />
-  <meta name="keywords" content="about, Afreach Creatives, creative agency, Nairobi, Kenya" />
-  <meta name="author" content="Afreach Creatives" />
-  <link rel="icon" href="images/favicon.png" sizes="any">
-  <link rel="manifest" href="manifest.webmanifest">
-
-  <!-- Open Graph / Twitter Card -->
-  <meta property="og:title" content="About Us — Afreach Creatives" />
-  <meta property="og:description" content="Meet Afreach Creatives, your Nairobi-based partner for creative solutions." />
-  <meta property="og:image" content="https://afreachcreatives.com/images/team.jpg" />
-  <meta property="og:url" content="https://afreachcreatives.com/about.html" />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="About Us — Afreach Creatives" />
-  <meta name="twitter:description" content="Meet Afreach Creatives, your Nairobi-based partner for creative solutions." />
-  <meta name="twitter:image" content="https://afreachcreatives.com/images/team.jpg" />
-
-  <!-- Preload Google Fonts -->
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700&display=swap" as="style" onload="this.rel='stylesheet'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet"></noscript>
-
-  <!-- AOS -->
-  <link rel="preload" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" as="style" onload="this.rel='stylesheet'">
-  <noscript><link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"></noscript>
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="css/styles.css">
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FYZL907RTJ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-FYZL907RTJ');
-  </script>
-
-  <!-- JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Afreach Creatives",
-    "url": "https://afreachcreatives.com",
-    "logo": "https://afreachcreatives.com/images/logo.png",
-    "sameAs": [
-      "https://www.linkedin.com/in/afreach-creatives-9802a6372",
-      "https://x.com/AfreachCreative",
-      "https://www.facebook.com/share/1D4xPeLRkc/",
-      "https://www.instagram.com/afreach_creatives",
-      "https://www.tiktok.com/@afreach.creatives"
-    ],
-    "contactPoint": [
-      {
-        "@type": "ContactPoint",
-        "telephone": "+254703579059",
-        "contactType": "customer service",
-        "email": "afreachcreatives@gmail.com",
-        "areaServed": "KE"
-      }
-    ]
-  }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Afreach Creatives | Kenya's Premier Digital Agency</title>
+    <meta name="description" content="Learn about Afreach Creatives - Kenya's leading digital agency. Our story, mission, values, and the passionate team behind your digital success.">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="About Afreach Creatives, Kenya digital agency team, web development company Kenya, Nairobi creative agency, digital marketing experts Kenya">
+    <meta name="author" content="Afreach Creatives">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="About Us - Afreach Creatives">
+    <meta property="og:description" content="Meet the team behind Kenya's premier digital agency. Passionate about creating digital solutions that drive business growth.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://afreachcreatives.com/about">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://afreachcreatives.com/about">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        * {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #1a1a1a 0%, #1e40af 50%, #f59e0b 100%);
+        }
+        
+        .gold-gradient {
+            background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+        }
+        
+        .blue-gradient {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .value-card {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(245, 158, 11, 0.2);
+            border-color: #f59e0b;
+        }
+        
+        .team-card {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border-color: #f59e0b;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 3rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0.75rem;
+            top: 2rem;
+            width: 2px;
+            height: calc(100% - 2rem);
+            background: linear-gradient(to bottom, #f59e0b, #fbbf24);
+        }
+        
+        .timeline-item:last-child::before {
+            display: none;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 2rem;
+            height: 2rem;
+            background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1a1a1a;
+            font-weight: bold;
+            font-size: 0.875rem;
+            border: 3px solid white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-color: #f59e0b;
+        }
+        
+        .image-placeholder {
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+            border: 2px dashed #d1d5db;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6b7280;
+            font-weight: 500;
+        }
+        
+        .parallax-section {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .counter {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #1f2937;
+        }
+        
+        @media (max-width: 768px) {
+            .timeline-item {
+                padding-left: 2.5rem;
+            }
+            
+            .timeline-dot {
+                width: 1.5rem;
+                height: 1.5rem;
+                font-size: 0.75rem;
+            }
+            
+            .timeline-item::before {
+                left: 0.5rem;
+            }
+            
+            .counter {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
-<body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span class="nav-toggle-icon"></span>
-      </button>
-      <a class="brand" href="index.html">
-        <img src="images/logo.png" alt="Afreach Creatives Logo" class="logo" />
-      </a>
-      <nav class="main-nav">
-        <a href="index.html">Home</a>
-        <a href="about.html" aria-current="page">About</a>
-        <a href="services.html">Services</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-      <div class="header-ctas">
-        <a class="btn btn-ghost" href="tel:+254703579059">Call Us</a>
-        <a class="btn btn-primary" id="quoteBtnTop5">Get a Quote</a>
-      </div>
-    </div>
-  </header>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-gray-900/95 backdrop-blur-sm z-50 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <div class="w-8 h-8 bg-yellow-400 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-rocket text-gray-900"></i>
+                        </div>
+                        <div class="text-2xl font-bold text-gradient">Afreach Creatives</div>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html" class="text-gray-300 hover:text-yellow-400 transition-colors">Home</a>
+                        <a href="services.html" class="text-gray-300 hover:text-yellow-400 transition-colors">Services</a>
+                        <a href="index.html#portfolio" class="text-gray-300 hover:text-yellow-400 transition-colors">Portfolio</a>
+                        <a href="#about" class="text-yellow-400 font-semibold">About</a>
+                        <a href="index.html#contact" class="text-gray-300 hover:text-yellow-400 transition-colors">Contact</a>
+                    </div>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white" aria-label="Toggle mobile menu">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-gray-900 border-t border-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-gray-300 hover:text-yellow-400 transition-colors">Home</a>
+                <a href="services.html" class="block px-3 py-2 text-gray-300 hover:text-yellow-400 transition-colors">Services</a>
+                <a href="index.html#portfolio" class="block px-3 py-2 text-gray-300 hover:text-yellow-400 transition-colors">Portfolio</a>
+                <a href="#about" class="block px-3 py-2 text-yellow-400 font-semibold">About</a>
+                <a href="index.html#contact" class="block px-3 py-2 text-gray-300 hover:text-yellow-400 transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
 
-  <main class="container">
-    <section class="about" data-aos="fade-up">
-      <h1>About Afreach Creatives</h1>
-      <p class="slogan">Crafting digital success from Nairobi, Kenya.</p>
-      <p>We’re a passionate creative agency specializing in branding, web development, digital marketing, and more. Our mission is to empower businesses with innovative solutions.</p>
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white pt-24 pb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    About <span class="text-yellow-300">Afreach Creatives</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto">
+                    We're passionate digital innovators dedicated to transforming Kenyan businesses through cutting-edge technology and creative excellence
+                </p>
+                <div class="flex flex-wrap justify-center gap-4 text-sm">
+                    <span class="bg-white/20 px-4 py-2 rounded-full">🚀 Innovation</span>
+                    <span class="bg-white/20 px-4 py-2 rounded-full">💡 Creativity</span>
+                    <span class="bg-white/20 px-4 py-2 rounded-full">🎯 Results</span>
+                    <span class="bg-white/20 px-4 py-2 rounded-full">🤝 Partnership</span>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section class="team" data-aos="fade-up">
-      <h2>Our Team</h2>
-      <p class="slogan">Meet the creatives behind your success.</p>
-      <div class="grid cols-3">
-        <div class="team-card">
-          <img src="images/ceo.jpg" alt="CEO" loading="lazy">
-          <div>
-            <h3>Charles Njoroge</h3>
-            <p>Creative Director</p>
-          </div>
+    <!-- Our Story Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+                        Our <span class="text-gradient">Story</span>
+                    </h2>
+                    <div class="space-y-6 text-lg text-gray-600">
+                        <p>
+                            Founded in 2023, Afreach Creatives emerged from a simple yet powerful vision: to bridge the digital divide for Kenyan businesses and empower them to compete on a global scale.
+                        </p>
+                        <p>
+                            What started as a small team of passionate developers and designers has grown into Kenya's most trusted digital agency, serving everyone from ambitious startups to established enterprises, political leaders, churches, and NGOs.
+                        </p>
+                        <p>
+                            We believe that every organization, regardless of size or budget, deserves access to world-class digital solutions. That's why we've made it our mission to deliver exceptional value while maintaining the highest standards of quality and innovation.
+                        </p>
+                        <p>
+                            Today, we're proud to have helped over <strong class="text-gray-800">200+ clients</strong> transform their digital presence and achieve measurable business growth.
+                        </p>
+                    </div>
+                    
+                    <div class="mt-8 flex flex-wrap gap-4">
+                        <div class="bg-yellow-50 px-4 py-2 rounded-lg border border-yellow-200">
+                            <span class="text-yellow-800 font-semibold">Est. 2023</span>
+                        </div>
+                        <div class="bg-blue-50 px-4 py-2 rounded-lg border border-blue-200">
+                            <span class="text-blue-800 font-semibold">200+ Projects</span>
+                        </div>
+                        <div class="bg-green-50 px-4 py-2 rounded-lg border border-green-200">
+                            <span class="text-green-800 font-semibold">100% Client Satisfaction</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="image-placeholder h-96">
+                        <div class="text-center">
+                            <i class="fas fa-users text-4xl mb-2"></i>
+                            <p>Team Photo / Office Image</p>
+                            <p class="text-sm">(Add your team or office photo here)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="team-card">
-          <img src="images/joseph.jpg" alt="Web Developer" loading="lazy">
-          <div>
-            <h3>Joseph Njuguna</h3>
-            <p>Web Developer</p>
-          </div>
-        </div>
-        <div class="team-card">
-          <img src="images/beatrice.jpg" alt="Marketing Specialist" loading="lazy">
-          <div>
-            <h3>Beatrice M.</h3>
-            <p>Marketing Specialist</p>
-          </div>
-        </div>
-      </div>
     </section>
-  </main>
 
-  <!-- Get Quote Modal -->
-  <div id="quoteModal" class="modal" aria-hidden="true">
-    <div class="modal-dialog" role="dialog" aria-modal="true" tabindex="-1">
-      <button class="modal-close" id="closeModal" aria-label="Close modal">&times;</button>
-      <h3>Get a Quote</h3>
-      <form id="quoteForm" class="form" method="POST" action="https://formspree.io/f/mjkedvkg">
-        <label>
-          <span>Name</span>
-          <input type="text" name="name" required aria-required="true">
-        </label>
-        <label>
-          <span>Email</span>
-          <input type="email" name="_replyto" required aria-required="true">
-        </label>
-        <label>
-          <span>Phone</span>
-          <input type="tel" name="phone" required aria-required="true">
-        </label>
-        <label>
-          <span>Service</span>
-          <select name="service" required aria-required="true">
-            <option value="Creative & Branding">Creative & Branding</option>
-            <option value="Web & App Development">Web & App Development</option>
-            <option value="Website & App Maintenance">Website & App Maintenance</option>
-            <option value="Digital Marketing & PR">Digital Marketing & PR</option>
-            <option value="Publishing & Content">Publishing & Content</option>
-            <option value="Livestreaming">Livestreaming</option>
-          </select>
-        </label>
-        <label>
-          <span>Message</span>
-          <textarea name="message" rows="4" aria-describedby="message-hint"></textarea>
-          <small id="message-hint" class="form-hint">Tell us about your project needs.</small>
-        </label>
-        <div class="g-recaptcha" data-sitekey="6LeVJdUrAAAAACi5qX3SLzr2ZjgG2_apbvxyz-d8"></div>
-        <input type="hidden" name="_subject" value="Afreach: New Quote Request">
-        <input type="hidden" name="_next" value="thankyou.html">
-        <button class="btn btn-primary" type="submit">Send</button>
-        <p class="form-error" id="quoteFormError" hidden>Please complete all required fields and reCAPTCHA.</p>
-      </form>
-    </div>
-  </div>
+    <!-- Mission, Vision & Values -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    Our <span class="text-gradient">Foundation</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    The principles that guide everything we do
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Mission -->
+                <article class="value-card bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="w-16 h-16 blue-gradient rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-bullseye text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Our Mission</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        To empower Kenyan businesses with innovative digital solutions that drive growth, enhance customer engagement, and create lasting competitive advantages in the digital marketplace.
+                    </p>
+                </article>
+                
+                <!-- Vision -->
+                <article class="value-card bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="w-16 h-16 gold-gradient rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-eye text-gray-900 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Our Vision</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        To be East Africa's leading digital agency, recognized for transforming businesses through cutting-edge technology, exceptional creativity, and unwavering commitment to client success.
+                    </p>
+                </article>
+                
+                <!-- Values -->
+                <article class="value-card bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="w-16 h-16 blue-gradient rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-heart text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Our Values</h3>
+                    <div class="text-gray-600 text-left">
+                        <div class="space-y-2">
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Excellence in everything</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Transparent communication</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Continuous innovation</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Client-first approach</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-left">
-        <p>© <span class="year">2025</span> Afreach Creatives — All rights reserved.</p>
-      </div>
-      <div class="footer-right">
-        <nav class="socials">
-          <a class="social" href="https://www.linkedin.com/in/afreach-creatives-9802a6372" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
-          <a class="social" href="https://x.com/AfreachCreative" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i> X</a>
-          <a class="social" href="https://www.facebook.com/share/1D4xPeLRkc/" target="_blank" rel="noopener"><i class="fab fa-facebook"></i> Facebook</a>
-          <a class="social" href="https://www.instagram.com/afreach_creatives" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> Instagram</a>
-          <a class="social" href="https://www.tiktok.com/@afreach.creatives" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i> TikTok</a>
-        </nav>
-        <a href="privacy.html" class="btn btn-ghost">Privacy Policy</a>
-      </div>
-    </div>
-  </footer>
+    <!-- Statistics Section -->
+    <section class="py-20 gradient-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                    Our <span class="text-yellow-300">Impact</span>
+                </h2>
+                <p class="text-xl text-gray-200">
+                    Numbers that speak to our commitment and success
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="stat-card">
+                    <div class="counter" data-target="200">0</div>
+                    <div class="text-lg font-semibold text-gray-600 mt-2">Projects Completed</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="counter" data-target="150">0</div>
+                    <div class="text-lg font-semibold text-gray-600 mt-2">Happy Clients</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="counter" data-target="24">0</div>
+                    <div class="text-lg font-semibold text-gray-600 mt-2">Months Experience</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="counter" data-target="100">0</div>
+                    <div class="text-lg font-semibold text-gray-600 mt-2">Success Rate %</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-  <script src="js/main.js"></script>
-  <script>
-    AOS.init({ duration: 700, once: true });
-    document.querySelectorAll('.year').forEach(el => el.textContent = new Date().getFullYear());
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js').catch(err => console.warn('SW failed:', err));
-    }
-  </script>
-</body>
-            </html>
+    <!-- Timeline Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+                    Our <span class="text-gradient">Journey</span>
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Key milestones in our growth story
+                </p>
+            </div>
+            
+            <div class="space-y-12">
+                <div class="timeline-item">
+                    <div class="timeline-dot">
+                        <i class="fas fa-rocket text-xs"></i>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
+                            <h3 class="text-xl font-bold text-gray-800">The Beginning</h3>
+                            <span class="text-sm text-gray-500 bg-yellow-100 px-3 py-1 rounded-full">January 2023</span>
+                        </div>
+                        <p class="text-gray-600">
+                            Afreach Creatives was founded with a vision to democratize digital excellence for Kenyan businesses. Started with our first client project - a local restaurant's website.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot">
+                        <i class="fas fa-users text-xs"></i>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
+                            <h3 class="text-xl font-bold text-gray-800">Team Expansion</h3>
+                            <span class="text-sm text-gray-500 bg-blue-100 px-3 py-1 rounded-full">June 2023</span>
+                        </div>
+                        <p class="text-gray-600">
+                            Expanded our team to include specialized developers, designers, and digital marketing experts. Completed our 50th project milestone.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot">
+                        <i class="fas fa-mobile-alt text-xs"></i>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
+                            <h3 class="text-xl font-bold text-gray-800">Mobile App Development</h3>
+                            <span class="text-sm text-gray-500 bg-green-100 px-3 py-1 rounded-full">September 2023</span>
+                        </div>
+                        <p class="text-gray-600">
+                            Launched our mobile app development services, delivering our first cross-platform application for a major Kenyan retailer.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot">
+                        <i class="fas fa-award text-xs"></i>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
+                            <h3 class="text-xl font-bold text-gray-800">100+ Projects Milestone</h3>
+                            <span class="text-sm text-gray-500 bg-purple-100 px-3 py-1 rounded-full">December 2023</span>
+                        </div>
+                        <p class="text-gray-600">
+                            Celebrated completing over 100 successful projects, establishing ourselves as a trusted partner for businesses across Kenya.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot">
+                        <i class="fas fa-globe text-xs"></i>
+                    </div>
+                    <div class="bg-gradient-to-r from-yellow-50 to-blue-50 p-6 rounded-lg border-2 border-yellow-200">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
+                            <h3 class="text-xl font-bold text-gray-800">Regional Expansion</h3>
+                            <span class="text-sm text-gray-500 bg-yellow-200 px-3 py-1 rounded-full">2024 & Beyond</span>
+                        </div>
+                        <p class="text-gray-600">
+                            Expanding our services across East Africa while continuing to innovate and deliver exceptional digital solutions for our growing client base.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+                    Meet Our <span class="text-gradient">Team</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    The passionate professionals behind your digital success
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Team Member 1 -->
+                <article class="team-card bg-white p-6 rounded-xl shadow-lg text-center">
+                    <div class="image-placeholder h-48 mb-6 rounded-lg">
+                        <div class="text-center">
+                            <i class="fas fa-user-circle text-4xl mb-2"></i>
+                            <p>CEO Photo</p>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">John Doe</h3>
+                    <p class="text-yellow-600 font-semibold mb-3">Founder & CEO</p>
+                    <p class="text-gray-600 mb-4">
+                        Visionary leader with 8+ years in digital strategy and business development. Passionate about empowering Kenyan businesses.
+                    </p>
+                    <div class="flex justify-center space-x-3">
+                        <a href="#" class="text-gray-400 hover:text-blue-600 transition-colors" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin text-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors" aria-label="Twitter">
+                            <i class="fab fa-twitter text-lg"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                <!-- Team Member 2 -->
+                <article class="team-card bg-white p-6 rounded-xl shadow-lg text-center">
+                    <div class="image-placeholder h-48 mb-6 rounded-lg">
+                        <div class="text-center">
+                            <i class="fas fa-user-circle text-4xl mb-2"></i>
+                            <p>CTO Photo</p>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Jane Smith</h3>
+                    <p class="text-blue-600 font-semibold mb-3">Chief Technology Officer</p>
+                    <p class="text-gray-600 mb-4">
+                        Full-stack developer and tech innovator with expertise in modern web technologies and mobile app development.
+                    </p>
+                    <div class="flex justify-center space-x-3">
+                        <a href="#" class="text-gray-400 hover:text-blue-600 transition-colors" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin text-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-gray-800 transition-colors" aria-label="GitHub">
+                            <i class="fab fa-github text-lg"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                <!-- Team Member 3 -->
+                <article class="team-card bg-white p-6 rounded-xl shadow-lg text-center">
+                    <div class="image-placeholder h-48 mb-6 rounded-lg">
+                        <div class="text-center">
+                            <i class="fas fa-user-circle text-4xl mb-2"></i>
+                            <p>Creative Director Photo</p>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Mike Johnson</h3>
+                    <p class="text-green-600 font-semibold mb-3">Creative Director</p>
+                    <p class="text-gray-600 mb-4">
+                        Award-winning designer specializing in brand identity, UI/UX design, and creating memorable visual experiences.
+                    </p>
+                    <div class="flex justify-center space-x-3">
+                        <a href="#" class="text-gray-400 hover:text-pink-600 transition-colors" aria-label="Dribbble">
+                            <i class="fab fa-dribbble text-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-blue-600 transition-colors" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin text-lg"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="text-center mt-12">
+                <p class="text-lg text-gray-600 mb-6">
+                    Want to join our growing team?
+                </p>
+                <a href="index.html#contact" class="gold-gradient text-gray-900 px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all inline-block">
+                    <i class="fas fa-briefcase mr-2"></i>View Open Positions
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+                    Why Choose <span class="text-gradient">Afreach Creatives?</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    What sets us apart in Kenya's competitive digital landscape
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 blue-gradient rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-clock text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Fast Delivery</h3>
+                    <p class="text-gray-600">
+                        We understand the urgency of business needs. Our streamlined processes ensure quick turnaround without compromising quality.
+                    </p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 gold-gradient rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-gray-900 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Guaranteed Results</h3>
+                    <p class="text-gray-600">
+                        We stand behind our work with a 100% satisfaction guarantee. If you're not happy, we'll make it right.
+                    </p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 blue-gradient rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-headset text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">24/7 Support</h3>
+                    <p class="text-gray-600">
+                        Our dedicated support team is always available to help you succeed, whenever you need assistance.
+                    </p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 gold-gradient rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-money-bill-wave text-gray-900 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Affordable Pricing</h3>
+                    <p class="text-gray-600">
+                        Premium quality at competitive prices. We believe great digital solutions should be accessible to all businesses.
+                    </p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 blue-gradient rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-cogs text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Latest Technology</h3>
+                    <p class="text-gray-600">
+                        We use cutting-edge tools and technologies to ensure your digital solutions are future-proof and scalable.
+                    </p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 gold-gradient rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-heart text-gray-900 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Local Understanding</h3>
+                    <p class="text-gray-600">
+                        As a Kenyan company, we understand the local market, culture, and business environment better than anyone.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 gradient-bg text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                Ready to Transform Your <span class="text-yellow-300">Digital Presence?</span>
+            </h2>
+            <p class="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+                Join over 200+ satisfied clients who have trusted us with their digital transformation journey
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="services.html" class="gold-gradient text-gray-900 px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-lg transition-all inline-block">
+                    <i class="fas fa-rocket mr-2"></i>View Our Services
+                </a>
+                <a href="index.html#contact" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-gray-900 transition-all inline-block">
+                    <i class="fas fa-phone mr-2"></i>Get Free Consultation
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <div class="w-8 h-8 bg-yellow-400 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-rocket text-gray-900"></i>
+                        </div>
+                        <div class="text-2xl font-bold text-gradient">Afreach Creatives</div>
+                    </div>
+                    <p class="text-gray-300 mb-6 max-w-md">
+                        Kenya's premier digital agency. From brand identity to digital marketing - we handle everything so you don't have to.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/in/afreach-creatives-9802a6372" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-yellow-400 transition-colors" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="https://x.com/AfreachCreative" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-yellow-400 transition-colors" aria-label="Twitter">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="https://www.facebook.com/share/1D4xPeLRkc/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-yellow-400 transition-colors" aria-label="Facebook">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/afreach_creatives" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-yellow-400 transition-colors" aria-label="Instagram">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@afreach.creatives" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-yellow-400 transition-colors" aria-label="TikTok">
+                            <i class="fab fa-tiktok text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="index.html" class="hover:text-yellow-400 transition-colors">Home</a></li>
+                        <li><a href="services.html" class="hover:text-yellow-400 transition-colors">Services</a></li>
+                        <li><a href="index.html#portfolio" class="hover:text-yellow-400 transition-colors">Portfolio</a></li>
+                        <li><a href="#about" class="hover:text-yellow-400 transition-colors">About Us</a></li>
+                        <li><a href="index.html#contact" class="hover:text-yellow-400 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Contact Info</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>
+                            <i class="fas fa-envelope mr-2 text-yellow-400"></i>
+                            <a href="mailto:afreachcreative@gmail.com" class="hover:text-yellow-400 transition-colors">afreachcreative@gmail.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone mr-2 text-yellow-400"></i>
+                            <a href="tel:+254703579059" class="hover:text-yellow-400 transition-colors">+254 703 579 059</a>
+                        </li>
+                        <li>
+                            <i class="fab fa-whatsapp mr-2 text-yellow-400"></i>
+                            <a href="https://wa.me/254703579059" target="_blank" rel="noopener noreferrer" class="hover:text-yellow-400 transition-colors">WhatsApp</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Afreach Creatives. All rights reserved. | <a href="index.html" class="hover:text-yellow-400 transition-colors">Back to Home</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Counter Animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const increment = target / 100;
+                let current = 0;
+                
+                const updateCounter = () => {
+                    if (current < target) {
+                        current += increment;
+                        counter.textContent = Math.ceil(current);
+                        setTimeout(updateCounter, 20);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+                
+                updateCounter();
+            });
+        }
+
+        // Intersection Observer for Counter Animation
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe the statistics section
+        const statsSection = document.querySelector('.py-20.gradient-bg');
+        if (statsSection) {
+            observer.observe(statsSection);
+        }
+
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu if open
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Navbar Background on Scroll
+        let ticking = false;
+        function updateNavbar() {
+            const navbar = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-gray-900');
+                navbar.classList.remove('bg-gray-900/95');
+            } else {
+                navbar.classList.remove('bg-gray-900');
+                navbar.classList.add('bg-gray-900/95');
+            }
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                requestAnimationFrame(updateNavbar);
+                ticking = true;
+            }
+        });
+
+        // Parallax Effect for Hero Section (subtle)
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.gradient-bg');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'990cf7d0f1db8a67',t:'MTc2MDg0MjIyNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
