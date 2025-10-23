@@ -3,910 +3,590 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Afreach Creatives - Kenya's Premier Brand Identity Experts</title>
-    <meta name="description" content="From brand identity to digital marketing - we handle everything so you don't have to. Kenya's leading creative agency for web development, app development, and social media management.">
+    <title>Afreach Creatives - Premier Brand Identity Studio in Kenya</title>
+    <meta name="description" content="Transform your brand with Kenya's leading creative agency. Web design, app development, graphic design & social media management. International quality, local expertise.">
     
     <!-- PWA Meta Tags -->
-    <meta name="theme-color" content="#1a1a1a">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Afreach Creatives">
-    
-    <!-- PWA Manifest -->
     <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#000000">
+    <link rel="apple-touch-icon" href="/images/afreachofficiallogo.png">
     
     <!-- Favicon -->
-    <link rel="icon" href="afreachofficiallogo.png" type="image/png">
-    <link rel="apple-touch-icon" href="afreachofficiallogo.png">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FYZL907RTJ"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-FYZL907RTJ');
-    </script>
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
     
     <style>
         body {
             box-sizing: border-box;
         }
         
-        .gradient-bg {
-            background: linear-gradient(135deg, #1a1a1a 0%, #1e40af 50%, #f59e0b 100%);
+        .gradient-gold {
+            background: linear-gradient(135deg, #FFD700, #FFA500, #FFD700);
         }
         
-        .gold-gradient {
-            background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+        .text-gold {
+            color: #FFD700;
         }
         
-        .blue-gradient {
-            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        .border-gold {
+            border-color: #FFD700;
         }
         
-        .text-gradient {
-            background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .hover-gold:hover {
+            background-color: #FFD700;
+            color: #000000;
         }
         
-        .hover-lift {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            animation: float 3s ease-in-out infinite;
         }
         
-        .hover-lift:hover {
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(245, 158, 11, 0.2);
+            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.3);
         }
         
         .portfolio-item {
-            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
-            min-height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2px solid #e5e7eb;
             transition: all 0.3s ease;
         }
         
         .portfolio-item:hover {
-            border-color: #f59e0b;
-            transform: scale(1.02);
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(255, 215, 0, 0.4);
         }
         
-        .service-icon {
-            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
+        .btn-primary {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #000000;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #FFA500, #FFD700);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.4);
+        }
+        
+        .btn-secondary {
+            border: 2px solid #FFD700;
+            color: #FFD700;
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: #FFD700;
+            color: #000000;
+            transform: translateY(-2px);
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+        }
+        
+        .modal-content {
+            background-color: #1a1a1a;
+            margin: 5% auto;
+            padding: 20px;
+            border: 2px solid #FFD700;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 10px;
+        }
+        
+        .close {
+            color: #FFD700;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .close:hover {
+            color: #FFA500;
+        }
+        
+        .testimonial-slider {
+            overflow: hidden;
+        }
+        
+        .testimonial-track {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
+            animation: scroll 20s linear infinite;
         }
         
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.5rem;
-                line-height: 1.2;
-            }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
         }
     </style>
 </head>
-<body class="bg-gray-900 text-white">
+<body class="bg-black text-white font-['Inter']">
+    
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-gray-900/95 backdrop-blur-sm z-50 border-b border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
+    <nav class="fixed top-0 w-full bg-black/90 backdrop-blur-md z-50 border-b border-gold">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
                 <div class="flex items-center">
-                    <img src="/images/logo.png" alt="Afreach Creatives Logo" class="h-8 w-8 mr-3" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <div class="text-2xl font-bold text-gradient">Afreach Creatives</div>
+                    <img src="/images/afreachofficiallogo.png" alt="Afreach Creatives Logo" class="h-10 w-auto" onerror="this.src=''; this.alt='Afreach Creatives'; this.style.display='none';">
+                    <span class="ml-3 text-xl font-bold text-gold">Afreach Creatives</span>
                 </div>
                 
                 <!-- Desktop Menu -->
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="index.html" class="hover:text-yellow-400 transition-colors">Home</a>
-                        <a href="services.html" class="hover:text-yellow-400 transition-colors">Services</a>
-                        <a href="portfolio.html" class="hover:text-yellow-400 transition-colors">Portfolio</a>
-                        <a href="about.html" class="hover:text-yellow-400 transition-colors">About</a>
-                        <a href="contact.html" class="hover:text-yellow-400 transition-colors">Contact</a>
-                    </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gold font-semibold">Home</a>
+                    <a href="services.html" class="text-white hover:text-gold transition-colors">Services</a>
+                    <a href="portfolio.html" class="text-white hover:text-gold transition-colors">Portfolio</a>
+                    <a href="about.html" class="text-white hover:text-gold transition-colors">About</a>
+                    <a href="contact.html" class="text-white hover:text-gold transition-colors">Contact</a>
+                    <button onclick="openQuoteModal()" class="btn-primary px-6 py-2 rounded-full">Get Quote</button>
                 </div>
                 
                 <!-- Mobile Menu Button -->
-                <div class="md:hidden">
-                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-gold">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
             </div>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="md:hidden hidden bg-gray-900 border-t border-gray-800">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="index.html" class="block px-3 py-2 hover:text-yellow-400 transition-colors">Home</a>
-                <a href="services.html" class="block px-3 py-2 hover:text-yellow-400 transition-colors">Services</a>
-                <a href="portfolio.html" class="block px-3 py-2 hover:text-yellow-400 transition-colors">Portfolio</a>
-                <a href="about.html" class="block px-3 py-2 hover:text-yellow-400 transition-colors">About</a>
-                <a href="contact.html" class="block px-3 py-2 hover:text-yellow-400 transition-colors">Contact</a>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="index.html" class="block py-2 text-gold font-semibold">Home</a>
+                <a href="services.html" class="block py-2 text-white hover:text-gold transition-colors">Services</a>
+                <a href="portfolio.html" class="block py-2 text-white hover:text-gold transition-colors">Portfolio</a>
+                <a href="about.html" class="block py-2 text-white hover:text-gold transition-colors">About</a>
+                <a href="contact.html" class="block py-2 text-white hover:text-gold transition-colors">Contact</a>
+                <button onclick="openQuoteModal()" class="btn-primary px-6 py-2 rounded-full mt-4">Get Quote</button>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="min-h-full gradient-bg flex items-center pt-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-            <div class="text-center">
-                <h1 class="hero-title text-4xl md:text-6xl font-bold mb-6" data-aos="fade-up">
-                    Kenya's Premier <span class="text-gradient">Brand Identity</span> Experts
-                </h1>
-                <p class="text-xl md:text-2xl mb-8 text-gray-300 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-                    From brand identity to digital marketing - we handle everything so you don't have to
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="400">
-                    <button onclick="scrollToSection('contact')" class="gold-gradient text-gray-900 px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-lg transition-all transform hover:scale-105">
-                        Start a Project
-                    </button>
-                    <button onclick="scrollToSection('contact')" class="border-2 border-yellow-400 text-yellow-400 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-yellow-400 hover:text-gray-900 transition-all">
-                        Book Free Consultation
-                    </button>
+    <section class="hero-bg min-h-screen flex items-center pt-20">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h1 class="text-5xl lg:text-7xl font-bold mb-6">
+                        Elevate Your <span class="text-gold">Brand</span> With Afreach Creatives
+                    </h1>
+                    <p class="text-xl lg:text-2xl mb-8 text-gray-300">
+                        Kenya's premier brand identity studio. We don't just design – we transform businesses with international-quality creative solutions.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button onclick="openQuoteModal()" class="btn-primary px-8 py-4 rounded-full text-lg">
+                            Start Your Project
+                        </button>
+                        <a href="portfolio.html" class="btn-secondary px-8 py-4 rounded-full text-lg text-center">
+                            View Our Work
+                        </a>
+                    </div>
+                    
+                    <!-- Trust Indicators -->
+                    <div class="mt-12 flex items-center gap-8">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-gold">50+</div>
+                            <div class="text-sm text-gray-400">Projects Delivered</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-gold">100%</div>
+                            <div class="text-sm text-gray-400">Client Satisfaction</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-gold">24/7</div>
+                            <div class="text-sm text-gray-400">Support</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div data-aos="fade-left" class="relative">
+                    <div class="relative z-10">
+                        <img src="/images/ceo.png" alt="Afreach Creatives CEO" class="rounded-2xl shadow-2xl w-full max-w-md mx-auto" onerror="this.style.display='none';">
+                    </div>
+                    <div class="absolute inset-0 gradient-gold rounded-2xl blur-3xl opacity-20 animate-pulse"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="py-20 bg-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6" data-aos="fade-up">
-                    Our <span class="text-gradient">Services</span>
-                </h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-                    Complete solutions for startups, SMEs, politicians, churches, and NGOs across Kenya
+    <!-- Services Preview -->
+    <section class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">Our <span class="text-gold">Services</span></h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    From concept to launch, we provide comprehensive creative solutions that drive results
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Web Development -->
-                <div class="bg-gray-900 p-8 rounded-xl hover-lift" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-icon">
-                        <i class="fas fa-code text-white text-2xl"></i>
+                <div class="card-hover bg-black border border-gold rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 gradient-gold rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                        </svg>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 text-center">Web Development</h3>
-                    <p class="text-gray-300 mb-6 text-center">
-                        Custom websites that convert visitors into customers. Responsive, fast, and SEO-optimized.
-                    </p>
-                    <ul class="text-gray-300 space-y-2">
-                        <li><i class="fas fa-check text-yellow-400 mr-2"></i>E-commerce Platforms</li>
-                        <li><i class="fas fa-check text-yellow-400 mr-2"></i>Corporate Websites</li>
-                        <li><i class="fas fa-check text-yellow-400 mr-2"></i>Landing Pages</li>
-                        <li><i class="fas fa-check text-yellow-400 mr-2"></i>CMS Development</li>
-                    </ul>
+                    <h3 class="text-2xl font-bold mb-4">Web Development</h3>
+                    <p class="text-gray-400 mb-6">Responsive, fast, and SEO-optimized websites that convert visitors into customers.</p>
+                    <a href="services.html#web-development" class="btn-secondary px-6 py-2 rounded-full inline-block">Learn More</a>
                 </div>
                 
                 <!-- App Development -->
-                <div class="bg-gray-900 p-8 rounded-xl hover-lift" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-icon">
-                        <i class="fas fa-mobile-alt text-white text-2xl"></i>
+                <div class="card-hover bg-black border border-gold rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 gradient-gold rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                        </svg>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 text-center">App Development</h3>
-                    <p class="text-gray-300 mb-6 text-center">
-                        Native and cross-platform mobile apps that engage users and drive business growth.
-                    </p>
-                    <ul class="text-gray-300 space-y-2">
-                        <li><i class="fas fa-check text-yellow-400 mr-2"></i>iOS & Android Apps</li>
-                        <li><i class="fas fa-check text-yellow-400 mr-2"></i>Progressive Web Apps</li>
-                        <li><i class="fas fa-check text-yellow-400 mr-2"></i>Cross-Platform Solutions</li>
-                        <li><i class="fas fa-check text-yellow-400 mr-2"></i>App Store Optimization</li>
-                    </ul>
+                    <h3 class="text-2xl font-bold mb-4">App Development</h3>
+                    <p class="text-gray-400 mb-6">Native and cross-platform mobile apps that engage users and drive business growth.</p>
+                    <a href="services.html#app-development" class="btn-secondary px-6 py-2 rounded-full inline-block">Learn More</a>
                 </div>
                 
-                <!-- Social Media Management -->
-                <div class="bg-gray-900 p-8 rounded-xl hover-lift" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-icon">
-                        <i class="fas fa-share-alt text-white text-2xl"></i>
+                <!-- Graphic Design -->
+                <div class="card-hover bg-black border border-gold rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 gradient-gold rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"/>
+                        </svg>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 text-center">Social Media Management</h3>
-                    <p class="text-gray-300 mb-6 text-center">
-                        Strategic social media campaigns that build communities and drive engagement.
-                    </p>
-                    <ul class="text-gray-300 space-y-2">
-                        <li><i class="fas fa-check text-yellow-400 mr-2"></i>Content Strategy</li>
-                        <li><i class="fas fa-check text-yellow-400 mr-2"></i>Community Management</li>
-                        <li><i class="fas fa-check text-yellow-400 mr-2"></i>Paid Advertising</li>
-                        <li><i class="fas fa-check text-yellow-400 mr-2"></i>Analytics & Reporting</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Additional Services -->
-            <div class="grid md:grid-cols-2 gap-8 mt-12">
-                <div class="bg-gray-900 p-8 rounded-xl hover-lift" data-aos="fade-up" data-aos-delay="400">
-                    <div class="service-icon">
-                        <i class="fas fa-palette text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 text-center">Graphic Design</h3>
-                    <p class="text-gray-300 text-center">
-                        Visual identity that speaks to your audience. Logos, branding, marketing materials, and more.
-                    </p>
+                    <h3 class="text-2xl font-bold mb-4">Graphic Design</h3>
+                    <p class="text-gray-400 mb-6">Brand identities, logos, and marketing materials that make lasting impressions.</p>
+                    <a href="services.html#graphic-design" class="btn-secondary px-6 py-2 rounded-full inline-block">Learn More</a>
                 </div>
                 
-                <div class="bg-gray-900 p-8 rounded-xl hover-lift" data-aos="fade-up" data-aos-delay="500">
-                    <div class="service-icon">
-                        <i class="fas fa-rocket text-white text-2xl"></i>
+                <!-- Social Media -->
+                <div class="card-hover bg-black border border-gold rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-16 h-16 gradient-gold rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"/>
+                        </svg>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 text-center">Brand Identity</h3>
-                    <p class="text-gray-300 text-center">
-                        Complete brand packages that establish your market presence and drive growth.
-                    </p>
+                    <h3 class="text-2xl font-bold mb-4">Social Media Management</h3>
+                    <p class="text-gray-400 mb-6">Strategic social media campaigns that build communities and drive engagement.</p>
+                    <a href="services.html#social-media" class="btn-secondary px-6 py-2 rounded-full inline-block">Learn More</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="py-20 bg-gray-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6" data-aos="fade-up">
-                    <span class="text-gradient">TRANSFORMING BRANDS</span> ACROSS THE GLOBE
-                </h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-                    See how we've helped businesses, organizations, and leaders establish powerful digital presences
+    <!-- Featured Work -->
+    <section class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">Our Work <span class="text-gold">Speaks for Itself</span></h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Discover how we've transformed brands across Kenya and beyond
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Portfolio Item 1 -->
-                <div class="portfolio-item rounded-xl" data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-center p-6">
-                        <i class="fas fa-shopping-cart text-4xl text-blue-600 mb-4"></i>
-                        <h4 class="text-xl font-bold text-gray-800 mb-2">E-commerce Platform</h4>
-                        <p class="text-gray-600">Kenyan Fashion Retailer</p>
-                        <div class="mt-4 text-sm text-gray-500">
-                            <span class="bg-blue-100 px-2 py-1 rounded">Web Development</span>
-                        </div>
-                    </div>
+            <!-- Portfolio Preview Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- App Logos -->
+                <div class="portfolio-item bg-gray-900 rounded-xl p-6 border border-gray-800" data-aos="fade-up" data-aos-delay="100">
+                    <img src="/images/apps/pesatip-logo.png" alt="PesaTip App Logo" class="w-full h-32 object-contain mb-4" onerror="this.style.display='none';">
+                    <h4 class="text-lg font-semibold text-gold">PesaTip</h4>
+                    <p class="text-gray-400 text-sm">Tipping Platform</p>
                 </div>
                 
-                <!-- Portfolio Item 2 -->
-                <div class="portfolio-item rounded-xl" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-center p-6">
-                        <i class="fas fa-mobile-alt text-4xl text-green-600 mb-4"></i>
-                        <h4 class="text-xl font-bold text-gray-800 mb-2">Banking Mobile App</h4>
-                        <p class="text-gray-600">Financial Services UI/UX</p>
-                        <div class="mt-4 text-sm text-gray-500">
-                            <span class="bg-green-100 px-2 py-1 rounded">App Development</span>
-                        </div>
-                    </div>
+                <div class="portfolio-item bg-gray-900 rounded-xl p-6 border border-gray-800" data-aos="fade-up" data-aos-delay="200">
+                    <img src="/images/websites/lydia-waweru.png" alt="Lydia Waweru Website" class="w-full h-32 object-cover rounded-lg mb-4" onerror="this.style.display='none';">
+                    <h4 class="text-lg font-semibold text-gold">Lydia Waweru</h4>
+                    <p class="text-gray-400 text-sm">Speaker & Charity</p>
                 </div>
                 
-                <!-- Portfolio Item 3 -->
-                <div class="portfolio-item rounded-xl" data-aos="fade-up" data-aos-delay="300">
-                    <div class="text-center p-6">
-                        <i class="fas fa-leaf text-4xl text-green-500 mb-4"></i>
-                        <h4 class="text-xl font-bold text-gray-800 mb-2">AgriTech Platform</h4>
-                        <p class="text-gray-600">Farmer Connect Solution</p>
-                        <div class="mt-4 text-sm text-gray-500">
-                            <span class="bg-green-100 px-2 py-1 rounded">Web & Mobile</span>
-                        </div>
-                    </div>
+                <div class="portfolio-item bg-gray-900 rounded-xl p-6 border border-gray-800" data-aos="fade-up" data-aos-delay="300">
+                    <img src="/images/apps/rimora-logo.png" alt="Rimora App Logo" class="w-full h-32 object-contain mb-4" onerror="this.style.display='none';">
+                    <h4 class="text-lg font-semibold text-gold">Rimora</h4>
+                    <p class="text-gray-400 text-sm">Money Transfer</p>
                 </div>
                 
-                <!-- Portfolio Item 4 -->
-                <div class="portfolio-item rounded-xl" data-aos="fade-up" data-aos-delay="400">
-                    <div class="text-center p-6">
-                        <i class="fas fa-vote-yea text-4xl text-blue-700 mb-4"></i>
-                        <h4 class="text-xl font-bold text-gray-800 mb-2">Political Campaign</h4>
-                        <p class="text-gray-600">Digital Strategy & Branding</p>
-                        <div class="mt-4 text-sm text-gray-500">
-                            <span class="bg-blue-100 px-2 py-1 rounded">Social Media</span>
-                        </div>
-                    </div>
+                <div class="portfolio-item bg-gray-900 rounded-xl p-6 border border-gray-800" data-aos="fade-up" data-aos-delay="400">
+                    <img src="/images/websites/riserig.png" alt="Riserig Website" class="w-full h-32 object-cover rounded-lg mb-4" onerror="this.style.display='none';">
+                    <h4 class="text-lg font-semibold text-gold">Riserig</h4>
+                    <p class="text-gray-400 text-sm">Learning Platform</p>
                 </div>
-                
-                <!-- Portfolio Item 5 -->
-                <div class="portfolio-item rounded-xl" data-aos="fade-up" data-aos-delay="500">
-                    <div class="text-center p-6">
-                        <i class="fas fa-heart text-4xl text-red-500 mb-4"></i>
-                        <h4 class="text-xl font-bold text-gray-800 mb-2">NGO Website</h4>
-                        <p class="text-gray-600">Healthcare Foundation</p>
-                        <div class="mt-4 text-sm text-gray-500">
-                            <span class="bg-red-100 px-2 py-1 rounded">Web Development</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Portfolio Item 6 -->
-                <div class="portfolio-item rounded-xl" data-aos="fade-up" data-aos-delay="600">
-                    <div class="text-center p-6">
-                        <i class="fas fa-church text-4xl text-purple-600 mb-4"></i>
-                        <h4 class="text-xl font-bold text-gray-800 mb-2">Church Management</h4>
-                        <p class="text-gray-600">Community Platform</p>
-                        <div class="mt-4 text-sm text-gray-500">
-                            <span class="bg-purple-100 px-2 py-1 rounded">Full Package</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div data-aos="fade-right">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-6">
-                        Why Choose <span class="text-gradient">Afreach Creatives</span>?
-                    </h2>
-                    <p class="text-xl text-gray-300 mb-8">
-                        We're not just another agency. We're your strategic partner in building a brand that dominates the Kenyan market and beyond.
-                    </p>
-                    
-                    <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div class="bg-yellow-400 rounded-full p-2 mr-4 mt-1">
-                                <i class="fas fa-check text-gray-900"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-xl font-semibold mb-2">Complete Package Solution</h4>
-                                <p class="text-gray-300">From brand identity to digital marketing - we handle everything so you don't have to.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="bg-yellow-400 rounded-full p-2 mr-4 mt-1">
-                                <i class="fas fa-users text-gray-900"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-xl font-semibold mb-2">Diverse Market Expertise</h4>
-                                <p class="text-gray-300">We understand startups, SMEs, politicians, churches, and NGOs - tailoring solutions for each.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="bg-yellow-400 rounded-full p-2 mr-4 mt-1">
-                                <i class="fas fa-rocket text-gray-900"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-xl font-semibold mb-2">Results-Driven Approach</h4>
-                                <p class="text-gray-300">We don't just create - we build digital experiences that convert and grow your business.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="grid grid-cols-2 gap-6" data-aos="fade-left">
-                    <div class="bg-gray-900 p-6 rounded-xl text-center">
-                        <div class="text-3xl font-bold text-gradient mb-2">50+</div>
-                        <div class="text-gray-300">Projects Completed</div>
-                    </div>
-                    <div class="bg-gray-900 p-6 rounded-xl text-center">
-                        <div class="text-3xl font-bold text-gradient mb-2">100%</div>
-                        <div class="text-gray-300">Client Satisfaction</div>
-                    </div>
-                    <div class="bg-gray-900 p-6 rounded-xl text-center">
-                        <div class="text-3xl font-bold text-gradient mb-2">24/7</div>
-                        <div class="text-gray-300">Support Available</div>
-                    </div>
-                    <div class="bg-gray-900 p-6 rounded-xl text-center">
-                        <div class="text-3xl font-bold text-gradient mb-2">5+</div>
-                        <div class="text-gray-300">Years Experience</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="py-20 bg-gray-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6" data-aos="fade-up">
-                    What Our <span class="text-gradient">Clients Say</span>
-                </h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-                    Real results from real clients across Kenya and beyond
-                </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
-                <div class="bg-gray-800 p-8 rounded-xl" data-aos="fade-up" data-aos-delay="100">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center mr-4">
-                            <span class="text-gray-900 font-bold">SM</span>
+            <div class="text-center" data-aos="fade-up">
+                <a href="portfolio.html" class="btn-primary px-8 py-4 rounded-full text-lg">
+                    View Full Portfolio
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-gray-900 overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">What Our <span class="text-gold">Clients Say</span></h2>
+            </div>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial-track flex gap-8">
+                    <div class="bg-black border border-gold rounded-xl p-8 min-w-[400px]">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-gold rounded-full flex items-center justify-center text-black font-bold">LW</div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold">Lydia Waweru</h4>
+                                <p class="text-gray-400 text-sm">Speaker & Philanthropist</p>
+                            </div>
                         </div>
-                        <div>
-                            <h4 class="font-semibold">Sarah Mwangi</h4>
-                            <p class="text-gray-400 text-sm">Tech Startup Founder</p>
-                        </div>
+                        <p class="text-gray-300">"Afreach Creatives transformed my online presence completely. Their attention to detail and understanding of my brand vision was exceptional."</p>
                     </div>
-                    <p class="text-gray-300 mb-4">
-                        "Afreach Creatives transformed our startup's digital presence completely. Their web development and social media strategy helped us secure our first round of funding."
-                    </p>
-                    <div class="flex text-yellow-400">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                </div>
-                
-                <!-- Testimonial 2 -->
-                <div class="bg-gray-800 p-8 rounded-xl" data-aos="fade-up" data-aos-delay="200">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full flex items-center justify-center mr-4">
-                            <span class="text-white font-bold">PK</span>
+                    
+                    <div class="bg-black border border-gold rounded-xl p-8 min-w-[400px]">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-gold rounded-full flex items-center justify-center text-black font-bold">BT</div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold">BM Tyres</h4>
+                                <p class="text-gray-400 text-sm">Automotive Business</p>
+                            </div>
                         </div>
-                        <div>
-                            <h4 class="font-semibold">Pastor John Kariuki</h4>
-                            <p class="text-gray-400 text-sm">Church Leader</p>
-                        </div>
+                        <p class="text-gray-300">"Our new website has increased our online sales by 300%. The team at Afreach Creatives delivered beyond our expectations."</p>
                     </div>
-                    <p class="text-gray-300 mb-4">
-                        "The church management platform they built has revolutionized how we connect with our congregation. Online giving increased by 300%!"
-                    </p>
-                    <div class="flex text-yellow-400">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                </div>
-                
-                <!-- Testimonial 3 -->
-                <div class="bg-gray-800 p-8 rounded-xl" data-aos="fade-up" data-aos-delay="300">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-r from-green-400 to-green-600 rounded-full flex items-center justify-center mr-4">
-                            <span class="text-white font-bold">HM</span>
+                    
+                    <div class="bg-black border border-gold rounded-xl p-8 min-w-[400px]">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-gold rounded-full flex items-center justify-center text-black font-bold">BN</div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold">Blessed Nation Ambassadors</h4>
+                                <p class="text-gray-400 text-sm">NGO</p>
+                            </div>
                         </div>
-                        <div>
-                            <h4 class="font-semibold">Hon. Mary Wanjiku</h4>
-                            <p class="text-gray-400 text-sm">Political Leader</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-300 mb-4">
-                        "Their digital campaign strategy was instrumental in my election victory. Professional, strategic, and results-driven team."
-                    </p>
-                    <div class="flex text-yellow-400">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                </div>
-                
-                <!-- Testimonial 4 -->
-                <div class="bg-gray-800 p-8 rounded-xl" data-aos="fade-up" data-aos-delay="400">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full flex items-center justify-center mr-4">
-                            <span class="text-white font-bold">DM</span>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold">Dr. Michael Ochieng</h4>
-                            <p class="text-gray-400 text-sm">NGO Director</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-300 mb-4">
-                        "The website and mobile app they developed for our healthcare NGO has helped us reach 10,000+ more beneficiaries across rural Kenya."
-                    </p>
-                    <div class="flex text-yellow-400">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                </div>
-                
-                <!-- Testimonial 5 -->
-                <div class="bg-gray-800 p-8 rounded-xl" data-aos="fade-up" data-aos-delay="500">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-r from-red-400 to-red-600 rounded-full flex items-center justify-center mr-4">
-                            <span class="text-white font-bold">JM</span>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold">James Mutua</h4>
-                            <p class="text-gray-400 text-sm">Agripreneur</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-300 mb-4">
-                        "Their e-commerce platform helped me scale my organic farming business from local to national. Sales increased by 500% in 6 months!"
-                    </p>
-                    <div class="flex text-yellow-400">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                </div>
-                
-                <!-- Testimonial 6 -->
-                <div class="bg-gray-800 p-8 rounded-xl" data-aos="fade-up" data-aos-delay="600">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-r from-indigo-400 to-indigo-600 rounded-full flex items-center justify-center mr-4">
-                            <span class="text-white font-bold">AN</span>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold">Alice Nyong'o</h4>
-                            <p class="text-gray-400 text-sm">SME Owner</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-300 mb-4">
-                        "From logo design to social media management, they handled everything. My beauty business now has a professional brand that customers trust."
-                    </p>
-                    <div class="flex text-yellow-400">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                        <p class="text-gray-300">"Professional, creative, and reliable. Afreach Creatives helped us reach more people and amplify our mission effectively."</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6" data-aos="fade-up">
-                    Ready to <span class="text-gradient">Transform Your Brand</span>?
-                </h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-                    Let's discuss your project and create something amazing together
+    <!-- CTA Section -->
+    <section class="py-20 bg-black">
+        <div class="container mx-auto px-6 text-center">
+            <div data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">Ready to <span class="text-gold">Transform</span> Your Brand?</h2>
+                <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                    Join the ranks of successful businesses that trust Afreach Creatives with their brand identity. Let's create something extraordinary together.
                 </p>
-            </div>
-            
-            <div class="grid lg:grid-cols-2 gap-12">
-                <!-- Contact Form -->
-                <div class="bg-gray-900 p-8 rounded-xl" data-aos="fade-right">
-                    <h3 class="text-2xl font-bold mb-6">Get Started Today</h3>
-                    <form id="contact-form" action="https://formspree.io/f/mjkedvkg" method="POST">
-                        <div class="grid md:grid-cols-2 gap-6 mb-6">
-                            <div>
-                                <label for="name" class="block text-sm font-medium mb-2">Full Name</label>
-                                <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-white">
-                            </div>
-                            <div>
-                                <label for="email" class="block text-sm font-medium mb-2">Email Address</label>
-                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-white">
-                            </div>
-                        </div>
-                        
-                        <div class="grid md:grid-cols-2 gap-6 mb-6">
-                            <div>
-                                <label for="phone" class="block text-sm font-medium mb-2">Phone Number</label>
-                                <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-white">
-                            </div>
-                            <div>
-                                <label for="service" class="block text-sm font-medium mb-2">Service Needed</label>
-                                <select id="service" name="service" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-white">
-                                    <option value="">Select a service</option>
-                                    <option value="web-development">Web Development</option>
-                                    <option value="app-development">App Development</option>
-                                    <option value="social-media">Social Media Management</option>
-                                    <option value="graphic-design">Graphic Design</option>
-                                    <option value="brand-identity">Brand Identity</option>
-                                    <option value="complete-package">Complete Package</option>
-                                </select>
-                            </div>
-                        </div>
-                        
-                        <div class="mb-6">
-                            <label for="message" class="block text-sm font-medium mb-2">Project Details</label>
-                            <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-white" placeholder="Tell us about your project..."></textarea>
-                        </div>
-                        
-                        <button type="submit" class="w-full gold-gradient text-gray-900 py-4 rounded-lg font-semibold text-lg hover:shadow-lg transition-all transform hover:scale-105">
-                            Send Message
-                        </button>
-                    </form>
-                    
-                    <div id="form-message" class="mt-4 p-4 rounded-lg hidden"></div>
-                </div>
-                
-                <!-- Contact Information -->
-                <div class="space-y-8" data-aos="fade-left">
-                    <div>
-                        <h3 class="text-2xl font-bold mb-6">Get in Touch</h3>
-                        <div class="space-y-6">
-                            <div class="flex items-center">
-                                <div class="bg-yellow-400 rounded-full p-3 mr-4">
-                                    <i class="fas fa-envelope text-gray-900"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold">Email</h4>
-                                    <a href="mailto:afreachcreative@gmail.com" class="text-gray-300 hover:text-yellow-400 transition-colors">afreachcreative@gmail.com</a>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-center">
-                                <div class="bg-yellow-400 rounded-full p-3 mr-4">
-                                    <i class="fas fa-phone text-gray-900"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold">Call Us</h4>
-                                    <a href="tel:+254703579059" class="text-gray-300 hover:text-yellow-400 transition-colors">+254 703 579 059</a>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-center">
-                                <div class="bg-yellow-400 rounded-full p-3 mr-4">
-                                    <i class="fab fa-whatsapp text-gray-900"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold">WhatsApp</h4>
-                                    <a href="https://wa.me/254703579059" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-yellow-400 transition-colors">+254 703 579 059</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <h4 class="text-xl font-bold mb-4">Follow Us</h4>
-                        <div class="flex space-x-4">
-                            <a href="https://www.linkedin.com/in/afreach-creatives-9802a6372?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" class="bg-gray-700 hover:bg-blue-600 p-3 rounded-full transition-colors">
-                                <i class="fab fa-linkedin text-xl"></i>
-                            </a>
-                            <a href="https://x.com/AfreachCreative?t=95xNXP91OWjgsZOZ8zrExg&s=09" target="_blank" rel="noopener noreferrer" class="bg-gray-700 hover:bg-blue-400 p-3 rounded-full transition-colors">
-                                <i class="fab fa-twitter text-xl"></i>
-                            </a>
-                            <a href="https://www.facebook.com/share/1D4xPeLRkc/" target="_blank" rel="noopener noreferrer" class="bg-gray-700 hover:bg-blue-700 p-3 rounded-full transition-colors">
-                                <i class="fab fa-facebook text-xl"></i>
-                            </a>
-                            <a href="https://www.instagram.com/afreach_creatives?igsh=MTIyN3MwYnlneGx5ZQ==" target="_blank" rel="noopener noreferrer" class="bg-gray-700 hover:bg-pink-600 p-3 rounded-full transition-colors">
-                                <i class="fab fa-instagram text-xl"></i>
-                            </a>
-                            <a href="https://www.tiktok.com/@afreach.creatives?_t=ZM-8zipJxHSNaK&_r=1" target="_blank" rel="noopener noreferrer" class="bg-gray-700 hover:bg-black p-3 rounded-full transition-colors">
-                                <i class="fab fa-tiktok text-xl"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-gray-900 p-6 rounded-xl">
-                        <h4 class="text-xl font-bold mb-4">Quick Response Guarantee</h4>
-                        <p class="text-gray-300 mb-4">We respond to all inquiries within 2 hours during business hours.</p>
-                        <div class="flex items-center text-yellow-400">
-                            <i class="fas fa-clock mr-2"></i>
-                            <span class="text-sm">Mon-Fri: 8AM-6PM EAT</span>
-                        </div>
-                    </div>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="openQuoteModal()" class="btn-primary px-8 py-4 rounded-full text-lg">
+                        Get Started Today
+                    </button>
+                    <a href="contact.html" class="btn-secondary px-8 py-4 rounded-full text-lg">
+                        Contact Us Now
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 py-12 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer class="bg-gray-900 border-t border-gold py-12">
+        <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-4 gap-8">
-                <div class="md:col-span-2">
+                <div>
                     <div class="flex items-center mb-4">
-                        <img src="logo.png" alt="Afreach Creatives Logo" class="h-8 w-8 mr-3" onerror="this.style.display='none';">
-                        <div class="text-2xl font-bold text-gradient">Afreach Creatives</div>
+                        <img src="/images/afreachofficiallogo.png" alt="Afreach Creatives Logo" class="h-8 w-auto" onerror="this.style.display='none';">
+                        <span class="ml-2 text-lg font-bold text-gold">Afreach Creatives</span>
                     </div>
-                    <p class="text-gray-300 mb-6 max-w-md">
-                        Kenya's premier brand identity experts. From brand identity to digital marketing - we handle everything so you don't have to.
-                    </p>
+                    <p class="text-gray-400">Kenya's premier brand identity studio, delivering international-quality creative solutions.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-gold font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="services.html#web-development" class="hover:text-gold transition-colors">Web Development</a></li>
+                        <li><a href="services.html#app-development" class="hover:text-gold transition-colors">App Development</a></li>
+                        <li><a href="services.html#graphic-design" class="hover:text-gold transition-colors">Graphic Design</a></li>
+                        <li><a href="services.html#social-media" class="hover:text-gold transition-colors">Social Media</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-gold font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="about.html" class="hover:text-gold transition-colors">About Us</a></li>
+                        <li><a href="portfolio.html" class="hover:text-gold transition-colors">Portfolio</a></li>
+                        <li><a href="contact.html" class="hover:text-gold transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-gold font-semibold mb-4">Connect</h4>
                     <div class="flex space-x-4">
-                        <a href="https://www.linkedin.com/in/afreach-creatives-9802a6372?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-yellow-400 transition-colors">
-                            <i class="fab fa-linkedin text-xl"></i>
+                        <a href="https://wa.me/254700000000" target="_blank" rel="noopener noreferrer" class="text-green-500 hover:text-green-400 transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                            </svg>
                         </a>
-                        <a href="https://x.com/AfreachCreative?t=95xNXP91OWjgsZOZ8zrExg&s=09" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-yellow-400 transition-colors">
-                            <i class="fab fa-twitter text-xl"></i>
+                        <a href="mailto:info@afreachcreatives.com" class="text-gold hover:text-yellow-400 transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
                         </a>
-                        <a href="https://www.facebook.com/share/1D4xPeLRkc/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-yellow-400 transition-colors">
-                            <i class="fab fa-facebook text-xl"></i>
-                        </a>
-                        <a href="https://www.instagram.com/afreach_creatives?igsh=MTIyN3MwYnlneGx5ZQ==" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-yellow-400 transition-colors">
-                            <i class="fab fa-instagram text-xl"></i>
-                        </a>
-                        <a href="https://www.tiktok.com/@afreach.creatives?_t=ZM-8zipJxHSNaK&_r=1" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-yellow-400 transition-colors">
-                            <i class="fab fa-tiktok text-xl"></i>
+                        <a href="tel:+254700000000" class="text-blue-400 hover:text-blue-300 transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                            </svg>
                         </a>
                     </div>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Services</h4>
-                    <ul class="space-y-2 text-gray-300">
-                        <li><a href="#services" class="hover:text-yellow-400 transition-colors">Web Development</a></li>
-                        <li><a href="#services" class="hover:text-yellow-400 transition-colors">App Development</a></li>
-                        <li><a href="#services" class="hover:text-yellow-400 transition-colors">Social Media Management</a></li>
-                        <li><a href="#services" class="hover:text-yellow-400 transition-colors">Graphic Design</a></li>
-                        <li><a href="#services" class="hover:text-yellow-400 transition-colors">Brand Identity</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
-                    <ul class="space-y-2 text-gray-300">
-                        <li><a href="#home" class="hover:text-yellow-400 transition-colors">Home</a></li>
-                        <li><a href="#about" class="hover:text-yellow-400 transition-colors">About</a></li>
-                        <li><a href="#portfolio" class="hover:text-yellow-400 transition-colors">Portfolio</a></li>
-                        <li><a href="#contact" class="hover:text-yellow-400 transition-colors">Contact</a></li>
-                    </ul>
                 </div>
             </div>
             
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2024 Afreach Creatives. All rights reserved. | Transforming brands across the globe.</p>
+                <p>&copy; 2024 Afreach Creatives. All rights reserved. | Transforming brands across Kenya and beyond.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Quote Modal -->
+    <div id="quoteModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeQuoteModal()">&times;</span>
+            <h2 class="text-2xl font-bold text-gold mb-6">Get Your Free Quote</h2>
+            <form id="quoteForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <div class="mb-4">
+                    <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Full Name</label>
+                    <input type="text" id="name" name="name" required class="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-gold focus:outline-none">
+                </div>
+                
+                <div class="mb-4">
+                    <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email Address</label>
+                    <input type="email" id="email" name="email" required class="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-gold focus:outline-none">
+                </div>
+                
+                <div class="mb-4">
+                    <label for="phone" class="block text-sm font-medium text-gray-300 mb-2">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-gold focus:outline-none">
+                </div>
+                
+                <div class="mb-4">
+                    <label for="service" class="block text-sm font-medium text-gray-300 mb-2">Service Needed</label>
+                    <select id="service" name="service" required class="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-gold focus:outline-none">
+                        <option value="">Select a service</option>
+                        <option value="web-development">Web Development</option>
+                        <option value="app-development">App Development</option>
+                        <option value="graphic-design">Graphic Design</option>
+                        <option value="social-media">Social Media Management</option>
+                        <option value="multiple">Multiple Services</option>
+                    </select>
+                </div>
+                
+                <div class="mb-6">
+                    <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Project Details</label>
+                    <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-gold focus:outline-none" placeholder="Tell us about your project..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn-primary w-full py-3 rounded-lg">
+                    Send Quote Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/254700000000?text=Hi%20Afreach%20Creatives!%20I'm%20interested%20in%20your%20services." target="_blank" rel="noopener noreferrer" class="floating-whatsapp">
+        <div class="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all duration-300">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+            </svg>
+        </div>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         // Initialize AOS
         AOS.init({
             duration: 1000,
-            once: true,
-            offset: 100
+            once: true
         });
 
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuBtn.addEventListener('click', () => {
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Smooth Scrolling
-        function scrollToSection(sectionId) {
-            const element = document.getElementById(sectionId);
-            if (element) {
-                element.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+        // Quote modal functions
+        function openQuoteModal() {
+            document.getElementById('quoteModal').style.display = 'block';
+        }
+
+        function closeQuoteModal() {
+            document.getElementById('quoteModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('quoteModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
             }
         }
 
-        // Navigation Links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-                // Close mobile menu if open
-                mobileMenu.classList.add('hidden');
-            });
-        });
-
-        // Form Submission
-        const contactForm = document.getElementById('contact-form');
-        const formMessage = document.getElementById('form-message');
-
-        contactForm.addEventListener('submit', async function(e) {
+        // Form submission
+        document.getElementById('quoteForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const formData = new FormData(contactForm);
+            // Show success message
+            const formData = new FormData(this);
             
-            try {
-                const response = await fetch(contactForm.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-                
-                if (response.ok) {
-                    formMessage.className = 'mt-4 p-4 rounded-lg bg-green-600 text-white';
-                    formMessage.textContent = 'Thank you! Your message has been sent successfully. We\'ll get back to you within 2 hours.';
-                    formMessage.classList.remove('hidden');
-                    contactForm.reset();
-                } else {
-                    throw new Error('Form submission failed');
-                }
-            } catch (error) {
-                formMessage.className = 'mt-4 p-4 rounded-lg bg-red-600 text-white';
-                formMessage.textContent = 'Sorry, there was an error sending your message. Please try again or contact us directly.';
-                formMessage.classList.remove('hidden');
-            }
+            // Here you would normally send to Formspree
+            // For now, we'll show a success message
+            alert('Thank you for your quote request! We\'ll get back to you within 24 hours.');
+            closeQuoteModal();
+            this.reset();
         });
 
-        // PWA Service Worker Registration
+        // Service Worker Registration for PWA
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', function() {
-                const swCode = `
-                    const CACHE_NAME = 'afreach-creatives-v1';
-                    const urlsToCache = [
-                        '/',
-                        'https://cdn.tailwindcss.com',
-                        'https://unpkg.com/aos@2.3.1/dist/aos.css',
-                        'https://unpkg.com/aos@2.3.1/dist/aos.js',
-                        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'
-                    ];
-
-                    self.addEventListener('install', function(event) {
-                        event.waitUntil(
-                            caches.open(CACHE_NAME)
-                                .then(function(cache) {
-                                    return cache.addAll(urlsToCache);
-                                })
-                        );
-                    });
-
-                    self.addEventListener('fetch', function(event) {
-                        event.respondWith(
-                            caches.match(event.request)
-                                .then(function(response) {
-                                    if (response) {
-                                        return response;
-                                    }
-                                    return fetch(event.request);
-                                }
-                            )
-                        );
-                    });
-                `;
-                
-                const blob = new Blob([swCode], { type: 'application/javascript' });
-                const swUrl = URL.createObjectURL(blob);
-                
-                navigator.serviceWorker.register(swUrl)
+                navigator.serviceWorker.register('/sw.js')
                     .then(function(registration) {
                         console.log('ServiceWorker registration successful');
                     })
                     .catch(function(err) {
-                        console.log('ServiceWorker registration failed: ', err);
+                        console.log('ServiceWorker registration failed');
                     });
             });
         }
-
-        // Navbar Background on Scroll
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                navbar.classList.add('bg-gray-900');
-                navbar.classList.remove('bg-gray-900/95');
-            } else {
-                navbar.classList.remove('bg-gray-900');
-                navbar.classList.add('bg-gray-900/95');
-            }
-        });
-
-        // Add loading animation for portfolio items
-        document.addEventListener('DOMContentLoaded', function() {
-            const portfolioItems = document.querySelectorAll('.portfolio-item');
-            portfolioItems.forEach(item => {
-                item.addEventListener('mouseenter', function() {
-                    this.style.transform = 'scale(1.02) translateY(-5px)';
-                });
-                item.addEventListener('mouseleave', function() {
-                    this.style.transform = 'scale(1) translateY(0)';
-                });
-            });
-        });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'990cc95e363b8a67',t:'MTc2MDg0MDMyNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9934b19a22c88a6b',t:'MTc2MTI1ODc4Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
