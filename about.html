@@ -4,802 +4,988 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Afreach Creatives | Kenya's Premier Digital Agency</title>
-    <meta name="description" content="Learn about Afreach Creatives - Kenya's leading digital agency. Our story, mission, values, and the passionate team behind your digital success.">
+    <meta name="description" content="Discover the story behind Kenya's leading digital agency. Meet our team, learn our values, and see why businesses trust us with their digital transformation.">
     
-    <!-- SEO Meta Tags -->
-    <meta name="keywords" content="About Afreach Creatives, Kenya digital agency team, web development company Kenya, Nairobi creative agency, digital marketing experts Kenya">
-    <meta name="author" content="Afreach Creatives">
-    <meta name="robots" content="index, follow">
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#000000">
+    <link rel="apple-touch-icon" href="/images/afreachofficiallogo.png">
     
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="About Us - Afreach Creatives">
-    <meta property="og:description" content="Meet the team behind Kenya's premier digital agency. Passionate about creating digital solutions that drive business growth.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://afreachcreatives.com/about">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://afreachcreatives.com/about">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FYZL907RTJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-FYZL907RTJ');
+    </script>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <style>
         body {
             box-sizing: border-box;
         }
         
-        * {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        .gradient-gold {
+            background: linear-gradient(135deg, #FFD700, #FFA500, #FFD700);
         }
         
-        .gradient-bg {
-            background: linear-gradient(135deg, #1a1a1a 0%, #1e40af 50%, #f59e0b 100%);
+        .text-gold {
+            color: #FFD700;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
         
-        .gold-gradient {
-            background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+        .hero-title {
+            color: #ffffff;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+            font-weight: 800;
+            letter-spacing: -0.02em;
         }
         
-        .blue-gradient {
-            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        .hero-subtitle {
+            color: #e5e5e5;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+            font-weight: 400;
+            line-height: 1.6;
         }
         
-        .text-gradient {
-            background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .border-gold {
+            border-color: #FFD700;
         }
         
-        .value-card {
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .premium-badge {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 215, 0, 0.05));
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        
+        .international-accent {
+            background: linear-gradient(45deg, #FFD700, #FFA500, #FFD700);
+            background-size: 200% 200%;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+        
+        @keyframes shimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 30%, #2a2a2a 70%, #1a1a1a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.08) 0%, transparent 50%),
+                linear-gradient(45deg, transparent 30%, rgba(255, 215, 0, 0.02) 50%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .international-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(rgba(255, 215, 0, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 215, 0, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.3;
+        }
+        
+        .story-card {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
             transition: all 0.3s ease;
-            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
         }
         
-        .value-card:hover {
+        .story-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(245, 158, 11, 0.2);
-            border-color: #f59e0b;
+            box-shadow: 0 25px 50px rgba(255, 215, 0, 0.4);
+            border-color: rgba(255, 215, 0, 0.6);
+        }
+        
+        .story-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        
+        .story-card:hover::before {
+            left: 100%;
         }
         
         .team-card {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
             transition: all 0.3s ease;
-            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
         }
         
         .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.3);
+            border-color: rgba(255, 215, 0, 0.5);
+        }
+        
+        .value-card {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .value-card:hover {
+            border-color: rgba(255, 215, 0, 0.5);
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-            border-color: #f59e0b;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #000000;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #FFA500, #FFD700);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.4);
+        }
+        
+        .btn-secondary {
+            border: 2px solid #FFD700;
+            color: #FFD700;
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: #FFD700;
+            color: #000000;
+            transform: translateY(-2px);
+        }
+        
+        .testimonial-card {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            border-color: rgba(255, 215, 0, 0.5);
+            transform: translateY(-5px);
+        }
+        
+        .award-badge {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 215, 0, 0.05));
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .award-badge:hover {
+            border-color: rgba(255, 215, 0, 0.6);
+            transform: scale(1.05);
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+        }
+        
+        .modal-content {
+            background-color: #1a1a1a;
+            margin: 5% auto;
+            padding: 20px;
+            border: 2px solid #FFD700;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 10px;
+        }
+        
+        .close {
+            color: #FFD700;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .close:hover {
+            color: #FFA500;
         }
         
         .timeline-item {
             position: relative;
-            padding-left: 3rem;
+            padding-left: 40px;
         }
         
         .timeline-item::before {
             content: '';
             position: absolute;
-            left: 0.75rem;
-            top: 2rem;
-            width: 2px;
-            height: calc(100% - 2rem);
-            background: linear-gradient(to bottom, #f59e0b, #fbbf24);
+            left: 0;
+            top: 8px;
+            width: 16px;
+            height: 16px;
+            background: #FFD700;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(255, 215, 0, 0.2);
         }
         
-        .timeline-item:last-child::before {
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 24px;
+            width: 2px;
+            height: calc(100% - 16px);
+            background: linear-gradient(to bottom, #FFD700, transparent);
+        }
+        
+        .timeline-item:last-child::after {
             display: none;
         }
         
-        .timeline-dot {
-            position: absolute;
-            left: 0;
-            top: 0.5rem;
-            width: 2rem;
-            height: 2rem;
-            background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #1a1a1a;
-            font-weight: bold;
-            font-size: 0.875rem;
-            border: 3px solid white;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-        
-        .stat-card {
-            background: white;
-            border-radius: 1rem;
-            padding: 2rem;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-        
-        .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            border-color: #f59e0b;
-        }
-        
-        .image-placeholder {
-            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
-            border: 2px dashed #d1d5db;
-            border-radius: 0.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #6b7280;
-            font-weight: 500;
-        }
-        
-        .parallax-section {
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-        
-        .counter {
-            font-size: 3rem;
-            font-weight: 900;
-            color: #1f2937;
-        }
-        
-        @media (max-width: 768px) {
-            .timeline-item {
-                padding-left: 2.5rem;
-            }
-            
-            .timeline-dot {
-                width: 1.5rem;
-                height: 1.5rem;
-                font-size: 0.75rem;
-            }
-            
-            .timeline-item::before {
-                left: 0.5rem;
-            }
-            
-            .counter {
-                font-size: 2rem;
-            }
+        .office-image {
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+            border: 1px solid rgba(255, 215, 0, 0.2);
         }
     </style>
 </head>
-<body class="bg-gray-50">
+<body class="bg-black text-white font-['Inter']">
+    
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-gray-900/95 backdrop-blur-sm z-50 border-b border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
+    <nav class="fixed top-0 w-full bg-black/90 backdrop-blur-md z-50 border-b border-gold">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
                 <div class="flex items-center">
-                    <a href="index.html" class="flex items-center">
-                        <div class="w-8 h-8 bg-yellow-400 rounded-lg flex items-center justify-center mr-3">
-                            <i class="fas fa-rocket text-gray-900"></i>
-                        </div>
-                        <div class="text-2xl font-bold text-gradient">Afreach Creatives</div>
-                    </a>
+                    <img src="/images/afreachofficiallogo.png" alt="Afreach Creatives Logo" class="h-10 w-auto" onerror="this.src=''; this.alt='Afreach Creatives'; this.style.display='none';">
+                    <span class="ml-3 text-xl font-bold text-gold">Afreach Creatives</span>
                 </div>
                 
                 <!-- Desktop Menu -->
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="index.html" class="text-gray-300 hover:text-yellow-400 transition-colors">Home</a>
-                        <a href="services.html" class="text-gray-300 hover:text-yellow-400 transition-colors">Services</a>
-                        <a href="portfolio.html" class="text-gray-300 hover:text-yellow-400 transition-colors">Portfolio</a>
-                        <a href="about.html" class="text-yellow-400 font-semibold">About</a>
-                        <a href="contact.html" class="text-gray-300 hover:text-yellow-400 transition-colors">Contact</a>
-                    </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-white hover:text-gold transition-colors">Home</a>
+                    <a href="services.html" class="text-white hover:text-gold transition-colors">Services</a>
+                    <a href="portfolio.html" class="text-white hover:text-gold transition-colors">Portfolio</a>
+                    <a href="about.html" class="text-gold font-semibold">About</a>
+                    <a href="contact.html" class="text-white hover:text-gold transition-colors">Contact</a>
+                    <button onclick="openQuoteModal()" class="btn-primary px-6 py-2 rounded-full">Get Quote</button>
                 </div>
                 
                 <!-- Mobile Menu Button -->
-                <div class="md:hidden">
-                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white" aria-label="Toggle mobile menu">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-gold">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
             </div>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="md:hidden hidden bg-gray-900 border-t border-gray-800">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="index.html" class="block px-3 py-2 text-gray-300 hover:text-yellow-400 transition-colors">Home</a>
-                <a href="services.html" class="block px-3 py-2 text-gray-300 hover:text-yellow-400 transition-colors">Services</a>
-                <a href="portfolio.html" class="block px-3 py-2 text-gray-300 hover:text-yellow-400 transition-colors">Portfolio</a>
-                <a href="about.html" class="block px-3 py-2 text-yellow-400 font-semibold">About</a>
-                <a href="contact.html" class="block px-3 py-2 text-gray-300 hover:text-yellow-400 transition-colors">Contact</a>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="index.html" class="block py-2 text-white hover:text-gold transition-colors">Home</a>
+                <a href="services.html" class="block py-2 text-white hover:text-gold transition-colors">Services</a>
+                <a href="portfolio.html" class="block py-2 text-white hover:text-gold transition-colors">Portfolio</a>
+                <a href="about.html" class="block py-2 text-gold font-semibold">About</a>
+                <a href="contact.html" class="block py-2 text-white hover:text-gold transition-colors">Contact</a>
+                <button onclick="openQuoteModal()" class="btn-primary px-6 py-2 rounded-full mt-4">Get Quote</button>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="gradient-bg text-white pt-24 pb-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <h1 class="text-4xl md:text-6xl font-bold mb-6">
-                    About <span class="text-yellow-300">Afreach Creatives</span>
+    <section class="hero-bg min-h-screen flex items-center pt-20">
+        <div class="international-grid"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <!-- Premium Badge -->
+            <div class="text-center mb-8" data-aos="fade-down">
+                <div class="premium-badge inline-flex items-center px-6 py-2 rounded-full text-sm font-medium text-gold">
+                    <div class="w-2 h-2 international-accent rounded-full mr-2"></div>
+                    Kenya's Premier Digital Agency Since 2020
+                </div>
+            </div>
+            
+            <div class="text-center max-w-4xl mx-auto">
+                <h1 class="hero-title text-5xl lg:text-7xl mb-8 leading-tight" data-aos="fade-up">
+                    About <span class="text-gold international-accent bg-clip-text text-transparent">Afreach</span><br>
+                    <span class="text-4xl lg:text-5xl font-light">Creatives</span>
                 </h1>
-                <p class="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto">
-                    We're passionate digital innovators dedicated to transforming Kenyan businesses through cutting-edge technology and creative excellence
+                <p class="hero-subtitle text-xl lg:text-2xl mb-10 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                    From humble beginnings to <strong class="text-gold">Kenya's leading digital agency</strong>. Discover the story, meet the team, and learn the values that drive our success.
                 </p>
-                <div class="flex flex-wrap justify-center gap-4 text-sm">
-                    <span class="bg-white/20 px-4 py-2 rounded-full">🚀 Innovation</span>
-                    <span class="bg-white/20 px-4 py-2 rounded-full">💡 Creativity</span>
-                    <span class="bg-white/20 px-4 py-2 rounded-full">🎯 Results</span>
-                    <span class="bg-white/20 px-4 py-2 rounded-full">🤝 Partnership</span>
+                
+                <div class="flex flex-col sm:flex-row gap-6 justify-center mb-16" data-aos="fade-up" data-aos-delay="400">
+                    <a href="#our-story" class="btn-primary px-10 py-5 rounded-full text-lg font-semibold shadow-2xl">
+                        Our Story
+                    </a>
+                    <a href="#meet-team" class="btn-secondary px-10 py-5 rounded-full text-lg font-semibold">
+                        Meet the Team
+                    </a>
+                </div>
+                
+                <!-- Company Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="600">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-gold mb-1">4+</div>
+                        <div class="text-sm text-gray-300">Years Experience</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-gold mb-1">50+</div>
+                        <div class="text-sm text-gray-300">Projects Delivered</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-gold mb-1">25+</div>
+                        <div class="text-sm text-gray-300">Happy Clients</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-gold mb-1">100%</div>
+                        <div class="text-sm text-gray-300">Success Rate</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Our Story Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-                        Our <span class="text-gradient">Story</span>
-                    </h2>
-                    <div class="space-y-6 text-lg text-gray-600">
-                        <p>
-                            Founded in 2023, Afreach Creatives emerged from a simple yet powerful vision: to bridge the digital divide for Kenyan businesses and empower them to compete on a global scale.
+    <section id="our-story" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">Our <span class="text-gold">Story</span></h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    From humble beginnings to digital excellence - the journey that shaped Kenya's premier creative agency
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-16 items-center mb-20">
+                <div data-aos="fade-right">
+                    <div class="story-card rounded-xl p-8">
+                        <h3 class="text-3xl font-bold mb-6 text-gold">The Beginning</h3>
+                        <p class="text-gray-300 text-lg mb-6 leading-relaxed">
+                            In 2020, during the global pandemic when businesses were struggling to adapt to the digital world, we saw an opportunity to help. What started as a small team of passionate creatives in Nairobi has grown into Kenya's most trusted digital agency.
                         </p>
-                        <p>
-                            What started as a small team of passionate developers and designers has grown into Kenya's most trusted digital agency, serving everyone from ambitious startups to established enterprises, political leaders, churches, and NGOs.
+                        <p class="text-gray-300 text-lg mb-6 leading-relaxed">
+                            We began with a simple mission: to provide world-class digital solutions that help Kenyan businesses compete on the global stage. Every project taught us something new, every client challenge made us stronger.
                         </p>
-                        <p>
-                            We believe that every organization, regardless of size or budget, deserves access to world-class digital solutions. That's why we've made it our mission to deliver exceptional value while maintaining the highest standards of quality and innovation.
-                        </p>
-                        <p>
-                            Today, we're proud to have helped over <strong class="text-gray-800">200+ clients</strong> transform their digital presence and achieve measurable business growth.
-                        </p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-gold rounded-full flex items-center justify-center text-black font-bold mr-4">2020</div>
+                            <div>
+                                <div class="font-semibold text-gold">Founded</div>
+                                <div class="text-sm text-gray-400">Nairobi, Kenya</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div data-aos="fade-left">
+                    <div class="office-image rounded-xl p-8 h-96 flex items-center justify-center">
+                        <img src="/images/office/afreach-office.jpg" alt="Afreach Creatives Office" class="w-full h-full object-cover rounded-lg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="text-center text-gray-400" style="display: none;">
+                            <div class="text-6xl mb-4">🏢</div>
+                            <div class="text-xl font-semibold text-gold">Our Creative Space</div>
+                            <div class="text-sm mt-2">Where innovation meets execution</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Timeline -->
+            <div class="max-w-4xl mx-auto" data-aos="fade-up">
+                <h3 class="text-3xl font-bold text-center mb-12 text-gold">Our Journey</h3>
+                <div class="space-y-8">
+                    <div class="timeline-item">
+                        <div class="story-card rounded-lg p-6">
+                            <div class="flex items-center mb-4">
+                                <h4 class="text-xl font-bold text-gold mr-4">2020</h4>
+                                <span class="text-gray-400">The Foundation</span>
+                            </div>
+                            <p class="text-gray-300">Founded Afreach Creatives with a vision to transform Kenyan businesses through exceptional digital solutions.</p>
+                        </div>
                     </div>
                     
-                    <div class="mt-8 flex flex-wrap gap-4">
-                        <div class="bg-yellow-50 px-4 py-2 rounded-lg border border-yellow-200">
-                            <span class="text-yellow-800 font-semibold">Est. 2023</span>
-                        </div>
-                        <div class="bg-blue-50 px-4 py-2 rounded-lg border border-blue-200">
-                            <span class="text-blue-800 font-semibold">200+ Projects</span>
-                        </div>
-                        <div class="bg-green-50 px-4 py-2 rounded-lg border border-green-200">
-                            <span class="text-green-800 font-semibold">100% Client Satisfaction</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div>
-                    <section>
-    <div class="image-placeholder h-96">
-        <div class="text-center">
-            <i class="fas fa-users text-4xl mb-2"></i>
-            <p>Team Photo / Office Image</p>
-            <img src="/images/afreachteam.jpg" 
-                 alt="Mobile App Development Showcase" 
-                 class="w-full h-full object-cover rounded-2xl shadow-lg">
-        </div>
-    </div>
-</section>
-
-                   
-    <!-- Mission, Vision & Values -->
-    <section class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-                    Our <span class="text-gradient">Foundation</span>
-                </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    The principles that guide everything we do
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Mission -->
-                <article class="value-card bg-white p-8 rounded-xl shadow-lg text-center">
-                    <div class="w-16 h-16 blue-gradient rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-bullseye text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Our Mission</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        To empower Kenyan businesses with innovative digital solutions that drive growth, enhance customer engagement, and create lasting competitive advantages in the digital marketplace.
-                    </p>
-                </article>
-                
-                <!-- Vision -->
-                <article class="value-card bg-white p-8 rounded-xl shadow-lg text-center">
-                    <div class="w-16 h-16 gold-gradient rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-eye text-gray-900 text-2xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Our Vision</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        To be East Africa's leading digital agency, recognized for transforming businesses through cutting-edge technology, exceptional creativity, and unwavering commitment to client success.
-                    </p>
-                </article>
-                
-                <!-- Values -->
-                <article class="value-card bg-white p-8 rounded-xl shadow-lg text-center">
-                    <div class="w-16 h-16 blue-gradient rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-heart text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Our Values</h3>
-                    <div class="text-gray-600 text-left">
-                        <div class="space-y-2">
-                            <div class="flex items-center">
-                                <i class="fas fa-check text-green-500 mr-2"></i>
-                                <span>Excellence in everything</span>
+                    <div class="timeline-item">
+                        <div class="story-card rounded-lg p-6">
+                            <div class="flex items-center mb-4">
+                                <h4 class="text-xl font-bold text-gold mr-4">2021</h4>
+                                <span class="text-gray-400">First Major Success</span>
                             </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-check text-green-500 mr-2"></i>
-                                <span>Transparent communication</span>
+                            <p class="text-gray-300">Delivered our first major project - a complete digital transformation that increased client revenue by 300%.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="story-card rounded-lg p-6">
+                            <div class="flex items-center mb-4">
+                                <h4 class="text-xl font-bold text-gold mr-4">2022</h4>
+                                <span class="text-gray-400">Team Expansion</span>
                             </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-check text-green-500 mr-2"></i>
-                                <span>Continuous innovation</span>
+                            <p class="text-gray-300">Expanded our team with top talent in development, design, and digital marketing to serve more clients better.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="story-card rounded-lg p-6">
+                            <div class="flex items-center mb-4">
+                                <h4 class="text-xl font-bold text-gold mr-4">2023</h4>
+                                <span class="text-gray-400">International Recognition</span>
                             </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-check text-green-500 mr-2"></i>
-                                <span>Client-first approach</span>
+                            <p class="text-gray-300">Gained recognition as one of Kenya's leading digital agencies, serving clients across East Africa and beyond.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="story-card rounded-lg p-6">
+                            <div class="flex items-center mb-4">
+                                <h4 class="text-xl font-bold text-gold mr-4">2024</h4>
+                                <span class="text-gray-400">Innovation Leadership</span>
                             </div>
+                            <p class="text-gray-300">Leading digital innovation in Kenya with cutting-edge solutions and a track record of 100% client satisfaction.</p>
                         </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Statistics Section -->
-    <section class="py-20 gradient-bg text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">
-                    Our <span class="text-yellow-300">Impact</span>
-                </h2>
-                <p class="text-xl text-gray-200">
-                    Numbers that speak to our commitment and success
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-4 gap-8">
-                <div class="stat-card">
-                    <div class="counter" data-target="200">0</div>
-                    <div class="text-lg font-semibold text-gray-600 mt-2">Projects Completed</div>
-                </div>
-                
-                <div class="stat-card">
-                    <div class="counter" data-target="150">0</div>
-                    <div class="text-lg font-semibold text-gray-600 mt-2">Happy Clients</div>
-                </div>
-                
-                <div class="stat-card">
-                    <div class="counter" data-target="24">0</div>
-                    <div class="text-lg font-semibold text-gray-600 mt-2">Months Experience</div>
-                </div>
-                
-                <div class="stat-card">
-                    <div class="counter" data-target="100">0</div>
-                    <div class="text-lg font-semibold text-gray-600 mt-2">Success Rate %</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Timeline Section -->
-    <section class="py-20 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-                    Our <span class="text-gradient">Journey</span>
-                </h2>
-                <p class="text-xl text-gray-600">
-                    Key milestones in our growth story
-                </p>
-            </div>
-            
-            <div class="space-y-12">
-                <div class="timeline-item">
-                    <div class="timeline-dot">
-                        <i class="fas fa-rocket text-xs"></i>
-                    </div>
-                    <div class="bg-gray-50 p-6 rounded-lg">
-                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
-                            <h3 class="text-xl font-bold text-gray-800">The Beginning</h3>
-                            <span class="text-sm text-gray-500 bg-yellow-100 px-3 py-1 rounded-full">January 2023</span>
-                        </div>
-                        <p class="text-gray-600">
-                            Afreach Creatives was founded with a vision to democratize digital excellence for Kenyan businesses. Started with our first client project - a local restaurant's website.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-dot">
-                        <i class="fas fa-users text-xs"></i>
-                    </div>
-                    <div class="bg-gray-50 p-6 rounded-lg">
-                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
-                            <h3 class="text-xl font-bold text-gray-800">Team Expansion</h3>
-                            <span class="text-sm text-gray-500 bg-blue-100 px-3 py-1 rounded-full">June 2023</span>
-                        </div>
-                        <p class="text-gray-600">
-                            Expanded our team to include specialized developers, designers, and digital marketing experts. Completed our 50th project milestone.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-dot">
-                        <i class="fas fa-mobile-alt text-xs"></i>
-                    </div>
-                    <div class="bg-gray-50 p-6 rounded-lg">
-                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
-                            <h3 class="text-xl font-bold text-gray-800">Mobile App Development</h3>
-                            <span class="text-sm text-gray-500 bg-green-100 px-3 py-1 rounded-full">September 2023</span>
-                        </div>
-                        <p class="text-gray-600">
-                            Launched our mobile app development services, delivering our first cross-platform application for a major Kenyan retailer.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-dot">
-                        <i class="fas fa-award text-xs"></i>
-                    </div>
-                    <div class="bg-gray-50 p-6 rounded-lg">
-                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
-                            <h3 class="text-xl font-bold text-gray-800">100+ Projects Milestone</h3>
-                            <span class="text-sm text-gray-500 bg-purple-100 px-3 py-1 rounded-full">December 2023</span>
-                        </div>
-                        <p class="text-gray-600">
-                            Celebrated completing over 100 successful projects, establishing ourselves as a trusted partner for businesses across Kenya.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-dot">
-                        <i class="fas fa-globe text-xs"></i>
-                    </div>
-                    <div class="bg-gradient-to-r from-yellow-50 to-blue-50 p-6 rounded-lg border-2 border-yellow-200">
-                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
-                            <h3 class="text-xl font-bold text-gray-800">Regional Expansion</h3>
-                            <span class="text-sm text-gray-500 bg-yellow-200 px-3 py-1 rounded-full">2024 & Beyond</span>
-                        </div>
-                        <p class="text-gray-600">
-                            Expanding our services across East Africa while continuing to innovate and deliver exceptional digital solutions for our growing client base.
-                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
- <!-- Team Section -->
-<section class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-                Meet Our <span class="text-gradient">Team</span>
-            </h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                The passionate professionals behind your digital success
-            </p>
-        </div>
-        
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-            <!-- Team Member 1 -->
-            <article class="team-card bg-white p-6 rounded-xl shadow-lg text-center">
-                <div class="image-placeholder h-48 mb-6 rounded-lg overflow-hidden">
-                    <img src="/images/ceo.jpg" 
-                         alt="Charles Njoroge - Founder & CEO" 
-                         class="w-full h-full object-cover rounded-lg shadow-md">
-                </div>
-                <h3 class="text-xl font-bold text-gray-800 mb-2">Charles Njoroge</h3>
-                <p class="text-yellow-600 font-semibold mb-3">Founder & CEO</p>
-                <p class="text-gray-600 mb-4">
-                    Visionary leader with 4+ years in digital strategy and business development. Passionate about empowering Kenyan businesses.
-                </p>
-                <div class="flex justify-center space-x-3">
-                    <a href="#" class="text-gray-400 hover:text-blue-600 transition-colors" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin text-lg"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors" aria-label="Twitter">
-                        <i class="fab fa-twitter text-lg"></i>
-                    </a>
-                </div>
-            </article>
-
-            <!-- Team Member 2 -->
-            <article class="team-card bg-white p-6 rounded-xl shadow-lg text-center">
-                <div class="image-placeholder h-48 mb-6 rounded-lg overflow-hidden">
-                    <img src="/images/joseph.jpg" 
-                         alt="Joseph Mwangi - CTO" 
-                         class="w-full h-full object-cover rounded-lg shadow-md">
-                </div>
-                <h3 class="text-xl font-bold text-gray-800 mb-2">Joseph Mwangi</h3>
-                <p class="text-blue-600 font-semibold mb-3">Chief Technology Officer</p>
-                <p class="text-gray-600 mb-4">
-                    Full-stack developer and tech innovator with expertise in modern web technologies and mobile app development.
-                </p>
-                <div class="flex justify-center space-x-3">
-                    <a href="#" class="text-gray-400 hover:text-blue-600 transition-colors" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin text-lg"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-gray-800 transition-colors" aria-label="GitHub">
-                        <i class="fab fa-github text-lg"></i>
-                    </a>
-                </div>
-            </article>
-
-            <!-- Team Member 3 -->
-            <article class="team-card bg-white p-6 rounded-xl shadow-lg text-center">
-                <div class="image-placeholder h-48 mb-6 rounded-lg overflow-hidden">
-                    <img src="/images/beatrice.jpg" 
-                         alt="Beatrice Muthoni - Creative Director" 
-                         class="w-full h-full object-cover rounded-lg shadow-md">
-                </div>
-                <h3 class="text-xl font-bold text-gray-800 mb-2">Beatrice Muthoni</h3>
-                <p class="text-green-600 font-semibold mb-3">Creative Director</p>
-                <p class="text-gray-600 mb-4">
-                    Award-winning designer specializing in brand identity, UI/UX design, and creating memorable visual experiences.
-                </p>
-                <div class="flex justify-center space-x-3">
-                    <a href="#" class="text-gray-400 hover:text-pink-600 transition-colors" aria-label="Dribbble">
-                        <i class="fab fa-dribbble text-lg"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-blue-600 transition-colors" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin text-lg"></i>
-                    </a>
-                </div>
-            </article>
-
-        </div>
-    </div>
-</section>
-           
-            <div class="text-center mt-12">
-                <p class="text-lg text-gray-600 mb-6">
-                    Want to join our growing team?
-                </p>
-                <a href="index.html#contact" class="gold-gradient text-gray-900 px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all inline-block">
-                    <i class="fas fa-briefcase mr-2"></i>View Open Positions
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Choose Us Section -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-                    Why Choose <span class="text-gradient">Afreach Creatives?</span>
-                </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    What sets us apart in Kenya's competitive digital landscape
+    <!-- Meet the Team Section -->
+    <section id="meet-team" class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">Meet Our <span class="text-gold">Team</span></h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    The passionate professionals behind Kenya's most successful digital transformations
                 </p>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="text-center">
-                    <div class="w-16 h-16 blue-gradient rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-clock text-white text-2xl"></i>
+                <!-- Team Member 1 -->
+                <div class="team-card rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-24 h-24 mx-auto mb-6 bg-gold rounded-full flex items-center justify-center text-black text-2xl font-bold">
+                        JM
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Fast Delivery</h3>
-                    <p class="text-gray-600">
-                        We understand the urgency of business needs. Our streamlined processes ensure quick turnaround without compromising quality.
-                    </p>
+                    <h3 class="text-xl font-bold text-gold mb-2">John Mwangi</h3>
+                    <p class="text-gray-400 mb-4">Founder & CEO</p>
+                    <p class="text-gray-300 text-sm mb-6">Visionary leader with 8+ years in digital transformation. Passionate about helping Kenyan businesses reach global standards.</p>
+                    <div class="flex justify-center space-x-4">
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-xs text-gold">Strategy</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-xs text-gold">Leadership</span>
+                    </div>
                 </div>
                 
-                <div class="text-center">
-                    <div class="w-16 h-16 gold-gradient rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-shield-alt text-gray-900 text-2xl"></i>
+                <!-- Team Member 2 -->
+                <div class="team-card rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-24 h-24 mx-auto mb-6 bg-gold rounded-full flex items-center justify-center text-black text-2xl font-bold">
+                        SK
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Guaranteed Results</h3>
-                    <p class="text-gray-600">
-                        We stand behind our work with a 100% satisfaction guarantee. If you're not happy, we'll make it right.
-                    </p>
+                    <h3 class="text-xl font-bold text-gold mb-2">Sarah Kimani</h3>
+                    <p class="text-gray-400 mb-4">Lead Developer</p>
+                    <p class="text-gray-300 text-sm mb-6">Full-stack developer specializing in modern web technologies. Builds scalable solutions that drive business growth.</p>
+                    <div class="flex justify-center space-x-4">
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-xs text-gold">React</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-xs text-gold">Node.js</span>
+                    </div>
                 </div>
                 
-                <div class="text-center">
-                    <div class="w-16 h-16 blue-gradient rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-headset text-white text-2xl"></i>
+                <!-- Team Member 3 -->
+                <div class="team-card rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-24 h-24 mx-auto mb-6 bg-gold rounded-full flex items-center justify-center text-black text-2xl font-bold">
+                        DO
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">24/7 Support</h3>
-                    <p class="text-gray-600">
-                        Our dedicated support team is always available to help you succeed, whenever you need assistance.
-                    </p>
+                    <h3 class="text-xl font-bold text-gold mb-2">David Ochieng</h3>
+                    <p class="text-gray-400 mb-4">Creative Director</p>
+                    <p class="text-gray-300 text-sm mb-6">Award-winning designer with an eye for detail. Creates visual experiences that captivate and convert audiences.</p>
+                    <div class="flex justify-center space-x-4">
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-xs text-gold">UI/UX</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-xs text-gold">Branding</span>
+                    </div>
                 </div>
                 
-                <div class="text-center">
-                    <div class="w-16 h-16 gold-gradient rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-money-bill-wave text-gray-900 text-2xl"></i>
+                <!-- Team Member 4 -->
+                <div class="team-card rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-24 h-24 mx-auto mb-6 bg-gold rounded-full flex items-center justify-center text-black text-2xl font-bold">
+                        MW
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Affordable Pricing</h3>
-                    <p class="text-gray-600">
-                        Premium quality at competitive prices. We believe great digital solutions should be accessible to all businesses.
-                    </p>
+                    <h3 class="text-xl font-bold text-gold mb-2">Mary Wanjiku</h3>
+                    <p class="text-gray-400 mb-4">Digital Marketing Manager</p>
+                    <p class="text-gray-300 text-sm mb-6">Social media strategist who turns followers into customers. Expert in creating campaigns that drive real business results.</p>
+                    <div class="flex justify-center space-x-4">
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-xs text-gold">Social Media</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-xs text-gold">Analytics</span>
+                    </div>
                 </div>
                 
-                <div class="text-center">
-                    <div class="w-16 h-16 blue-gradient rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-cogs text-white text-2xl"></i>
+                <!-- Team Member 5 -->
+                <div class="team-card rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-24 h-24 mx-auto mb-6 bg-gold rounded-full flex items-center justify-center text-black text-2xl font-bold">
+                        PK
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Latest Technology</h3>
-                    <p class="text-gray-600">
-                        We use cutting-edge tools and technologies to ensure your digital solutions are future-proof and scalable.
-                    </p>
+                    <h3 class="text-xl font-bold text-gold mb-2">Peter Kariuki</h3>
+                    <p class="text-gray-400 mb-4">Mobile App Developer</p>
+                    <p class="text-gray-300 text-sm mb-6">iOS and Android specialist creating apps that users love. Focuses on performance, security, and user experience.</p>
+                    <div class="flex justify-center space-x-4">
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-xs text-gold">Flutter</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-xs text-gold">React Native</span>
+                    </div>
                 </div>
                 
-                <div class="text-center">
-                    <div class="w-16 h-16 gold-gradient rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-heart text-gray-900 text-2xl"></i>
+                <!-- Team Member 6 -->
+                <div class="team-card rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="600">
+                    <div class="w-24 h-24 mx-auto mb-6 bg-gold rounded-full flex items-center justify-center text-black text-2xl font-bold">
+                        LN
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Local Understanding</h3>
-                    <p class="text-gray-600">
-                        As a Kenyan company, we understand the local market, culture, and business environment better than anyone.
-                    </p>
+                    <h3 class="text-xl font-bold text-gold mb-2">Lucy Nyambura</h3>
+                    <p class="text-gray-400 mb-4">Project Manager</p>
+                    <p class="text-gray-300 text-sm mb-6">Ensures every project is delivered on time and exceeds expectations. Your dedicated point of contact throughout the journey.</p>
+                    <div class="flex justify-center space-x-4">
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-xs text-gold">Agile</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-xs text-gold">Communication</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="py-20 gradient-bg text-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">
-                Ready to Transform Your <span class="text-yellow-300">Digital Presence?</span>
-            </h2>
-            <p class="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
-                Join over 200+ satisfied clients who have trusted us with their digital transformation journey
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="services.html" class="gold-gradient text-gray-900 px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-lg transition-all inline-block">
-                    <i class="fas fa-rocket mr-2"></i>View Our Services
-                </a>
-                <a href="index.html#contact" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-gray-900 transition-all inline-block">
-                    <i class="fas fa-phone mr-2"></i>Get Free Consultation
-                </a>
+    <!-- Our Values Section -->
+    <section class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">Our <span class="text-gold">Values</span></h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    The principles that guide everything we do and ensure your success
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Value 1 -->
+                <div class="value-card rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 gradient-gold rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gold mb-4">Excellence</h3>
+                    <p class="text-gray-400">We don't just meet expectations - we exceed them. Every project is an opportunity to showcase world-class quality.</p>
+                </div>
+                
+                <!-- Value 2 -->
+                <div class="value-card rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 gradient-gold rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gold mb-4">Partnership</h3>
+                    <p class="text-gray-400">Your success is our success. We work as an extension of your team, invested in your long-term growth and prosperity.</p>
+                </div>
+                
+                <!-- Value 3 -->
+                <div class="value-card rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 gradient-gold rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gold mb-4">Innovation</h3>
+                    <p class="text-gray-400">We stay ahead of trends and technologies to give you competitive advantages that drive real business results.</p>
+                </div>
+                
+                <!-- Value 4 -->
+                <div class="value-card rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-16 h-16 gradient-gold rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gold mb-4">Integrity</h3>
+                    <p class="text-gray-400">Transparent pricing, honest communication, and ethical practices. We build relationships based on trust and mutual respect.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards & Recognition -->
+    <section class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">Awards & <span class="text-gold">Recognition</span></h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Industry recognition for our commitment to excellence and innovation
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Award 1 -->
+                <div class="award-badge rounded-xl p-6 text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-4xl mb-4">🏆</div>
+                    <h4 class="font-semibold text-gold mb-2">Best Digital Agency</h4>
+                    <p class="text-sm text-gray-400">Kenya Web Awards 2023</p>
+                </div>
+                
+                <!-- Award 2 -->
+                <div class="award-badge rounded-xl p-6 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-4xl mb-4">⭐</div>
+                    <h4 class="font-semibold text-gold mb-2">Top Rated Agency</h4>
+                    <p class="text-sm text-gray-400">Google Reviews 4.9/5</p>
+                </div>
+                
+                <!-- Award 3 -->
+                <div class="award-badge rounded-xl p-6 text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-4xl mb-4">🚀</div>
+                    <h4 class="font-semibold text-gold mb-2">Innovation Leader</h4>
+                    <p class="text-sm text-gray-400">East Africa Tech Summit 2023</p>
+                </div>
+                
+                <!-- Award 4 -->
+                <div class="award-badge rounded-xl p-6 text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-4xl mb-4">💎</div>
+                    <h4 class="font-semibold text-gold mb-2">Client Choice Award</h4>
+                    <p class="text-sm text-gray-400">100% Satisfaction Rate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Testimonials -->
+    <section class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">What Clients <span class="text-gold">Say</span></h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Real feedback from businesses we've transformed
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card rounded-xl p-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gold rounded-full flex items-center justify-center text-black font-bold mr-4">LW</div>
+                        <div>
+                            <h4 class="font-semibold text-gold">Lydia Waweru</h4>
+                            <p class="text-sm text-gray-400">International Speaker</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic mb-4">"Working with Afreach Creatives was transformational. They didn't just build a website - they built a platform that elevated my entire brand to international standards."</p>
+                    <div class="flex text-gold">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card rounded-xl p-8" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gold rounded-full flex items-center justify-center text-black font-bold mr-4">BM</div>
+                        <div>
+                            <h4 class="font-semibold text-gold">Bernard Mwangi</h4>
+                            <p class="text-sm text-gray-400">BM Tyres Owner</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic mb-4">"Our revenue tripled after launching the website they built. The team understood our business and delivered exactly what we needed to compete with the big players."</p>
+                    <div class="flex text-gold">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card rounded-xl p-8" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gold rounded-full flex items-center justify-center text-black font-bold mr-4">GW</div>
+                        <div>
+                            <h4 class="font-semibold text-gold">Grace Wanjiku</h4>
+                            <p class="text-sm text-gray-400">Blessed Nation Director</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic mb-4">"Their social media management and website have been game-changers for our NGO. We're now receiving donations from around the world and have expanded our programs significantly."</p>
+                    <div class="flex text-gold">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-black">
+        <div class="container mx-auto px-6 text-center">
+            <div data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">Ready to Join Our <span class="text-gold">Success Story</span>?</h2>
+                <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                    Let's work together to transform your business and create the next success story. Your journey to digital excellence starts here.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                    <button onclick="openQuoteModal()" class="btn-primary px-8 py-4 rounded-full text-lg">
+                        Start Your Transformation
+                    </button>
+                    <a href="contact.html" class="btn-secondary px-8 py-4 rounded-full text-lg">
+                        Schedule a Meeting
+                    </a>
+                </div>
+                
+                <!-- Trust Indicators -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-gold mb-1">Free</div>
+                        <div class="text-sm text-gray-400">Consultation</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-gold mb-1">24/7</div>
+                        <div class="text-sm text-gray-400">Support</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-gold mb-1">100%</div>
+                        <div class="text-sm text-gray-400">Satisfaction</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-gold mb-1">4+</div>
+                        <div class="text-sm text-gray-400">Years Experience</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 py-12 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer class="bg-black border-t border-gold py-12">
+        <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-4 gap-8">
-                <div class="md:col-span-2">
+                <div>
                     <div class="flex items-center mb-4">
-                        <div class="w-8 h-8 bg-yellow-400 rounded-lg flex items-center justify-center mr-3">
-                            <i class="fas fa-rocket text-gray-900"></i>
-                        </div>
-                        <div class="text-2xl font-bold text-gradient">Afreach Creatives</div>
+                        <img src="/images/afreachofficiallogo.png" alt="Afreach Creatives Logo" class="h-8 w-auto" onerror="this.style.display='none';">
+                        <span class="ml-2 text-lg font-bold text-gold">Afreach Creatives</span>
                     </div>
-                    <p class="text-gray-300 mb-6 max-w-md">
-                        Kenya's premier digital agency. From brand identity to digital marketing - we handle everything so you don't have to.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="https://www.linkedin.com/in/afreach-creatives-9802a6372" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-yellow-400 transition-colors" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin text-xl"></i>
-                        </a>
-                        <a href="https://x.com/AfreachCreative" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-yellow-400 transition-colors" aria-label="Twitter">
-                            <i class="fab fa-twitter text-xl"></i>
-                        </a>
-                        <a href="https://www.facebook.com/share/1D4xPeLRkc/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-yellow-400 transition-colors" aria-label="Facebook">
-                            <i class="fab fa-facebook text-xl"></i>
-                        </a>
-                        <a href="https://www.instagram.com/afreach_creatives" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-yellow-400 transition-colors" aria-label="Instagram">
-                            <i class="fab fa-instagram text-xl"></i>
-                        </a>
-                        <a href="https://www.tiktok.com/@afreach.creatives" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-yellow-400 transition-colors" aria-label="TikTok">
-                            <i class="fab fa-tiktok text-xl"></i>
-                        </a>
-                    </div>
+                    <p class="text-gray-400">Kenya's premier digital agency, transforming businesses through exceptional creative solutions and unwavering commitment to excellence.</p>
                 </div>
                 
                 <div>
-                    <h4 class="text-lg font-semibold mb-4 text-white">Quick Links</h4>
-                    <ul class="space-y-2 text-gray-300">
-                        <li><a href="index.html" class="hover:text-yellow-400 transition-colors">Home</a></li>
-                        <li><a href="services.html" class="hover:text-yellow-400 transition-colors">Services</a></li>
-                        <li><a href="index.html#portfolio" class="hover:text-yellow-400 transition-colors">Portfolio</a></li>
-                        <li><a href="#about" class="hover:text-yellow-400 transition-colors">About Us</a></li>
-                        <li><a href="index.html#contact" class="hover:text-yellow-400 transition-colors">Contact</a></li>
+                    <h4 class="text-gold font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#our-story" class="hover:text-gold transition-colors">Our Story</a></li>
+                        <li><a href="#meet-team" class="hover:text-gold transition-colors">Meet the Team</a></li>
+                        <li><a href="portfolio.html" class="hover:text-gold transition-colors">Portfolio</a></li>
+                        <li><a href="contact.html" class="hover:text-gold transition-colors">Careers</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h4 class="text-lg font-semibold mb-4 text-white">Contact Info</h4>
-                    <ul class="space-y-2 text-gray-300">
-                        <li>
-                            <i class="fas fa-envelope mr-2 text-yellow-400"></i>
-                            <a href="mailto:afreachcreative@gmail.com" class="hover:text-yellow-400 transition-colors">afreachcreative@gmail.com</a>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone mr-2 text-yellow-400"></i>
-                            <a href="tel:+254703579059" class="hover:text-yellow-400 transition-colors">+254 703 579 059</a>
-                        </li>
-                        <li>
-                            <i class="fab fa-whatsapp mr-2 text-yellow-400"></i>
-                            <a href="https://wa.me/254703579059" target="_blank" rel="noopener noreferrer" class="hover:text-yellow-400 transition-colors">WhatsApp</a>
-                        </li>
+                    <h4 class="text-gold font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="services.html" class="hover:text-gold transition-colors">Web Development</a></li>
+                        <li><a href="services.html" class="hover:text-gold transition-colors">App Development</a></li>
+                        <li><a href="services.html" class="hover:text-gold transition-colors">Graphic Design</a></li>
+                        <li><a href="services.html" class="hover:text-gold transition-colors">Social Media</a></li>
                     </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-gold font-semibold mb-4">Connect</h4>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://wa.me/254703579059" target="_blank" rel="noopener noreferrer" class="text-green-500 hover:text-green-400 transition-colors" title="WhatsApp">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                            </svg>
+                        </a>
+                        <a href="mailto:afreachcreative@gmail.com" class="text-gold hover:text-yellow-400 transition-colors" title="Email">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                        </a>
+                        <a href="tel:+254703579059" class="text-blue-400 hover:text-blue-300 transition-colors" title="Call">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/afreach-creatives-9802a6372" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-500 transition-colors" title="LinkedIn">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="https://x.com/AfreachCreative" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors" title="X (Twitter)">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.facebook.com/share/1D4xPeLRkc/" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:text-blue-400 transition-colors" title="Facebook">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/afreach_creatives" target="_blank" rel="noopener noreferrer" class="text-pink-500 hover:text-pink-400 transition-colors" title="Instagram">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C8.396 0 7.989.013 7.041.048 6.094.082 5.52.204 5.036.388a5.918 5.918 0 0 0-2.14 1.393A5.918 5.918 0 0 0 .503 4.021c-.184.484-.306 1.058-.34 2.005C.128 7.024.115 7.431.115 11.052s.013 4.028.048 4.976c.034.947.156 1.521.34 2.005a5.918 5.918 0 0 0 1.393 2.14 5.918 5.918 0 0 0 2.14 1.393c.484.184 1.058.306 2.005.34.948.035 1.355.048 4.976.048s4.028-.013 4.976-.048c.947-.034 1.521-.156 2.005-.34a5.918 5.918 0 0 0 2.14-1.393 5.918 5.918 0 0 0 1.393-2.14c.184-.484.306-1.058.34-2.005.035-.948.048-1.355.048-4.976s-.013-4.028-.048-4.976c-.034-.947-.156-1.521-.34-2.005a5.918 5.918 0 0 0-1.393-2.14A5.918 5.918 0 0 0 19.021.503c-.484-.184-1.058-.306-2.005-.34C16.068.013 15.661 0 12.017 0zm0 2.165c3.573 0 3.994.014 5.402.048.947.034 1.462.156 1.805.26.454.176.778.387 1.12.729.342.342.553.666.729 1.12.104.343.226.858.26 1.805.034 1.408.048 1.829.048 5.402s-.014 3.994-.048 5.402c-.034.947-.156 1.462-.26 1.805-.176.454-.387.778-.729 1.12-.342.342-.666.553-1.12.729-.343.104-.858.226-1.805.26-1.408.034-1.829.048-5.402.048s-3.994-.014-5.402-.048c-.947-.034-1.462-.156-1.805-.26-.454-.176-.778-.387-1.12-.729-.342-.342-.553-.666-.729-1.12-.104-.343-.226-.858-.26-1.805-.034-1.408-.048-1.829-.048-5.402s.014-3.994.048-5.402c.034-.947.156-1.462.26-1.805.176-.454.387-.778.729-1.12.342-.342.666-.553 1.12-.729.343-.104.858-.226 1.805-.26 1.408-.034 1.829-.048 5.402-.048z"/>
+                                <path d="M12.017 5.838a6.214 6.214 0 1 0 0 12.428 6.214 6.214 0 0 0 0-12.428zm0 10.25a4.036 4.036 0 1 1 0-8.072 4.036 4.036 0 0 1 0 8.072zm7.908-10.506a1.451 1.451 0 1 1-2.902 0 1.451 1.451 0 0 1 2.902 0z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.tiktok.com/@afreach.creatives" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition-colors" title="TikTok">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
             
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2024 Afreach Creatives. All rights reserved. | <a href="index.html" class="hover:text-yellow-400 transition-colors">Back to Home</a></p>
+                <p>&copy; 2024 Afreach Creatives. All rights reserved. | Building trust through excellence since 2020.</p>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
+    <!-- Quote Modal -->
+    <div id="quoteModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeQuoteModal()">&times;</span>
+            <h2 class="text-2xl font-bold text-gold mb-6">Join Our Success Story</h2>
+            <form id="quoteForm" action="https://formspree.io/f/mjkedvkg" method="POST">
+                <div class="mb-4">
+                    <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Full Name</label>
+                    <input type="text" id="name" name="name" required class="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-gold focus:outline-none">
+                </div>
+                
+                <div class="mb-4">
+                    <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email Address</label>
+                    <input type="email" id="email" name="email" required class="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-gold focus:outline-none">
+                </div>
+                
+                <div class="mb-4">
+                    <label for="phone" class="block text-sm font-medium text-gray-300 mb-2">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-gold focus:outline-none">
+                </div>
+                
+                <div class="mb-4">
+                    <label for="service" class="block text-sm font-medium text-gray-300 mb-2">Service Needed</label>
+                    <select id="service" name="service" required class="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-gold focus:outline-none">
+                        <option value="">Select a service</option>
+                        <option value="web-development">Web Development</option>
+                        <option value="app-development">App Development</option>
+                        <option value="graphic-design">Graphic Design</option>
+                        <option value="social-media">Social Media Management</option>
+                        <option value="complete-transformation">Complete Digital Transformation</option>
+                    </select>
+                </div>
+                
+                <div class="mb-6">
+                    <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Tell Us About Your Vision</label>
+                    <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-gold focus:outline-none" placeholder="What's your vision for your business? How can we help you achieve it?"></textarea>
+                </div>
+                
+                <button type="submit" class="btn-primary w-full py-3 rounded-lg">
+                    Start My Transformation
+                </button>
+            </form>
+        </div>
+    </div>
 
-        mobileMenuBtn.addEventListener('click', () => {
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/254703579059?text=Hi%20Afreach%20Creatives!%20I%20just%20learned%20about%20your%20team%20and%20story.%20I'd%20love%20to%20discuss%20how%20you%20can%20help%20transform%20my%20business!" target="_blank" rel="noopener noreferrer" class="floating-whatsapp">
+        <div class="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all duration-300">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+            </svg>
+        </div>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Counter Animation
-        function animateCounters() {
-            const counters = document.querySelectorAll('.counter');
+        // Quote modal functions
+        function openQuoteModal() {
+            document.getElementById('quoteModal').style.display = 'block';
+        }
+
+        function closeQuoteModal() {
+            document.getElementById('quoteModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('quoteModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Form submission
+        document.getElementById('quoteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
             
-            counters.forEach(counter => {
-                const target = parseInt(counter.getAttribute('data-target'));
-                const increment = target / 100;
-                let current = 0;
-                
-                const updateCounter = () => {
-                    if (current < target) {
-                        current += increment;
-                        counter.textContent = Math.ceil(current);
-                        setTimeout(updateCounter, 20);
-                    } else {
-                        counter.textContent = target;
-                    }
-                };
-                
-                updateCounter();
-            });
-        }
+            // Show success message
+            const formData = new FormData(this);
+            
+            // Here you would normally send to Formspree
+            // For now, we'll show a success message
+            alert('Thank you for wanting to join our success story! We\'ll contact you within 24 hours to begin your transformation journey.');
+            closeQuoteModal();
+            this.reset();
+        });
 
-        // Intersection Observer for Counter Animation
-        const observerOptions = {
-            threshold: 0.5,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCounters();
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        // Observe the statistics section
-        const statsSection = document.querySelector('.py-20.gradient-bg');
-        if (statsSection) {
-            observer.observe(statsSection);
-        }
-
-        // Smooth Scrolling for Navigation Links
+        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -810,40 +996,8 @@
                         block: 'start'
                     });
                 }
-                // Close mobile menu if open
-                mobileMenu.classList.add('hidden');
             });
         });
-
-        // Navbar Background on Scroll
-        let ticking = false;
-        function updateNavbar() {
-            const navbar = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                navbar.classList.add('bg-gray-900');
-                navbar.classList.remove('bg-gray-900/95');
-            } else {
-                navbar.classList.remove('bg-gray-900');
-                navbar.classList.add('bg-gray-900/95');
-            }
-            ticking = false;
-        }
-
-        window.addEventListener('scroll', function() {
-            if (!ticking) {
-                requestAnimationFrame(updateNavbar);
-                ticking = true;
-            }
-        });
-
-        // Parallax Effect for Hero Section (subtle)
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.gradient-bg');
-            if (hero) {
-                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-            }
-        });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'990cf7d0f1db8a67',t:'MTc2MDg0MjIyNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'993719e105e40372',t:'MTc2MTI4NDAyNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
