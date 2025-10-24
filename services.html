@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Services - Afreach Creatives | Premium Digital Solutions</title>
-    <meta name="description" content="Discover our comprehensive digital services: Web Development, App Development, Graphic Design & Social Media Management. International quality, local expertise.">
+    <meta name="description" content="Discover our comprehensive digital services with transparent pricing. Web Development, App Development, Graphic Design & Social Media Management.">
     
     <!-- PWA Meta Tags -->
     <link rel="manifest" href="manifest.json">
@@ -144,30 +144,38 @@
             border-color: rgba(255, 215, 0, 0.5);
         }
         
-        .portfolio-item {
+        .pricing-card {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
             transition: all 0.3s ease;
             position: relative;
-            overflow: hidden;
         }
         
-        .portfolio-item:hover {
+        .pricing-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(255, 215, 0, 0.4);
+            border-color: rgba(255, 215, 0, 0.6);
+        }
+        
+        .pricing-card.featured {
+            border: 2px solid #FFD700;
             transform: scale(1.05);
-            box-shadow: 0 15px 30px rgba(255, 215, 0, 0.4);
         }
         
-        .portfolio-overlay {
+        .pricing-card.featured::before {
+            content: 'MOST POPULAR';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-        
-        .portfolio-item:hover .portfolio-overlay {
-            opacity: 1;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #000;
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
         }
         
         .btn-primary {
@@ -200,12 +208,25 @@
             background: rgba(0, 0, 0, 0.4);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 215, 0, 0.2);
+            transition: all 0.3s ease;
         }
         
-        .tech-badge {
-            background: rgba(255, 215, 0, 0.1);
-            border: 1px solid rgba(255, 215, 0, 0.3);
+        .process-step:hover {
+            border-color: rgba(255, 215, 0, 0.5);
+            transform: translateY(-5px);
+        }
+        
+        .feature-list li {
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
             color: #FFD700;
+            font-weight: bold;
         }
         
         .modal {
@@ -239,6 +260,21 @@
         
         .close:hover {
             color: #FFA500;
+        }
+        
+        .comparison-table {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+        
+        .comparison-table th {
+            background: rgba(255, 215, 0, 0.1);
+            color: #FFD700;
+        }
+        
+        .comparison-table td {
+            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
         }
     </style>
 </head>
@@ -291,25 +327,25 @@
             <div class="text-center mb-8" data-aos="fade-down">
                 <div class="premium-badge inline-flex items-center px-6 py-2 rounded-full text-sm font-medium text-gold">
                     <div class="w-2 h-2 international-accent rounded-full mr-2"></div>
-                    Comprehensive Digital Solutions
+                    Premium Digital Services & Transparent Pricing
                 </div>
             </div>
             
             <div class="text-center max-w-4xl mx-auto">
                 <h1 class="hero-title text-5xl lg:text-7xl mb-8 leading-tight" data-aos="fade-up">
-                    Our <span class="text-gold international-accent bg-clip-text text-transparent">Premium</span><br>
-                    <span class="text-4xl lg:text-5xl font-light">Digital Services</span>
+                    Our <span class="text-gold international-accent bg-clip-text text-transparent">Services</span><br>
+                    <span class="text-4xl lg:text-5xl font-light">& Pricing</span>
                 </h1>
                 <p class="hero-subtitle text-xl lg:text-2xl mb-10 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-                    From concept to launch, we deliver <strong class="text-gold">world-class digital solutions</strong> that transform businesses and captivate global audiences.
+                    Comprehensive digital solutions with <strong class="text-gold">transparent pricing</strong> and international quality standards. No hidden fees, just exceptional results.
                 </p>
                 
                 <div class="flex flex-col sm:flex-row gap-6 justify-center mb-16" data-aos="fade-up" data-aos-delay="400">
-                    <button onclick="openQuoteModal()" class="btn-primary px-10 py-5 rounded-full text-lg font-semibold shadow-2xl">
-                        Start Your Project
-                    </button>
+                    <a href="#pricing" class="btn-primary px-10 py-5 rounded-full text-lg font-semibold shadow-2xl">
+                        View Pricing
+                    </a>
                     <a href="#services-overview" class="btn-secondary px-10 py-5 rounded-full text-lg font-semibold text-center">
-                        Explore Services
+                        Our Services
                     </a>
                 </div>
                 
@@ -320,16 +356,16 @@
                         <div class="text-sm text-gray-300">Core Services</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-3xl font-bold text-gold mb-1">50+</div>
-                        <div class="text-sm text-gray-300">Projects Delivered</div>
-                    </div>
-                    <div class="text-center">
                         <div class="text-3xl font-bold text-gold mb-1">24/7</div>
                         <div class="text-sm text-gray-300">Support</div>
                     </div>
                     <div class="text-center">
                         <div class="text-3xl font-bold text-gold mb-1">100%</div>
                         <div class="text-sm text-gray-300">Satisfaction</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-gold mb-1">0</div>
+                        <div class="text-sm text-gray-300">Hidden Fees</div>
                     </div>
                 </div>
             </div>
@@ -342,7 +378,7 @@
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-4xl lg:text-5xl font-bold mb-6">What We <span class="text-gold">Deliver</span></h2>
                 <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                    Four core services that cover every aspect of your digital presence
+                    Four comprehensive services that transform your digital presence
                 </p>
             </div>
             
@@ -355,8 +391,8 @@
                         </svg>
                     </div>
                     <h3 class="text-2xl font-bold mb-4">Web Development</h3>
-                    <p class="text-gray-400 mb-6">Responsive, fast, and SEO-optimized websites that convert visitors into customers.</p>
-                    <a href="#web-development" class="btn-secondary px-6 py-2 rounded-full inline-block">Learn More</a>
+                    <p class="text-gray-400 mb-6">Custom websites, e-commerce platforms, and web applications built with modern technologies.</p>
+                    <div class="text-gold font-semibold">Starting from KSh 25,000</div>
                 </div>
                 
                 <!-- App Development -->
@@ -367,8 +403,8 @@
                         </svg>
                     </div>
                     <h3 class="text-2xl font-bold mb-4">App Development</h3>
-                    <p class="text-gray-400 mb-6">Native and cross-platform mobile apps that engage users and drive business growth.</p>
-                    <a href="#app-development" class="btn-secondary px-6 py-2 rounded-full inline-block">Learn More</a>
+                    <p class="text-gray-400 mb-6">Native iOS and Android apps, cross-platform solutions, and progressive web apps.</p>
+                    <div class="text-gold font-semibold">Starting from KSh 80,000</div>
                 </div>
                 
                 <!-- Graphic Design -->
@@ -379,8 +415,8 @@
                         </svg>
                     </div>
                     <h3 class="text-2xl font-bold mb-4">Graphic Design</h3>
-                    <p class="text-gray-400 mb-6">Brand identities, logos, and marketing materials that make lasting impressions.</p>
-                    <a href="#graphic-design" class="btn-secondary px-6 py-2 rounded-full inline-block">Learn More</a>
+                    <p class="text-gray-400 mb-6">Brand identity, logos, marketing materials, and complete visual design systems.</p>
+                    <div class="text-gold font-semibold">Starting from KSh 5,000</div>
                 </div>
                 
                 <!-- Social Media -->
@@ -391,474 +427,345 @@
                         </svg>
                     </div>
                     <h3 class="text-2xl font-bold mb-4">Social Media Management</h3>
-                    <p class="text-gray-400 mb-6">Strategic social media campaigns that build communities and drive engagement.</p>
-                    <a href="#social-media" class="btn-secondary px-6 py-2 rounded-full inline-block">Learn More</a>
+                    <p class="text-gray-400 mb-6">Content creation, community management, and strategic social media campaigns.</p>
+                    <div class="text-gold font-semibold">Starting from KSh 15,000/month</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Web Development Section -->
-    <section id="web-development" class="py-20 bg-black">
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-black">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl lg:text-5xl font-bold mb-6">Web Development</h2>
-                <h3 class="text-2xl text-gold mb-8">Our Work Speaks for Itself</h3>
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">Transparent <span class="text-gold">Pricing</span></h2>
                 <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                    We build responsive, fast, and SEO-optimized websites that convert visitors into customers
+                    Choose the perfect package for your needs. All prices are transparent with no hidden fees.
                 </p>
             </div>
             
-            <!-- Website Portfolio Grid -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-                <!-- Lydia Waweru -->
-                <div class="portfolio-item bg-gray-900 rounded-xl overflow-hidden border border-gray-800" data-aos="fade-up" data-aos-delay="100">
-                    <div class="relative">
-                        <img src="/images/websites/lydia-waweru.png" alt="Lydia Waweru Website" class="w-full h-48 object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="w-full h-48 bg-gray-800 flex items-center justify-center text-gray-400" style="display: none;">
-                            <div class="text-center">
-                                <div class="text-4xl mb-2">🌐</div>
-                                <div>Lydia Waweru</div>
-                            </div>
+            <!-- Web Development Pricing -->
+            <div class="mb-20">
+                <h3 class="text-3xl font-bold text-center text-gold mb-12" data-aos="fade-up">Web Development Packages</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Starter Package -->
+                    <div class="pricing-card rounded-xl p-8" data-aos="fade-up" data-aos-delay="100">
+                        <div class="text-center mb-8">
+                            <h4 class="text-2xl font-bold mb-2">Starter Website</h4>
+                            <div class="text-4xl font-bold text-gold mb-2">KSh 25,000</div>
+                            <p class="text-gray-400">Perfect for small businesses</p>
                         </div>
-                        <div class="portfolio-overlay flex items-end p-6">
-                            <div class="text-white">
-                                <h4 class="text-lg font-semibold text-gold">Lydia Waweru</h4>
-                                <p class="text-sm">Speaker & Charity</p>
-                            </div>
-                        </div>
+                        <ul class="feature-list space-y-3 text-gray-300 mb-8">
+                            <li>Up to 5 pages</li>
+                            <li>Responsive design</li>
+                            <li>Basic SEO setup</li>
+                            <li>Contact form</li>
+                            <li>1 month support</li>
+                            <li>SSL certificate</li>
+                        </ul>
+                        <button onclick="openQuoteModal()" class="btn-secondary w-full py-3 rounded-lg">Choose Starter</button>
                     </div>
-                </div>
-                
-                <!-- BM Tyres -->
-                <div class="portfolio-item bg-gray-900 rounded-xl overflow-hidden border border-gray-800" data-aos="fade-up" data-aos-delay="200">
-                    <div class="relative">
-                        <img src="/images/websites/bm-tyres.png" alt="BM Tyres Website" class="w-full h-48 object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="w-full h-48 bg-gray-800 flex items-center justify-center text-gray-400" style="display: none;">
-                            <div class="text-center">
-                                <div class="text-4xl mb-2">🚗</div>
-                                <div>BM Tyres</div>
-                            </div>
+                    
+                    <!-- Professional Package -->
+                    <div class="pricing-card featured rounded-xl p-8" data-aos="fade-up" data-aos-delay="200">
+                        <div class="text-center mb-8">
+                            <h4 class="text-2xl font-bold mb-2">Professional Website</h4>
+                            <div class="text-4xl font-bold text-gold mb-2">KSh 50,000</div>
+                            <p class="text-gray-400">Most popular choice</p>
                         </div>
-                        <div class="portfolio-overlay flex items-end p-6">
-                            <div class="text-white">
-                                <h4 class="text-lg font-semibold text-gold">BM Tyres</h4>
-                                <p class="text-sm">Automotive Business</p>
-                            </div>
-                        </div>
+                        <ul class="feature-list space-y-3 text-gray-300 mb-8">
+                            <li>Up to 10 pages</li>
+                            <li>Advanced responsive design</li>
+                            <li>Complete SEO optimization</li>
+                            <li>Multiple contact forms</li>
+                            <li>3 months support</li>
+                            <li>Google Analytics setup</li>
+                            <li>Social media integration</li>
+                            <li>Blog functionality</li>
+                        </ul>
+                        <button onclick="openQuoteModal()" class="btn-primary w-full py-3 rounded-lg">Choose Professional</button>
                     </div>
-                </div>
-                
-                <!-- Blessed Nation Ambassadors -->
-                <div class="portfolio-item bg-gray-900 rounded-xl overflow-hidden border border-gray-800" data-aos="fade-up" data-aos-delay="300">
-                    <div class="relative">
-                        <img src="/images/websites/blessed-nation.png" alt="Blessed Nation Ambassadors Website" class="w-full h-48 object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="w-full h-48 bg-gray-800 flex items-center justify-center text-gray-400" style="display: none;">
-                            <div class="text-center">
-                                <div class="text-4xl mb-2">🤝</div>
-                                <div>Blessed Nation</div>
-                            </div>
+                    
+                    <!-- Enterprise Package -->
+                    <div class="pricing-card rounded-xl p-8" data-aos="fade-up" data-aos-delay="300">
+                        <div class="text-center mb-8">
+                            <h4 class="text-2xl font-bold mb-2">Enterprise Website</h4>
+                            <div class="text-4xl font-bold text-gold mb-2">KSh 100,000+</div>
+                            <p class="text-gray-400">For large businesses</p>
                         </div>
-                        <div class="portfolio-overlay flex items-end p-6">
-                            <div class="text-white">
-                                <h4 class="text-lg font-semibold text-gold">Blessed Nation Ambassadors</h4>
-                                <p class="text-sm">NGO</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Riserig -->
-                <div class="portfolio-item bg-gray-900 rounded-xl overflow-hidden border border-gray-800" data-aos="fade-up" data-aos-delay="400">
-                    <div class="relative">
-                        <img src="/images/websites/riserig.png" alt="Riserig Website" class="w-full h-48 object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="w-full h-48 bg-gray-800 flex items-center justify-center text-gray-400" style="display: none;">
-                            <div class="text-center">
-                                <div class="text-4xl mb-2">📚</div>
-                                <div>Riserig</div>
-                            </div>
-                        </div>
-                        <div class="portfolio-overlay flex items-end p-6">
-                            <div class="text-white">
-                                <h4 class="text-lg font-semibold text-gold">Riserig</h4>
-                                <p class="text-sm">E-Learning Platform</p>
-                            </div>
-                        </div>
+                        <ul class="feature-list space-y-3 text-gray-300 mb-8">
+                            <li>Unlimited pages</li>
+                            <li>Custom functionality</li>
+                            <li>E-commerce integration</li>
+                            <li>Advanced SEO & marketing</li>
+                            <li>6 months support</li>
+                            <li>Performance optimization</li>
+                            <li>Security features</li>
+                            <li>Custom admin panel</li>
+                        </ul>
+                        <button onclick="openQuoteModal()" class="btn-secondary w-full py-3 rounded-lg">Choose Enterprise</button>
                     </div>
                 </div>
             </div>
             
-            <!-- Web Development Features -->
-            <div class="grid md:grid-cols-3 gap-8" data-aos="fade-up">
-                <div class="text-center">
-                    <div class="w-12 h-12 gradient-gold rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
-                        </svg>
+            <!-- App Development Pricing -->
+            <div class="mb-20">
+                <h3 class="text-3xl font-bold text-center text-gold mb-12" data-aos="fade-up">App Development Packages</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Basic App -->
+                    <div class="pricing-card rounded-xl p-8" data-aos="fade-up" data-aos-delay="100">
+                        <div class="text-center mb-8">
+                            <h4 class="text-2xl font-bold mb-2">Basic App</h4>
+                            <div class="text-4xl font-bold text-gold mb-2">KSh 80,000</div>
+                            <p class="text-gray-400">Simple mobile app</p>
+                        </div>
+                        <ul class="feature-list space-y-3 text-gray-300 mb-8">
+                            <li>Single platform (iOS or Android)</li>
+                            <li>Up to 5 screens</li>
+                            <li>Basic functionality</li>
+                            <li>App store submission</li>
+                            <li>2 months support</li>
+                        </ul>
+                        <button onclick="openQuoteModal()" class="btn-secondary w-full py-3 rounded-lg">Choose Basic</button>
                     </div>
-                    <h4 class="text-xl font-semibold text-gold mb-2">Responsive Design</h4>
-                    <p class="text-gray-400">Perfect on all devices - desktop, tablet, and mobile</p>
+                    
+                    <!-- Advanced App -->
+                    <div class="pricing-card featured rounded-xl p-8" data-aos="fade-up" data-aos-delay="200">
+                        <div class="text-center mb-8">
+                            <h4 class="text-2xl font-bold mb-2">Advanced App</h4>
+                            <div class="text-4xl font-bold text-gold mb-2">KSh 150,000</div>
+                            <p class="text-gray-400">Cross-platform solution</p>
+                        </div>
+                        <ul class="feature-list space-y-3 text-gray-300 mb-8">
+                            <li>Both iOS and Android</li>
+                            <li>Up to 15 screens</li>
+                            <li>Advanced features</li>
+                            <li>Backend integration</li>
+                            <li>Push notifications</li>
+                            <li>App store optimization</li>
+                            <li>4 months support</li>
+                        </ul>
+                        <button onclick="openQuoteModal()" class="btn-primary w-full py-3 rounded-lg">Choose Advanced</button>
+                    </div>
+                    
+                    <!-- Custom App -->
+                    <div class="pricing-card rounded-xl p-8" data-aos="fade-up" data-aos-delay="300">
+                        <div class="text-center mb-8">
+                            <h4 class="text-2xl font-bold mb-2">Custom App</h4>
+                            <div class="text-4xl font-bold text-gold mb-2">KSh 300,000+</div>
+                            <p class="text-gray-400">Fully customized solution</p>
+                        </div>
+                        <ul class="feature-list space-y-3 text-gray-300 mb-8">
+                            <li>Complex functionality</li>
+                            <li>Custom backend</li>
+                            <li>Third-party integrations</li>
+                            <li>Advanced security</li>
+                            <li>Analytics dashboard</li>
+                            <li>Ongoing maintenance</li>
+                            <li>6 months support</li>
+                        </ul>
+                        <button onclick="openQuoteModal()" class="btn-secondary w-full py-3 rounded-lg">Choose Custom</button>
+                    </div>
                 </div>
-                <div class="text-center">
-                    <div class="w-12 h-12 gradient-gold rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
-                        </svg>
+            </div>
+            
+            <!-- Design & Social Media Pricing -->
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Graphic Design -->
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-3xl font-bold text-gold mb-8">Graphic Design Services</h3>
+                    <div class="comparison-table rounded-xl overflow-hidden">
+                        <table class="w-full">
+                            <thead>
+                                <tr>
+                                    <th class="text-left p-4">Service</th>
+                                    <th class="text-right p-4">Price</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-300">
+                                <tr>
+                                    <td class="p-4">Logo Design</td>
+                                    <td class="p-4 text-right text-gold font-semibold">KSh 5,000 - 15,000</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4">Brand Identity Package</td>
+                                    <td class="p-4 text-right text-gold font-semibold">KSh 25,000 - 50,000</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4">Business Cards</td>
+                                    <td class="p-4 text-right text-gold font-semibold">KSh 2,000 - 5,000</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4">Brochure Design</td>
+                                    <td class="p-4 text-right text-gold font-semibold">KSh 8,000 - 15,000</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4">Social Media Graphics</td>
+                                    <td class="p-4 text-right text-gold font-semibold">KSh 3,000 - 8,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <h4 class="text-xl font-semibold text-gold mb-2">SEO Optimized</h4>
-                    <p class="text-gray-400">Built for search engines and fast loading speeds</p>
                 </div>
-                <div class="text-center">
-                    <div class="w-12 h-12 gradient-gold rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                        </svg>
+                
+                <!-- Social Media Management -->
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-3xl font-bold text-gold mb-8">Social Media Management</h3>
+                    <div class="comparison-table rounded-xl overflow-hidden">
+                        <table class="w-full">
+                            <thead>
+                                <tr>
+                                    <th class="text-left p-4">Package</th>
+                                    <th class="text-right p-4">Monthly Price</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-300">
+                                <tr>
+                                    <td class="p-4">
+                                        <div class="font-semibold">Starter</div>
+                                        <div class="text-sm text-gray-400">2 platforms, 12 posts/month</div>
+                                    </td>
+                                    <td class="p-4 text-right text-gold font-semibold">KSh 15,000</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4">
+                                        <div class="font-semibold">Professional</div>
+                                        <div class="text-sm text-gray-400">4 platforms, 20 posts/month</div>
+                                    </td>
+                                    <td class="p-4 text-right text-gold font-semibold">KSh 25,000</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4">
+                                        <div class="font-semibold">Premium</div>
+                                        <div class="text-sm text-gray-400">6 platforms, 30 posts/month</div>
+                                    </td>
+                                    <td class="p-4 text-right text-gold font-semibold">KSh 40,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <h4 class="text-xl font-semibold text-gold mb-2">Secure & Reliable</h4>
-                    <p class="text-gray-400">SSL certificates, security updates, and reliable hosting</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- App Development Section -->
-    <section id="app-development" class="py-20 bg-gray-900">
+    <!-- Our Process -->
+    <section class="py-20 bg-gray-900">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl lg:text-5xl font-bold mb-6">App Development</h2>
-                <h3 class="text-2xl text-gold mb-8">Powering Kenya's Digital Future</h3>
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">Our <span class="text-gold">Process</span></h2>
                 <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                    Native and cross-platform mobile applications that engage users and drive business growth
+                    A proven methodology that ensures exceptional results every time
                 </p>
             </div>
             
-            <!-- App Portfolio Grid -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-                <!-- PesaTip -->
-                <div class="service-card rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-20 h-20 mx-auto mb-6 bg-gray-800 rounded-2xl flex items-center justify-center">
-                        <img src="/images/apps/pesatip-logo.png" alt="PesaTip App Logo" class="w-16 h-16 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <div class="text-4xl text-gold" style="display: none;">💰</div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="process-step rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 gradient-gold rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold text-black">1</span>
                     </div>
-                    <h4 class="text-xl font-semibold text-gold mb-2">PesaTip</h4>
-                    <p class="text-gray-400 text-sm mb-4">Tipping Platform</p>
-                    <div class="inline-flex items-center px-3 py-1 rounded-full text-xs bg-yellow-500/20 text-yellow-400 border border-yellow-500/30">
-                        Coming Soon
-                    </div>
+                    <h3 class="text-xl font-bold text-gold mb-4">Discovery</h3>
+                    <p class="text-gray-400">We understand your business, goals, and target audience through detailed consultation.</p>
                 </div>
                 
-                <!-- QuestCrest Abroad -->
-                <div class="service-card rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-20 h-20 mx-auto mb-6 bg-gray-800 rounded-2xl flex items-center justify-center">
-                        <img src="/images/apps/questcrest-logo.png" alt="QuestCrest Abroad App Logo" class="w-16 h-16 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <div class="text-4xl text-gold" style="display: none;">🌍</div>
+                <div class="process-step rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 gradient-gold rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold text-black">2</span>
                     </div>
-                    <h4 class="text-xl font-semibold text-gold mb-2">QuestCrest Abroad</h4>
-                    <p class="text-gray-400 text-sm mb-4">Overseas Jobs Agency</p>
-                    <div class="inline-flex items-center px-3 py-1 rounded-full text-xs bg-green-500/20 text-green-400 border border-green-500/30">
-                        Live
-                    </div>
+                    <h3 class="text-xl font-bold text-gold mb-4">Strategy</h3>
+                    <p class="text-gray-400">We develop a comprehensive strategy and project roadmap tailored to your needs.</p>
                 </div>
                 
-                <!-- Rimora -->
-                <div class="service-card rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-20 h-20 mx-auto mb-6 bg-gray-800 rounded-2xl flex items-center justify-center">
-                        <img src="/images/apps/rimora-logo.png" alt="Rimora App Logo" class="w-16 h-16 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <div class="text-4xl text-gold" style="display: none;">💸</div>
+                <div class="process-step rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 gradient-gold rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold text-black">3</span>
                     </div>
-                    <h4 class="text-xl font-semibold text-gold mb-2">Rimora</h4>
-                    <p class="text-gray-400 text-sm mb-4">Money Transfer System</p>
-                    <div class="inline-flex items-center px-3 py-1 rounded-full text-xs bg-green-500/20 text-green-400 border border-green-500/30">
-                        Live
-                    </div>
+                    <h3 class="text-xl font-bold text-gold mb-4">Creation</h3>
+                    <p class="text-gray-400">Our expert team brings your vision to life with cutting-edge design and development.</p>
                 </div>
                 
-                <!-- Lypach Investment -->
-                <div class="service-card rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="400">
-                    <div class="w-20 h-20 mx-auto mb-6 bg-gray-800 rounded-2xl flex items-center justify-center">
-                        <img src="/images/apps/lypach-logo.png" alt="Lypach Investment App Logo" class="w-16 h-16 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <div class="text-4xl text-gold" style="display: none;">📈</div>
+                <div class="process-step rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-16 h-16 gradient-gold rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold text-black">4</span>
                     </div>
-                    <h4 class="text-xl font-semibold text-gold mb-2">Lypach Investment</h4>
-                    <p class="text-gray-400 text-sm mb-4">Investment Platform</p>
-                    <div class="inline-flex items-center px-3 py-1 rounded-full text-xs bg-blue-500/20 text-blue-400 border border-blue-500/30">
-                        In Development
-                    </div>
-                </div>
-            </div>
-            
-            <!-- App Development Features -->
-            <div class="grid md:grid-cols-3 gap-8" data-aos="fade-up">
-                <div class="text-center">
-                    <div class="w-12 h-12 gradient-gold rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-                        </svg>
-                    </div>
-                    <h4 class="text-xl font-semibold text-gold mb-2">Cross-Platform</h4>
-                    <p class="text-gray-400">iOS and Android apps from a single codebase</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-12 h-12 gradient-gold rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                        </svg>
-                    </div>
-                    <h4 class="text-xl font-semibold text-gold mb-2">User-Centric Design</h4>
-                    <p class="text-gray-400">Intuitive interfaces that users love to interact with</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-12 h-12 gradient-gold rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
-                        </svg>
-                    </div>
-                    <h4 class="text-xl font-semibold text-gold mb-2">Performance Optimized</h4>
-                    <p class="text-gray-400">Fast, efficient apps that work smoothly on all devices</p>
+                    <h3 class="text-xl font-bold text-gold mb-4">Launch</h3>
+                    <p class="text-gray-400">We launch your project and provide ongoing support to ensure continued success.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Graphic Design Section -->
-    <section id="graphic-design" class="py-20 bg-black">
+    <!-- Why Choose Us -->
+    <section class="py-20 bg-black">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl lg:text-5xl font-bold mb-6">Graphic Design & Branding</h2>
-                <h3 class="text-2xl text-gold mb-8">Visual Identity That Speaks Volumes</h3>
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">Why Choose <span class="text-gold">Afreach Creatives</span>?</h2>
                 <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                    From logos to complete brand identities, we create visual experiences that resonate with your audience
+                    We combine international quality with local expertise to deliver exceptional results
                 </p>
             </div>
             
-            <!-- Design Services Grid -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-                <!-- Logo Design -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="service-card rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="100">
                     <div class="w-16 h-16 gradient-gold rounded-full flex items-center justify-center mx-auto mb-6">
                         <svg class="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                         </svg>
                     </div>
-                    <h4 class="text-xl font-semibold text-gold mb-4">Logo Design</h4>
-                    <p class="text-gray-400">Memorable logos that capture your brand essence and stand the test of time</p>
+                    <h3 class="text-xl font-bold text-gold mb-4">Quality Guarantee</h3>
+                    <p class="text-gray-400">100% satisfaction guarantee with unlimited revisions until you're completely happy.</p>
                 </div>
                 
-                <!-- Brand Identity -->
                 <div class="service-card rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 gradient-gold rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
+                            <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gold mb-4">Transparent Process</h3>
+                    <p class="text-gray-400">Regular updates, clear communication, and full transparency throughout the project.</p>
+                </div>
+                
+                <div class="service-card rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 gradient-gold rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gold mb-4">Modern Technology</h3>
+                    <p class="text-gray-400">We use the latest tools and technologies to ensure your project is future-proof.</p>
+                </div>
+                
+                <div class="service-card rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-16 h-16 gradient-gold rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"/>
+                            <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gold mb-4">Fast Delivery</h3>
+                    <p class="text-gray-400">Quick turnaround times without compromising on quality or attention to detail.</p>
+                </div>
+                
+                <div class="service-card rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="500">
                     <div class="w-16 h-16 gradient-gold rounded-full flex items-center justify-center mx-auto mb-6">
                         <svg class="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
                     </div>
-                    <h4 class="text-xl font-semibold text-gold mb-4">Brand Identity</h4>
-                    <p class="text-gray-400">Complete brand systems including colors, typography, and style guides</p>
+                    <h3 class="text-xl font-bold text-gold mb-4">Ongoing Support</h3>
+                    <p class="text-gray-400">Comprehensive support and maintenance to keep your digital assets running smoothly.</p>
                 </div>
                 
-                <!-- Marketing Materials -->
-                <div class="service-card rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-card rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="600">
                     <div class="w-16 h-16 gradient-gold rounded-full flex items-center justify-center mx-auto mb-6">
                         <svg class="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4z"/>
-                            <path d="M4 8h12v2H4V8z"/>
+                            <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/>
                         </svg>
                     </div>
-                    <h4 class="text-xl font-semibold text-gold mb-4">Marketing Materials</h4>
-                    <p class="text-gray-400">Brochures, flyers, business cards, and digital marketing assets</p>
-                </div>
-                
-                <!-- Print Design -->
-                <div class="service-card rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="400">
-                    <div class="w-16 h-16 gradient-gold rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M5 4a3 3 0 00-3 3v6a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H5zm-1 9v-1h5v2H5a1 1 0 01-1-1zm7 1h4a1 1 0 001-1v-1h-5v2zm0-4h5V8h-5v2zM9 8H4v2h5V8z" clip-rule="evenodd"/>
-                        </svg>
-                    </div>
-                    <h4 class="text-xl font-semibold text-gold mb-4">Print Design</h4>
-                    <p class="text-gray-400">Professional print materials that make a lasting physical impression</p>
-                </div>
-            </div>
-            
-            <!-- Design Process -->
-            <div class="text-center mb-12" data-aos="fade-up">
-                <h3 class="text-3xl font-bold text-gold mb-8">Our Design Process</h3>
-                <div class="grid md:grid-cols-5 gap-6">
-                    <div class="process-step rounded-xl p-6">
-                        <div class="text-2xl font-bold text-gold mb-2">01</div>
-                        <h4 class="font-semibold mb-2">Research</h4>
-                        <p class="text-sm text-gray-400">Understanding your brand and target audience</p>
-                    </div>
-                    <div class="process-step rounded-xl p-6">
-                        <div class="text-2xl font-bold text-gold mb-2">02</div>
-                        <h4 class="font-semibold mb-2">Concept</h4>
-                        <p class="text-sm text-gray-400">Developing creative concepts and ideas</p>
-                    </div>
-                    <div class="process-step rounded-xl p-6">
-                        <div class="text-2xl font-bold text-gold mb-2">03</div>
-                        <h4 class="font-semibold mb-2">Design</h4>
-                        <p class="text-sm text-gray-400">Creating initial design mockups</p>
-                    </div>
-                    <div class="process-step rounded-xl p-6">
-                        <div class="text-2xl font-bold text-gold mb-2">04</div>
-                        <h4 class="font-semibold mb-2">Refine</h4>
-                        <p class="text-sm text-gray-400">Incorporating feedback and improvements</p>
-                    </div>
-                    <div class="process-step rounded-xl p-6">
-                        <div class="text-2xl font-bold text-gold mb-2">05</div>
-                        <h4 class="font-semibold mb-2">Deliver</h4>
-                        <p class="text-sm text-gray-400">Final files and brand guidelines</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Social Media Management Section -->
-    <section id="social-media" class="py-20 bg-gray-900">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl lg:text-5xl font-bold mb-6">Social Media Management</h2>
-                <h3 class="text-2xl text-gold mb-8">Trusted by Leading Brands</h3>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                    Strategic social media campaigns that build communities, drive engagement, and deliver measurable results
-                </p>
-            </div>
-            
-            <!-- Client Logos Grid -->
-            <div class="mb-16" data-aos="fade-up">
-                <p class="text-center text-gray-400 mb-8">Some of the social media accounts we manage:</p>
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-                    <!-- Blessed Nation Ambassadors -->
-                    <div class="service-card rounded-xl p-6 text-center">
-                        <img src="/images/social-clients/blessed-nation-logo.png" alt="Blessed Nation Ambassadors" class="w-16 h-16 mx-auto mb-3 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <div class="w-16 h-16 mx-auto mb-3 bg-gold rounded-full flex items-center justify-center text-black font-bold text-xl" style="display: none;">BN</div>
-                        <p class="text-sm text-gold font-semibold">Blessed Nation</p>
-                    </div>
-                    
-                    <!-- Riserig -->
-                    <div class="service-card rounded-xl p-6 text-center">
-                        <img src="/images/social-clients/riserig-logo.png" alt="Riserig" class="w-16 h-16 mx-auto mb-3 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <div class="w-16 h-16 mx-auto mb-3 bg-gold rounded-full flex items-center justify-center text-black font-bold text-xl" style="display: none;">R</div>
-                        <p class="text-sm text-gold font-semibold">Riserig</p>
-                    </div>
-                    
-                    <!-- Pillars Of Hope -->
-                    <div class="service-card rounded-xl p-6 text-center">
-                        <img src="/images/social-clients/pillars-hope-logo.png" alt="Pillars Of Hope" class="w-16 h-16 mx-auto mb-3 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <div class="w-16 h-16 mx-auto mb-3 bg-gold rounded-full flex items-center justify-center text-black font-bold text-xl" style="display: none;">PH</div>
-                        <p class="text-sm text-gold font-semibold">Pillars Of Hope</p>
-                    </div>
-                    
-                    <!-- Aroma -->
-                    <div class="service-card rounded-xl p-6 text-center">
-                        <img src="/images/social-clients/aroma-logo.png" alt="Aroma" class="w-16 h-16 mx-auto mb-3 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <div class="w-16 h-16 mx-auto mb-3 bg-gold rounded-full flex items-center justify-center text-black font-bold text-xl" style="display: none;">A</div>
-                        <p class="text-sm text-gold font-semibold">Aroma</p>
-                    </div>
-                    
-                    <!-- Lydia Waweru -->
-                    <div class="service-card rounded-xl p-6 text-center">
-                        <img src="/images/social-clients/lydia-waweru-logo.png" alt="Lydia Waweru" class="w-16 h-16 mx-auto mb-3 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <div class="w-16 h-16 mx-auto mb-3 bg-gold rounded-full flex items-center justify-center text-black font-bold text-xl" style="display: none;">LW</div>
-                        <p class="text-sm text-gold font-semibold">Lydia Waweru</p>
-                    </div>
-                    
-                    <!-- Lypach Investment -->
-                    <div class="service-card rounded-xl p-6 text-center">
-                        <img src="/images/social-clients/lypach-logo.png" alt="Lypach Investment" class="w-16 h-16 mx-auto mb-3 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <div class="w-16 h-16 mx-auto mb-3 bg-gold rounded-full flex items-center justify-center text-black font-bold text-xl" style="display: none;">LI</div>
-                        <p class="text-sm text-gold font-semibold">Lypach Investment</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Social Media Services -->
-            <div class="grid md:grid-cols-3 gap-8" data-aos="fade-up">
-                <div class="text-center">
-                    <div class="w-12 h-12 gradient-gold rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"/>
-                        </svg>
-                    </div>
-                    <h4 class="text-xl font-semibold text-gold mb-2">Content Creation</h4>
-                    <p class="text-gray-400">Engaging posts, stories, and multimedia content that resonates with your audience</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-12 h-12 gradient-gold rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                        </svg>
-                    </div>
-                    <h4 class="text-xl font-semibold text-gold mb-2">Community Management</h4>
-                    <p class="text-gray-400">Building and nurturing online communities that drive brand loyalty</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-12 h-12 gradient-gold rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
-                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
-                        </svg>
-                    </div>
-                    <h4 class="text-xl font-semibold text-gold mb-2">Analytics & Reporting</h4>
-                    <p class="text-gray-400">Detailed insights and performance reports to track your social media ROI</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Technology Stack -->
-    <section class="py-20 bg-black">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl lg:text-5xl font-bold mb-6">Our <span class="text-gold">Technology Stack</span></h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                    We use cutting-edge tools and technologies to deliver exceptional results
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-4 gap-8">
-                <!-- Web Technologies -->
-                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="text-xl font-semibold text-gold mb-4">Web Development</h3>
-                    <div class="space-y-2">
-                        <div class="tech-badge px-3 py-1 rounded-full text-sm">React</div>
-                        <div class="tech-badge px-3 py-1 rounded-full text-sm">WordPress</div>
-                        <div class="tech-badge px-3 py-1 rounded-full text-sm">Shopify</div>
-                        <div class="tech-badge px-3 py-1 rounded-full text-sm">Node.js</div>
-                    </div>
-                </div>
-                
-                <!-- Mobile Technologies -->
-                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="text-xl font-semibold text-gold mb-4">Mobile Development</h3>
-                    <div class="space-y-2">
-                        <div class="tech-badge px-3 py-1 rounded-full text-sm">React Native</div>
-                        <div class="tech-badge px-3 py-1 rounded-full text-sm">Flutter</div>
-                        <div class="tech-badge px-3 py-1 rounded-full text-sm">iOS Native</div>
-                        <div class="tech-badge px-3 py-1 rounded-full text-sm">Android Native</div>
-                    </div>
-                </div>
-                
-                <!-- Design Tools -->
-                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
-                    <h3 class="text-xl font-semibold text-gold mb-4">Design Tools</h3>
-                    <div class="space-y-2">
-                        <div class="tech-badge px-3 py-1 rounded-full text-sm">Adobe Creative Suite</div>
-                        <div class="tech-badge px-3 py-1 rounded-full text-sm">Figma</div>
-                        <div class="tech-badge px-3 py-1 rounded-full text-sm">Sketch</div>
-                        <div class="tech-badge px-3 py-1 rounded-full text-sm">Canva Pro</div>
-                    </div>
-                </div>
-                
-                <!-- Social Media Tools -->
-                <div class="text-center" data-aos="fade-up" data-aos-delay="400">
-                    <h3 class="text-xl font-semibold text-gold mb-4">Social Media</h3>
-                    <div class="space-y-2">
-                        <div class="tech-badge px-3 py-1 rounded-full text-sm">Hootsuite</div>
-                        <div class="tech-badge px-3 py-1 rounded-full text-sm">Buffer</div>
-                        <div class="tech-badge px-3 py-1 rounded-full text-sm">Meta Business</div>
-                        <div class="tech-badge px-3 py-1 rounded-full text-sm">Google Analytics</div>
-                    </div>
+                    <h3 class="text-xl font-bold text-gold mb-4">Local Expertise</h3>
+                    <p class="text-gray-400">Deep understanding of the Kenyan market with international quality standards.</p>
                 </div>
             </div>
         </div>
@@ -868,9 +775,9 @@
     <section class="py-20 bg-gray-900">
         <div class="container mx-auto px-6 text-center">
             <div data-aos="fade-up">
-                <h2 class="text-4xl lg:text-5xl font-bold mb-6">Ready to Start Your <span class="text-gold">Project</span>?</h2>
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">Ready to Get <span class="text-gold">Started</span>?</h2>
                 <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-                    Let's discuss your vision and create something extraordinary together. Get your free consultation today.
+                    Let's discuss your project and provide you with a detailed quote. No obligations, just honest advice.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
                     <button onclick="openQuoteModal()" class="btn-primary px-8 py-4 rounded-full text-lg">
@@ -893,16 +800,16 @@
                         <img src="/images/afreachofficiallogo.png" alt="Afreach Creatives Logo" class="h-8 w-auto" onerror="this.style.display='none';">
                         <span class="ml-2 text-lg font-bold text-gold">Afreach Creatives</span>
                     </div>
-                    <p class="text-gray-400">Kenya's premier brand identity studio, delivering international-quality creative solutions.</p>
+                    <p class="text-gray-400">Kenya's premier digital agency, delivering international-quality creative solutions with transparent pricing.</p>
                 </div>
                 
                 <div>
                     <h4 class="text-gold font-semibold mb-4">Services</h4>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="#web-development" class="hover:text-gold transition-colors">Web Development</a></li>
-                        <li><a href="#app-development" class="hover:text-gold transition-colors">App Development</a></li>
-                        <li><a href="#graphic-design" class="hover:text-gold transition-colors">Graphic Design</a></li>
-                        <li><a href="#social-media" class="hover:text-gold transition-colors">Social Media</a></li>
+                        <li><a href="#services-overview" class="hover:text-gold transition-colors">Web Development</a></li>
+                        <li><a href="#services-overview" class="hover:text-gold transition-colors">App Development</a></li>
+                        <li><a href="#services-overview" class="hover:text-gold transition-colors">Graphic Design</a></li>
+                        <li><a href="#services-overview" class="hover:text-gold transition-colors">Social Media</a></li>
                     </ul>
                 </div>
                 
@@ -912,6 +819,7 @@
                         <li><a href="about.html" class="hover:text-gold transition-colors">About Us</a></li>
                         <li><a href="portfolio.html" class="hover:text-gold transition-colors">Portfolio</a></li>
                         <li><a href="contact.html" class="hover:text-gold transition-colors">Contact</a></li>
+                        <li><a href="#pricing" class="hover:text-gold transition-colors">Pricing</a></li>
                     </ul>
                 </div>
                 
@@ -964,7 +872,7 @@
             </div>
             
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2024 Afreach Creatives. All rights reserved. | Transforming brands across Kenya and beyond.</p>
+                <p>&copy; 2024 Afreach Creatives. All rights reserved. | Transparent pricing, exceptional results.</p>
             </div>
         </div>
     </footer>
@@ -1004,7 +912,7 @@
                 
                 <div class="mb-6">
                     <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Project Details</label>
-                    <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-gold focus:outline-none" placeholder="Tell us about your project..."></textarea>
+                    <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-gold focus:outline-none" placeholder="Tell us about your project requirements..."></textarea>
                 </div>
                 
                 <button type="submit" class="btn-primary w-full py-3 rounded-lg">
@@ -1015,7 +923,7 @@
     </div>
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/254703579059?text=Hi%20Afreach%20Creatives!%20I'm%20interested%20in%20your%20services." target="_blank" rel="noopener noreferrer" class="floating-whatsapp">
+    <a href="https://wa.me/254703579059?text=Hi%20Afreach%20Creatives!%20I'm%20interested%20in%20your%20services%20and%20would%20like%20to%20get%20a%20quote." target="_blank" rel="noopener noreferrer" class="floating-whatsapp">
         <div class="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all duration-300">
             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
@@ -1064,7 +972,7 @@
             
             // Here you would normally send to Formspree
             // For now, we'll show a success message
-            alert('Thank you for your quote request! We\'ll get back to you within 24 hours.');
+            alert('Thank you for your quote request! We\'ll get back to you within 24 hours with a detailed proposal.');
             closeQuoteModal();
             this.reset();
         });
@@ -1083,5 +991,5 @@
             });
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9936d566c08c8a6b',t:'MTc2MTI4MTIyMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9936ea24c6930372',t:'MTc2MTI4MjA2OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
