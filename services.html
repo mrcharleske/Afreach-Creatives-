@@ -3,1080 +3,1073 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services - Afreach Creatives | Web Development, App Development & Digital Marketing Kenya</title>
-    <meta name="description" content="Comprehensive digital services in Kenya: Web Development, Mobile Apps, Social Media Management, Graphic Design, Brand Identity & Digital Marketing. Get your free quote today!">
+    <title>Our Services - Afreach Creatives | Premium Digital Solutions</title>
+    <meta name="description" content="Discover our comprehensive digital services: Web Development, App Development, Graphic Design & Social Media Management. International quality, local expertise.">
     
-    <!-- SEO Meta Tags -->
-    <meta name="keywords" content="Kenya web development services, Nairobi app development, social media management Kenya, graphic design services Kenya, brand identity Kenya, digital marketing Nairobi">
-    <meta name="author" content="Afreach Creatives">
-    <meta name="robots" content="index, follow">
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#000000">
+    <link rel="apple-touch-icon" href="/images/afreachofficiallogo.png">
     
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Our Services - Afreach Creatives">
-    <meta property="og:description" content="Complete digital solutions for Kenyan businesses. From web development to digital marketing - we handle everything.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://afreachcreatives.com/services">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://afreachcreatives.com/services">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FYZL907RTJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-FYZL907RTJ');
+    </script>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <style>
         body {
             box-sizing: border-box;
         }
         
-        * {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        .gradient-gold {
+            background: linear-gradient(135deg, #FFD700, #FFA500, #FFD700);
         }
         
-        .gradient-bg {
-            background: linear-gradient(135deg, #1a1a1a 0%, #1e40af 50%, #f59e0b 100%);
+        .text-gold {
+            color: #FFD700;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
         
-        .gold-gradient {
-            background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+        .hero-title {
+            color: #ffffff;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+            font-weight: 800;
+            letter-spacing: -0.02em;
         }
         
-        .blue-gradient {
-            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        .hero-subtitle {
+            color: #e5e5e5;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+            font-weight: 400;
+            line-height: 1.6;
         }
         
-        .text-gradient {
-            background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .border-gold {
+            border-color: #FFD700;
+        }
+        
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .premium-badge {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 215, 0, 0.05));
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        
+        .international-accent {
+            background: linear-gradient(45deg, #FFD700, #FFA500, #FFD700);
+            background-size: 200% 200%;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+        
+        @keyframes shimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 30%, #2a2a2a 70%, #1a1a1a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.08) 0%, transparent 50%),
+                linear-gradient(45deg, transparent 30%, rgba(255, 215, 0, 0.02) 50%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .international-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(rgba(255, 215, 0, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 215, 0, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.3;
         }
         
         .service-card {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
             transition: all 0.3s ease;
-            border: 2px solid transparent;
         }
         
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(245, 158, 11, 0.2);
-            border-color: #f59e0b;
+            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.3);
+            border-color: rgba(255, 215, 0, 0.5);
+        }
+        
+        .portfolio-item {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .portfolio-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(255, 215, 0, 0.4);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #000000;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #FFA500, #FFD700);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.4);
+        }
+        
+        .btn-secondary {
+            border: 2px solid #FFD700;
+            color: #FFD700;
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: #FFD700;
+            color: #000000;
+            transform: translateY(-2px);
         }
         
         .process-step {
-            position: relative;
-            padding-left: 3rem;
-        }
-        
-        .process-step::before {
-            content: attr(data-step);
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 2rem;
-            height: 2rem;
-            background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: #1a1a1a;
-            font-size: 0.875rem;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
         }
         
         .tech-badge {
-            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 9999px;
-            font-size: 0.875rem;
-            font-weight: 500;
-            display: inline-block;
-            margin: 0.25rem;
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            color: #FFD700;
         }
         
-        .pricing-card {
-            background: white;
-            border-radius: 1rem;
-            padding: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-        
-        .pricing-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            border-color: #f59e0b;
-        }
-        
-        .pricing-card.featured {
-            border-color: #f59e0b;
-            background: linear-gradient(135deg, #fef3c7 0%, #ffffff 10%);
-        }
-        
-        .image-placeholder {
-            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
-            border: 2px dashed #d1d5db;
-            border-radius: 0.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #6b7280;
-            font-weight: 500;
-            min-height: 200px;
-        }
-        
-        .faq-item {
-            border-bottom: 1px solid #e5e7eb;
-            padding: 1.5rem 0;
-        }
-        
-        .faq-question {
-            cursor: pointer;
-            display: flex;
-            justify-content: between;
-            align-items: center;
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
             width: 100%;
-            text-align: left;
-            font-weight: 600;
-            color: #1f2937;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
         }
         
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            color: #6b7280;
-            padding-top: 0;
+        .modal-content {
+            background-color: #1a1a1a;
+            margin: 5% auto;
+            padding: 20px;
+            border: 2px solid #FFD700;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 10px;
         }
         
-        .faq-answer.open {
-            max-height: 200px;
-            padding-top: 1rem;
+        .close {
+            color: #FFD700;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
         }
         
-        @media (max-width: 768px) {
-            .process-step {
-                padding-left: 2.5rem;
-            }
-            
-            .process-step::before {
-                width: 1.5rem;
-                height: 1.5rem;
-                font-size: 0.75rem;
-            }
+        .close:hover {
+            color: #FFA500;
         }
     </style>
 </head>
-<body class="bg-gray-50">
+<body class="bg-black text-white font-['Inter']">
+    
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-gray-900/95 backdrop-blur-sm z-50 border-b border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
+    <nav class="fixed top-0 w-full bg-black/90 backdrop-blur-md z-50 border-b border-gold">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
                 <div class="flex items-center">
-                    <a href="index.html" class="flex items-center">
-                        <div class="w-8 h-8 bg-yellow-400 rounded-lg flex items-center justify-center mr-3">
-                            <i class="fas fa-rocket text-gray-900"></i>
-                        </div>
-                        <div class="text-2xl font-bold text-gradient">Afreach Creatives</div>
-                    </a>
+                    <img src="/images/afreachofficiallogo.png" alt="Afreach Creatives Logo" class="h-10 w-auto" onerror="this.src=''; this.alt='Afreach Creatives'; this.style.display='none';">
+                    <span class="ml-3 text-xl font-bold text-gold">Afreach Creatives</span>
                 </div>
                 
                 <!-- Desktop Menu -->
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="index.html" class="text-gray-300 hover:text-yellow-400 transition-colors">Home</a>
-                        <a href="services.html" class="text-yellow-400 font-semibold">Services</a>
-                        <a href="portfolio.html" class="text-gray-300 hover:text-yellow-400 transition-colors">Portfolio</a>
-                        <a href="about.html" class="text-gray-300 hover:text-yellow-400 transition-colors">About</a>
-                        <a href="contact.htmlt" class="text-gray-300 hover:text-yellow-400 transition-colors">Contact</a>
-                    </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-white hover:text-gold transition-colors">Home</a>
+                    <a href="services.html" class="text-gold font-semibold">Services</a>
+                    <a href="portfolio.html" class="text-white hover:text-gold transition-colors">Portfolio</a>
+                    <a href="about.html" class="text-white hover:text-gold transition-colors">About</a>
+                    <a href="contact.html" class="text-white hover:text-gold transition-colors">Contact</a>
+                    <button onclick="openQuoteModal()" class="btn-primary px-6 py-2 rounded-full">Get Quote</button>
                 </div>
                 
                 <!-- Mobile Menu Button -->
-                <div class="md:hidden">
-                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white" aria-label="Toggle mobile menu">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-gold">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
             </div>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="md:hidden hidden bg-gray-900 border-t border-gray-800">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="index.html" class="block px-3 py-2 text-gray-300 hover:text-yellow-400 transition-colors">Home</a>
-                <a href="services.html" class="block px-3 py-2 text-yellow-400 font-semibold">Services</a>
-                <a href="portfolio.html" class="block px-3 py-2 text-gray-300 hover:text-yellow-400 transition-colors">Portfolio</a>
-                <a href="about.html" class="block px-3 py-2 text-gray-300 hover:text-yellow-400 transition-colors">About</a>
-                <a href="contact.html" class="block px-3 py-2 text-gray-300 hover:text-yellow-400 transition-colors">Contact</a>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="index.html" class="block py-2 text-white hover:text-gold transition-colors">Home</a>
+                <a href="services.html" class="block py-2 text-gold font-semibold">Services</a>
+                <a href="portfolio.html" class="block py-2 text-white hover:text-gold transition-colors">Portfolio</a>
+                <a href="about.html" class="block py-2 text-white hover:text-gold transition-colors">About</a>
+                <a href="contact.html" class="block py-2 text-white hover:text-gold transition-colors">Contact</a>
+                <button onclick="openQuoteModal()" class="btn-primary px-6 py-2 rounded-full mt-4">Get Quote</button>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="gradient-bg text-white pt-24 pb-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <h1 class="text-4xl md:text-6xl font-bold mb-6">
-                    Our <span class="text-yellow-300">Services</span>
+    <section class="hero-bg min-h-screen flex items-center pt-20">
+        <div class="international-grid"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <!-- Premium Badge -->
+            <div class="text-center mb-8" data-aos="fade-down">
+                <div class="premium-badge inline-flex items-center px-6 py-2 rounded-full text-sm font-medium text-gold">
+                    <div class="w-2 h-2 international-accent rounded-full mr-2"></div>
+                    Comprehensive Digital Solutions
+                </div>
+            </div>
+            
+            <div class="text-center max-w-4xl mx-auto">
+                <h1 class="hero-title text-5xl lg:text-7xl mb-8 leading-tight" data-aos="fade-up">
+                    Our <span class="text-gold international-accent bg-clip-text text-transparent">Premium</span><br>
+                    <span class="text-4xl lg:text-5xl font-light">Digital Services</span>
                 </h1>
-                <p class="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto">
-                    Complete digital solutions tailored for Kenyan businesses, organizations, and leaders
+                <p class="hero-subtitle text-xl lg:text-2xl mb-10 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                    From concept to launch, we deliver <strong class="text-gold">world-class digital solutions</strong> that transform businesses and captivate global audiences.
                 </p>
-                <div class="flex flex-wrap justify-center gap-4 text-sm">
-                    <span class="bg-white/20 px-4 py-2 rounded-full">Startups</span>
-                    <span class="bg-white/20 px-4 py-2 rounded-full">SMEs</span>
-                    <span class="bg-white/20 px-4 py-2 rounded-full">Politicians</span>
-                    <span class="bg-white/20 px-4 py-2 rounded-full">Churches</span>
-                    <span class="bg-white/20 px-4 py-2 rounded-full">NGOs</span>
+                
+                <div class="flex flex-col sm:flex-row gap-6 justify-center mb-16" data-aos="fade-up" data-aos-delay="400">
+                    <button onclick="openQuoteModal()" class="btn-primary px-10 py-5 rounded-full text-lg font-semibold shadow-2xl">
+                        Start Your Project
+                    </button>
+                    <a href="#services-overview" class="btn-secondary px-10 py-5 rounded-full text-lg font-semibold text-center">
+                        Explore Services
+                    </a>
+                </div>
+                
+                <!-- Service Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="600">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-gold mb-1">4</div>
+                        <div class="text-sm text-gray-300">Core Services</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-gold mb-1">50+</div>
+                        <div class="text-sm text-gray-300">Projects Delivered</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-gold mb-1">24/7</div>
+                        <div class="text-sm text-gray-300">Support</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-gold mb-1">100%</div>
+                        <div class="text-sm text-gray-300">Satisfaction</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Overview -->
-    <section id="services" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-                    Everything You Need to <span class="text-gradient">Succeed Online</span>
-                </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    From concept to launch, we provide end-to-end digital solutions that drive real business results
+    <section id="services-overview" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">What We <span class="text-gold">Deliver</span></h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Four core services that cover every aspect of your digital presence
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Web Development -->
-                <article class="service-card bg-white p-8 rounded-xl shadow-lg">
-                    <div class="text-center mb-6">
-                        <div class="w-16 h-16 blue-gradient rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-code text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Web Development</h3>
-                        <p class="text-gray-600">Custom websites that convert visitors into customers</p>
+                <div class="service-card rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 gradient-gold rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                        </svg>
                     </div>
-                    
-                    <div class="space-y-3 mb-6">
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">Responsive Design</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">E-commerce Integration</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">SEO Optimization</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">CMS Integration</span>
-                        </div>
-                    </div>
-                    
-                    <div class="text-center">
-                        <div class="text-2xl font-bold text-gray-800 mb-2">From KES 15,000</div>
-                        <button onclick="scrollToQuote('web-development')" class="gold-gradient text-gray-900 px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all w-full">
-                            Get Quote
-                        </button>
-                    </div>
-                </article>
+                    <h3 class="text-2xl font-bold mb-4">Web Development</h3>
+                    <p class="text-gray-400 mb-6">Responsive, fast, and SEO-optimized websites that convert visitors into customers.</p>
+                    <a href="#web-development" class="btn-secondary px-6 py-2 rounded-full inline-block">Learn More</a>
+                </div>
                 
                 <!-- App Development -->
-                <article class="service-card bg-white p-8 rounded-xl shadow-lg">
-                    <div class="text-center mb-6">
-                        <div class="w-16 h-16 blue-gradient rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-mobile-alt text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-2">App Development</h3>
-                        <p class="text-gray-600">Native and cross-platform mobile applications</p>
+                <div class="service-card rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 gradient-gold rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                        </svg>
                     </div>
-                    
-                    <div class="space-y-3 mb-6">
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">iOS & Android</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">Cross-Platform</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">App Store Optimization</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">Backend Integration</span>
-                        </div>
-                    </div>
-                    
-                    <div class="text-center">
-                        <div class="text-2xl font-bold text-gray-800 mb-2">From KES 80,000</div>
-                        <button onclick="scrollToQuote('app-development')" class="gold-gradient text-gray-900 px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all w-full">
-                            Get Quote
-                        </button>
-                    </div>
-                </article>
-                
-                <!-- Social Media Management -->
-                <article class="service-card bg-white p-8 rounded-xl shadow-lg">
-                    <div class="text-center mb-6">
-                        <div class="w-16 h-16 blue-gradient rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-share-alt text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Social Media Management</h3>
-                        <p class="text-gray-600">Strategic campaigns that build communities</p>
-                    </div>
-                    
-                    <div class="space-y-3 mb-6">
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">Content Strategy</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">Community Management</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">Paid Advertising</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">Analytics & Reporting</span>
-                        </div>
-                    </div>
-                    
-                    <div class="text-center">
-                        <div class="text-2xl font-bold text-gray-800 mb-2">From KES 5,600/month</div>
-                        <button onclick="scrollToQuote('social-media')" class="gold-gradient text-gray-900 px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all w-full">
-                            Get Quote
-                        </button>
-                    </div>
-                </article>
+                    <h3 class="text-2xl font-bold mb-4">App Development</h3>
+                    <p class="text-gray-400 mb-6">Native and cross-platform mobile apps that engage users and drive business growth.</p>
+                    <a href="#app-development" class="btn-secondary px-6 py-2 rounded-full inline-block">Learn More</a>
+                </div>
                 
                 <!-- Graphic Design -->
-                <article class="service-card bg-white p-8 rounded-xl shadow-lg">
-                    <div class="text-center mb-6">
-                        <div class="w-16 h-16 blue-gradient rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-palette text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Graphic Design</h3>
-                        <p class="text-gray-600">Visual identity that speaks to your audience</p>
+                <div class="service-card rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 gradient-gold rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"/>
+                        </svg>
                     </div>
-                    
-                    <div class="space-y-3 mb-6">
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">Logo Design</span>
+                    <h3 class="text-2xl font-bold mb-4">Graphic Design</h3>
+                    <p class="text-gray-400 mb-6">Brand identities, logos, and marketing materials that make lasting impressions.</p>
+                    <a href="#graphic-design" class="btn-secondary px-6 py-2 rounded-full inline-block">Learn More</a>
+                </div>
+                
+                <!-- Social Media -->
+                <div class="service-card rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-16 h-16 gradient-gold rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Social Media Management</h3>
+                    <p class="text-gray-400 mb-6">Strategic social media campaigns that build communities and drive engagement.</p>
+                    <a href="#social-media" class="btn-secondary px-6 py-2 rounded-full inline-block">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Web Development Section -->
+    <section id="web-development" class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">Web Development</h2>
+                <h3 class="text-2xl text-gold mb-8">Our Work Speaks for Itself</h3>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    We build responsive, fast, and SEO-optimized websites that convert visitors into customers
+                </p>
+            </div>
+            
+            <!-- Website Portfolio Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <!-- Lydia Waweru -->
+                <div class="portfolio-item bg-gray-900 rounded-xl overflow-hidden border border-gray-800" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative">
+                        <img src="/images/websites/lydia-waweru.png" alt="Lydia Waweru Website" class="w-full h-48 object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-48 bg-gray-800 flex items-center justify-center text-gray-400" style="display: none;">
+                            <div class="text-center">
+                                <div class="text-4xl mb-2">🌐</div>
+                                <div>Lydia Waweru</div>
+                            </div>
                         </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">Marketing Materials</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">Print Design</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">Digital Graphics</span>
+                        <div class="portfolio-overlay flex items-end p-6">
+                            <div class="text-white">
+                                <h4 class="text-lg font-semibold text-gold">Lydia Waweru</h4>
+                                <p class="text-sm">Speaker & Charity</p>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="text-center">
-                        <div class="text-2xl font-bold text-gray-800 mb-2">From KES 2,500</div>
-                        <button onclick="scrollToQuote('graphic-design')" class="gold-gradient text-gray-900 px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all w-full">
-                            Get Quote
-                        </button>
+                </div>
+                
+                <!-- BM Tyres -->
+                <div class="portfolio-item bg-gray-900 rounded-xl overflow-hidden border border-gray-800" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative">
+                        <img src="/images/websites/bm-tyres.png" alt="BM Tyres Website" class="w-full h-48 object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-48 bg-gray-800 flex items-center justify-center text-gray-400" style="display: none;">
+                            <div class="text-center">
+                                <div class="text-4xl mb-2">🚗</div>
+                                <div>BM Tyres</div>
+                            </div>
+                        </div>
+                        <div class="portfolio-overlay flex items-end p-6">
+                            <div class="text-white">
+                                <h4 class="text-lg font-semibold text-gold">BM Tyres</h4>
+                                <p class="text-sm">Automotive Business</p>
+                            </div>
+                        </div>
                     </div>
-                </article>
+                </div>
+                
+                <!-- Blessed Nation Ambassadors -->
+                <div class="portfolio-item bg-gray-900 rounded-xl overflow-hidden border border-gray-800" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative">
+                        <img src="/images/websites/blessed-nation.png" alt="Blessed Nation Ambassadors Website" class="w-full h-48 object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-48 bg-gray-800 flex items-center justify-center text-gray-400" style="display: none;">
+                            <div class="text-center">
+                                <div class="text-4xl mb-2">🤝</div>
+                                <div>Blessed Nation</div>
+                            </div>
+                        </div>
+                        <div class="portfolio-overlay flex items-end p-6">
+                            <div class="text-white">
+                                <h4 class="text-lg font-semibold text-gold">Blessed Nation Ambassadors</h4>
+                                <p class="text-sm">NGO</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Riserig -->
+                <div class="portfolio-item bg-gray-900 rounded-xl overflow-hidden border border-gray-800" data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative">
+                        <img src="/images/websites/riserig.png" alt="Riserig Website" class="w-full h-48 object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-48 bg-gray-800 flex items-center justify-center text-gray-400" style="display: none;">
+                            <div class="text-center">
+                                <div class="text-4xl mb-2">📚</div>
+                                <div>Riserig</div>
+                            </div>
+                        </div>
+                        <div class="portfolio-overlay flex items-end p-6">
+                            <div class="text-white">
+                                <h4 class="text-lg font-semibold text-gold">Riserig</h4>
+                                <p class="text-sm">E-Learning Platform</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Web Development Features -->
+            <div class="grid md:grid-cols-3 gap-8" data-aos="fade-up">
+                <div class="text-center">
+                    <div class="w-12 h-12 gradient-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-semibold text-gold mb-2">Responsive Design</h4>
+                    <p class="text-gray-400">Perfect on all devices - desktop, tablet, and mobile</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-12 h-12 gradient-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-semibold text-gold mb-2">SEO Optimized</h4>
+                    <p class="text-gray-400">Built for search engines and fast loading speeds</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-12 h-12 gradient-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-semibold text-gold mb-2">Secure & Reliable</h4>
+                    <p class="text-gray-400">SSL certificates, security updates, and reliable hosting</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Development Section -->
+    <section id="app-development" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">App Development</h2>
+                <h3 class="text-2xl text-gold mb-8">Powering Kenya's Digital Future</h3>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Native and cross-platform mobile applications that engage users and drive business growth
+                </p>
+            </div>
+            
+            <!-- App Portfolio Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <!-- PesaTip -->
+                <div class="service-card rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-20 h-20 mx-auto mb-6 bg-gray-800 rounded-2xl flex items-center justify-center">
+                        <img src="/images/apps/pesatip-logo.png" alt="PesaTip App Logo" class="w-16 h-16 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="text-4xl text-gold" style="display: none;">💰</div>
+                    </div>
+                    <h4 class="text-xl font-semibold text-gold mb-2">PesaTip</h4>
+                    <p class="text-gray-400 text-sm mb-4">Tipping Platform</p>
+                    <div class="inline-flex items-center px-3 py-1 rounded-full text-xs bg-yellow-500/20 text-yellow-400 border border-yellow-500/30">
+                        Coming Soon
+                    </div>
+                </div>
+                
+                <!-- QuestCrest Abroad -->
+                <div class="service-card rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 mx-auto mb-6 bg-gray-800 rounded-2xl flex items-center justify-center">
+                        <img src="/images/apps/questcrest-logo.png" alt="QuestCrest Abroad App Logo" class="w-16 h-16 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="text-4xl text-gold" style="display: none;">🌍</div>
+                    </div>
+                    <h4 class="text-xl font-semibold text-gold mb-2">QuestCrest Abroad</h4>
+                    <p class="text-gray-400 text-sm mb-4">Overseas Jobs Agency</p>
+                    <div class="inline-flex items-center px-3 py-1 rounded-full text-xs bg-green-500/20 text-green-400 border border-green-500/30">
+                        Live
+                    </div>
+                </div>
+                
+                <!-- Rimora -->
+                <div class="service-card rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-20 h-20 mx-auto mb-6 bg-gray-800 rounded-2xl flex items-center justify-center">
+                        <img src="/images/apps/rimora-logo.png" alt="Rimora App Logo" class="w-16 h-16 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="text-4xl text-gold" style="display: none;">💸</div>
+                    </div>
+                    <h4 class="text-xl font-semibold text-gold mb-2">Rimora</h4>
+                    <p class="text-gray-400 text-sm mb-4">Money Transfer System</p>
+                    <div class="inline-flex items-center px-3 py-1 rounded-full text-xs bg-green-500/20 text-green-400 border border-green-500/30">
+                        Live
+                    </div>
+                </div>
+                
+                <!-- Lypach Investment -->
+                <div class="service-card rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-20 h-20 mx-auto mb-6 bg-gray-800 rounded-2xl flex items-center justify-center">
+                        <img src="/images/apps/lypach-logo.png" alt="Lypach Investment App Logo" class="w-16 h-16 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="text-4xl text-gold" style="display: none;">📈</div>
+                    </div>
+                    <h4 class="text-xl font-semibold text-gold mb-2">Lypach Investment</h4>
+                    <p class="text-gray-400 text-sm mb-4">Investment Platform</p>
+                    <div class="inline-flex items-center px-3 py-1 rounded-full text-xs bg-blue-500/20 text-blue-400 border border-blue-500/30">
+                        In Development
+                    </div>
+                </div>
+            </div>
+            
+            <!-- App Development Features -->
+            <div class="grid md:grid-cols-3 gap-8" data-aos="fade-up">
+                <div class="text-center">
+                    <div class="w-12 h-12 gradient-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-semibold text-gold mb-2">Cross-Platform</h4>
+                    <p class="text-gray-400">iOS and Android apps from a single codebase</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-12 h-12 gradient-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-semibold text-gold mb-2">User-Centric Design</h4>
+                    <p class="text-gray-400">Intuitive interfaces that users love to interact with</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-12 h-12 gradient-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-semibold text-gold mb-2">Performance Optimized</h4>
+                    <p class="text-gray-400">Fast, efficient apps that work smoothly on all devices</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Graphic Design Section -->
+    <section id="graphic-design" class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">Graphic Design & Branding</h2>
+                <h3 class="text-2xl text-gold mb-8">Visual Identity That Speaks Volumes</h3>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    From logos to complete brand identities, we create visual experiences that resonate with your audience
+                </p>
+            </div>
+            
+            <!-- Design Services Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <!-- Logo Design -->
+                <div class="service-card rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 gradient-gold rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-semibold text-gold mb-4">Logo Design</h4>
+                    <p class="text-gray-400">Memorable logos that capture your brand essence and stand the test of time</p>
+                </div>
                 
                 <!-- Brand Identity -->
-                <article class="service-card bg-white p-8 rounded-xl shadow-lg">
-                    <div class="text-center mb-6">
-                        <div class="w-16 h-16 blue-gradient rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-rocket text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Brand Identity</h3>
-                        <p class="text-gray-600">Complete brand packages that establish presence</p>
+                <div class="service-card rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 gradient-gold rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
                     </div>
-                    
-                    <div class="space-y-3 mb-6">
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">Brand Strategy</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">Visual Identity</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">Brand Guidelines</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">Marketing Collateral</span>
-                        </div>
-                    </div>
-                    
-                    <div class="text-center">
-                        <div class="text-2xl font-bold text-gray-800 mb-2">From KES 10,000</div>
-                        <button onclick="scrollToQuote('brand-identity')" class="gold-gradient text-gray-900 px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all w-full">
-                            Get Quote
-                        </button>
-                    </div>
-                </article>
+                    <h4 class="text-xl font-semibold text-gold mb-4">Brand Identity</h4>
+                    <p class="text-gray-400">Complete brand systems including colors, typography, and style guides</p>
+                </div>
                 
-                <!-- Digital Marketing -->
-                <article class="service-card bg-white p-8 rounded-xl shadow-lg">
-                    <div class="text-center mb-6">
-                        <div class="w-16 h-16 blue-gradient rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-bullhorn text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Digital Marketing</h3>
-                        <p class="text-gray-600">Data-driven campaigns that deliver ROI</p>
+                <!-- Marketing Materials -->
+                <div class="service-card rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 gradient-gold rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4z"/>
+                            <path d="M4 8h12v2H4V8z"/>
+                        </svg>
                     </div>
-                    
-                    <div class="space-y-3 mb-6">
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">SEO & SEM</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">PPC Campaigns</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">Content Marketing</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">Email Marketing</span>
-                        </div>
+                    <h4 class="text-xl font-semibold text-gold mb-4">Marketing Materials</h4>
+                    <p class="text-gray-400">Brochures, flyers, business cards, and digital marketing assets</p>
+                </div>
+                
+                <!-- Print Design -->
+                <div class="service-card rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-16 h-16 gradient-gold rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5 4a3 3 0 00-3 3v6a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H5zm-1 9v-1h5v2H5a1 1 0 01-1-1zm7 1h4a1 1 0 001-1v-1h-5v2zm0-4h5V8h-5v2zM9 8H4v2h5V8z" clip-rule="evenodd"/>
+                        </svg>
                     </div>
-                    
-                    <div class="text-center">
-                        <div class="text-2xl font-bold text-gray-800 mb-2">From KES 15,000/month</div>
-                        <button onclick="scrollToQuote('digital-marketing')" class="gold-gradient text-gray-900 px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all w-full">
-                            Get Quote
-                        </button>
+                    <h4 class="text-xl font-semibold text-gold mb-4">Print Design</h4>
+                    <p class="text-gray-400">Professional print materials that make a lasting physical impression</p>
+                </div>
+            </div>
+            
+            <!-- Design Process -->
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h3 class="text-3xl font-bold text-gold mb-8">Our Design Process</h3>
+                <div class="grid md:grid-cols-5 gap-6">
+                    <div class="process-step rounded-xl p-6">
+                        <div class="text-2xl font-bold text-gold mb-2">01</div>
+                        <h4 class="font-semibold mb-2">Research</h4>
+                        <p class="text-sm text-gray-400">Understanding your brand and target audience</p>
                     </div>
-                </article>
+                    <div class="process-step rounded-xl p-6">
+                        <div class="text-2xl font-bold text-gold mb-2">02</div>
+                        <h4 class="font-semibold mb-2">Concept</h4>
+                        <p class="text-sm text-gray-400">Developing creative concepts and ideas</p>
+                    </div>
+                    <div class="process-step rounded-xl p-6">
+                        <div class="text-2xl font-bold text-gold mb-2">03</div>
+                        <h4 class="font-semibold mb-2">Design</h4>
+                        <p class="text-sm text-gray-400">Creating initial design mockups</p>
+                    </div>
+                    <div class="process-step rounded-xl p-6">
+                        <div class="text-2xl font-bold text-gold mb-2">04</div>
+                        <h4 class="font-semibold mb-2">Refine</h4>
+                        <p class="text-sm text-gray-400">Incorporating feedback and improvements</p>
+                    </div>
+                    <div class="process-step rounded-xl p-6">
+                        <div class="text-2xl font-bold text-gold mb-2">05</div>
+                        <h4 class="font-semibold mb-2">Deliver</h4>
+                        <p class="text-sm text-gray-400">Final files and brand guidelines</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Detailed Service Sections -->
-    
-    <!-- 🌐 Web Development Detail -->
-<section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-            
-            <!-- Portrait Screenshot -->
-            <div class="order-2 lg:order-1 flex justify-center">
-                <div class="border-[6px] border-gray-300 rounded-3xl shadow-2xl overflow-hidden w-64 h-[520px]">
-                    <img src="/images/webshowcase1.jpg" 
-                         alt="Web Development Showcase" 
-                         class="w-full h-full object-cover">
-                </div>
-            </div>
-            
-            <!-- Text Content -->
-            <div class="order-1 lg:order-2">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-                    <i class="fas fa-code text-blue-600 mr-3"></i>
-                    Web Development
-                </h2>
-                <p class="text-xl text-gray-600 mb-8">
-                    Modern, responsive, and high-performing websites built to impress and convert. We combine clean design with powerful functionality.
-                </p>
-                <div class="grid md:grid-cols-2 gap-6 mb-8">
-                    <div class="bg-gray-50 p-6 rounded-lg">
-                        <h4 class="font-semibold text-gray-800 mb-3">Front-End</h4>
-                        <ul class="space-y-2 text-gray-600">
-                            <li><i class="fas fa-check text-blue-500 mr-2"></i>React / Next.js</li>
-                            <li><i class="fas fa-check text-blue-500 mr-2"></i>Tailwind / Bootstrap</li>
-                            <li><i class="fas fa-check text-blue-500 mr-2"></i>Modern UI/UX</li>
-                        </ul>
-                    </div>
-                    <div class="bg-gray-50 p-6 rounded-lg">
-                        <h4 class="font-semibold text-gray-800 mb-3">Back-End</h4>
-                        <ul class="space-y-2 text-gray-600">
-                            <li><i class="fas fa-check text-blue-500 mr-2"></i>Node.js / Express</li>
-                            <li><i class="fas fa-check text-blue-500 mr-2"></i>Firebase / MongoDB</li>
-                            <li><i class="fas fa-check text-blue-500 mr-2"></i>Scalable APIs</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="bg-blue-50 p-6 rounded-lg">
-                    <h4 class="font-semibold text-gray-800 mb-3">We Focus On:</h4>
-                    <div class="grid md:grid-cols-2 gap-2">
-                        <div class="flex items-center">
-                            <i class="fas fa-tachometer-alt text-blue-600 mr-2"></i>
-                            <span class="text-gray-700">Speed Optimization</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-lock text-blue-600 mr-2"></i>
-                            <span class="text-gray-700">Security</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-mobile-alt text-blue-600 mr-2"></i>
-                            <span class="text-gray-700">Mobile Responsiveness</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-search text-blue-600 mr-2"></i>
-                            <span class="text-gray-700">SEO Ready</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<!-- 📱 Mobile App Development Detail -->
-<section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-            
-            <!-- App Logo / Favicon -->
-            <div class="order-2 lg:order-1 flex justify-center">
-                <div class="w-24 h-24 rounded-full overflow-hidden shadow-lg hover:scale-110 transition-transform duration-300">
-                    <img src="/images/pesatipfavicon.png" 
-                         alt="Pesatip App Logo" 
-                         class="w-full h-full object-cover">
-                </div>
-            </div>
-            
-            <!-- Text Content -->
-            <div class="order-1 lg:order-2">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-                    <i class="fas fa-mobile-alt text-green-600 mr-3"></i>
-                    Mobile App Development
-                </h2>
-                <p class="text-xl text-gray-600 mb-8">
-                    We craft native and cross-platform mobile applications that engage users and drive business growth across iOS and Android.
-                </p>
-                
-                <div class="grid md:grid-cols-2 gap-6 mb-8">
-                    <div class="bg-gray-50 p-6 rounded-lg">
-                        <h4 class="font-semibold text-gray-800 mb-3">Native Development</h4>
-                        <ul class="space-y-2 text-gray-600">
-                            <li><i class="fas fa-check text-green-500 mr-2"></i>iOS (Swift)</li>
-                            <li><i class="fas fa-check text-green-500 mr-2"></i>Android (Kotlin)</li>
-                            <li><i class="fas fa-check text-green-500 mr-2"></i>Optimal Performance</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="bg-gray-50 p-6 rounded-lg">
-                        <h4 class="font-semibold text-gray-800 mb-3">Cross-Platform</h4>
-                        <ul class="space-y-2 text-gray-600">
-                            <li><i class="fas fa-check text-green-500 mr-2"></i>React Native</li>
-                            <li><i class="fas fa-check text-green-500 mr-2"></i>Flutter</li>
-                            <li><i class="fas fa-check text-green-500 mr-2"></i>Cost Effective</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="bg-green-50 p-6 rounded-lg">
-                    <h4 class="font-semibold text-gray-800 mb-3">App Features We Implement:</h4>
-                    <div class="grid md:grid-cols-2 gap-2">
-                        <div class="flex items-center">
-                            <i class="fas fa-bell text-green-600 mr-2"></i>
-                            <span class="text-gray-700">Push Notifications</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-map-marker-alt text-green-600 mr-2"></i>
-                            <span class="text-gray-700">GPS Integration</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-credit-card text-green-600 mr-2"></i>
-                            <span class="text-gray-700">Payment Gateway</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-users text-green-600 mr-2"></i>
-                            <span class="text-gray-700">Social Login</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-cloud text-green-600 mr-2"></i>
-                            <span class="text-gray-700">Cloud Sync</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-chart-bar text-green-600 mr-2"></i>
-                            <span class="text-gray-700">Analytics</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-    
-
-    <!-- Pricing Packages -->
-    <section class="py-20 bg-gray-900 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">
-                    Choose Your <span class="text-gradient">Perfect Package</span>
-                </h2>
+    <!-- Social Media Management Section -->
+    <section id="social-media" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">Social Media Management</h2>
+                <h3 class="text-2xl text-gold mb-8">Trusted by Leading Brands</h3>
                 <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                    Transparent pricing with no hidden fees. All packages include free consultation and 3 months support.
+                    Strategic social media campaigns that build communities, drive engagement, and deliver measurable results
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Starter Package -->
-                <div class="pricing-card">
-                    <div class="text-center mb-6">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Starter</h3>
-                        <p class="text-gray-600 mb-4">Perfect for small businesses and startups</p>
-                        <div class="text-4xl font-bold text-gray-800">KES 25,000</div>
-                        <p class="text-gray-600">One-time payment</p>
+            <!-- Client Logos Grid -->
+            <div class="mb-16" data-aos="fade-up">
+                <p class="text-center text-gray-400 mb-8">Some of the social media accounts we manage:</p>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+                    <!-- Blessed Nation Ambassadors -->
+                    <div class="service-card rounded-xl p-6 text-center">
+                        <img src="/images/social-clients/blessed-nation-logo.png" alt="Blessed Nation Ambassadors" class="w-16 h-16 mx-auto mb-3 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="w-16 h-16 mx-auto mb-3 bg-gold rounded-full flex items-center justify-center text-black font-bold text-xl" style="display: none;">BN</div>
+                        <p class="text-sm text-gold font-semibold">Blessed Nation</p>
                     </div>
                     
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">5-Page Website</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">Responsive Design</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">Basic SEO</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">Contact Forms</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">12 Months Support</span>
-                        </li>
-                    </ul>
+                    <!-- Riserig -->
+                    <div class="service-card rounded-xl p-6 text-center">
+                        <img src="/images/social-clients/riserig-logo.png" alt="Riserig" class="w-16 h-16 mx-auto mb-3 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="w-16 h-16 mx-auto mb-3 bg-gold rounded-full flex items-center justify-center text-black font-bold text-xl" style="display: none;">R</div>
+                        <p class="text-sm text-gold font-semibold">Riserig</p>
+                    </div>
                     
-                    <button onclick="scrollToQuote('starter')" class="w-full border-2 border-gray-300 text-gray-700 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-all">
-                        Get Started
-                    </button>
+                    <!-- Pillars Of Hope -->
+                    <div class="service-card rounded-xl p-6 text-center">
+                        <img src="/images/social-clients/pillars-hope-logo.png" alt="Pillars Of Hope" class="w-16 h-16 mx-auto mb-3 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="w-16 h-16 mx-auto mb-3 bg-gold rounded-full flex items-center justify-center text-black font-bold text-xl" style="display: none;">PH</div>
+                        <p class="text-sm text-gold font-semibold">Pillars Of Hope</p>
+                    </div>
+                    
+                    <!-- Aroma -->
+                    <div class="service-card rounded-xl p-6 text-center">
+                        <img src="/images/social-clients/aroma-logo.png" alt="Aroma" class="w-16 h-16 mx-auto mb-3 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="w-16 h-16 mx-auto mb-3 bg-gold rounded-full flex items-center justify-center text-black font-bold text-xl" style="display: none;">A</div>
+                        <p class="text-sm text-gold font-semibold">Aroma</p>
+                    </div>
+                    
+                    <!-- Lydia Waweru -->
+                    <div class="service-card rounded-xl p-6 text-center">
+                        <img src="/images/social-clients/lydia-waweru-logo.png" alt="Lydia Waweru" class="w-16 h-16 mx-auto mb-3 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="w-16 h-16 mx-auto mb-3 bg-gold rounded-full flex items-center justify-center text-black font-bold text-xl" style="display: none;">LW</div>
+                        <p class="text-sm text-gold font-semibold">Lydia Waweru</p>
+                    </div>
+                    
+                    <!-- Lypach Investment -->
+                    <div class="service-card rounded-xl p-6 text-center">
+                        <img src="/images/social-clients/lypach-logo.png" alt="Lypach Investment" class="w-16 h-16 mx-auto mb-3 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="w-16 h-16 mx-auto mb-3 bg-gold rounded-full flex items-center justify-center text-black font-bold text-xl" style="display: none;">LI</div>
+                        <p class="text-sm text-gold font-semibold">Lypach Investment</p>
+                    </div>
                 </div>
-                
-                <!-- Professional Package -->
-                <div class="pricing-card featured">
-                    <div class="text-center mb-6">
-                        <div class="bg-yellow-400 text-gray-900 px-3 py-1 rounded-full text-sm font-semibold mb-4 inline-block">
-                            Most Popular
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Professional</h3>
-                        <p class="text-gray-600 mb-4">Ideal for growing businesses</p>
-                        <div class="text-4xl font-bold text-gray-800">KES 50,000</div>
-                        <p class="text-gray-600">One-time payment</p>
+            </div>
+            
+            <!-- Social Media Services -->
+            <div class="grid md:grid-cols-3 gap-8" data-aos="fade-up">
+                <div class="text-center">
+                    <div class="w-12 h-12 gradient-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"/>
+                        </svg>
                     </div>
-                    
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">10-Page Website</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">E-commerce Ready</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">Advanced SEO</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">CMS Integration</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">Social Media Integration</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">12 Months Support</span>
-                        </li>
-                    </ul>
-                    
-                    <button onclick="scrollToQuote('professional')" class="w-full gold-gradient text-gray-900 py-3 rounded-lg font-semibold hover:shadow-lg transition-all">
-                        Get Started
-                    </button>
+                    <h4 class="text-xl font-semibold text-gold mb-2">Content Creation</h4>
+                    <p class="text-gray-400">Engaging posts, stories, and multimedia content that resonates with your audience</p>
                 </div>
-                
-                <!-- Enterprise Package -->
-                <div class="pricing-card">
-                    <div class="text-center mb-6">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Enterprise</h3>
-                        <p class="text-gray-600 mb-4">Complete digital transformation</p>
-                        <div class="text-4xl font-bold text-gray-800">KES 100,000+</div>
-                        <p class="text-gray-600">Custom pricing</p>
+                <div class="text-center">
+                    <div class="w-12 h-12 gradient-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
                     </div>
-                    
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">Unlimited Pages</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">Custom Development</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">Mobile App Included</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">Digital Marketing</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">Brand Identity Package</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">12 Months Support</span>
-                        </li>
-                    </ul>
-                    
-                    <button onclick="scrollToQuote('enterprise')" class="w-full border-2 border-gray-300 text-gray-700 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-all">
-                        Contact Us
-                    </button>
+                    <h4 class="text-xl font-semibold text-gold mb-2">Community Management</h4>
+                    <p class="text-gray-400">Building and nurturing online communities that drive brand loyalty</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-12 h-12 gradient-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-semibold text-gold mb-2">Analytics & Reporting</h4>
+                    <p class="text-gray-400">Detailed insights and performance reports to track your social media ROI</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="py-20 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-                    Frequently Asked <span class="text-gradient">Questions</span>
-                </h2>
-                <p class="text-xl text-gray-600">
-                    Get answers to common questions about our services and process
+    <!-- Technology Stack -->
+    <section class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">Our <span class="text-gold">Technology Stack</span></h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    We use cutting-edge tools and technologies to deliver exceptional results
                 </p>
             </div>
             
-            <div class="space-y-4">
-                <div class="faq-item">
-                    <button class="faq-question w-full flex justify-between items-center" onclick="toggleFAQ(this)">
-                        <span>How long does it take to complete a website?</span>
-                        <i class="fas fa-chevron-down transition-transform"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Typical timelines are: Simple websites (2-4 weeks), E-commerce sites (4-8 weeks), Custom applications (8-16 weeks). We provide detailed timelines during our initial consultation.</p>
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Web Technologies -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-xl font-semibold text-gold mb-4">Web Development</h3>
+                    <div class="space-y-2">
+                        <div class="tech-badge px-3 py-1 rounded-full text-sm">React</div>
+                        <div class="tech-badge px-3 py-1 rounded-full text-sm">WordPress</div>
+                        <div class="tech-badge px-3 py-1 rounded-full text-sm">Shopify</div>
+                        <div class="tech-badge px-3 py-1 rounded-full text-sm">Node.js</div>
                     </div>
                 </div>
                 
-                <div class="faq-item">
-                    <button class="faq-question w-full flex justify-between items-center" onclick="toggleFAQ(this)">
-                        <span>Do you provide ongoing support after launch?</span>
-                        <i class="fas fa-chevron-down transition-transform"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Yes! All our packages include free support for 3-12 months depending on the package. This includes bug fixes, minor updates, and technical support. We also offer extended support plans.</p>
+                <!-- Mobile Technologies -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-xl font-semibold text-gold mb-4">Mobile Development</h3>
+                    <div class="space-y-2">
+                        <div class="tech-badge px-3 py-1 rounded-full text-sm">React Native</div>
+                        <div class="tech-badge px-3 py-1 rounded-full text-sm">Flutter</div>
+                        <div class="tech-badge px-3 py-1 rounded-full text-sm">iOS Native</div>
+                        <div class="tech-badge px-3 py-1 rounded-full text-sm">Android Native</div>
                     </div>
                 </div>
                 
-                <div class="faq-item">
-                    <button class="faq-question w-full flex justify-between items-center" onclick="toggleFAQ(this)">
-                        <span>Can you help with hosting and domain registration?</span>
-                        <i class="fas fa-chevron-down transition-transform"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Absolutely! We can handle domain registration, hosting setup, SSL certificates, and all technical aspects. We work with reliable Kenyan and international hosting providers.</p>
+                <!-- Design Tools -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="text-xl font-semibold text-gold mb-4">Design Tools</h3>
+                    <div class="space-y-2">
+                        <div class="tech-badge px-3 py-1 rounded-full text-sm">Adobe Creative Suite</div>
+                        <div class="tech-badge px-3 py-1 rounded-full text-sm">Figma</div>
+                        <div class="tech-badge px-3 py-1 rounded-full text-sm">Sketch</div>
+                        <div class="tech-badge px-3 py-1 rounded-full text-sm">Canva Pro</div>
                     </div>
                 </div>
                 
-                <div class="faq-item">
-                    <button class="faq-question w-full flex justify-between items-center" onclick="toggleFAQ(this)">
-                        <span>Do you work with businesses outside Kenya?</span>
-                        <i class="fas fa-chevron-down transition-transform"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Yes, we work with clients across East Africa and globally. We use modern communication tools and project management systems to ensure smooth collaboration regardless of location.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <button class="faq-question w-full flex justify-between items-center" onclick="toggleFAQ(this)">
-                        <span>What payment methods do you accept?</span>
-                        <i class="fas fa-chevron-down transition-transform"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>We accept M-Pesa, bank transfers, PayPal, and other digital payment methods. We typically require 50% upfront and 50% upon completion, but can discuss flexible payment plans for larger projects.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <button class="faq-question w-full flex justify-between items-center" onclick="toggleFAQ(this)">
-                        <span>Can you redesign an existing website?</span>
-                        <i class="fas fa-chevron-down transition-transform"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Yes! We offer website redesign services to modernize your existing site, improve performance, enhance user experience, and ensure mobile responsiveness. We can work with your existing content or help create new content.</p>
+                <!-- Social Media Tools -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                    <h3 class="text-xl font-semibold text-gold mb-4">Social Media</h3>
+                    <div class="space-y-2">
+                        <div class="tech-badge px-3 py-1 rounded-full text-sm">Hootsuite</div>
+                        <div class="tech-badge px-3 py-1 rounded-full text-sm">Buffer</div>
+                        <div class="tech-badge px-3 py-1 rounded-full text-sm">Meta Business</div>
+                        <div class="tech-badge px-3 py-1 rounded-full text-sm">Google Analytics</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Get Quote Section -->
-    <section id="get-quote" class="py-20 gradient-bg text-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">
-                    Ready to Get <span class="text-yellow-300">Started?</span>
-                </h2>
-                <p class="text-xl text-gray-200">
-                    Tell us about your project and get a free consultation and quote
+    <!-- CTA Section -->
+    <section class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6 text-center">
+            <div data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">Ready to Start Your <span class="text-gold">Project</span>?</h2>
+                <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                    Let's discuss your vision and create something extraordinary together. Get your free consultation today.
                 </p>
-            </div>
-            
-            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8">
-                <form id="quote-form" class="space-y-6">
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label for="quote-name" class="block text-sm font-medium mb-2">Full Name</label>
-                            <input type="text" id="quote-name" name="name" required class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-white placeholder-gray-300" placeholder="Your full name">
-                        </div>
-                        <div>
-                            <label for="quote-email" class="block text-sm font-medium mb-2">Email Address</label>
-                            <input type="email" id="quote-email" name="email" required class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-white placeholder-gray-300" placeholder="your@email.com">
-                        </div>
-                    </div>
-                    
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label for="quote-phone" class="block text-sm font-medium mb-2">Phone Number</label>
-                            <input type="tel" id="quote-phone" name="phone" class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-white placeholder-gray-300" placeholder="+254 700 000 000">
-                        </div>
-                        <div>
-                            <label for="quote-service" class="block text-sm font-medium mb-2">Service Needed</label>
-                            <select id="quote-service" name="service" required class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-white">
-                                <option value="">Select a service</option>
-                                <option value="web-development">Web Development</option>
-                                <option value="app-development">App Development</option>
-                                <option value="social-media">Social Media Management</option>
-                                <option value="graphic-design">Graphic Design</option>
-                                <option value="brand-identity">Brand Identity</option>
-                                <option value="digital-marketing">Digital Marketing</option>
-                                <option value="complete-package">Complete Package</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <label for="quote-budget" class="block text-sm font-medium mb-2">Budget Range</label>
-                        <select id="quote-budget" name="budget" class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-white">
-                            <option value="">Select budget range</option>
-                            <option value="50000-100000">KES 50,000 - 100,000</option>
-                            <option value="100000-250000">KES 100,000 - 250,000</option>
-                            <option value="250000-500000">KES 250,000 - 500,000</option>
-                            <option value="500000-1000000">KES 500,000 - 1,000,000</option>
-                            <option value="1000000+">KES 1,000,000+</option>
-                        </select>
-                    </div>
-                    
-                    <div>
-                        <label for="quote-message" class="block text-sm font-medium mb-2">Project Details</label>
-                        <textarea id="quote-message" name="message" rows="4" required class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-white placeholder-gray-300" placeholder="Tell us about your project requirements..."></textarea>
-                    </div>
-                    
-                    <div class="text-center">
-                        <button type="submit" class="gold-gradient text-gray-900 px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-lg transition-all">
-                            <i class="fas fa-paper-plane mr-2"></i>Get Free Quote
-                        </button>
-                    </div>
-                </form>
-                
-                <div id="quote-message" class="mt-4 p-4 rounded-lg hidden"></div>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="openQuoteModal()" class="btn-primary px-8 py-4 rounded-full text-lg">
+                        Get Free Quote
+                    </button>
+                    <a href="contact.html" class="btn-secondary px-8 py-4 rounded-full text-lg">
+                        Schedule Consultation
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 py-12 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer class="bg-black border-t border-gold py-12">
+        <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-4 gap-8">
-                <div class="md:col-span-2">
+                <div>
                     <div class="flex items-center mb-4">
-                        <div class="w-8 h-8 bg-yellow-400 rounded-lg flex items-center justify-center mr-3">
-                            <i class="fas fa-rocket text-gray-900"></i>
-                        </div>
-                        <div class="text-2xl font-bold text-gradient">Afreach Creatives</div>
+                        <img src="/images/afreachofficiallogo.png" alt="Afreach Creatives Logo" class="h-8 w-auto" onerror="this.style.display='none';">
+                        <span class="ml-2 text-lg font-bold text-gold">Afreach Creatives</span>
                     </div>
-                    <p class="text-gray-300 mb-6 max-w-md">
-                        Kenya's premier brand identity experts. From brand identity to digital marketing - we handle everything so you don't have to.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="https://www.linkedin.com/in/afreach-creatives-9802a6372" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-yellow-400 transition-colors" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin text-xl"></i>
-                        </a>
-                        <a href="https://x.com/AfreachCreative" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-yellow-400 transition-colors" aria-label="Twitter">
-                            <i class="fab fa-twitter text-xl"></i>
-                        </a>
-                        <a href="https://www.facebook.com/share/1D4xPeLRkc/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-yellow-400 transition-colors" aria-label="Facebook">
-                            <i class="fab fa-facebook text-xl"></i>
-                        </a>
-                        <a href="https://www.instagram.com/afreach_creatives" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-yellow-400 transition-colors" aria-label="Instagram">
-                            <i class="fab fa-instagram text-xl"></i>
-                        </a>
-                        <a href="https://www.tiktok.com/@afreach.creatives" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-yellow-400 transition-colors" aria-label="TikTok">
-                            <i class="fab fa-tiktok text-xl"></i>
-                        </a>
-                    </div>
+                    <p class="text-gray-400">Kenya's premier brand identity studio, delivering international-quality creative solutions.</p>
                 </div>
                 
                 <div>
-                    <h4 class="text-lg font-semibold mb-4 text-white">Services</h4>
-                    <ul class="space-y-2 text-gray-300">
-                        <li><a href="#services" class="hover:text-yellow-400 transition-colors">Web Development</a></li>
-                        <li><a href="#services" class="hover:text-yellow-400 transition-colors">App Development</a></li>
-                        <li><a href="#services" class="hover:text-yellow-400 transition-colors">Social Media Management</a></li>
-                        <li><a href="#services" class="hover:text-yellow-400 transition-colors">Graphic Design</a></li>
-                        <li><a href="#services" class="hover:text-yellow-400 transition-colors">Brand Identity</a></li>
-                        <li><a href="#services" class="hover:text-yellow-400 transition-colors">Digital Marketing</a></li>
+                    <h4 class="text-gold font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#web-development" class="hover:text-gold transition-colors">Web Development</a></li>
+                        <li><a href="#app-development" class="hover:text-gold transition-colors">App Development</a></li>
+                        <li><a href="#graphic-design" class="hover:text-gold transition-colors">Graphic Design</a></li>
+                        <li><a href="#social-media" class="hover:text-gold transition-colors">Social Media</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h4 class="text-lg font-semibold mb-4 text-white">Contact Info</h4>
-                    <ul class="space-y-2 text-gray-300">
-                        <li>
-                            <i class="fas fa-envelope mr-2 text-yellow-400"></i>
-                            <a href="mailto:afreachcreative@gmail.com" class="hover:text-yellow-400 transition-colors">afreachcreative@gmail.com</a>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone mr-2 text-yellow-400"></i>
-                            <a href="tel:+254703579059" class="hover:text-yellow-400 transition-colors">+254 703 579 059</a>
-                        </li>
-                        <li>
-                            <i class="fab fa-whatsapp mr-2 text-yellow-400"></i>
-                            <a href="https://wa.me/254703579059" target="_blank" rel="noopener noreferrer" class="hover:text-yellow-400 transition-colors">WhatsApp</a>
-                        </li>
+                    <h4 class="text-gold font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="about.html" class="hover:text-gold transition-colors">About Us</a></li>
+                        <li><a href="portfolio.html" class="hover:text-gold transition-colors">Portfolio</a></li>
+                        <li><a href="contact.html" class="hover:text-gold transition-colors">Contact</a></li>
                     </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-gold font-semibold mb-4">Connect</h4>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://wa.me/254703579059" target="_blank" rel="noopener noreferrer" class="text-green-500 hover:text-green-400 transition-colors" title="WhatsApp">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                            </svg>
+                        </a>
+                        <a href="mailto:afreachcreative@gmail.com" class="text-gold hover:text-yellow-400 transition-colors" title="Email">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                        </a>
+                        <a href="tel:+254703579059" class="text-blue-400 hover:text-blue-300 transition-colors" title="Call">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/afreach-creatives-9802a6372" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-500 transition-colors" title="LinkedIn">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="https://x.com/AfreachCreative" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors" title="X (Twitter)">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.facebook.com/share/1D4xPeLRkc/" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:text-blue-400 transition-colors" title="Facebook">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/afreach_creatives" target="_blank" rel="noopener noreferrer" class="text-pink-500 hover:text-pink-400 transition-colors" title="Instagram">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C8.396 0 7.989.013 7.041.048 6.094.082 5.52.204 5.036.388a5.918 5.918 0 0 0-2.14 1.393A5.918 5.918 0 0 0 .503 4.021c-.184.484-.306 1.058-.34 2.005C.128 7.024.115 7.431.115 11.052s.013 4.028.048 4.976c.034.947.156 1.521.34 2.005a5.918 5.918 0 0 0 1.393 2.14 5.918 5.918 0 0 0 2.14 1.393c.484.184 1.058.306 2.005.34.948.035 1.355.048 4.976.048s4.028-.013 4.976-.048c.947-.034 1.521-.156 2.005-.34a5.918 5.918 0 0 0 2.14-1.393 5.918 5.918 0 0 0 1.393-2.14c.184-.484.306-1.058.34-2.005.035-.948.048-1.355.048-4.976s-.013-4.028-.048-4.976c-.034-.947-.156-1.521-.34-2.005a5.918 5.918 0 0 0-1.393-2.14A5.918 5.918 0 0 0 19.021.503c-.484-.184-1.058-.306-2.005-.34C16.068.013 15.661 0 12.017 0zm0 2.165c3.573 0 3.994.014 5.402.048.947.034 1.462.156 1.805.26.454.176.778.387 1.12.729.342.342.553.666.729 1.12.104.343.226.858.26 1.805.034 1.408.048 1.829.048 5.402s-.014 3.994-.048 5.402c-.034.947-.156 1.462-.26 1.805-.176.454-.387.778-.729 1.12-.342.342-.666.553-1.12.729-.343.104-.858.226-1.805.26-1.408.034-1.829.048-5.402.048s-3.994-.014-5.402-.048c-.947-.034-1.462-.156-1.805-.26-.454-.176-.778-.387-1.12-.729-.342-.342-.553-.666-.729-1.12-.104-.343-.226-.858-.26-1.805-.034-1.408-.048-1.829-.048-5.402s.014-3.994.048-5.402c.034-.947.156-1.462.26-1.805.176-.454.387-.778.729-1.12.342-.342.666-.553 1.12-.729.343-.104.858-.226 1.805-.26 1.408-.034 1.829-.048 5.402-.048z"/>
+                                <path d="M12.017 5.838a6.214 6.214 0 1 0 0 12.428 6.214 6.214 0 0 0 0-12.428zm0 10.25a4.036 4.036 0 1 1 0-8.072 4.036 4.036 0 0 1 0 8.072zm7.908-10.506a1.451 1.451 0 1 1-2.902 0 1.451 1.451 0 0 1 2.902 0z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.tiktok.com/@afreach.creatives" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition-colors" title="TikTok">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
             
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2024 Afreach Creatives. All rights reserved. | <a href="index.html" class="hover:text-yellow-400 transition-colors">Back to Home</a></p>
+                <p>&copy; 2024 Afreach Creatives. All rights reserved. | Transforming brands across Kenya and beyond.</p>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
+    <!-- Quote Modal -->
+    <div id="quoteModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeQuoteModal()">&times;</span>
+            <h2 class="text-2xl font-bold text-gold mb-6">Get Your Free Quote</h2>
+            <form id="quoteForm" action="https://formspree.io/f/mjkedvkg" method="POST">
+                <div class="mb-4">
+                    <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Full Name</label>
+                    <input type="text" id="name" name="name" required class="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-gold focus:outline-none">
+                </div>
+                
+                <div class="mb-4">
+                    <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email Address</label>
+                    <input type="email" id="email" name="email" required class="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-gold focus:outline-none">
+                </div>
+                
+                <div class="mb-4">
+                    <label for="phone" class="block text-sm font-medium text-gray-300 mb-2">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-gold focus:outline-none">
+                </div>
+                
+                <div class="mb-4">
+                    <label for="service" class="block text-sm font-medium text-gray-300 mb-2">Service Needed</label>
+                    <select id="service" name="service" required class="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-gold focus:outline-none">
+                        <option value="">Select a service</option>
+                        <option value="web-development">Web Development</option>
+                        <option value="app-development">App Development</option>
+                        <option value="graphic-design">Graphic Design</option>
+                        <option value="social-media">Social Media Management</option>
+                        <option value="multiple">Multiple Services</option>
+                    </select>
+                </div>
+                
+                <div class="mb-6">
+                    <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Project Details</label>
+                    <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-gold focus:outline-none" placeholder="Tell us about your project..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn-primary w-full py-3 rounded-lg">
+                    Send Quote Request
+                </button>
+            </form>
+        </div>
+    </div>
 
-        mobileMenuBtn.addEventListener('click', () => {
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/254703579059?text=Hi%20Afreach%20Creatives!%20I'm%20interested%20in%20your%20services." target="_blank" rel="noopener noreferrer" class="floating-whatsapp">
+        <div class="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all duration-300">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+            </svg>
+        </div>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Smooth Scrolling
-        function scrollToSection(sectionId) {
-            const element = document.getElementById(sectionId);
-            if (element) {
-                element.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+        // Quote modal functions
+        function openQuoteModal() {
+            document.getElementById('quoteModal').style.display = 'block';
+        }
+
+        function closeQuoteModal() {
+            document.getElementById('quoteModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('quoteModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
             }
         }
 
-        function scrollToQuote(service) {
-            // Set the service in the quote form
-            document.getElementById('quote-service').value = service;
-            
-            // Scroll to quote section
-            document.getElementById('get-quote').scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-
-        // FAQ Toggle
-        function toggleFAQ(button) {
-            const answer = button.nextElementSibling;
-            const icon = button.querySelector('i');
-            
-            if (answer.classList.contains('open')) {
-                answer.classList.remove('open');
-                icon.style.transform = 'rotate(0deg)';
-            } else {
-                // Close all other FAQs
-                document.querySelectorAll('.faq-answer.open').forEach(openAnswer => {
-                    openAnswer.classList.remove('open');
-                });
-                document.querySelectorAll('.faq-question i').forEach(openIcon => {
-                    openIcon.style.transform = 'rotate(0deg)';
-                });
-                
-                // Open this FAQ
-                answer.classList.add('open');
-                icon.style.transform = 'rotate(180deg)';
-            }
-        }
-
-        // Quote Form Submission
-        const quoteForm = document.getElementById('quote-form');
-        const quoteMessage = document.getElementById('quote-message');
-
-        quoteForm.addEventListener('submit', async function(e) {
+        // Form submission
+        document.getElementById('quoteForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const formData = new FormData(quoteForm);
+            // Show success message
+            const formData = new FormData(this);
             
-            // Show loading state
-            const submitBtn = quoteForm.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
-            submitBtn.disabled = true;
-            
-            try {
-                // Simulate form submission (replace with actual endpoint)
-                await new Promise(resolve => setTimeout(resolve, 2000));
-                
-                quoteMessage.className = 'mt-4 p-4 rounded-lg bg-green-600 text-white';
-                quoteMessage.textContent = 'Thank you! We\'ve received your quote request. We\'ll get back to you within 2 hours with a detailed proposal.';
-                quoteMessage.classList.remove('hidden');
-                quoteForm.reset();
-                
-            } catch (error) {
-                quoteMessage.className = 'mt-4 p-4 rounded-lg bg-red-600 text-white';
-                quoteMessage.textContent = 'Sorry, there was an error sending your request. Please try again or contact us directly.';
-                quoteMessage.classList.remove('hidden');
-            } finally {
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-            }
+            // Here you would normally send to Formspree
+            // For now, we'll show a success message
+            alert('Thank you for your quote request! We\'ll get back to you within 24 hours.');
+            closeQuoteModal();
+            this.reset();
         });
 
-        // Navigation Links
+        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1087,31 +1080,8 @@
                         block: 'start'
                     });
                 }
-                // Close mobile menu if open
-                mobileMenu.classList.add('hidden');
             });
         });
-
-        // Navbar Background on Scroll
-        let ticking = false;
-        function updateNavbar() {
-            const navbar = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                navbar.classList.add('bg-gray-900');
-                navbar.classList.remove('bg-gray-900/95');
-            } else {
-                navbar.classList.remove('bg-gray-900');
-                navbar.classList.add('bg-gray-900/95');
-            }
-            ticking = false;
-        }
-
-        window.addEventListener('scroll', function() {
-            if (!ticking) {
-                requestAnimationFrame(updateNavbar);
-                ticking = true;
-            }
-        });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'990cefcfa66b8a67',t:'MTc2MDg0MTkwMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9936d566c08c8a6b',t:'MTc2MTI4MTIyMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
