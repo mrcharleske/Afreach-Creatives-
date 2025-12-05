@@ -4,7 +4,7 @@ const CACHE_NAME = 'afreach-creatives-v1';
 const urlsToCache = [
   '/',
   '/index.html',
-  '/about.html',
+  '/about/index.html',
   '/services.html',
   '/portfolio.html',
   '/contact.html',
